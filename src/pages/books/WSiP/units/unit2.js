@@ -4,9 +4,9 @@ import styled from 'styled-components';
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 // SCRIPTS
-import getNew from '../../../../components/Scripts/index.1'
+import getNew from '../../../../components/Scripts/Functions/getNew()'
 import expand from '../../../../components/Scripts/menu-hamburger'
-import deleteImage from '../../../../components/Scripts/deleteImage()'
+import deleteImage from '../../../../components/Scripts/Functions/deleteImage()'
 // STYLES
 import Global, {Wrapper, PageLink, BrowserLink, Emoji} from '../../../../components/Styled/Global/global';
 import '../../../../components/Styled/Keyframes/main-keyframes.css'
@@ -429,7 +429,7 @@ class Unit1 extends Component {
 							<li id="hamburger-list-element-1">Całość</li>
 							<li id="hamburger-list-element-2">Podstawa</li>
 							<li id="hamburger-list-element-3">Rozszerzenie</li>
-							<li id="back"><Back to='/macmillan'>↩</Back></li>
+							<li id="back"><Back to='/easy-word/wsip'>↩</Back></li>
 						</ul>
 					</Hamburger>
 					<SocialMedia id="social-media">
@@ -466,10 +466,10 @@ class Unit1 extends Component {
 				<Win id="end-game">
 					<Information id="information">
 						<p>Gratulacje! Zdobyłeś już 50 punktów <Emoji symbol="😁"/>.</p>
-						<p>Odpocznij chwilę, lub <PageLink to='/macmillan'>zacznij inną grę</PageLink> <Emoji symbol="😃"/>.</p>
+						<p>Odpocznij chwilę, lub <PageLink to='/easy-word/wsip'>zacznij inną grę</PageLink> <Emoji symbol="😃"/>.</p>
 					</Information>
 				</Win>
-				<Input placeholder="Wpisz tłumaczenie" id="userText" type="text"/>
+				<Input id="userText" type="text" placeholder="Wpisz tłumaczenie" autoComplete="off"/>
 				<Nav id="nav">
 					<button id="check">Sprawdź</button>
 					<button id="new">Następny</button>

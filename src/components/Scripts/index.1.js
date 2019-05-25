@@ -3,7 +3,7 @@ import words2 from '../../components/Words/2_Macmillan/Unit2/2_DescribingHouses'
 import words3 from '../../components/Words/2_Macmillan/Unit2/3_HouseholdAndGardenJobs'
 import words4 from '../../components/Words/2_Macmillan/Unit2/4_RentingPurchasingAndSellingProperty'
 import words5 from '../../components/Words/2_Macmillan/Unit2/5_Orther'
-import endGame from '../../components/Scripts/endGame()'
+import endGame from './Functions/endGame()'
 
 function getWord() {
   const allWords = [].concat(words1, words2, words3, words4, words5);
@@ -112,7 +112,7 @@ function getAnswer() {
   if(translation3 !== undefined) {
     if(similarText === similarTranslation || similarText === similarTranslation2 || similarText === similarTranslation3) {
       points = points + 1;
-      if(points === 1) {
+      if(points === 50) {
         endGame();
       }
       else {
@@ -134,7 +134,7 @@ function getAnswer() {
   else if(translation2 !== undefined) {
     if(similarText === similarTranslation || similarText === similarTranslation2) {
       points = points + 1;
-      if(points === 1) {
+      if(points === 50) {
         endGame();
       }
       else {
@@ -156,7 +156,7 @@ function getAnswer() {
   else {
     if(similarText === similarTranslation) {
       points = points + 1;
-      if(points === 1) {
+      if(points === 50) {
         endGame();
       }
       else {
@@ -175,20 +175,10 @@ function getAnswer() {
     }
   }
   
-  
   pointCounter.innerHTML = points;
   
   }
 
 }
 
-// function checkKeyCode(event) {
-//   if (event.key === 'Enter') {
-//     getAnswer();
-//  }
-// }
-
-
-
-
-  export default getNew
+export default getNew

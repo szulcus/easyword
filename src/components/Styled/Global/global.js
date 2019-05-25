@@ -1,6 +1,7 @@
 import React from 'react'
 import styled, {createGlobalStyle, css} from 'styled-components'
 import {Link} from 'react-router-dom'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 
 const Global = createGlobalStyle`
@@ -36,22 +37,34 @@ const Global = createGlobalStyle`
 const Wrapper = styled.main`
 	display: flex;
 	padding: 50px;
+	height: 100vh;
 	
 	${props =>
 		props.center &&
 		css`
+			text-align: center;
 			align-items: center;
 			flex-direction: column;
-			`
+		`
 	}
 
-${props =>
+	${props =>
 		props.small &&
 		css`
 			padding: 20px;
-			`
+		`
 	}
-`;
+
+	${props =>
+		props.scroll &&
+		css`
+			overflow-y: scroll;
+			::-webkit-scrollbar {
+				width: 0;
+			}
+		`
+	}
+`
 
 const Separator = styled.hr`
 	width: calc(100vw - 100px);
@@ -74,9 +87,9 @@ const PageLink = styled(Link)`
 		css`
 			display: flex;
 			justify-content: center;
-			`};
+	`};
 			
-			${props =>
+	${props =>
 		props.styled &&
 		css`
 			display: flex;
@@ -87,9 +100,9 @@ const PageLink = styled(Link)`
 			:hover {
 				padding: 0px 50px 5px 50px;
 			}
-			`};
+	`};
 			
-			${props =>
+	${props =>
 		props.list &&
 		css`
 			display: contents;
@@ -98,8 +111,9 @@ const PageLink = styled(Link)`
 				color: var(--color-light);
 				opacity: 1;
 			}
-			`};
-			`;
+		`
+	};
+`;
 
 const BrowserLink = styled.a`
 	transition: all .15s ease;
@@ -110,6 +124,33 @@ const BrowserLink = styled.a`
 		opacity: 0.5;
 	}
 	`;
+
+const Icon = styled(FontAwesomeIcon)`
+	${props =>
+		props.list &&
+		css`
+			color: var(--color-decorative);
+			margin-right: 5px;
+			margin-left: -15px;
+		`
+	};
+
+	${props =>
+		props.test &&
+		css`
+			margin: 0 5px;
+			color: var(--color-decorative);
+			:first-child {
+				margin-left: 10px;
+			}
+		`
+	};
+`
+
+const Back = styled(PageLink)`
+`
+
+// // //
 
 const Emoji = props => (
 	<span
@@ -124,6 +165,6 @@ const Emoji = props => (
 
 // STYLES
 export default Global
-export {Separator, PageLink, BrowserLink, Wrapper}
+export {Separator, PageLink, BrowserLink, Wrapper, Icon, Back}
 // COMPONENTS
 export {Emoji}

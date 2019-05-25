@@ -10,6 +10,7 @@ import MacmillanList from './pages/books/Macmillan/macmillan'
 import Unit1 from './pages/books/Macmillan/units/unit1'
 import OxfordList from './pages/books/Oxford/oxford'
 import WSiPList from './pages/books/WSiP/wsip'
+import WSiP_Unit1 from './pages/books/WSiP/units/unit1'
 import WSiP_Unit2 from './pages/books/WSiP/units/unit2'
 
 import NotFoundPage from './pages/404'
@@ -22,19 +23,20 @@ class App extends Component {
 		<Router>
 		<GlobalStyles/>
 			<Switch>
-				<Route path="/" exact component={MainPage}/>
-				<Route path="/linked-page" component={LinkedPage}/>
-				<Route path="/macmillan" exact component={MacmillanList}/>
+				<Route path="/easy-word" exact component={MainPage}/>
+				<Route path="/easy-word/linked-page" component={LinkedPage}/>
+				<Route path="/easy-word/macmillan" exact component={MacmillanList}/>
 
-				<Route path="/macmillan/test-człowiek" component={Unit1}/>
-				<Route path="/macmillan/wybór-gry" component={Page}/>
+				<Route path="/easy-word/macmillan/test-człowiek" component={Unit1}/>
+				<Route path="/easy-word/macmillan/test-dom" component={Unit1}/>
+				<Route path="/easy-word/macmillan/wybór-gry" component={Page}/>
 
-				<Route path="/oxford" exact component={OxfordList}/>
+				<Route path="/easy-word/oxford" exact component={OxfordList}/>
 
-
-				<Route path="/wsip" exact component={WSiPList}/>
-
-				<Route path="/wsip/test-w-stolicy-polski" exact component={WSiP_Unit2}/>
+				<Route path="/easy-word/wsip" exact component={WSiPList}/>
+				<Route path="/easy-word/wsip/wybór-gry-rzeczowniki" component={Page}/>
+				<Route path="/easy-word/wsip/test-rejsy" exact component={WSiP_Unit1}/>
+				<Route path="/easy-word/wsip/test-w-stolicy-polski" exact component={WSiP_Unit2}/>
 
 				<Route component={NotFoundPage}/>
 			</Switch>

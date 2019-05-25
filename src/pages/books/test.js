@@ -6,7 +6,7 @@ const Test = () => (
     <>
       <Global/>
       <h1>Strona testowa - symulacja innej książki</h1>
-      <Link to='/'>Wróć</Link>
+      <Link to='/easy-word/'>Wróć</Link>
     </>
   )
 

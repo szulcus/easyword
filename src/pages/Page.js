@@ -2,14 +2,12 @@
 import React, {Component} from 'react'
 import styled from 'styled-components'
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 // STYLED
-import Global, {Wrapper, PageLink, Separator} from '../components/Styled/Global/global'
+import Global, {Wrapper, PageLink, Separator, Icon, Back} from '../components/Styled/Global/global'
 // ICONS
-import {  } from '@fortawesome/free-brands-svg-icons'
-import { faPencilAlt, faCopy, faFire } from '@fortawesome/free-solid-svg-icons'
+import { faPencilAlt, faCopy, faFire, faReply } from '@fortawesome/free-solid-svg-icons'
 
-library.add(faPencilAlt, faCopy, faFire);
+library.add(faPencilAlt, faCopy, faFire, faReply);
 
 const Header = styled.header`
 	font-size: 30px;
@@ -38,7 +36,7 @@ const Game = styled.div`
 	}
 	`
 
-const Icon = styled(FontAwesomeIcon)`
+const StyledIcon = styled(Icon)`
 	font-size: 50px;
 	color: var(--color-decorative);
 `
@@ -53,25 +51,27 @@ class Page extends Component {
 					<Separator/>
 					<SelectWrapper>
 						<Game>
-							<PageLink to='/macmillan'>
-								<Icon icon={['fas', 'pencil-alt']}/>
+							<PageLink to='/easy-word/macmillan'>
+								<StyledIcon icon={['fas', 'pencil-alt']}/>
 								<div>Pisanie</div>
 							</PageLink>
 						</Game>
 						<Game>
-							<PageLink to='/macmillan'>
-								<Icon icon={['fas', 'copy']}/>
+							<PageLink to='/easy-word/macmillan'>
+								<StyledIcon icon={['fas', 'copy']}/>
 								<div>Dopasowywanie</div>
 							</PageLink>
 						</Game>
 						<Game>
-							
-							<PageLink to='/macmillan'>
-								<Icon icon={['fas', 'fire']}/>
+							<PageLink to='/easy-word/macmillan'>
+								<StyledIcon icon={['fas', 'fire']}/>
 								<div>Tinder</div>
 							</PageLink>
 						</Game>
 					</SelectWrapper>
+					<Back to='/easy-word/wsip'>
+						<Icon icon={['fas', 'reply']}/>
+					</Back>
 				</Wrapper>
 			</>
 		);

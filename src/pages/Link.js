@@ -6,7 +6,7 @@ class LinkPage extends Component {
 		return (
 			<div>
 			<h1>Linkowana strona www</h1>
-			<PageLink to='/'>Wróć</PageLink>
+			<PageLink to='/easy-word/'>Wróć</PageLink>
 			</div>
 		);
 	}

@@ -1,18 +1,10 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import styled from 'styled-components';
-
-
-const PageWrapper = styled.main`
-	text-align: center;
-	padding: 50px;
-
-	@media (max-width: 420px) {
-		padding: 20px;
-	}
-`;
+import {Wrapper} from '../components/Styled/Global/global'
 
 const PageHeader = styled.header`
+	width: 90vw;
 	font-size: 20px;
 	font-weight: bold;
 	letter-spacing: 2px;
@@ -34,7 +26,7 @@ const Logo = styled.span`
 	span {
 		color: gold;
 	}
-`;
+`
 
 const LogoSeparator = styled.hr`
 	max-width: 1000px;
@@ -47,11 +39,6 @@ const BooksWrapper = styled.div`
 	justify-content: center;
 	flex-wrap: wrap;
 	height: calc(100vh - 200px);
-	overflow-y: scroll;
-
-	::-webkit-scrollbar {
-		width: 0px;
-	}
 `;
 
 const Book = styled.div`
@@ -85,7 +72,7 @@ const Book = styled.div`
 
 const IndexPage = () => (
 	<>
-		<PageWrapper>
+		<Wrapper center scroll>
 			<PageHeader>
 				<Logo><span>E</span>asy<span>W</span>ord</Logo>
 				<LogoSeparator/>
@@ -93,22 +80,22 @@ const IndexPage = () => (
 			</PageHeader>
 			<BooksWrapper>
 				<Book>
-					<Link to='/macmillan'>
+					<Link to='/easy-word/macmillan'>
 						<img src="https://www.macmillan.pl/components/com_ssshop/cache/500x500/9788376218496.png" alt="Macmillan Education"/>
 					</Link>
 				</Book>
 				<Book>
-					<Link to='/oxford'>
+					<Link to='/easy-word/oxford'>
 						<img src="https://www.gandalf.com.pl/o/oxford-solutions-intermediate,big,578379.jpg" alt="Oxford Solutions Intermediate"/>
 					</Link>
 				</Book>
 				<Book>
-					<Link to='/wsip'>
+					<Link to='/easy-word/wsip'>
 						<img src="https://sklep.wsip.pl/uploads/tx_evosenk/covers/upload_temp_tF8lhB.jpg" alt="test"/>
 					</Link>
 				</Book>
 			</BooksWrapper>
-		</PageWrapper>
+		</Wrapper>
 	</>
 )
 

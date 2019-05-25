@@ -2,21 +2,21 @@
 import React, {Component} from 'react';
 import styled from 'styled-components';
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 // SCRIPTS
-import getNew from '../../../../components/Scripts/index.1'
+import getNew from '../../../../components/Scripts/Functions/getNew()'
 import expand from '../../../../components/Scripts/menu-hamburger'
-import deleteImage from '../../../../components/Scripts/deleteImage()'
+import deleteImage from '../../../../components/Scripts/Functions/deleteImage()'
 // STYLES
-import Global, {Wrapper, PageLink, BrowserLink, Emoji} from '../../../../components/Styled/Global/global';
+import Global, {Wrapper, PageLink, BrowserLink, Emoji, Icon} from '../../../../components/Styled/Global/global';
 import '../../../../components/Styled/Keyframes/main-keyframes.css'
 // FILES
 import information from '../../../../images/information.png'
+import words1 from '../../../../components/Words/3_WSiP/Unit1/1_Rzeczowniki'
 // ICONS
 import { faFacebookF, faGithub, faLinkedinIn } from '@fortawesome/free-brands-svg-icons'
-import { faUserTie } from '@fortawesome/free-solid-svg-icons'
+import { faUserTie, faReply } from '@fortawesome/free-solid-svg-icons'
 
-library.add(faFacebookF, faGithub, faLinkedinIn, faUserTie);
+library.add(faFacebookF, faGithub, faLinkedinIn, faUserTie, faReply);
 
 const Loader = styled.div`
 	display: none;
@@ -204,6 +204,9 @@ const Hamburger = styled.div`
 				:last-child {
 					border-bottom: 0;
 				}
+			}
+			@media(max-width: 350px) {
+				padding: 20px 0;
 			}
 		}
 	}
@@ -429,21 +432,21 @@ class Unit1 extends Component {
 							<li id="hamburger-list-element-1">Całość</li>
 							<li id="hamburger-list-element-2">Podstawa</li>
 							<li id="hamburger-list-element-3">Rozszerzenie</li>
-							<li id="back"><Back to='/macmillan'>↩</Back></li>
+							<li id="back"><Back to='/easy-word/wsip'><Icon icon={['fas', 'reply']}/></Back></li>
 						</ul>
 					</Hamburger>
 					<SocialMedia id="social-media">
 						<li>
-							<BrowserLink href="https://www.facebook.com/programista.webowy.jakub.schulz"><FontAwesomeIcon icon={['fab', 'facebook-f']} /></BrowserLink>
+							<BrowserLink href="https://www.facebook.com/programista.webowy.jakub.schulz"><Icon icon={['fab', 'facebook-f']} /></BrowserLink>
 						</li>
 						<li>
-							<BrowserLink href="https://github.com/jakub104"><FontAwesomeIcon icon={['fab', 'github']} /></BrowserLink>
+							<BrowserLink href="https://github.com/jakub104"><Icon icon={['fab', 'github']} /></BrowserLink>
 						</li>
 						<li>
-							<BrowserLink href="https://www.linkedin.com/in/jakub-schulz-265931186/"><FontAwesomeIcon icon={['fab', 'linkedin-in']} /></BrowserLink>
+							<BrowserLink href="https://www.linkedin.com/in/jakub-schulz-265931186/"><Icon icon={['fab', 'linkedin-in']} /></BrowserLink>
 						</li>
 						<li>
-							<BrowserLink href="https://programista-webowy-jakub-schulz.000webhostapp.com"><FontAwesomeIcon icon={['fas', 'user-tie']} /></BrowserLink>
+							<BrowserLink href="https://programista-webowy-jakub-schulz.000webhostapp.com"><Icon icon={['fas', 'user-tie']} /></BrowserLink>
 						</li>
 					</SocialMedia>
 				</Navigation>
@@ -466,10 +469,10 @@ class Unit1 extends Component {
 				<Win id="end-game">
 					<Information id="information">
 						<p>Gratulacje! Zdobyłeś już 50 punktów <Emoji symbol="😁"/>.</p>
-						<p>Odpocznij chwilę, lub <PageLink to='/macmillan'>zacznij inną grę</PageLink> <Emoji symbol="😃"/>.</p>
+						<p>Odpocznij chwilę, lub <PageLink to='/easy-word/wsip'>zacznij inną grę</PageLink> <Emoji symbol="😃"/>.</p>
 					</Information>
 				</Win>
-				<Input placeholder="Wpisz tłumaczenie" id="userText" type="text"/>
+				<Input id="userText" type="text" placeholder="Wpisz tłumaczenie" autoComplete="off"/>
 				<Nav id="nav">
 					<button id="check">Sprawdź</button>
 					<button id="new">Następny</button>

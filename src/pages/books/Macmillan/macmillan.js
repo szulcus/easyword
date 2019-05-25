@@ -1,7 +1,14 @@
+// BASIC
 import React from 'react'
 import styled from 'styled-components'
 import {Link} from 'react-router-dom'
-import Global, {PageLink} from '../../../components/Styled/Global/global'
+import { library } from '@fortawesome/fontawesome-svg-core'
+// STYLES
+import Global, {PageLink, Icon} from '../../../components/Styled/Global/global'
+// ICONS
+import { faAngleRight, faStar, faReply } from '@fortawesome/free-solid-svg-icons'
+
+library.add(faAngleRight, faStar, faReply);
 
 const ListWrapper = styled.div`
 	padding: 30px;
@@ -43,18 +50,26 @@ const ListSeparator = styled.hr`
 	}
 `;
 
-const ListHeader = styled.h1`
+const ListHeader = styled.header`
+	display: block;
+	width: 100%;
 	color: white;
+
+	h1 {
+		margin-bottom: 0;
+	}
 
 	@media (max-width: 768px) {
 		text-align: center;
-		margin-bottom: 0;
+		margin-bottom: 5px;
 	}
 `;
 
 const Back = styled(PageLink)`
-	color: var(--color-decorative);
 	display: none;
+	font-size: 25px;
+	margin: 0;
+	color: var(--color-decorative);
 	@media (max-width: 768px) {
 		display: block;
 	}
@@ -75,7 +90,6 @@ const List = styled.div`
 		border-radius: 3px;
 	}
 	::-webkit-scrollbar-thumb {
-		border-radius: 10px;
 		background: var(--color-secondary);
 	}
 
@@ -87,6 +101,10 @@ const List = styled.div`
 		width: 90vw;
 		padding: 0 20px;
 		height: calc(100vh - 150px);
+
+		ol {
+			padding: 0;
+		}
 	}
 `;
 
@@ -99,25 +117,10 @@ const ListSubsection = styled.ul`
 
 	li {
 		padding: 3px;
+	}
 
-		::before {
-			content: "↪";
-			color: gold;
-			margin-left: -20px;
-			margin-right: 5px;
-		}
-
-		:last-child::before {
-			content: "🎓";
-			text-shadow: 0 0px 7px #998100;
-			margin-left: -24px;
-		}
-
-		:last-child::after {
-			content: "🎓";
-			text-shadow: 0 0px 7px #998100;
-			margin-left: 7px;
-		}
+	li:last-child {
+		padding-top: 10px;
 	}
 `;
 
@@ -125,139 +128,182 @@ const MacmillanBook = () => (
 <>
 	<Global/>
 	<ListWrapper>
-		<Book to='/'>
+		<Book to='/easy-word/'>
 			<BookImage src="https://www.macmillan.pl/components/com_ssshop/cache/500x500/9788376218496.png" alt="https://www.macmillan.pl/katalog/repetytorium-dla-uczniow-liceow-i-technikow-poziom-podstawowy-i-rozszerzony-wersja-wieloletnia,p-642-84"/>
 		</Book>
 		<ListSeparator/>
 		<div>
 		<ListHeader>
-			<div>Spis treści:</div>
-			<Back to='/'>↩</Back>
+			<h1>Spis treści:</h1>
+			<Back to='/easy-word/'>
+				<Icon list icon={['fas', 'reply']}/>
+			</Back>
 		</ListHeader>
 		<List>
 			<ol>
 				<ListSection>Rozdział 1 - Człowiek</ListSection>
 				<ListSubsection>
 					<li>
-						<PageLink list to='/macmillan/wybór-gry'>Dane osobowe</PageLink>
+						<Icon list icon={['fas', 'angle-right']}/>
+						<PageLink list to='/easy-word/macmillan/wybór-gry'>Dane osobowe</PageLink>
 					</li>
 					<li>
-						<PageLink list to='/macmillan'>Wygląd zewnętrzny</PageLink>
+						<Icon list icon={['fas', 'angle-right']}/>
+						<PageLink list to='/easy-word/macmillan'>Wygląd zewnętrzny</PageLink>
 					</li>
 					<li>
-						<PageLink list to='/macmillan'>Ubrania</PageLink>
+						<Icon list icon={['fas', 'angle-right']}/>
+						<PageLink list to='/easy-word/macmillan'>Ubrania</PageLink>
 					</li>
 					<li>
-						<PageLink list to='/macmillan'>Cechy charakteru</PageLink>
+						<Icon list icon={['fas', 'angle-right']}/>
+						<PageLink list to='/easy-word/macmillan'>Cechy charakteru</PageLink>
 					</li>
 					<li>
-						<PageLink list to='/macmillan'>Uczucia i emocje</PageLink>
+						<Icon list icon={['fas', 'angle-right']}/>
+						<PageLink list to='/easy-word/macmillan'>Uczucia i emocje</PageLink>
 					</li>
 					<li>
-						<PageLink list to='/macmillan'>Zainteresowania</PageLink>
+						<Icon list icon={['fas', 'angle-right']}/>
+						<PageLink list to='/easy-word/macmillan'>Zainteresowania</PageLink>
 					</li>
 					<li>
-						<PageLink list to='/macmillan'>Problemy etyczne</PageLink>
+						<Icon list icon={['fas', 'angle-right']}/>
+						<PageLink list to='/easy-word/macmillan'>Problemy etyczne</PageLink>
 					</li>
 					<li>
-						<PageLink list to='/macmillan'>Inne</PageLink>
+						<Icon list icon={['fas', 'angle-right']}/>
+						<PageLink list to='/easy-word/macmillan'>Inne</PageLink>
 					</li>
 					<li>
-						<PageLink list to='/macmillan/test-człowiek'>Test</PageLink>
+						<Icon test icon={['fas', 'star']}/>
+						<PageLink list to='/easy-word/macmillan/test-człowiek'>Test</PageLink>
+						<Icon test icon={['fas', 'star']}/>
 					</li>
 				</ListSubsection>
 				<ListSection>Rozdział 2 - Dom</ListSection>
 				<ListSubsection>
 					<li>
-						<PageLink list to='/macmillan'>Miejsce zamieszkania</PageLink>
+						<Icon list icon={['fas', 'angle-right']}/>
+						<PageLink list to='/easy-word/macmillan'>Miejsce zamieszkania</PageLink>
 					</li>
 					<li>
-						<PageLink list to='/macmillan'>Opis Domu</PageLink>
+						<Icon list icon={['fas', 'angle-right']}/>
+						<PageLink list to='/easy-word/macmillan'>Opis Domu</PageLink>
 					</li>
 					<li>
-						<PageLink list to='/macmillan'>Prace w domu i ogrodzie</PageLink>
+						<Icon list icon={['fas', 'angle-right']}/>
+						<PageLink list to='/easy-word/macmillan'>Prace w domu i ogrodzie</PageLink>
 					</li>
 					<li>
-						<PageLink list to='/macmillan'>Wynajem, kupno i sprzedaż nieruchomości</PageLink>
+						<Icon list icon={['fas', 'angle-right']}/>
+						<PageLink list to='/easy-word/macmillan'>Wynajem, kupno i sprzedaż nieruchomości</PageLink>
 					</li>
 					<li>
-						<PageLink list to='/macmillan'>Inne</PageLink>
+						<Icon list icon={['fas', 'angle-right']}/>
+						<PageLink list to='/easy-word/macmillan'>Inne</PageLink>
 					</li>
 					<li>
-						<PageLink list to='/macmillan/test-dom'>Test</PageLink>
+						<Icon test icon={['fas', 'star']}/>
+						<PageLink list to='/easy-word/macmillan/test-dom'>Test</PageLink>
+						<Icon test icon={['fas', 'star']}/>
 					</li>
 				</ListSubsection>
 
 				<ListSection>Rozdział 3 - Szkoła</ListSection>
 				<ListSubsection>
 					<li>
-						<PageLink list to='/macmillan'>Przedmioty szkolne</PageLink>
+						<Icon list icon={['fas', 'angle-right']}/>
+						<PageLink list to='/easy-word/macmillan'>Przedmioty szkolne</PageLink>
 					</li>
 					<li>
-						<PageLink list to='/macmillan'>Oceny i wymagania</PageLink>
+						<Icon list icon={['fas', 'angle-right']}/>
+						<PageLink list to='/easy-word/macmillan'>Oceny i wymagania</PageLink>
 					</li>
 					<li>
-						<PageLink list to='/macmillan'>Życie szkolne</PageLink>
+						<Icon list icon={['fas', 'angle-right']}/>
+						<PageLink list to='/easy-word/macmillan'>Życie szkolne</PageLink>
 					</li>
 					<li>
-						<PageLink list to='/macmillan'>Zajęcia pozalekcyjne</PageLink>
+						<Icon list icon={['fas', 'angle-right']}/>
+						<PageLink list to='/easy-word/macmillan'>Zajęcia pozalekcyjne</PageLink>
 					</li>
 					<li>
-						<PageLink list to='/macmillan'>Education system</PageLink>
+						<Icon list icon={['fas', 'angle-right']}/>
+						<PageLink list to='/easy-word/macmillan'>Education system</PageLink>
 					</li>
 					<li>
-						<PageLink list to='/macmillan'>Inne</PageLink>
+						<Icon list icon={['fas', 'angle-right']}/>
+						<PageLink list to='/easy-word/macmillan'>Inne</PageLink>
 					</li>
 					<li>
-						<PageLink list to='/macmillan/test-szkoła'>Test</PageLink>
+						<Icon test icon={['fas', 'star']}/>
+						<PageLink list to='/easy-word/macmillan/test-szkoła'>Test</PageLink>
+						<Icon test icon={['fas', 'star']}/>
 					</li>
 				</ListSubsection>
 				<ListSection>Rozdział 4 - Praca</ListSection>
 				<ListSubsection>
 					<li>
-						<PageLink list to='/macmillan'>Zawody związane z innymi czynnościami</PageLink>
+						<Icon list icon={['fas', 'angle-right']}/>
+						<PageLink list to='/easy-word/macmillan'>Zawody związane z innymi czynnościami</PageLink>
 					</li>
 					<li>
-						<PageLink list to='/macmillan'>Warunki pracy i zatrudnienia</PageLink>
+						<Icon list icon={['fas', 'angle-right']}/>
+						<PageLink list to='/easy-word/macmillan'>Warunki pracy i zatrudnienia</PageLink>
 					</li>
 					<li>
-						<PageLink list to='/macmillan'>Praca dorywcza</PageLink>
+						<Icon list icon={['fas', 'angle-right']}/>
+						<PageLink list to='/easy-word/macmillan'>Praca dorywcza</PageLink>
 					</li>
 					<li>
-						<PageLink list to='/macmillan'>Rynek pracy</PageLink>
+						<Icon list icon={['fas', 'angle-right']}/>
+						<PageLink list to='/easy-word/macmillan'>Rynek pracy</PageLink>
 					</li>
 					<li>
-						<PageLink list to='/macmillan'>Inne</PageLink>
+						<Icon list icon={['fas', 'angle-right']}/>
+						<PageLink list to='/easy-word/macmillan'>Inne</PageLink>
 					</li>
 					<li>
-						<PageLink list to='/macmillan/test-praca'>Test</PageLink>
+						<Icon test icon={['fas', 'star']}/>
+						<PageLink list to='/easy-word/macmillan/test-praca'>Test</PageLink>
+						<Icon test icon={['fas', 'star']}/>
 					</li>
 				</ListSubsection>
 				<ListSection>Rozdział 5 - Życie rodzinne i towarzyskie</ListSection>
 				<ListSubsection>
 					<li>
-						<PageLink list to='/macmillan'>Etapy życia</PageLink>
+						<Icon list icon={['fas', 'angle-right']}/>
+						<PageLink list to='/easy-word/macmillan'>Etapy życia</PageLink>
 					</li>
 					<li>
-						<PageLink list to='/macmillan'>Członkowie rodziny, koledzy i przyjaciele</PageLink>
+						<Icon list icon={['fas', 'angle-right']}/>
+						<PageLink list to='/easy-word/macmillan'>Członkowie rodziny, koledzy i przyjaciele</PageLink>
 					</li>
 					<li>
-						<PageLink list to='/macmillan'>Czynności życia codziennego</PageLink>
+						<Icon list icon={['fas', 'angle-right']}/>
+						<PageLink list to='/easy-word/macmillan'>Czynności życia codziennego</PageLink>
 					</li>
 					<li>
-						<PageLink list to='/macmillan'>Formy spędzania czasu wolnego</PageLink>
+						<Icon list icon={['fas', 'angle-right']}/>
+						<PageLink list to='/easy-word/macmillan'>Formy spędzania czasu wolnego</PageLink>
 					</li>
 					<li>
-						<PageLink list to='/macmillan'>Święta i uroczystości</PageLink>
+						<Icon list icon={['fas', 'angle-right']}/>
+						<PageLink list to='/easy-word/macmillan'>Święta i uroczystości</PageLink>
 					</li>
 					<li>
-						<PageLink list to='/macmillan'>Styl życia, konflikty i problemy</PageLink>
+						<Icon list icon={['fas', 'angle-right']}/>
+						<PageLink list to='/easy-word/macmillan'>Styl życia, konflikty i problemy</PageLink>
 					</li>
 					<li>
-						<PageLink list to='/macmillan'>Inne</PageLink>
+						<Icon list icon={['fas', 'angle-right']}/>
+						<PageLink list to='/easy-word/macmillan'>Inne</PageLink>
 					</li>
 					<li>
-						<PageLink list to='/macmillan/test-życie-rodzinne-i-towarzyskie'>Test</PageLink>
+						<Icon test icon={['fas', 'star']}/>
+						<PageLink list to='/easy-word/macmillan/test-życie-rodzinne-i-towarzyskie'>Test</PageLink>
+						<Icon test icon={['fas', 'star']}/>
 					</li>
 				</ListSubsection>
 			</ol>
