@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/deploy-react/static/css/main.4488b0a6.chunk.css",
-    "main.js": "/deploy-react/static/js/main.8178ad9c.chunk.js",
-    "main.js.map": "/deploy-react/static/js/main.8178ad9c.chunk.js.map",
-    "runtime~main.js": "/deploy-react/static/js/runtime~main.5de6419e.js",
-    "runtime~main.js.map": "/deploy-react/static/js/runtime~main.5de6419e.js.map",
-    "static/js/2.3a597c43.chunk.js": "/deploy-react/static/js/2.3a597c43.chunk.js",
-    "static/js/2.3a597c43.chunk.js.map": "/deploy-react/static/js/2.3a597c43.chunk.js.map",
-    "index.html": "/deploy-react/index.html",
-    "precache-manifest.3ee9dc99519ae75c7aa6233d9d90987d.js": "/deploy-react/precache-manifest.3ee9dc99519ae75c7aa6233d9d90987d.js",
-    "service-worker.js": "/deploy-react/service-worker.js",
-    "static/css/main.4488b0a6.chunk.css.map": "/deploy-react/static/css/main.4488b0a6.chunk.css.map",
-    "static/media/information.png": "/deploy-react/static/media/information.35cbfcc3.png"
+    "main.css": "/easy-word/static/css/main.4488b0a6.chunk.css",
+    "main.js": "/easy-word/static/js/main.6df0af3a.chunk.js",
+    "main.js.map": "/easy-word/static/js/main.6df0af3a.chunk.js.map",
+    "runtime~main.js": "/easy-word/static/js/runtime~main.5c3a33a2.js",
+    "runtime~main.js.map": "/easy-word/static/js/runtime~main.5c3a33a2.js.map",
+    "static/js/2.ad9cdc68.chunk.js": "/easy-word/static/js/2.ad9cdc68.chunk.js",
+    "static/js/2.ad9cdc68.chunk.js.map": "/easy-word/static/js/2.ad9cdc68.chunk.js.map",
+    "index.html": "/easy-word/index.html",
+    "precache-manifest.8673ed27afab3a41cf777160910a5eeb.js": "/easy-word/precache-manifest.8673ed27afab3a41cf777160910a5eeb.js",
+    "service-worker.js": "/easy-word/service-worker.js",
+    "static/css/main.4488b0a6.chunk.css.map": "/easy-word/static/css/main.4488b0a6.chunk.css.map",
+    "static/media/information.png": "/easy-word/static/media/information.35cbfcc3.png"
   }
 }
