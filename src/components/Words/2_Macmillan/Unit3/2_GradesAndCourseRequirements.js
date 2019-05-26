@@ -239,8 +239,9 @@ const words2_GradesAndCourseRequirements = [
 	},
 	{
 		word:  `BA`,
-		word2: `Bachelor of science`,
+		word2: `Bachelor of Arts`,
 		translation: `licencjat na kierunku humanistycznym`,
+		translation2: `licencjat sztuk pieknych`,
 		level: `basic`,
 		type: `oceny i wymagania`,
 		image: `url`,
@@ -257,6 +258,7 @@ const words2_GradesAndCourseRequirements = [
 		word:  `BSc`,
 		word2: `Bachelor of Science`,
 		translation: `licencjat w dziedzinie nauk ścisłych lub przyrodniczych`,
+		translation2: `licencjat nauk ścisłych`,
 		level: `basic`,
 		type: `oceny i wymagania`,
 		image: `url`,

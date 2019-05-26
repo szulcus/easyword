@@ -31,7 +31,7 @@ function getNew() {
   const userText = document.getElementById('userText');
 
 	userText.value = '';
-	document.getElementById('answer').innerHTML = '';
+	document.getElementById('answer').style.display = 'none';
   
 	picture.innerHTML = `<img src="${image}" alt="${word} image">`;
   
@@ -120,11 +120,13 @@ function getAnswer() {
         firework.style.display = 'block';
         firework.style.animation = 'boom 0.7s ease-out';
         setTimeout(function(){firework.style.display = 'none';}, 700);
+        answer.style.display = 'block';
         answer.innerHTML = `Brawo! Dostajesz punkt! 😁`;
         setTimeout(function(){getNew();}, 500);
       }
     }
     else {
+      answer.style.display = 'block';
       answer.innerHTML = `Źle 😶. Odpowiedź to: <strong>${translation}</strong>, <strong>${translation2}</strong> lub <strong>${translation3}</strong>`;
       answer.style.color = 'firebrick';
       answer.style.animation = 'scale 0.3s ease-in-out';
@@ -142,11 +144,13 @@ function getAnswer() {
         firework.style.display = 'block';
         firework.style.animation = 'boom 0.7s ease-out';
         setTimeout(function(){firework.style.display = 'none';}, 700);
+        answer.style.display = 'block';
         answer.innerHTML = `Brawo! Dostajesz punkt! 😁`;
         setTimeout(function(){getNew();}, 500);
       }
     }
     else {
+      answer.style.display = 'block';
       answer.innerHTML = `Źle 😶. Odpowiedź to: <strong>${translation}</strong> lub <strong>${translation2}</strong>`;
       answer.style.color = 'firebrick';
       answer.style.animation = 'scale 0.3s ease-in-out';
@@ -164,11 +168,13 @@ function getAnswer() {
         firework.style.display = 'block';
         firework.style.animation = 'boom 0.7s ease-out';
         setTimeout(function(){firework.style.display = 'none';}, 700);
+        answer.style.display = 'block';
         answer.innerHTML = `Brawo! Dostajesz punkt! 😁`;
         setTimeout(function(){getNew();}, 500);
       }
     }
     else {
+      answer.style.display = 'block';
       answer.innerHTML = `Źle 😶. Odpowiedź to: <strong>${translation}</strong>`;
       answer.style.color = 'firebrick';
       answer.style.animation = 'scale 0.3s ease-in-out';

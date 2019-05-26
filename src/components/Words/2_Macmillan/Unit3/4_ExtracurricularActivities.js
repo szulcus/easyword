@@ -43,7 +43,8 @@ const words4_ExtracurricularActivities = [
 	},
 	{
 		word:  `fundraising event`,
-		translation: `impreza zorganizowana w celu zbierania funduszy`,
+		translation: `impreza (zorganizowana w celu zbierania funduszy)`,
+		translation2: `impreza do zbierania funduszy`,
 		level: `basic`,
 		type: `zajęcia pozalekcyjne`,
 		image: `url`,

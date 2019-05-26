@@ -35,7 +35,7 @@ function getNew() {
   const userText = document.getElementById('userText')
 	
 	userText.value = '';
-	document.getElementById('answer').innerHTML = '';
+	document.getElementById('answer').style.display = 'none';
   
 	cathegory.innerHTML = `${type.toUpperCase()}`;
   

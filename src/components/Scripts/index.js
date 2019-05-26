@@ -24,7 +24,7 @@ function getNew() {
 	const cathegory = document.getElementById('cathegory');
 	
 	document.getElementById('userText').value = '';
-	document.getElementById('answer').innerHTML = '';
+	document.getElementById('answer').style.display = 'none';
   
 	cathegory.innerHTML = `${type.toUpperCase()}`;
   

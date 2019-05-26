@@ -72,7 +72,7 @@ const words3_SchoolLive = [
 	},
 	{
 		word:  `dictation`,
-		translation: `dyktanto`,
+		translation: `dyktando`,
 		level: `basic`,
 		type: `życie szkolne`,
 		image: `url`,
@@ -281,7 +281,7 @@ const words3_SchoolLive = [
 	},
 	{
 		word:  `term`,
-		translation: `semester`,
+		translation: `semestr`,
 		level: `basic`,
 		type: `życie szkolne`,
 		image: `url`,
