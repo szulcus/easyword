@@ -8,6 +8,8 @@ import LinkedPage from './pages/Link'
 
 import MacmillanList from './pages/books/Macmillan/macmillan'
 import Unit1 from './pages/books/Macmillan/units/unit1'
+import Unit2 from './pages/books/Macmillan/units/unit2'
+import Unit3 from './pages/books/Macmillan/units/unit3'
 import OxfordList from './pages/books/Oxford/oxford'
 
 import WSiPList from './pages/books/WSiP/wsip'
@@ -30,7 +32,8 @@ class App extends Component {
 				<Route path="/easy-word/macmillan" exact component={MacmillanList}/>
 
 				<Route path="/easy-word/macmillan/test-człowiek" component={Unit1}/>
-				<Route path="/easy-word/macmillan/test-dom" component={Unit1}/>
+				<Route path="/easy-word/macmillan/test-dom" component={Unit2}/>
+				<Route path="/easy-word/macmillan/test-szkoła" component={Unit3}/>
 				<Route path="/easy-word/macmillan/wybór-gry" component={Page}/>
 
 				<Route path="/easy-word/oxford" exact component={OxfordList}/>

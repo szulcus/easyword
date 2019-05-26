@@ -3,7 +3,7 @@ import React, {Component} from 'react';
 import styled from 'styled-components';
 import { library } from '@fortawesome/fontawesome-svg-core'
 // SCRIPTS
-import getNew from '../../../../components/Scripts/index.1'
+import getNew from '../../../../components/Scripts/en/en1_getNew()'
 import expand from '../../../../components/Scripts/menu-hamburger'
 import deleteImage from '../../../../components/Scripts/Functions/deleteImage()'
 import dowolne from '../../../../components/Scripts/dowolne'
@@ -416,7 +416,7 @@ const Back = styled(PageLink)`
 	font-size: 20px;
 	line-height: 20px;
 `
-class Unit1 extends Component {
+class Unit2 extends Component {
 	render() {
 	return (
 		<>
@@ -489,4 +489,4 @@ class Unit1 extends Component {
 	}
 }
 
-export default Unit1
+export default Unit2
