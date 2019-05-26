@@ -56,7 +56,7 @@ const words1_Rzeczowniki = [
         image: `https://c.pxhere.com/photos/cd/53/beach_clouds_dusk_evening_evening_sun_golden_hour_horizon_landscape-1556343.jpg!s`,
     },
     {
-        word: `путеводи́тель́`,
+        word: `путеводи́тель`,
         translation: `przewodnik`,
         type: `rzeczowniki`,
         image: `https://c.pxhere.com/photos/d5/b8/ipad_map_tablet_internet_screen_multimedia_information_restaurant-1234397.jpg!s`,

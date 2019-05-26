@@ -9,8 +9,10 @@ import LinkedPage from './pages/Link'
 import MacmillanList from './pages/books/Macmillan/macmillan'
 import Unit1 from './pages/books/Macmillan/units/unit1'
 import OxfordList from './pages/books/Oxford/oxford'
+
 import WSiPList from './pages/books/WSiP/wsip'
 import WSiP_Unit1 from './pages/books/WSiP/units/unit1'
+import WSiP_Unit1_1 from './pages/books/WSiP/units/unit1-1'
 import WSiP_Unit2 from './pages/books/WSiP/units/unit2'
 
 import NotFoundPage from './pages/404'
@@ -34,7 +36,7 @@ class App extends Component {
 				<Route path="/easy-word/oxford" exact component={OxfordList}/>
 
 				<Route path="/easy-word/wsip" exact component={WSiPList}/>
-				<Route path="/easy-word/wsip/wybór-gry-rzeczowniki" component={Page}/>
+				<Route path="/easy-word/wsip/rzeczowniki-wybór-gry/pisanie" component={WSiP_Unit1_1}/>
 				<Route path="/easy-word/wsip/test-rejsy" exact component={WSiP_Unit1}/>
 				<Route path="/easy-word/wsip/test-w-stolicy-polski" exact component={WSiP_Unit2}/>
 

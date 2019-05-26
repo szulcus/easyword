@@ -3,19 +3,14 @@ import React, {Component} from 'react';
 import styled from 'styled-components';
 import { library } from '@fortawesome/fontawesome-svg-core'
 // SCRIPTS
-import getNew from '../../../../components/Scripts/index.1'
+import getNew from '../../../../components/Scripts/ru/ru1-1_getNew()'
 import expand from '../../../../components/Scripts/menu-hamburger'
 import deleteImage from '../../../../components/Scripts/Functions/deleteImage()'
-import dowolne from '../../../../components/Scripts/dowolne'
 // STYLES
 import Global, {Wrapper, PageLink, BrowserLink, Emoji, Icon} from '../../../../components/Styled/Global/global';
 import '../../../../components/Styled/Keyframes/main-keyframes.css'
 // FILES
 import information from '../../../../images/information.png'
-import words1 from '../../../../components/Words/3_WSiP/Unit1/1_Rzeczowniki'
-import words2 from '../../../../components/Words/3_WSiP/Unit1/2_StronyŚwiata'
-import words3 from '../../../../components/Words/3_WSiP/Unit1/3_PytaniaOMiejsceIKierunek'
-import words4 from '../../../../components/Words/3_WSiP/Unit1/4_PoryRokuINazwyMiesięcy'
 // ICONS
 import { faFacebookF, faGithub, faLinkedinIn } from '@fortawesome/free-brands-svg-icons'
 import { faUserTie, faReply } from '@fortawesome/free-solid-svg-icons'
@@ -423,7 +418,7 @@ class Unit1 extends Component {
 			<Global/>
 			<Loader id="loader-bg"/>
 			<Wrapper center small onLoad={getNew}>
-				<Cathegory onLoad={dowolne(words1, words2, words3, words4)} id="cathegory">Jakaś bardzo długa i zawiła kategoria</Cathegory>
+				<Cathegory id="cathegory">Jakaś bardzo długa i zawiła kategoria</Cathegory>
 				<Navigation id="navigation">
 					<Points>Punkty: <strong id="pointCounter">0</strong></Points>
 					<Hamburger>
@@ -436,7 +431,7 @@ class Unit1 extends Component {
 							<li id="hamburger-list-element-1">Całość</li>
 							<li id="hamburger-list-element-2">Podstawa</li>
 							<li id="hamburger-list-element-3">Rozszerzenie</li>
-							<li id="back"><Back to='/easy-word/macmillan'><Icon icon={['fas', 'reply']}/></Back></li>
+							<li id="back"><Back to='/easy-word/wsip'><Icon icon={['fas', 'reply']}/></Back></li>
 						</ul>
 					</Hamburger>
 					<SocialMedia id="social-media">
@@ -473,10 +468,10 @@ class Unit1 extends Component {
 				<Win id="end-game">
 					<Information id="information">
 						<p>Gratulacje! Zdobyłeś już 50 punktów <Emoji symbol="😁"/>.</p>
-						<p>Odpocznij chwilę, lub <PageLink to='/easy-word/macmillan'>zacznij inną grę</PageLink> <Emoji symbol="😃"/>.</p>
+						<p>Odpocznij chwilę, lub <PageLink to='/easy-word/wsip'>zacznij inną grę</PageLink> <Emoji symbol="😃"/>.</p>
 					</Information>
 				</Win>
-				<Input placeholder="Wpisz tłumaczenie" id="userText" type="text" autoComplete="off"/>
+				<Input id="userText" type="text" placeholder="Wpisz tłumaczenie" autoComplete="off"/>
 				<Nav id="nav">
 					<button id="check">Sprawdź</button>
 					<button id="new">Następny</button>

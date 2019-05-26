@@ -3,7 +3,7 @@ import React, {Component} from 'react';
 import styled from 'styled-components';
 import { library } from '@fortawesome/fontawesome-svg-core'
 // SCRIPTS
-import getNew from '../../../../components/Scripts/Functions/getNew()'
+import getNew from '../../../../components/Scripts/ru/ru1_getNew()'
 import expand from '../../../../components/Scripts/menu-hamburger'
 import deleteImage from '../../../../components/Scripts/Functions/deleteImage()'
 // STYLES
@@ -11,7 +11,6 @@ import Global, {Wrapper, PageLink, BrowserLink, Emoji, Icon} from '../../../../c
 import '../../../../components/Styled/Keyframes/main-keyframes.css'
 // FILES
 import information from '../../../../images/information.png'
-import words1 from '../../../../components/Words/3_WSiP/Unit1/1_Rzeczowniki'
 // ICONS
 import { faFacebookF, faGithub, faLinkedinIn } from '@fortawesome/free-brands-svg-icons'
 import { faUserTie, faReply } from '@fortawesome/free-solid-svg-icons'
@@ -409,7 +408,7 @@ const Answer = styled.div`
 `
 
 const Back = styled(PageLink)`
-	font-size: 30px;
+	font-size: 20px;
 	line-height: 20px;
 `
 class Unit1 extends Component {

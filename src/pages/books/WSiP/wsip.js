@@ -145,7 +145,7 @@ const MacmillanBook = () => (
 				<ListSubsection>
 					<li>
 						<Icon list icon={['fas', 'angle-right']}/>
-						<PageLink list to='/easy-word/wsip/wybór-gry-rzeczowniki'>Rzeczowniki</PageLink>
+						<PageLink list to='/easy-word/wsip/rzeczowniki-wybór-gry/pisanie'>Rzeczowniki</PageLink>
 					</li>
 					<li>
 						<Icon list icon={['fas', 'angle-right']}/>
