@@ -110,7 +110,7 @@ function getAnswer() {
   if(translation3 !== undefined) {
     if(similarText === similarTranslation || similarText === similarTranslation2 || similarText === similarTranslation3) {
       points = points + 1;
-      if(points === 1) {
+      if(points === 50) {
         endGame();
       }
       else {
@@ -132,7 +132,7 @@ function getAnswer() {
   else if(translation2 !== undefined) {
     if(similarText === similarTranslation || similarText === similarTranslation2) {
       points = points + 1;
-      if(points === 1) {
+      if(points === 50) {
         endGame();
       }
       else {
@@ -154,7 +154,7 @@ function getAnswer() {
   else {
     if(similarText === similarTranslation) {
       points = points + 1;
-      if(points === 1) {
+      if(points === 50) {
         endGame();
       }
       else {
