@@ -7,6 +7,7 @@ import getNew from '../../../../components/Scripts/en/en1_getNew()'
 import expand from '../../../../components/Scripts/menu-hamburger'
 import deleteImage from '../../../../components/Scripts/Functions/deleteImage()'
 import dowolne from '../../../../components/Scripts/dowolne'
+import removeButtons from '../../../../components/Scripts/removeButtons()'
 // STYLES
 import Global, {Wrapper, PageLink, BrowserLink, Emoji, Icon} from '../../../../components/Styled/Global/global';
 import '../../../../components/Styled/Keyframes/main-keyframes.css'
@@ -18,9 +19,9 @@ import words3 from '../../../../components/Words/3_WSiP/Unit1/3_PytaniaOMiejsceI
 import words4 from '../../../../components/Words/3_WSiP/Unit1/4_PoryRokuINazwyMiesięcy'
 // ICONS
 import { faFacebookF, faGithub, faLinkedinIn } from '@fortawesome/free-brands-svg-icons'
-import { faUserTie, faReply } from '@fortawesome/free-solid-svg-icons'
+import { faUserTie, faReply, faCog } from '@fortawesome/free-solid-svg-icons'
 
-library.add(faFacebookF, faGithub, faLinkedinIn, faUserTie, faReply);
+library.add(faFacebookF, faGithub, faLinkedinIn, faUserTie, faReply, faCog);
 
 const Loader = styled.div`
 	display: none;
@@ -413,6 +414,16 @@ const Answer = styled.div`
 	transition: all 0.15s ease-out;
 `
 
+const Settings = styled.div`
+	display: none;
+	position: absolute;
+	top: 54px;
+	left: 26px;
+	font-size: 30px;
+	color: var(--color-secondary);
+	animation: rotate 0.8s ease-out;
+`
+
 const Back = styled(PageLink)`
 	font-size: 20px;
 	line-height: 20px;
@@ -427,6 +438,7 @@ class Unit2 extends Component {
 				<Cathegory onLoad={dowolne(words1, words2, words3, words4)} id="cathegory">Jakaś bardzo długa i zawiła kategoria</Cathegory>
 				<Navigation id="navigation">
 					<Points>Punkty: <strong id="pointCounter">0</strong></Points>
+					<Settings id="settings" onClick={removeButtons}><Icon icon={['fas', 'cog']}/></Settings>
 					<Hamburger>
 						<button onClick={expand} id="hamburger-menu" className="hamburger" aria-label="Menu">
 								<span className="hamburger__container" tabIndex="-1">

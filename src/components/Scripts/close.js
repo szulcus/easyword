@@ -1,4 +1,5 @@
 function expand() {
+	const settings = document.getElementById('settings');
 	const list = document.getElementById('hamburger-list');
 	const list1 = document.getElementById('hamburger-list-element-1');
 	const list2 = document.getElementById('hamburger-list-element-2');
@@ -27,6 +28,7 @@ function expand() {
 		
 		else {
 			if (list.classList.contains('slide')){
+				settings.style.display = 'block';
 				socialMedia.style.transform = 'translateY(-15vh)';
 				socialMedia.style.opacity = '1';
 				loader.style.display = 'block';
@@ -37,6 +39,7 @@ function expand() {
 			}
 			
 			else {
+				settings.style.display = 'none';
 				socialMedia.style.transform = 'translateY(0)';
 				socialMedia.style.opacity = '0.5';
 				loader.style.display = 'none';

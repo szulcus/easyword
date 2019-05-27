@@ -6,6 +6,7 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import getNew from '../../../../components/Scripts/en/en3_getNew()'
 import expand from '../../../../components/Scripts/menu-hamburger'
 import deleteImage from '../../../../components/Scripts/Functions/deleteImage()'
+import removeButtons from '../../../../components/Scripts/removeButtons()'
 // STYLES
 import Global, {Wrapper, PageLink, BrowserLink, Emoji, Icon} from '../../../../components/Styled/Global/global';
 import '../../../../components/Styled/Keyframes/main-keyframes.css'
@@ -13,9 +14,9 @@ import '../../../../components/Styled/Keyframes/main-keyframes.css'
 import information from '../../../../images/information.png'
 // ICONS
 import { faFacebookF, faGithub, faLinkedinIn } from '@fortawesome/free-brands-svg-icons'
-import { faUserTie, faReply } from '@fortawesome/free-solid-svg-icons'
+import { faUserTie, faReply, faCog } from '@fortawesome/free-solid-svg-icons'
 
-library.add(faFacebookF, faGithub, faLinkedinIn, faUserTie, faReply);
+library.add(faFacebookF, faGithub, faLinkedinIn, faUserTie, faReply, faCog);
 
 const Loader = styled.div`
 	display: none;
@@ -405,6 +406,17 @@ const Input = styled.input`
 
 const Answer = styled.div`
 	text-align: center;
+	transition: all 0.15s ease-out;
+`
+
+const Settings = styled.div`
+	display: none;
+	position: absolute;
+	top: 54px;
+	left: 26px;
+	font-size: 30px;
+	color: var(--color-secondary);
+	animation: rotate 0.8s ease-out;
 `
 
 const Back = styled(PageLink)`
@@ -421,6 +433,7 @@ class Unit3 extends Component {
 				<Cathegory id="cathegory">Jakaś bardzo długa i zawiła kategoria</Cathegory>
 				<Navigation id="navigation">
 					<Points>Punkty: <strong id="pointCounter">0</strong></Points>
+					<Settings id="settings" onClick={removeButtons}><Icon icon={['fas', 'cog']}/></Settings>
 					<Hamburger>
 						<button onClick={expand} id="hamburger-menu" className="hamburger" aria-label="Menu">
 								<span className="hamburger__container" tabIndex="-1">

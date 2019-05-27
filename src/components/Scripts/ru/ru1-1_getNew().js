@@ -10,6 +10,7 @@ function getNew() {
   
   let word = randomWord.word;
   let word2 = randomWord.word2;
+  let word3 = randomWord.word3;
   let type = randomWord.type;
   let image = randomWord.image;
   
@@ -43,11 +44,15 @@ function getNew() {
     picture.innerHTML = '';
 	}
   
-	if(word2 !== undefined) {
-    baseWord.innerHTML = `${word} / ${word2}`;
+	if(word3 !== undefined) {
+    baseWord.innerHTML = `${word} / ${word2} / ${word3}`;
 	}
   
-	else if(word2 === undefined) {
+	else if(word2 !== undefined) {
+    baseWord.innerHTML = `${word} / ${word2}`;
+  }
+
+  else {
     baseWord.innerHTML = word;
   }
 
@@ -82,7 +87,6 @@ function getAnswer() {
   let userText = document.getElementById('userText').value;
 
   const answer = document.getElementById('answer');
-  const firework = document.getElementById('firework');
   const pointCounter = document.getElementById('pointCounter');
   
   let similarText = userText.toLowerCase().trim().replace('ą','a').replace('ć','c').replace('ę','e').replace('ł','l').replace('ń','n').replace('ó','o').replace('ś','s').replace('ź','z').replace('ż','z');
@@ -129,12 +133,10 @@ function getAnswer() {
       points = points + 1;
       if(points === 2) {
         endGame();
+        points = 0;
       }
       else {
         answer.style.color = 'green';
-        firework.style.display = 'block';
-        firework.style.animation = 'boom 0.7s ease-out';
-        setTimeout(function(){firework.style.display = 'none';}, 700);
         answer.style.display = 'block';
         answer.innerHTML = `Brawo! Dostajesz punkt! 😁`;
         setTimeout(function(){getNew();}, 500);
@@ -144,7 +146,6 @@ function getAnswer() {
       answer.style.display = 'block';
       answer.innerHTML = `Źle 😶. Odpowiedź to: <strong>${translation}</strong>, <strong>${translation2}</strong> lub <strong>${translation3}</strong>`;
       answer.style.color = 'firebrick';
-      answer.style.animation = 'scale 0.2s ease-in-out';
     }
   }
   
@@ -153,12 +154,10 @@ function getAnswer() {
       points = points + 1;
       if(points === 2) {
         endGame();
+        points = 0;
       }
       else {
         answer.style.color = 'green';
-        firework.style.display = 'block';
-        firework.style.animation = 'boom 0.7s ease-out';
-        setTimeout(function(){firework.style.display = 'none';}, 700);
         answer.style.display = 'block';
         answer.innerHTML = `Brawo! Dostajesz punkt! 😁`;
         setTimeout(function(){getNew();}, 500);
@@ -168,7 +167,6 @@ function getAnswer() {
       answer.style.display = 'block';
       answer.innerHTML = `Źle 😶. Odpowiedź to: <strong>${translation}</strong> lub <strong>${translation2}</strong>`;
       answer.style.color = 'firebrick';
-      answer.style.animation = 'scale 0.2s ease-in-out';
     }
   }
   
@@ -177,12 +175,10 @@ function getAnswer() {
       points = points + 1;
       if(points === 2) {
         endGame();
+        points = 0;
       }
       else {
         answer.style.color = 'green';
-        firework.style.display = 'block';
-        firework.style.animation = 'boom 0.7s ease-out';
-        setTimeout(function(){firework.style.display = 'none';}, 700);
         answer.style.display = 'block';
         answer.innerHTML = `Brawo! Dostajesz punkt! 😁`;
         setTimeout(function(){getNew();}, 500);
@@ -192,7 +188,6 @@ function getAnswer() {
       answer.style.display = 'block';
       answer.innerHTML = `Źle 😶. Odpowiedź to: <strong>${translation}</strong>`;
       answer.style.color = 'firebrick';
-      answer.style.animation = 'scale 0.2s ease-in-out';
     }
   }
   
