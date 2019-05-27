@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/easy-word/static/css/main.1f8523d8.chunk.css",
-    "main.js": "/easy-word/static/js/main.816a22c8.chunk.js",
-    "main.js.map": "/easy-word/static/js/main.816a22c8.chunk.js.map",
+    "main.js": "/easy-word/static/js/main.4f83f518.chunk.js",
+    "main.js.map": "/easy-word/static/js/main.4f83f518.chunk.js.map",
     "runtime~main.js": "/easy-word/static/js/runtime~main.5c3a33a2.js",
     "runtime~main.js.map": "/easy-word/static/js/runtime~main.5c3a33a2.js.map",
     "static/js/2.20d8c32c.chunk.js": "/easy-word/static/js/2.20d8c32c.chunk.js",
     "static/js/2.20d8c32c.chunk.js.map": "/easy-word/static/js/2.20d8c32c.chunk.js.map",
     "index.html": "/easy-word/index.html",
-    "precache-manifest.c47efe73e3a8b21c514b3eed9fbcf332.js": "/easy-word/precache-manifest.c47efe73e3a8b21c514b3eed9fbcf332.js",
+    "precache-manifest.218f39197b0f0d7e69c1765f9d6ed1c8.js": "/easy-word/precache-manifest.218f39197b0f0d7e69c1765f9d6ed1c8.js",
     "service-worker.js": "/easy-word/service-worker.js",
     "static/css/main.1f8523d8.chunk.css.map": "/easy-word/static/css/main.1f8523d8.chunk.css.map",
     "static/media/information.png": "/easy-word/static/media/information.35cbfcc3.png"
