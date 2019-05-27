@@ -410,6 +410,7 @@ const Input = styled.input`
 
 const Answer = styled.div`
 	text-align: center;
+	transition: all 0.15s ease-out;
 `
 
 const Back = styled(PageLink)`
@@ -433,9 +434,9 @@ class Unit2 extends Component {
 								</span>
 						</button>
 						<ul id="hamburger-list">
-							<li id="hamburger-list-element-1">Całość</li>
-							<li id="hamburger-list-element-2">Podstawa</li>
-							<li id="hamburger-list-element-3">Rozszerzenie</li>
+							<li id="hamburger-list-element-1">Angielski</li>
+							<li id="hamburger-list-element-2">Polski</li>
+							<li id="hamburger-list-element-3">Przemiennie</li>
 							<li id="back"><Back to='/easy-word/macmillan'><Icon icon={['fas', 'reply']}/></Back></li>
 						</ul>
 					</Hamburger>
@@ -478,8 +479,8 @@ class Unit2 extends Component {
 				</Win>
 				<Input placeholder="Wpisz tłumaczenie" id="userText" type="text" autoComplete="off"/>
 				<Nav id="nav">
-					<button id="check">Sprawdź</button>
-					<button id="new">Następny</button>
+					<button id="checkButton">Sprawdź</button>
+					<button id="newButton">Następny</button>
 				</Nav>
 
 				<Answer id="answer"></Answer>

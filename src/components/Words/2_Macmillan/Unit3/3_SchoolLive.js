@@ -565,7 +565,7 @@ const words3_SchoolLive = [
 	},
 	{
 		word:  `classroom`,
-		translation: `salsa lekcyjna`,
+		translation: `sala lekcyjna`,
 		level: `basic`,
 		type: `miejsca w szkole`,
 		image: `url`,

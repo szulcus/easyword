@@ -13,9 +13,9 @@ import '../../../../components/Styled/Keyframes/main-keyframes.css'
 import information from '../../../../images/information.png'
 // ICONS
 import { faFacebookF, faGithub, faLinkedinIn } from '@fortawesome/free-brands-svg-icons'
-import { faUserTie, faReply } from '@fortawesome/free-solid-svg-icons'
+import { faUserTie, faReply, faCog } from '@fortawesome/free-solid-svg-icons'
 
-library.add(faFacebookF, faGithub, faLinkedinIn, faUserTie, faReply);
+library.add(faFacebookF, faGithub, faLinkedinIn, faUserTie, faReply, faCog);
 
 const Loader = styled.div`
 	display: none;
@@ -407,6 +407,16 @@ const Answer = styled.div`
 	text-align: center;
 `
 
+const Settings = styled.div`
+	display: none;
+	position: absolute;
+	top: 54px;
+	left: 26px;
+	font-size: 30px;
+	color: var(--color-secondary);
+	animation: rotate 0.8s ease-out;
+`
+
 const Back = styled(PageLink)`
 	font-size: 20px;
 	line-height: 20px;
@@ -421,16 +431,17 @@ class Unit1 extends Component {
 				<Cathegory id="cathegory">Jakaś bardzo długa i zawiła kategoria</Cathegory>
 				<Navigation id="navigation">
 					<Points>Punkty: <strong id="pointCounter">0</strong></Points>
+					<Settings id="settings"><Icon icon={['fas', 'cog']}/></Settings>
 					<Hamburger>
 						<button onClick={expand} id="hamburger-menu" className="hamburger" aria-label="Menu">
 								<span className="hamburger__container" tabIndex="-1">
-									<span className="hamburger__bars"></span>
+									<span id="menu-bars" className="hamburger__bars"></span>
 								</span>
 						</button>
 						<ul id="hamburger-list">
-							<li id="hamburger-list-element-1">Całość</li>
-							<li id="hamburger-list-element-2">Podstawa</li>
-							<li id="hamburger-list-element-3">Rozszerzenie</li>
+							<li id="hamburger-list-element-1">Rosyjski</li>
+							<li id="hamburger-list-element-2">Polski</li>
+							<li id="hamburger-list-element-3">Przemiennie</li>
 							<li id="back"><Back to='/easy-word/wsip'><Icon icon={['fas', 'reply']}/></Back></li>
 						</ul>
 					</Hamburger>
@@ -473,8 +484,8 @@ class Unit1 extends Component {
 				</Win>
 				<Input id="userText" type="text" placeholder="Wpisz tłumaczenie" autoComplete="off"/>
 				<Nav id="nav">
-					<button id="check">Sprawdź</button>
-					<button id="new">Następny</button>
+					<button id="checkButton">Sprawdź</button>
+					<button id="newButton">Następny</button>
 				</Nav>
 
 				<Answer id="answer"></Answer>

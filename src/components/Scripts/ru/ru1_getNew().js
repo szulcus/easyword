@@ -1,5 +1,6 @@
 import getWord from '../Functions/getWord()'
 import endGame from '../Functions/endGame()'
+import close from '../close'
 import words1 from '../../Words/3_WSiP/Unit1/1_Rzeczowniki'
 import words2 from '../../Words/3_WSiP/Unit1/2_StronyŚwiata'
 import words3 from '../../Words/3_WSiP/Unit1/3_PytaniaOMiejsceIKierunek'
@@ -27,6 +28,14 @@ function getNew() {
 	const picture = document.getElementById('picture');
   const cathegory = document.getElementById('cathegory');
   const userText = document.getElementById('userText');
+
+  const checkB = document.getElementById('checkButton');
+  const newB = document.getElementById('newButton');
+
+  const takeEnglishWords = document.getElementById('hamburger-list-element-1');
+  const takePolishWords = document.getElementById('hamburger-list-element-2');
+  const takeAlternatelyWords = document.getElementById('hamburger-list-element-3');
+  const hamburger = document.getElementById('hamburger-menu');
 
 	userText.value = '';
 	document.getElementById('answer').style.display = 'none';
@@ -58,8 +67,26 @@ function getNew() {
     if (event.key === 'Enter') {
       getAnswer();
     }
-  })
+  });
 
+  checkB.addEventListener('click', getAnswer);
+
+  newB.addEventListener('click', getNew);
+
+  takeEnglishWords.addEventListener('click', function(){
+    close();
+    hamburger.classList.toggle('hamburger--active');
+  });
+
+  takePolishWords.addEventListener('click', function(){
+    close();
+    hamburger.classList.toggle('hamburger--active');
+  });
+
+  takeAlternatelyWords.addEventListener('click', function(){
+    close();
+    hamburger.classList.toggle('hamburger--active');
+  });
 
 function getAnswer() {
 
@@ -111,7 +138,7 @@ function getAnswer() {
   if(translation3 !== undefined) {
     if(similarText === similarTranslation || similarText === similarTranslation2 || similarText === similarTranslation3) {
       points = points + 1;
-      if(points === 1) {
+      if(points === 2) {
         endGame();
       }
       else {
@@ -128,14 +155,14 @@ function getAnswer() {
       answer.style.display = 'block';
       answer.innerHTML = `Źle 😶. Odpowiedź to: <strong>${translation}</strong>, <strong>${translation2}</strong> lub <strong>${translation3}</strong>`;
       answer.style.color = 'firebrick';
-      answer.style.animation = 'scale 0.3s ease-in-out';
+      answer.style.animation = 'scale 0.2s ease-in-out';
     }
   }
   
   else if(translation2 !== undefined) {
     if(similarText === similarTranslation || similarText === similarTranslation2) {
       points = points + 1;
-      if(points === 1) {
+      if(points === 2) {
         endGame();
       }
       else {
@@ -152,14 +179,14 @@ function getAnswer() {
       answer.style.display = 'block';
       answer.innerHTML = `Źle 😶. Odpowiedź to: <strong>${translation}</strong> lub <strong>${translation2}</strong>`;
       answer.style.color = 'firebrick';
-      answer.style.animation = 'scale 0.3s ease-in-out';
+      answer.style.animation = 'scale 0.2s ease-in-out';
     }
   }
   
   else {
     if(similarText === similarTranslation) {
       points = points + 1;
-      if(points === 1) {
+      if(points === 2) {
         endGame();
       }
       else {
@@ -176,7 +203,7 @@ function getAnswer() {
       answer.style.display = 'block';
       answer.innerHTML = `Źle 😶. Odpowiedź to: <strong>${translation}</strong>`;
       answer.style.color = 'firebrick';
-      answer.style.animation = 'scale 0.3s ease-in-out';
+      answer.style.animation = 'scale 0.2s ease-in-out';
     }
   }
   

@@ -152,7 +152,7 @@ const words1_SchoolSubjects = [
 	},
 	{
 		word:  `sports psychology`,
-		translation: `psychologią sportu`,
+		translation: `psychologia sportu`,
 		level: `extended`,
 		type: `przedmioty szkolne`,
 		image: `https://c.pxhere.com/photos/63/14/electrostimulation_sport_bless_you_wellness_beauty_diet_nutrition_physiotherapy-820138.jpg!s`,

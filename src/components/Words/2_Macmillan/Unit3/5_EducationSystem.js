@@ -16,7 +16,7 @@ const words5_EducationSystem = [
 	{
 		word:  `college`,
 		translation: `kolegium`,
-		translation2: `szkoła pomaturalną`, 
+		translation2: `szkoła pomaturalna`, 
 		level: `basic`,
 		type: `system oświaty`,
 		image: `url`,
@@ -37,6 +37,7 @@ const words5_EducationSystem = [
 	},
 	{
 		word:  `elementary school`,
+		word2:  `primary school`,
 		translation: `szkoła podstawowa`,
 		level: `basic`,
 		type: `system oświaty`,
@@ -80,13 +81,6 @@ const words5_EducationSystem = [
 	{
 		word:  `nursery`,
 		translation: `żłobek`,
-		level: `basic`,
-		type: `system oświaty`,
-		image: `url`,
-	},
-	{
-		word:  `primary school`,
-		translation: `szkoła podstawowa`,
 		level: `basic`,
 		type: `system oświaty`,
 		image: `url`,

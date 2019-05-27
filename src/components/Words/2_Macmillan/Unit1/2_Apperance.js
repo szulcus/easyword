@@ -117,8 +117,8 @@ const words2_Apperance = [
 		image: `url`,
 	},
 	{
-		word: `take up a sport)`,
-		translation: `zacząć uprawiać sport)`,
+		word: `take up a sport`,
+		translation: `zacząć uprawiać sport`,
 		level: `basic`,
 		type: `zwroty związane z wygladem`,
 		image: `url`,
@@ -328,14 +328,14 @@ const words2_Apperance = [
 		image: `url`,
 	},
 	{
-		word: `wear your włosy loose`,
+		word: `wear your hair loose`,
 		translation: `nosić rozpuszczone włosy`,
 		level: `extended`,
 		type: `włosy`,
 		image: `url`,
 	},
 	{
-		word: `wear your włosy up`,
+		word: `wear your hair up`,
 		translation: `nosić spięte włosy`,
 		level: `extended`,
 		type: `włosy`,

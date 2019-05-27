@@ -428,9 +428,9 @@ class Unit3 extends Component {
 								</span>
 						</button>
 						<ul id="hamburger-list">
-							<li id="hamburger-list-element-1">Całość</li>
-							<li id="hamburger-list-element-2">Podstawa</li>
-							<li id="hamburger-list-element-3">Rozszerzenie</li>
+							<li id="hamburger-list-element-1">Angielski</li>
+							<li id="hamburger-list-element-2">Polski</li>
+							<li id="hamburger-list-element-3">Przemiennie</li>
 							<li id="back"><Back to='/easy-word/macmillan'><Icon icon={['fas', 'reply']}/></Back></li>
 						</ul>
 					</Hamburger>
@@ -473,8 +473,8 @@ class Unit3 extends Component {
 				</Win>
 				<Input placeholder="Wpisz tłumaczenie" id="userText" type="text" autoComplete="off"/>
 				<Nav id="nav">
-					<button id="check">Sprawdź</button>
-					<button id="new">Następny</button>
+					<button id="checkButton">Sprawdź</button>
+					<button id="newButton">Następny</button>
 				</Nav>
 
 				<Answer id="answer"></Answer>

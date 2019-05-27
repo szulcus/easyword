@@ -78,8 +78,25 @@
 		opacity: 0;
 	}
 
-	tp {
+	t0 {
 		transform: translateY(0);
+		opacity: 1;
+	}
+}
+
+@keyframes rotate {
+	0% {
+		transform: rotate(50deg);
+		opacity: 0;
+	}
+
+	60% {
+		transform: rotate(50deg);
+		opacity: 0;
+	}
+
+	100% {
+		transform: rotate(0);
 		opacity: 1;
 	}
 }

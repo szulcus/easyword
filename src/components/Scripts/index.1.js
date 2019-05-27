@@ -127,7 +127,7 @@ function getAnswer() {
     else {
       answer.innerHTML = `Źle 😶. Odpowiedź to: <strong>${translation}</strong>, <strong>${translation2}</strong> lub <strong>${translation3}</strong>`;
       answer.style.color = 'firebrick';
-      answer.style.animation = 'scale 0.3s ease-in-out';
+      answer.style.animation = 'scale 0.2s ease-in-out';
     }
   }
   
@@ -149,7 +149,7 @@ function getAnswer() {
     else {
       answer.innerHTML = `Źle 😶. Odpowiedź to: <strong>${translation}</strong> lub <strong>${translation2}</strong>`;
       answer.style.color = 'firebrick';
-      answer.style.animation = 'scale 0.3s ease-in-out';
+      answer.style.animation = 'scale 0.2s ease-in-out';
     }
   }
   
@@ -171,7 +171,7 @@ function getAnswer() {
     else {
       answer.innerHTML = `Źle 😶. Odpowiedź to: <strong>${translation}</strong>`;
       answer.style.color = 'firebrick';
-      answer.style.animation = 'scale 0.3s ease-in-out';
+      answer.style.animation = 'scale 0.2s ease-in-out';
     }
   }
   
