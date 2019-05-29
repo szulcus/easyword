@@ -85,13 +85,13 @@ const IndexPage = () => (
 					</Link>
 				</Book>
 				<Book>
-					<Link to='/easy-word/oxford'>
-						<img src="https://www.gandalf.com.pl/o/oxford-solutions-intermediate,big,578379.jpg" alt="Oxford Solutions Intermediate"/>
+					<Link to='/easy-word/wsip'>
+						<img src="https://sklep.wsip.pl/uploads/tx_evosenk/covers/upload_temp_tF8lhB.jpg" alt="test"/>
 					</Link>
 				</Book>
 				<Book>
-					<Link to='/easy-word/wsip'>
-						<img src="https://sklep.wsip.pl/uploads/tx_evosenk/covers/upload_temp_tF8lhB.jpg" alt="test"/>
+					<Link to='/easy-word/oxford'>
+						<img src="https://www.gandalf.com.pl/o/oxford-solutions-intermediate,big,578379.jpg" alt="Oxford Solutions Intermediate"/>
 					</Link>
 				</Book>
 			</BooksWrapper>
