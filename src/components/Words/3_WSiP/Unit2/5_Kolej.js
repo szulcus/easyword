@@ -1,0 +1,143 @@
+const words5_Kolej = [
+    {
+        word: `ваго́н`,
+        translation: `wagon`,
+        type: `kolej`,
+        image: `url`,
+    },
+    {
+        word: `купе́йный ваго́н`,
+        translation: `wagon z przedziałami`,
+        type: `kolej`,
+        image: `url`,
+    },
+    {
+        word: `о́бщий ваго́н`,
+        translation: `wagon bez przedziałów`,
+        type: `kolej`,
+        image: `url`,
+    },
+    {
+        word: `плацка́ртный ваго́н`,
+        translation: `wagon z miejscówkami`,
+        type: `kolej`,
+        image: `url`,
+    },
+    {
+        word: `вокза́л`,
+        translation: `dworzec`,
+        type: `kolej`,
+        image: `url`,
+    },
+    {
+        word: `желе́зная доро́га`,
+        translation: `kolej`,
+        type: `kolej`,
+        image: `url`,
+    },
+    {
+        word: `зал ожида́ния`,
+        translation: `poczekalnia`,
+        type: `kolej`,
+        image: `url`,
+    },
+    {
+        word: `ка́мера хране́ния багажа́`,
+        translation: `przechowalnia bagażu`,
+        type: `kolej`,
+        image: `url`,
+    },
+    {
+        word: `ка́сса`,
+        translation: `kasa`,
+        type: `kolej`,
+        image: `url`,
+    },
+    {
+        word: `ка́сса предвари́тельной прода́жи`,
+        translation: `kasa przedsprzedaży`,
+        type: `kolej`,
+        image: `url`,
+    },
+    {
+        word: `ка́ссовый зал`,
+        translation: `sala kasowa`,
+        type: `kolej`,
+        image: `url`,
+    },
+    {
+        word: `купе́`,
+        translation: `przedział w wagonie`,
+        type: `kolej`,
+        image: `url`,
+    },
+    {
+        word: `отправле́ние по́езда`,
+        translation: `odjazd pociągu`,
+        type: `kolej`,
+        image: `url`,
+    },
+    {
+        word: `памятник (кому́?)`,
+        translation: `pomnik`,
+        type: `kolej`,
+        image: `url`,
+    },
+    {
+        word: `платфо́рма (перро́н)`,
+        translation: `peron`,
+        type: `kolej`,
+        image: `url`,
+    },
+    {
+        word: `по́езд`,
+        translation: `pociąg`,
+        type: `kolej`,
+        image: `url`,
+    },
+    {
+        word: `при́городный по́езд`,
+        translation: `tłumaczenie`,
+        type: `kolej`,
+        image: `url`,
+    },
+    {
+        word: `по́езд дальнего сле́дования`,
+        translation: `tłumaczenie`,
+        type: `kolej`,
+        image: `url`,
+    },
+    {
+        word: `прибы́тие по́езда`,
+        translation: `tłumaczenie`,
+        type: `kolej`,
+        image: `url`,
+    },
+    {
+        word: `расписа́ние движе́ния поездо́в`,
+        translation: `tłumaczenie`,
+        type: `kolej`,
+        image: `url`,
+    },
+    {
+        word: `спра́вочное бюро́`,
+        translation: `tłumaczenie`,
+        type: `kolej`,
+        image: `url`,
+    },
+    {
+        word: `электри́чка`,
+        translation: `potocznie pociąg elektryczny (zazwyczaj podmiejski)`,
+        teSame: true,
+        type: `kolej`,
+        image: `url`,
+    },
+    {
+        word: `электропо́езд`,
+        translation: `pociąg elektryczny`,
+        type: `kolej`,
+        image: `url`,
+    },
+]
+
+export default words5_Kolej
