@@ -799,6 +799,15 @@ const words1_FromBook = [
         type: `basic`,
         image: `url`,
     }
+	{
+        firstForm: `test`,
+        twiceForm: `test2`,
+        thirdForm: `test3`,
+        translation: `tłumaczenie`,
+	level: `podstawa (z podręcznika)`,
+        type: `basic`,
+        image: `url`,
+    }
 ]
 
 export default words1_FromBook
