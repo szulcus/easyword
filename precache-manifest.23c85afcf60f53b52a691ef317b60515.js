@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "12b6a432e44461c9aaae07fcf8a941ab",
+    "revision": "81367beddfe046f416684d75a534594b",
     "url": "/easy-word/index.html"
   },
   {
-    "revision": "ed4340d6c6d24bf9647d",
-    "url": "/easy-word/static/css/main.1f8523d8.chunk.css"
+    "revision": "72da36fbd2fbf2de0f87",
+    "url": "/easy-word/static/css/main.43e5bd32.chunk.css"
   },
   {
     "revision": "a7e002cbba3cabe85e4e",
     "url": "/easy-word/static/js/2.20d8c32c.chunk.js"
   },
   {
-    "revision": "ed4340d6c6d24bf9647d",
-    "url": "/easy-word/static/js/main.4f83f518.chunk.js"
+    "revision": "72da36fbd2fbf2de0f87",
+    "url": "/easy-word/static/js/main.250aba68.chunk.js"
   },
   {
     "revision": "f73a53ad2ca57ac0a35a",
