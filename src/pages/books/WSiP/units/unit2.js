@@ -5,9 +5,14 @@ import Global, {Wrapper, PageLink} from '../../../../components/Styled/Global/gl
 
 
 
+
 const Div = styled.div`
    text-align: center;
    font-size: 30px;
+`;
+
+const Description = styled.div`
+   font-size: 20px;
 `;
 
 class Unit1 extends Component {
@@ -15,13 +20,13 @@ class Unit1 extends Component {
 	return (
 		<>
 		   <Global/>
-		   <Wrapper>
-		      <Div>Unit 2</Div>
-		      <div>test</div>
-		      <PageLink to="/easy-word/wsip">wróć</PageLink>
-		   </Wrapper>
+		   <Wrapper center>
+	      <Div>Unit 2</Div>
+		      <Description>test</Description>
+	         <PageLink to="/easy-word/wsip">Wróć</PageLink>
+	      </Wrapper>
 		</>
-	)
+	);
 	}
 }
 
