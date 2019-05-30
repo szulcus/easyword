@@ -145,7 +145,7 @@ function getAnswer() {
   else if(translation2 !== undefined) {
     if(similarText === similarTranslation || similarText === similarTranslation2) {
       points = points + 1;
-      if(points === 5) {
+      if(points === 50) {
         endGame(answer, firework, firework2, firework3);
       }
       else {

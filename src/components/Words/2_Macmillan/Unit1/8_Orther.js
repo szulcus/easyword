@@ -162,8 +162,8 @@ const words8_Orther = [
 	},
 	// // //
 	{
-		word: `be part of someone\`s nature`,
-		translation: `lezeć w czyjejś naturze`, 
+		word: `be part of someone's nature`,
+		translation: `leżeć w czyjejś naturze`, 
 		level: `extended`,
 		type: `inne`,
 		image: `url`,
