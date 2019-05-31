@@ -101,7 +101,6 @@ function getAnswer() {
   let userText = document.getElementById('userText').value;
 
   const answer = document.getElementById('answer');
-  const firework = document.getElementById('firework');
   const pointCounter = document.getElementById('pointCounter');
   
   let similarText = userText.toLowerCase().trim().replace('ą','a').replace('ć','c').replace('ę','e').replace('ł','l').replace('ń','n').replace('ó','o').replace('ś','s').replace('ź','z').replace('ż','z');
@@ -152,12 +151,9 @@ function getAnswer() {
       }
       else {
         answer.style.color = 'green';
-        firework.style.display = 'block';
-        firework.style.animation = 'boom 0.7s ease-out';
-        setTimeout(function(){firework.style.display = 'none';}, 700);
         answer.style.display = 'block';
         answer.innerHTML = `Brawo! Dostajesz punkt! 😁`;
-        setTimeout(function(){getNew();}, 500);
+        setTimeout(getNew, 500);
       }
     }
     else {
@@ -176,9 +172,6 @@ function getAnswer() {
       }
       else {
         answer.style.color = 'green';
-        firework.style.display = 'block';
-        firework.style.animation = 'boom 0.7s ease-out';
-        setTimeout(function(){firework.style.display = 'none';}, 700);
         answer.style.display = 'block';
         answer.innerHTML = `Brawo! Dostajesz punkt! 😁`;
         setTimeout(function(){getNew();}, 500);
@@ -200,9 +193,6 @@ function getAnswer() {
       }
       else {
         answer.style.color = 'green';
-        firework.style.display = 'block';
-        firework.style.animation = 'boom 0.7s ease-out';
-        setTimeout(function(){firework.style.display = 'none';}, 700);
         answer.style.display = 'block';
         answer.innerHTML = `Brawo! Dostajesz punkt! 😁`;
         setTimeout(function(){getNew();}, 500);

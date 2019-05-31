@@ -412,6 +412,7 @@ const Input = styled.input`
 const Answer = styled.div`
 	text-align: center;
 	transition: all 0.15s ease-out;
+	animation: scale 0.2s ease-in-out;
 `
 
 const Settings = styled.div`

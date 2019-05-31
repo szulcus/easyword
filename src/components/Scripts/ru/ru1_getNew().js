@@ -150,7 +150,7 @@ function getAnswer() {
         answer.style.color = 'green';
         answer.style.display = 'block';
         answer.innerHTML = `Brawo! Dostajesz punkt! 😁`;
-        setTimeout(function(){getNew();}, 500);
+        setTimeout(getNew, 500);
       }
     }
     else {
@@ -171,7 +171,7 @@ function getAnswer() {
         answer.style.color = 'green';
         answer.style.display = 'block';
         answer.innerHTML = `Brawo! Dostajesz punkt! 😁`;
-        setTimeout(function(){getNew();}, 500);
+        setTimeout(getNew, 500);
       }
     }
     else {
@@ -192,7 +192,7 @@ function getAnswer() {
         answer.style.color = 'green';
         answer.style.display = 'block';
         answer.innerHTML = `Brawo! Dostajesz punkt! 😁`;
-        setTimeout(function(){getNew();}, 500);
+        setTimeout(getNew, 500);
       }
     }
     else {

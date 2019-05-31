@@ -79,6 +79,6 @@ const words1_Rzeczowniki = [
         type: `rzeczowniki`,
         image: `https://c.pxhere.com/photos/05/2c/tarp_tent_camping_camp_nature_outdoor_forest_adventure-628582.jpg!s`,
     },
-]
+];
 
-export default words1_Rzeczowniki
+export default words1_Rzeczowniki;
