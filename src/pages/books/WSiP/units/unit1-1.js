@@ -445,7 +445,7 @@ class Unit1 extends Component {
 							<li id="hamburger-list-element-1">Rosyjski</li>
 							<li id="hamburger-list-element-2">Polski</li>
 							<li id="hamburger-list-element-3">Przemiennie</li>
-							<li id="back"><Back to='/easy-word/wsip'><Icon icon={['fas', 'reply']}/></Back></li>
+							<li id="back"><Back to='/wsip'><Icon icon={['fas', 'reply']}/></Back></li>
 						</ul>
 					</Hamburger>
 					<SocialMedia id="social-media">

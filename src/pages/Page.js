@@ -69,7 +69,7 @@ class Page extends Component {
 							</PageLink>
 						</Game>
 					</SelectWrapper>
-					<Back to='/easy-word/wsip'>
+					<Back to='/wsip'>
 						<Icon icon={['fas', 'reply']}/>
 					</Back>
 				</Wrapper>

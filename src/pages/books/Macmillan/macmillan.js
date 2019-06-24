@@ -135,7 +135,7 @@ const MacmillanBook = () => (
 		<div>
 		<ListHeader>
 			<h1>Spis treści:</h1>
-			<Back to='/easy-word/'>
+			<Back to='/'>
 				<Icon list icon={['fas', 'reply']}/>
 			</Back>
 		</ListHeader>
