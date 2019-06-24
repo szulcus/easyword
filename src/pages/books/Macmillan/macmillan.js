@@ -145,39 +145,39 @@ const MacmillanBook = () => (
 				<ListSubsection>
 					<li>
 						<Icon list icon={['fas', 'angle-right']}/>
-						<PageLink list to='/easy-word/macmillan/wybór-gry'>Dane osobowe</PageLink>
+						<PageLink list to='/macmillan/wybór-gry'>Dane osobowe</PageLink>
 					</li>
 					<li>
 						<Icon list icon={['fas', 'angle-right']}/>
-						<PageLink list to='/easy-word/macmillan'>Wygląd zewnętrzny</PageLink>
+						<PageLink list to='/macmillan'>Wygląd zewnętrzny</PageLink>
 					</li>
 					<li>
 						<Icon list icon={['fas', 'angle-right']}/>
-						<PageLink list to='/easy-word/macmillan'>Ubrania</PageLink>
+						<PageLink list to='/macmillan'>Ubrania</PageLink>
 					</li>
 					<li>
 						<Icon list icon={['fas', 'angle-right']}/>
-						<PageLink list to='/easy-word/macmillan'>Cechy charakteru</PageLink>
+						<PageLink list to='/macmillan'>Cechy charakteru</PageLink>
 					</li>
 					<li>
 						<Icon list icon={['fas', 'angle-right']}/>
-						<PageLink list to='/easy-word/macmillan'>Uczucia i emocje</PageLink>
+						<PageLink list to='/macmillan'>Uczucia i emocje</PageLink>
 					</li>
 					<li>
 						<Icon list icon={['fas', 'angle-right']}/>
-						<PageLink list to='/easy-word/macmillan'>Zainteresowania</PageLink>
+						<PageLink list to='/macmillan'>Zainteresowania</PageLink>
 					</li>
 					<li>
 						<Icon list icon={['fas', 'angle-right']}/>
-						<PageLink list to='/easy-word/macmillan'>Problemy etyczne</PageLink>
+						<PageLink list to='/macmillan'>Problemy etyczne</PageLink>
 					</li>
 					<li>
 						<Icon list icon={['fas', 'angle-right']}/>
-						<PageLink list to='/easy-word/macmillan'>Inne</PageLink>
+						<PageLink list to='/macmillan'>Inne</PageLink>
 					</li>
 					<li>
 						<Icon test icon={['fas', 'star']}/>
-						<PageLink list to='/easy-word/macmillan/test-człowiek'>Test</PageLink>
+						<PageLink list to='/macmillan/test-człowiek'>Test</PageLink>
 						<Icon test icon={['fas', 'star']}/>
 					</li>
 				</ListSubsection>
@@ -185,27 +185,27 @@ const MacmillanBook = () => (
 				<ListSubsection>
 					<li>
 						<Icon list icon={['fas', 'angle-right']}/>
-						<PageLink list to='/easy-word/macmillan'>Miejsce zamieszkania</PageLink>
+						<PageLink list to='/macmillan'>Miejsce zamieszkania</PageLink>
 					</li>
 					<li>
 						<Icon list icon={['fas', 'angle-right']}/>
-						<PageLink list to='/easy-word/macmillan'>Opis Domu</PageLink>
+						<PageLink list to='/macmillan'>Opis Domu</PageLink>
 					</li>
 					<li>
 						<Icon list icon={['fas', 'angle-right']}/>
-						<PageLink list to='/easy-word/macmillan'>Prace w domu i ogrodzie</PageLink>
+						<PageLink list to='/macmillan'>Prace w domu i ogrodzie</PageLink>
 					</li>
 					<li>
 						<Icon list icon={['fas', 'angle-right']}/>
-						<PageLink list to='/easy-word/macmillan'>Wynajem, kupno i sprzedaż nieruchomości</PageLink>
+						<PageLink list to='/macmillan'>Wynajem, kupno i sprzedaż nieruchomości</PageLink>
 					</li>
 					<li>
 						<Icon list icon={['fas', 'angle-right']}/>
-						<PageLink list to='/easy-word/macmillan'>Inne</PageLink>
+						<PageLink list to='/macmillan'>Inne</PageLink>
 					</li>
 					<li>
 						<Icon test icon={['fas', 'star']}/>
-						<PageLink list to='/easy-word/macmillan/test-dom'>Test</PageLink>
+						<PageLink list to='/macmillan/test-dom'>Test</PageLink>
 						<Icon test icon={['fas', 'star']}/>
 					</li>
 				</ListSubsection>
@@ -214,31 +214,31 @@ const MacmillanBook = () => (
 				<ListSubsection>
 					<li>
 						<Icon list icon={['fas', 'angle-right']}/>
-						<PageLink list to='/easy-word/macmillan'>Przedmioty szkolne</PageLink>
+						<PageLink list to='/macmillan'>Przedmioty szkolne</PageLink>
 					</li>
 					<li>
 						<Icon list icon={['fas', 'angle-right']}/>
-						<PageLink list to='/easy-word/macmillan'>Oceny i wymagania</PageLink>
+						<PageLink list to='/macmillan'>Oceny i wymagania</PageLink>
 					</li>
 					<li>
 						<Icon list icon={['fas', 'angle-right']}/>
-						<PageLink list to='/easy-word/macmillan'>Życie szkolne</PageLink>
+						<PageLink list to='/macmillan'>Życie szkolne</PageLink>
 					</li>
 					<li>
 						<Icon list icon={['fas', 'angle-right']}/>
-						<PageLink list to='/easy-word/macmillan'>Zajęcia pozalekcyjne</PageLink>
+						<PageLink list to='/macmillan'>Zajęcia pozalekcyjne</PageLink>
 					</li>
 					<li>
 						<Icon list icon={['fas', 'angle-right']}/>
-						<PageLink list to='/easy-word/macmillan'>Education system</PageLink>
+						<PageLink list to='/macmillan'>Education system</PageLink>
 					</li>
 					<li>
 						<Icon list icon={['fas', 'angle-right']}/>
-						<PageLink list to='/easy-word/macmillan'>Inne</PageLink>
+						<PageLink list to='/macmillan'>Inne</PageLink>
 					</li>
 					<li>
 						<Icon test icon={['fas', 'star']}/>
-						<PageLink list to='/easy-word/macmillan/test-szkoła'>Test</PageLink>
+						<PageLink list to='/macmillan/test-szkoła'>Test</PageLink>
 						<Icon test icon={['fas', 'star']}/>
 					</li>
 				</ListSubsection>
@@ -246,27 +246,27 @@ const MacmillanBook = () => (
 				<ListSubsection>
 					<li>
 						<Icon list icon={['fas', 'angle-right']}/>
-						<PageLink list to='/easy-word/macmillan'>Zawody związane z innymi czynnościami</PageLink>
+						<PageLink list to='/macmillan'>Zawody związane z innymi czynnościami</PageLink>
 					</li>
 					<li>
 						<Icon list icon={['fas', 'angle-right']}/>
-						<PageLink list to='/easy-word/macmillan'>Warunki pracy i zatrudnienia</PageLink>
+						<PageLink list to='/macmillan'>Warunki pracy i zatrudnienia</PageLink>
 					</li>
 					<li>
 						<Icon list icon={['fas', 'angle-right']}/>
-						<PageLink list to='/easy-word/macmillan'>Praca dorywcza</PageLink>
+						<PageLink list to='/macmillan'>Praca dorywcza</PageLink>
 					</li>
 					<li>
 						<Icon list icon={['fas', 'angle-right']}/>
-						<PageLink list to='/easy-word/macmillan'>Rynek pracy</PageLink>
+						<PageLink list to='/macmillan'>Rynek pracy</PageLink>
 					</li>
 					<li>
 						<Icon list icon={['fas', 'angle-right']}/>
-						<PageLink list to='/easy-word/macmillan'>Inne</PageLink>
+						<PageLink list to='/macmillan'>Inne</PageLink>
 					</li>
 					<li>
 						<Icon test icon={['fas', 'star']}/>
-						<PageLink list to='/easy-word/macmillan/test-praca'>Test</PageLink>
+						<PageLink list to='/macmillan/test-praca'>Test</PageLink>
 						<Icon test icon={['fas', 'star']}/>
 					</li>
 				</ListSubsection>
@@ -274,35 +274,35 @@ const MacmillanBook = () => (
 				<ListSubsection>
 					<li>
 						<Icon list icon={['fas', 'angle-right']}/>
-						<PageLink list to='/easy-word/macmillan'>Etapy życia</PageLink>
+						<PageLink list to='/macmillan'>Etapy życia</PageLink>
 					</li>
 					<li>
 						<Icon list icon={['fas', 'angle-right']}/>
-						<PageLink list to='/easy-word/macmillan'>Członkowie rodziny, koledzy i przyjaciele</PageLink>
+						<PageLink list to='/macmillan'>Członkowie rodziny, koledzy i przyjaciele</PageLink>
 					</li>
 					<li>
 						<Icon list icon={['fas', 'angle-right']}/>
-						<PageLink list to='/easy-word/macmillan'>Czynności życia codziennego</PageLink>
+						<PageLink list to='/macmillan'>Czynności życia codziennego</PageLink>
 					</li>
 					<li>
 						<Icon list icon={['fas', 'angle-right']}/>
-						<PageLink list to='/easy-word/macmillan'>Formy spędzania czasu wolnego</PageLink>
+						<PageLink list to='/macmillan'>Formy spędzania czasu wolnego</PageLink>
 					</li>
 					<li>
 						<Icon list icon={['fas', 'angle-right']}/>
-						<PageLink list to='/easy-word/macmillan'>Święta i uroczystości</PageLink>
+						<PageLink list to='/macmillan'>Święta i uroczystości</PageLink>
 					</li>
 					<li>
 						<Icon list icon={['fas', 'angle-right']}/>
-						<PageLink list to='/easy-word/macmillan'>Styl życia, konflikty i problemy</PageLink>
+						<PageLink list to='/macmillan'>Styl życia, konflikty i problemy</PageLink>
 					</li>
 					<li>
 						<Icon list icon={['fas', 'angle-right']}/>
-						<PageLink list to='/easy-word/macmillan'>Inne</PageLink>
+						<PageLink list to='/macmillan'>Inne</PageLink>
 					</li>
 					<li>
 						<Icon test icon={['fas', 'star']}/>
-						<PageLink list to='/easy-word/macmillan/test-życie-rodzinne-i-towarzyskie'>Test</PageLink>
+						<PageLink list to='/macmillan/test-życie-rodzinne-i-towarzyskie'>Test</PageLink>
 						<Icon test icon={['fas', 'star']}/>
 					</li>
 				</ListSubsection>

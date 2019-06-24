@@ -23,7 +23,7 @@ class Unit1 extends Component {
 		   <Wrapper center>
 	      <Div>Unit 2</Div>
 		      <Description>test</Description>
-	         <PageLink to="/easy-word/wsip">Wróć</PageLink>
+	         <PageLink to="/wsip">Wróć</PageLink>
 	      </Wrapper>
 		</>
 	);

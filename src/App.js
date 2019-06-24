@@ -1,6 +1,6 @@
 // BASIC
 import React, {Component} from 'react';
-import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import { HashRouter as Router, Switch, Route} from 'react-router-dom';
 // PAGES
 import MainPage from './pages/index'
 import Page from './pages/Page'
@@ -27,21 +27,21 @@ class App extends Component {
 		<Router>
 		<GlobalStyles/>
 			<Switch>
-				<Route path="/easy-word" exact component={MainPage}/>
-				<Route path="/easy-word/linked-page" component={LinkedPage}/>
-				<Route path="/easy-word/macmillan" exact component={MacmillanList}/>
+				<Route path="/" exact component={MainPage}/>
+				<Route path="/linked-page" component={LinkedPage}/>
+				<Route path="/macmillan" exact component={MacmillanList}/>
 
-				<Route path="/easy-word/macmillan/test-człowiek" component={Unit1}/>
-				<Route path="/easy-word/macmillan/test-dom" component={Unit2}/>
-				<Route path="/easy-word/macmillan/test-szkoła" component={Unit3}/>
-				<Route path="/easy-word/macmillan/wybór-gry" component={Page}/>
+				<Route path="/macmillan/test-człowiek" component={Unit1}/>
+				<Route path="/macmillan/test-dom" component={Unit2}/>
+				<Route path="/macmillan/test-szkoła" component={Unit3}/>
+				<Route path="/macmillan/wybór-gry" component={Page}/>
 
-				<Route path="/easy-word/oxford" exact component={OxfordList}/>
+				<Route path="/oxford" exact component={OxfordList}/>
 
-				<Route path="/easy-word/wsip" exact component={WSiPList}/>
-				<Route path="/easy-word/wsip/rzeczowniki-wybór-gry/pisanie" component={WSiP_Unit1_1}/>
-				<Route path="/easy-word/wsip/test-rejsy" exact component={WSiP_Unit1}/>
-				<Route path="/easy-word/wsip/test-w-stolicy-polski" exact component={WSiP_Unit2}/>
+				<Route path="/wsip" exact component={WSiPList}/>
+				<Route path="/wsip/rzeczowniki-wybór-gry/pisanie" component={WSiP_Unit1_1}/>
+				<Route path="/wsip/test-rejsy" exact component={WSiP_Unit1}/>
+				<Route path="/wsip/test-w-stolicy-polski" exact component={WSiP_Unit2}/>
 
 				<Route component={NotFoundPage}/>
 			</Switch>

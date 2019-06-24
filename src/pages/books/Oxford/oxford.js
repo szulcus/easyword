@@ -126,13 +126,13 @@ const MacmillanBook = () => (
 				<ListSection>Czasowniki nieregularne</ListSection>
 				<ListSubsection>
 					<li>
-						<PageLink list to='/easy-word/macmillan'>Podstawa (z podręcznika)</PageLink>
+						<PageLink list to='/macmillan'>Podstawa (z podręcznika)</PageLink>
 					</li>
 					<li>
-						<PageLink list to='/easy-word/macmillan'>Rozszerzenie</PageLink>
+						<PageLink list to='/macmillan'>Rozszerzenie</PageLink>
 					</li>
 					<li>
-						<PageLink list to='/easy-word/macmillan/test-człowiek'>Test</PageLink>
+						<PageLink list to='/macmillan/test-człowiek'>Test</PageLink>
 					</li>
 				</ListSubsection>
 			</ol>

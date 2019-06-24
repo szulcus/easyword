@@ -80,17 +80,17 @@ const IndexPage = () => (
 			</PageHeader>
 			<BooksWrapper>
 				<Book>
-					<Link to='/easy-word/macmillan'>
+					<Link to='/macmillan'>
 						<img src="https://www.macmillan.pl/components/com_ssshop/cache/500x500/9788376218496.png" alt="Macmillan Education"/>
 					</Link>
 				</Book>
 				<Book>
-					<Link to='/easy-word/wsip'>
+					<Link to='/wsip'>
 						<img src="https://sklep.wsip.pl/uploads/tx_evosenk/covers/upload_temp_tF8lhB.jpg" alt="test"/>
 					</Link>
 				</Book>
 				<Book>
-					<Link to='/easy-word/oxford'>
+					<Link to='/oxford'>
 						<img src="https://www.gandalf.com.pl/o/oxford-solutions-intermediate,big,578379.jpg" alt="Oxford Solutions Intermediate"/>
 					</Link>
 				</Book>

@@ -145,55 +145,55 @@ const MacmillanBook = () => (
 				<ListSubsection>
 					<li>
 						<Icon list icon={['fas', 'angle-right']}/>
-						<PageLink list to='/easy-word/wsip/rzeczowniki-wybór-gry/pisanie'>Rzeczowniki</PageLink>
+						<PageLink list to='/wsip/rzeczowniki-wybór-gry/pisanie'>Rzeczowniki</PageLink>
 					</li>
 					<li>
 						<Icon list icon={['fas', 'angle-right']}/>
-						<PageLink list to='/easy-word/wsip'>Strony świata</PageLink>
+						<PageLink list to='/wsip'>Strony świata</PageLink>
 					</li>
 					<li>
 						<Icon list icon={['fas', 'angle-right']}/>
-						<PageLink list to='/easy-word/wsip'>Pytania o miejsce i kierunek</PageLink>
+						<PageLink list to='/wsip'>Pytania o miejsce i kierunek</PageLink>
 					</li>
 					<li>
 						<Icon list icon={['fas', 'angle-right']}/>
-						<PageLink list to='/easy-word/wsip'>Pory roku i nazwy miesięcy</PageLink>
+						<PageLink list to='/wsip'>Pory roku i nazwy miesięcy</PageLink>
 					</li>
 					<li>
 						<Icon list icon={['fas', 'angle-right']}/>
-						<PageLink list to='/easy-word/wsip'>Zjawiska pogodowe</PageLink>
+						<PageLink list to='/wsip'>Zjawiska pogodowe</PageLink>
 					</li>
 					<li>
 						<Icon list icon={['fas', 'angle-right']}/>
-						<PageLink list to='/easy-word/wsip'>Typy krajobrazu Rosji</PageLink>
+						<PageLink list to='/wsip'>Typy krajobrazu Rosji</PageLink>
 					</li>
 					<li>
 						<Icon list icon={['fas', 'angle-right']}/>
-						<PageLink list to='/easy-word/wsip'>Przyroda</PageLink>
+						<PageLink list to='/wsip'>Przyroda</PageLink>
 					</li>
 					<li>
 						<Icon list icon={['fas', 'angle-right']}/>
-						<PageLink list to='/easy-word/wsip'>Aktywny wypoczynek</PageLink>
+						<PageLink list to='/wsip'>Aktywny wypoczynek</PageLink>
 					</li>
 					<li>
 						<Icon list icon={['fas', 'angle-right']}/>
-						<PageLink list to='/easy-word/wsip'>Wyposażenie turysty</PageLink>
+						<PageLink list to='/wsip'>Wyposażenie turysty</PageLink>
 					</li>
 					<li>
 						<Icon list icon={['fas', 'angle-right']}/>
-						<PageLink list to='/easy-word/wsip'>Czasowniki</PageLink>
+						<PageLink list to='/wsip'>Czasowniki</PageLink>
 					</li>
 					<li>
 						<Icon list icon={['fas', 'angle-right']}/>
-						<PageLink list to='/easy-word/wsip'>Zwroty i wyrażenia</PageLink>
+						<PageLink list to='/wsip'>Zwroty i wyrażenia</PageLink>
 					</li>
 					<li>
 						<Icon list icon={['fas', 'angle-right']}/>
-						<PageLink list to='/easy-word/wsip'>Przyimki</PageLink>
+						<PageLink list to='/wsip'>Przyimki</PageLink>
 					</li>
 					<li>
 						<Icon test icon={['fas', 'star']}/>
-						<PageLink list to='/easy-word/wsip/test-rejsy'>Test</PageLink>
+						<PageLink list to='/wsip/test-rejsy'>Test</PageLink>
 						<Icon test icon={['fas', 'star']}/>
 					</li>
 				</ListSubsection>
@@ -201,55 +201,55 @@ const MacmillanBook = () => (
 				<ListSubsection>
 					<li>
 						<Icon list icon={['fas', 'angle-right']}/>
-						<PageLink list to='/easy-word/wsip/wybór-gry'>Rzeczowniki</PageLink>
+						<PageLink list to='/wsip/wybór-gry'>Rzeczowniki</PageLink>
 					</li>
 					<li>
 						<Icon list icon={['fas', 'angle-right']}/>
-						<PageLink list to='/easy-word/wsip'>Rzeczowniki nieodmienne</PageLink>
+						<PageLink list to='/wsip'>Rzeczowniki nieodmienne</PageLink>
 					</li>
 					<li>
 						<Icon list icon={['fas', 'angle-right']}/>
-						<PageLink list to='/easy-word/wsip'>Określanie czasu</PageLink>
+						<PageLink list to='/wsip'>Określanie czasu</PageLink>
 					</li>
 					<li>
 						<Icon list icon={['fas', 'angle-right']}/>
-						<PageLink list to='/easy-word/wsip'>Sztuka</PageLink>
+						<PageLink list to='/wsip'>Sztuka</PageLink>
 					</li>
 					<li>
 						<Icon list icon={['fas', 'angle-right']}/>
-						<PageLink list to='/easy-word/wsip'>Kolej</PageLink>
+						<PageLink list to='/wsip'>Kolej</PageLink>
 					</li>
 					<li>
 						<Icon list icon={['fas', 'angle-right']}/>
-						<PageLink list to='/easy-word/wsip'>Kolory</PageLink>
+						<PageLink list to='/wsip'>Kolory</PageLink>
 					</li>
 					<li>
 						<Icon list icon={['fas', 'angle-right']}/>
-						<PageLink list to='/easy-word/wsip'>Przyimki</PageLink>
+						<PageLink list to='/wsip'>Przyimki</PageLink>
 					</li>
 					<li>
 						<Icon list icon={['fas', 'angle-right']}/>
-						<PageLink list to='/easy-word/wsip'>Przymiotniki</PageLink>
+						<PageLink list to='/wsip'>Przymiotniki</PageLink>
 					</li>
 					<li>
 						<Icon list icon={['fas', 'angle-right']}/>
-						<PageLink list to='/easy-word/wsip'>Czasowniki</PageLink>
+						<PageLink list to='/wsip'>Czasowniki</PageLink>
 					</li>
 					<li>
 						<Icon list icon={['fas', 'angle-right']}/>
-						<PageLink list to='/easy-word/wsip'>Przysłówki</PageLink>
+						<PageLink list to='/wsip'>Przysłówki</PageLink>
 					</li>
 					<li>
 						<Icon list icon={['fas', 'angle-right']}/>
-						<PageLink list to='/easy-word/wsip'>Liczebniki główne</PageLink>
+						<PageLink list to='/wsip'>Liczebniki główne</PageLink>
 					</li>
 					<li>
 						<Icon list icon={['fas', 'angle-right']}/>
-						<PageLink list to='/easy-word/wsip'>Zwroty i wyrażenia</PageLink>
+						<PageLink list to='/wsip'>Zwroty i wyrażenia</PageLink>
 					</li>
 					<li>
 						<Icon test icon={['fas', 'star']}/>
-						<PageLink list to='/easy-word/wsip/test-w-stolicy-polski'>Test</PageLink>
+						<PageLink list to='/wsip/test-w-stolicy-polski'>Test</PageLink>
 						<Icon test icon={['fas', 'star']}/>
 					</li>
 				</ListSubsection>
@@ -257,47 +257,47 @@ const MacmillanBook = () => (
 				<ListSubsection>
 					<li>
 						<Icon list icon={['fas', 'angle-right']}/>
-						<PageLink list to='/easy-word/wsip/wybór-gry'>Rzeczowniki</PageLink>
+						<PageLink list to='/wsip/wybór-gry'>Rzeczowniki</PageLink>
 					</li>
 					<li>
 						<Icon list icon={['fas', 'angle-right']}/>
-						<PageLink list to='/easy-word/wsip'>Rodzaje budynków mieszkalnych</PageLink>
+						<PageLink list to='/wsip'>Rodzaje budynków mieszkalnych</PageLink>
 					</li>
 					<li>
 						<Icon list icon={['fas', 'angle-right']}/>
-						<PageLink list to='/easy-word/wsip'>Rodzaje pomieszczeń</PageLink>
+						<PageLink list to='/wsip'>Rodzaje pomieszczeń</PageLink>
 					</li>
 					<li>
 						<Icon list icon={['fas', 'angle-right']}/>
-						<PageLink list to='/easy-word/wsip'>Umeblowanie</PageLink>
+						<PageLink list to='/wsip'>Umeblowanie</PageLink>
 					</li>
 					<li>
 						<Icon list icon={['fas', 'angle-right']}/>
-						<PageLink list to='/easy-word/wsip'>Wygląd zewnętrzny człowieka</PageLink>
+						<PageLink list to='/wsip'>Wygląd zewnętrzny człowieka</PageLink>
 					</li>
 					<li>
 						<Icon list icon={['fas', 'angle-right']}/>
-						<PageLink list to='/easy-word/wsip'>Cechy charakteru</PageLink>
+						<PageLink list to='/wsip'>Cechy charakteru</PageLink>
 					</li>
 					<li>
 						<Icon list icon={['fas', 'angle-right']}/>
-						<PageLink list to='/easy-word/wsip'>Przymiotniki</PageLink>
+						<PageLink list to='/wsip'>Przymiotniki</PageLink>
 					</li>
 					<li>
 						<Icon list icon={['fas', 'angle-right']}/>
-						<PageLink list to='/easy-word/wsip'>Czasowniki</PageLink>
+						<PageLink list to='/wsip'>Czasowniki</PageLink>
 					</li>
 					<li>
 						<Icon list icon={['fas', 'angle-right']}/>
-						<PageLink list to='/easy-word/wsip'>Określanie położenia</PageLink>
+						<PageLink list to='/wsip'>Określanie położenia</PageLink>
 					</li>
 					<li>
 						<Icon list icon={['fas', 'angle-right']}/>
-						<PageLink list to='/easy-word/wsip'>Zwroty i wyrażenia</PageLink>
+						<PageLink list to='/wsip'>Zwroty i wyrażenia</PageLink>
 					</li>
 					<li>
 						<Icon test icon={['fas', 'star']}/>
-						<PageLink list to='/easy-word/wsip/test-w-stolicy-polski'>Test</PageLink>
+						<PageLink list to='/wsip/test-w-stolicy-polski'>Test</PageLink>
 						<Icon test icon={['fas', 'star']}/>
 					</li>
 				</ListSubsection>

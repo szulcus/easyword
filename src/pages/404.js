@@ -9,7 +9,7 @@ class NotFoundPage extends Component {
 				<GlobalStyled/>
 				<Wrapper center>
 					<h1>Nie ma takiej strony!</h1>
-					<PageLink styled to="/easy-word">Wróć do strony głównej</PageLink>
+					<PageLink styled to="/">Wróć do strony głównej</PageLink>
 				</Wrapper>
 			</>
 		);
