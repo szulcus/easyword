@@ -128,7 +128,7 @@ const MacmillanBook = () => (
 <>
 	<Global/>
 	<ListWrapper>
-		<Book to='/easy-word/'>
+		<Book to='/'>
 			<BookImage src="https://sklep.wsip.pl/uploads/tx_evosenk/covers/upload_temp_tF8lhB.jpg" alt="WSiP - Nowyj Dialog 2"/>
 		</Book>
 		<ListSeparator/>

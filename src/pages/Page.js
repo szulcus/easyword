@@ -51,19 +51,19 @@ class Page extends Component {
 					<Separator/>
 					<SelectWrapper>
 						<Game>
-							<PageLink to='/easy-word/macmillan'>
+							<PageLink to='/macmillan'>
 								<StyledIcon icon={['fas', 'pencil-alt']}/>
 								<div>Pisanie</div>
 							</PageLink>
 						</Game>
 						<Game>
-							<PageLink to='/easy-word/macmillan'>
+							<PageLink to='/macmillan'>
 								<StyledIcon icon={['fas', 'copy']}/>
 								<div>Dopasowywanie</div>
 							</PageLink>
 						</Game>
 						<Game>
-							<PageLink to='/easy-word/macmillan'>
+							<PageLink to='/macmillan'>
 								<StyledIcon icon={['fas', 'fire']}/>
 								<div>Tinder</div>
 							</PageLink>

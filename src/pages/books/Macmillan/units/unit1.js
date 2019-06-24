@@ -369,6 +369,7 @@ const Nav = styled.div`
 		background: var(--color-secondary);
 		padding: 7px;
 		margin: 0 5px;
+		margin-bottom: 5px;
 		border-radius: 20px;
 		outline: none;
 		color: lightgray;
@@ -487,7 +488,7 @@ class Unit2 extends Component {
 				<Win id="end-game">
 					<Information id="information">
 						<p>Gratulacje! Zdobyłeś już 50 punktów <Emoji symbol="😁"/>.</p>
-						<p>Odpocznij chwilę, lub <PageLink to='/easy-word/macmillan'>zacznij inną grę</PageLink> <Emoji symbol="😃"/>.</p>
+						<p>Odpocznij chwilę, lub <PageLink to='/macmillan'>zacznij inną grę</PageLink> <Emoji symbol="😃"/>.</p>
 					</Information>
 				</Win>
 				<Input placeholder="Wpisz tłumaczenie" id="userText" type="text" autoComplete="off"/>

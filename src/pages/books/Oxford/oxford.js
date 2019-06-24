@@ -115,7 +115,7 @@ const MacmillanBook = () => (
 <>
 	<Global/>
 	<ListWrapper>
-		<Book to='/easy-word/'>
+		<Book to='/'>
 			<BookImage src="https://www.gandalf.com.pl/o/oxford-solutions-intermediate,big,578379.jpg" alt="Oxford Solutions Intermediate"/>
 		</Book>
 		<ListSeparator/>

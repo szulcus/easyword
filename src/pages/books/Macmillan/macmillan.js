@@ -128,7 +128,7 @@ const MacmillanBook = () => (
 <>
 	<Global/>
 	<ListWrapper>
-		<Book to='/easy-word/'>
+		<Book to='/'>
 			<BookImage src="https://www.macmillan.pl/components/com_ssshop/cache/500x500/9788376218496.png" alt="https://www.macmillan.pl/katalog/repetytorium-dla-uczniow-liceow-i-technikow-poziom-podstawowy-i-rozszerzony-wersja-wieloletnia,p-642-84"/>
 		</Book>
 		<ListSeparator/>
