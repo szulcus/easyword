@@ -1,13 +1,13 @@
 const words7_Przyimki = [
     {
-        word: `че́рез`,
-        translation: `przez (w znaczeniu przestrzeni)`,
+        word1: `че́рез`,
+        translation1: `przez (w znaczeniu przestrzeni)`,
         type: `przyimki`,
         image: `url`,
     },
     {
-        word: `че́рез`,
-        translation: `po (w znaczeniu czasu)`,
+        word1: `че́рез`,
+        translation1: `po (w znaczeniu czasu)`,
         translation2: `za (w znaczeniu czasu)`,
         type: `przyimki`,
         image: `url`,

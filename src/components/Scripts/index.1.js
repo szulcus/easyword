@@ -20,12 +20,12 @@ let points = 0;
 function getNew() {
   let randomWord = getWord();
 
-  let word = randomWord.word;
+  let word1 = randomWord.word1;
   let word2 = randomWord.word2;
   let type = randomWord.type;
   let image = randomWord.image;
 
-  let translation = randomWord.translation;
+  let translation1 = randomWord.translation1;
   let translation2 = randomWord.translation2;
   let translation3 = randomWord.translation3;
 
@@ -48,11 +48,11 @@ function getNew() {
 	}
   
 	if(word2 !== undefined) {
-    baseWord.innerHTML = `${word} / ${word2}`;
+    baseWord.innerHTML = `${word1} / ${word2}`;
 	}
   
 	else if(word2 === undefined) {
-    baseWord.innerHTML = word;
+    baseWord.innerHTML = word1;
   }
 
   userText.addEventListener('keypress', function(event){
@@ -72,7 +72,7 @@ function getAnswer() {
   
   let similarText = userText.toLowerCase().trim().replace('ą','a').replace('ć','c').replace('ę','e').replace('ł','l').replace('ń','n').replace('ó','o').replace('ś','s').replace('ź','z').replace('ż','z');
   
-  let similarTranslation = translation.toLowerCase().replace('ą','a').replace('ć','c').replace('ę','e').replace('ł','l').replace('ń','n').replace('ó','o').replace('ś','s').replace('ź','z').replace('ż','z');
+  let similarTranslation = translation1.toLowerCase().replace('ą','a').replace('ć','c').replace('ę','e').replace('ł','l').replace('ń','n').replace('ó','o').replace('ś','s').replace('ź','z').replace('ż','z');
   let similarTranslation2 = '';
   let similarTranslation3 = '';
   
@@ -80,8 +80,8 @@ function getAnswer() {
   
   if(translation3 !== undefined){
     similarTranslation3 = translation3.toLowerCase().replace('ą','a').replace('ć','c').replace('ę','e').replace('ł','l').replace('ń','n').replace('ó','o').replace('ś','s').replace('ź','z').replace('ż','z');
-    if(translation.includes('(') === true) {
-      similarTranslation = similarTranslation.slice(0, translation.indexOf('(') - 1);
+    if(translation1.includes('(') === true) {
+      similarTranslation = similarTranslation.slice(0, translation1.indexOf('(') - 1);
     }
     if(translation2.includes('(') === true) {
       similarTranslation2 = similarTranslation2.slice(0, translation2.indexOf('(') - 1);
@@ -94,8 +94,8 @@ function getAnswer() {
   
   if(translation2 !== undefined) {
     similarTranslation2 = translation2.toLowerCase().replace('ą','a').replace('ć','c').replace('ę','e').replace('ł','l').replace('ń','n').replace('ó','o').replace('ś','s').replace('ź','z').replace('ż','z');
-    if(translation.includes('(') === true) {
-      similarTranslation = similarTranslation.slice(0, translation.indexOf('(') - 1);
+    if(translation1.includes('(') === true) {
+      similarTranslation = similarTranslation.slice(0, translation1.indexOf('(') - 1);
     }
     if(translation2.includes('(') === true) {
       similarTranslation2 = similarTranslation2.slice(0, translation2.indexOf('(') - 1);
@@ -103,9 +103,9 @@ function getAnswer() {
   }
   
   
-  if(translation !== undefined) {
-    if(translation.includes('(') === true) {
-      similarTranslation = similarTranslation.slice(0, translation.indexOf('(') - 1)
+  if(translation1 !== undefined) {
+    if(translation1.includes('(') === true) {
+      similarTranslation = similarTranslation.slice(0, translation1.indexOf('(') - 1)
     }
   }
   
@@ -125,7 +125,7 @@ function getAnswer() {
       }
     }
     else {
-      answer.innerHTML = `Źle 😶. Odpowiedź to: <strong>${translation}</strong>, <strong>${translation2}</strong> lub <strong>${translation3}</strong>`;
+      answer.innerHTML = `Źle 😶. Odpowiedź to: <strong>${translation1}</strong>, <strong>${translation2}</strong> lub <strong>${translation3}</strong>`;
       answer.style.color = 'firebrick';
       answer.style.animation = 'scale 0.2s ease-in-out';
     }
@@ -147,7 +147,7 @@ function getAnswer() {
       }
     }
     else {
-      answer.innerHTML = `Źle 😶. Odpowiedź to: <strong>${translation}</strong> lub <strong>${translation2}</strong>`;
+      answer.innerHTML = `Źle 😶. Odpowiedź to: <strong>${translation1}</strong> lub <strong>${translation2}</strong>`;
       answer.style.color = 'firebrick';
       answer.style.animation = 'scale 0.2s ease-in-out';
     }
@@ -169,7 +169,7 @@ function getAnswer() {
       }
     }
     else {
-      answer.innerHTML = `Źle 😶. Odpowiedź to: <strong>${translation}</strong>`;
+      answer.innerHTML = `Źle 😶. Odpowiedź to: <strong>${translation1}</strong>`;
       answer.style.color = 'firebrick';
       answer.style.animation = 'scale 0.2s ease-in-out';
     }

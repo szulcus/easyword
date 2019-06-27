@@ -1,1 +1,1 @@
-\n\t\t(translation: `[ -˙]*`,\n\t\ttranslation:)
+\n\t\t(translation1: `[ -˙]*`,\n\t\ttranslation:)

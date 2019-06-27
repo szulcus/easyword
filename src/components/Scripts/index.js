@@ -10,9 +10,9 @@ import words8 from '../../components/Words/2_Macmillan/Unit1/8_Orther'
 let points = 0;
 let allWords = [].concat(words1, words2, words3, words4, words5, words6, words7, words8);
 let getWord = allWords[Math.floor(Math.random()*allWords.length)];
-let word = getWord.word;
+let word1 = getWord.word1;
 let word2 = getWord.word2;
-let translation = getWord.translation;
+let translation1 = getWord.translation1;
 let translation2 = getWord.translation2;
 let translation3 = getWord.translation3;
 let type = getWord.type;
@@ -37,11 +37,11 @@ function getNew() {
 	}
   
 	if(word2 !== undefined) {
-    baseWord.innerHTML = `${word} / ${word2}`;
+    baseWord.innerHTML = `${word1} / ${word2}`;
 	}
   
 	else if(word2 === undefined) {
-    baseWord.innerHTML = word;
+    baseWord.innerHTML = word1;
   }
   
 }
@@ -82,7 +82,7 @@ function getAnswer() {
   
   let similarText = userText.toLowerCase().trim().replace('ą','a').replace('ć','c').replace('ę','e').replace('ł','l').replace('ń','n').replace('ó','o').replace('ś','s').replace('ź','z').replace('ż','z');
   
-  let similarTranslation = translation.toLowerCase().replace('ą','a').replace('ć','c').replace('ę','e').replace('ł','l').replace('ń','n').replace('ó','o').replace('ś','s').replace('ź','z').replace('ż','z');
+  let similarTranslation = translation1.toLowerCase().replace('ą','a').replace('ć','c').replace('ę','e').replace('ł','l').replace('ń','n').replace('ó','o').replace('ś','s').replace('ź','z').replace('ż','z');
   let similarTranslation2 = '';
   let similarTranslation3 = '';
   
@@ -90,8 +90,8 @@ function getAnswer() {
   
   if(translation3 !== undefined){
     similarTranslation3 = translation3.toLowerCase().replace('ą','a').replace('ć','c').replace('ę','e').replace('ł','l').replace('ń','n').replace('ó','o').replace('ś','s').replace('ź','z').replace('ż','z');
-    if(translation.includes('(') === true) {
-      similarTranslation = similarTranslation.slice(0, translation.indexOf('(') - 1);
+    if(translation1.includes('(') === true) {
+      similarTranslation = similarTranslation.slice(0, translation1.indexOf('(') - 1);
     }
     if(translation2.includes('(') === true) {
       similarTranslation2 = similarTranslation2.slice(0, translation2.indexOf('(') - 1);
@@ -104,8 +104,8 @@ function getAnswer() {
   
   if(translation2 !== undefined) {
     similarTranslation2 = translation2.toLowerCase().replace('ą','a').replace('ć','c').replace('ę','e').replace('ł','l').replace('ń','n').replace('ó','o').replace('ś','s').replace('ź','z').replace('ż','z');
-    if(translation.includes('(') === true) {
-      similarTranslation = similarTranslation.slice(0, translation.indexOf('(') - 1);
+    if(translation1.includes('(') === true) {
+      similarTranslation = similarTranslation.slice(0, translation1.indexOf('(') - 1);
     }
     if(translation2.includes('(') === true) {
       similarTranslation2 = similarTranslation2.slice(0, translation2.indexOf('(') - 1);
@@ -113,9 +113,9 @@ function getAnswer() {
   }
   
   
-  if(translation !== undefined) {
-    if(translation.includes('(') === true) {
-      similarTranslation = similarTranslation.slice(0, translation.indexOf('(') - 1)
+  if(translation1 !== undefined) {
+    if(translation1.includes('(') === true) {
+      similarTranslation = similarTranslation.slice(0, translation1.indexOf('(') - 1)
     }
   }
   
@@ -135,7 +135,7 @@ function getAnswer() {
       }
     }
     else {
-      answer.innerHTML = `Pomyliłeś się 😶. Prawidłowe odpowiedzi to: <strong>${translation}</strong>, <strong>${translation2}</strong> lub <strong>${translation3}</strong>`;
+      answer.innerHTML = `Pomyliłeś się 😶. Prawidłowe odpowiedzi to: <strong>${translation1}</strong>, <strong>${translation2}</strong> lub <strong>${translation3}</strong>`;
       answer.style.color = 'firebrick';
       answer.style.animation = 'scale 0.2s ease-in-out';
       points = points - 1;
@@ -158,7 +158,7 @@ function getAnswer() {
     }
   }
   else {
-    answer.innerHTML = `Pomyliłeś się 😶. Prawidłowa odpowiedź to: <strong>${translation}</strong> lub <strong>${translation2}</strong>`;
+    answer.innerHTML = `Pomyliłeś się 😶. Prawidłowa odpowiedź to: <strong>${translation1}</strong> lub <strong>${translation2}</strong>`;
     answer.style.color = 'firebrick';
     answer.style.animation = 'scale 0.2s ease-in-out';
     points = points - 1;
@@ -181,7 +181,7 @@ else {
     }
   }
   else {
-    answer.innerHTML = `Pomyliłeś się 😶. Prawidłowa odpowiedź to: <strong>${translation}</strong>`;
+    answer.innerHTML = `Pomyliłeś się 😶. Prawidłowa odpowiedź to: <strong>${translation1}</strong>`;
     answer.style.color = 'firebrick';
     answer.style.animation = 'scale 0.2s ease-in-out';
     points = points - 1;
