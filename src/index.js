@@ -9,11 +9,13 @@ import words1 from './components/Words/2_Macmillan/Unit1/1_PersonalData'
 import words2 from './components/Words/2_Macmillan/Unit1/2_Apperance'
 import words3 from './components/Words/2_Macmillan/Unit1/3_Clothes'
 
-let randomWord = getWord(words1, words2, words3)
+let randomWord = getWord(words1, words2, words3);
+console.log(randomWord.type);
 
 ReactDOM.render(
 	<App
 		cathegory={randomWord.type}
+		word={randomWord.word1}
 	/>,
 	document.getElementById('root')
 	);
