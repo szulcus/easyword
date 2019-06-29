@@ -94,10 +94,11 @@ const PageLink = styled(Link)`
 const BrowserLink = styled.a`
 	transition: all .15s ease;
 	text-decoration: none;
-	color: var(--color-primary);
+	color: var(--color-light);
+	opacity: 0.7;
 	
 	:hover {
-		opacity: 0.5;
+		opacity: 1;
 	}
 	`;
 

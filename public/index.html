@@ -6,32 +6,99 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="theme-color" content="#000000" />
 		<!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
+			manifest.json provides metadata used when your web app is installed on a
+			user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+		-->
 		<link rel="manifest" href="manifest.json" />
 		<!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
+			Notice the use of %PUBLIC_URL% in the tags above.
+			It will be replaced with the URL of the `public` folder during the build.
+			Only files inside the `public` folder can be referenced from the HTML.
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
+			Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+			work correctly both with client-side routing and a non-root public URL.
+			Learn how to configure a non-root public URL by running `npm run build`.
+		-->
 		<title>EasyWord</title>
+		<style>
+			body {
+				box-sizing: border-box;
+				margin: 0;
+			}
+
+			.logo {
+				width: 90vw;
+				max-width: 1200px;
+				font-size: 50px;
+				letter-spacing: 2px;
+				padding: 10px 0;
+				text-align: center;
+				color: snow;
+				border-bottom: 1px solid gold;
+			}
+
+			.logo-letter {
+				color: gold;
+			}
+
+			.noscript {
+				display: flex;
+				width: 80vw;
+				height: 100vh;
+				padding: 0 10vw;
+				background-color: black;
+				justify-content: center;
+				align-items: center;
+				flex-direction: column;
+			}
+			.noscript-paragraph {
+				max-width: 1000px;
+				margin: 0;
+				padding-bottom: 20px;
+				color: lightgray;
+				font-size: 25px;
+				text-align: center;
+				font-weight: bold;
+			}
+
+			.javascript {
+				color: gold;
+			}
+
+			@media screen and (min-width: 720px) {
+				.logo {
+					font-size: 70px;
+				}
+
+				.noscript-paragraph {
+					font-size: 35px;
+				}
+			}
+		</style>
 	</head>
 	<body>
-		<noscript>You need to enable JavaScript to run this app.</noscript>
+		<noscript class="noscript">
+			<h1 class="logo">
+				<span class="logo-letter">E</span>asy<span class="logo-letter"
+					>W</span
+				>ord
+			</h1>
+			<p class="noscript-paragraph">
+				Aby aplikacja działała poprawnie, musisz włączyć
+				<span class="javascript">JavaScript</span> w swojej
+				przeglądarce!
+			</p>
+		</noscript>
 		<div id="root"></div>
 		<!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
+			This HTML file is a template.
+			If you open it directly in the browser, you will see an empty page.
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
+			You can add webfonts, meta tags, or analytics to this file.
+			The build step will place the bundled scripts into the <body> tag.
 
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    --></body>
+			To begin the development, run `npm start` or `yarn start`.
+			To create a production bundle, use `npm run build` or `yarn build`.
+		-->
+	</body>
 </html>

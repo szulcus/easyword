@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 import styled from 'styled-components';
 
 const WordItem = styled.div`
+margin-bottom: 5px;
 	color: var(--color-highlighted);
 	font-weight: bold;
 `

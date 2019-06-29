@@ -16,7 +16,7 @@ class App extends Component {
 		<GlobalStyles/>
 			<Switch>
 				<Route path="/" exact component={MainPage}/>
-				<Route path="/app" render={(props) => <AppPage {...props} cathegory={this.props.cathegory} word={this.props.word} />}/>
+				<Route path="/app" render={(props) => <AppPage {...props} cathegory={this.props.cathegory} word={this.props.word} picture={this.props.picture} />}/>
 				<Route component={NotFoundPage}/>
 			</Switch>
 		</Router>
