@@ -28,7 +28,6 @@ class Picture extends Component {
 		return (
 			<PictureElement>
 				<BrowserLink href={this.props.url} target="_blank">
-					{/* <Image src={this.props.url} alt="Twoja przeglądarka nie wspiera Standardu JavaScript ES6!" title="Pobierz Google Chrome!"/> */}
 					<Image src={this.props.src} alt={`${this.props.word} image`} title={`${this.props.word} image`} />
 				</BrowserLink>
 			</PictureElement>

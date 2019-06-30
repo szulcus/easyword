@@ -12,9 +12,15 @@ library.add(faFacebookF, faGithub, faLinkedinIn, faUserTie, faReply, faCog);
 
 const Wrapper = styled.main`
 	display: flex;
-	padding: 50px;
 	height: 100vh;
 	
+	${props =>
+		props.default &&
+		css`
+			padding: 50px;
+		`
+	}
+
 	${props =>
 		props.center &&
 		css`
@@ -95,11 +101,17 @@ const BrowserLink = styled.a`
 	transition: all .15s ease;
 	text-decoration: none;
 	color: var(--color-light);
-	opacity: 0.7;
 	
-	:hover {
-		opacity: 1;
-	}
+	${props =>
+		props.socialMedia &&
+		css`
+			:hover {
+				opacity: 0.5;
+			}
+		`
+	};
+
+	
 	`;
 
 const Icon = styled(FontAwesomeIcon)`

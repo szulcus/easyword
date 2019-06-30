@@ -12,7 +12,7 @@ class Points extends Component {
 	render() {
 		return (
 			<PointsElement>
-				Punkty: <strong>0</strong>
+				Punkty: <strong>{this.props.points}</strong>
 			</PointsElement>
 		);
 	}

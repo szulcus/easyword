@@ -15,7 +15,7 @@ class Navigation extends Component {
 	render() {
 		return (
 				<NavigationElement>
-					<Points/>
+					<Points points={this.props.points} />
 					<Hamburger />
 				</NavigationElement>
 		);

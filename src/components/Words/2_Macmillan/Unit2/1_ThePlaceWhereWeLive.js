@@ -91,7 +91,7 @@ const words1_TypesOfHouses = [
 		translation1: `bliźniak`,
 		level: `basic`,
 		type: `rodzaje domów`,
-		image: `https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRd6zvUZl6Bu9inxfN-lOep-aPrQZKglXSNwGuYgPSYMCTj0l1S`
+		image: `https://images.pexels.com/photos/259957/pexels-photo-259957.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500`
 	},
 	{
 		word1: `studio flat`,
