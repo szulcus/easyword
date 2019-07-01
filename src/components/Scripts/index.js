@@ -1,11 +1,11 @@
-import words1 from '../../components/Words/2_Macmillan/Unit1/1_PersonalData'
-import words2 from '../../components/Words/2_Macmillan/Unit1/2_Apperance'
-import words3 from '../../components/Words/2_Macmillan/Unit1/3_Clothes'
-import words4 from '../../components/Words/2_Macmillan/Unit1/4_FeaturesOfCharacters'
-import words5 from '../../components/Words/2_Macmillan/Unit1/5_FeelingsAndEmotions'
-import words6 from '../../components/Words/2_Macmillan/Unit1/6_Interests'
-import words7 from '../../components/Words/2_Macmillan/Unit1/7_EthnicalProblems'
-import words8 from '../../components/Words/2_Macmillan/Unit1/8_Orther'
+import words1 from '../../components/Words/1_Macmillan/Unit1/1_PersonalData'
+import words2 from '../../components/Words/1_Macmillan/Unit1/2_Apperance'
+import words3 from '../../components/Words/1_Macmillan/Unit1/3_Clothes'
+import words4 from '../../components/Words/1_Macmillan/Unit1/4_FeaturesOfCharacters'
+import words5 from '../../components/Words/1_Macmillan/Unit1/5_FeelingsAndEmotions'
+import words6 from '../../components/Words/1_Macmillan/Unit1/6_Interests'
+import words7 from '../../components/Words/1_Macmillan/Unit1/7_EthnicalProblems'
+import words8 from '../../components/Words/1_Macmillan/Unit1/8_Orther'
 
 let points = 0;
 let allWords = [].concat(words1, words2, words3, words4, words5, words6, words7, words8);

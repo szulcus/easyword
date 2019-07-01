@@ -19,8 +19,9 @@ class App extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
+			language: this.props.base_language,
 			points: 0,
-			baseWord: getWord(this.props.words1, this.props.words2, this.props.words3, this.props.words4, this.props.words5, this.props.words6, this.props.words7, this.props.words8),
+			baseWord: getWord(this.props.words),
 			answer: ''
 		};
 		this.increment = this.increment.bind(this);
@@ -29,7 +30,7 @@ class App extends Component {
 	}
 
 	getNew() {
-		this.setState({baseWord: getWord(this.props.words1, this.props.words2, this.props.words3, this.props.words4, this.props.words5, this.props.words6, this.props.words7, this.props.words8)});
+		this.setState({baseWord: getWord(this.props.words)});
 	}
 
 	increment() {
@@ -57,8 +58,6 @@ class App extends Component {
 		let cathegory = baseWord.type;
 		let image = baseWord.image;
 
-
-		// replace src attribute
 		if (image === `url`) {
 			image = `https://fakeimg.pl/647x400/?text=${baseWord.word1}`;
 		}
@@ -89,7 +88,7 @@ class App extends Component {
 					<Cathegory content={cathegory} />
 					<Navigation points={this.state.points} />
 					<Word content={word} />
-					<Picture src={image} word={word} url={`https://pxhere.com/${this.props.language}/photos?q=${baseWord.word1}`} />
+					<Picture src={image} word={word} url={`https://pxhere.com/${this.state.language}/photos?q=${baseWord.word1}`} />
 					<Input onChange={this.check} />
 					<AppNavigation change={this.getNew}/>
 					<Answer text={this.state.answer} />

@@ -1,14 +1,14 @@
 import getWord from '../Functions/getWord()'
 import endGame from '../Functions/endGame()'
 import close from '../close'
-import words1 from '../../Words/2_Macmillan/Unit1/1_PersonalData'
-import words2 from '../../Words/2_Macmillan/Unit1/2_Apperance'
-import words3 from '../../Words/2_Macmillan/Unit1/3_Clothes'
-import words4 from '../../Words/2_Macmillan/Unit1/4_FeaturesOfCharacters'
-import words5 from '../../Words/2_Macmillan/Unit1/5_FeelingsAndEmotions'
-import words6 from '../../Words/2_Macmillan/Unit1/6_Interests'
-import words7 from '../../Words/2_Macmillan/Unit1/7_EthnicalProblems'
-import words8 from '../../Words/2_Macmillan/Unit1/8_Orther'
+import words1 from '../../Words/1_Macmillan/Unit1/1_PersonalData'
+import words2 from '../../Words/1_Macmillan/Unit1/2_Apperance'
+import words3 from '../../Words/1_Macmillan/Unit1/3_Clothes'
+import words4 from '../../Words/1_Macmillan/Unit1/4_FeaturesOfCharacters'
+import words5 from '../../Words/1_Macmillan/Unit1/5_FeelingsAndEmotions'
+import words6 from '../../Words/1_Macmillan/Unit1/6_Interests'
+import words7 from '../../Words/1_Macmillan/Unit1/7_EthnicalProblems'
+import words8 from '../../Words/1_Macmillan/Unit1/8_Orther'
 
 let points = 0;
 

@@ -1,11 +1,11 @@
 import getWord from '../Functions/getWord()'
 import endGame from '../Functions/endGame()'
 import close from '../close'
-import words1 from '../../Words/2_Macmillan/Unit2/1_ThePlaceWhereWeLive'
-import words2 from '../../Words/2_Macmillan/Unit2/2_DescribingHouses'
-import words3 from '../../Words/2_Macmillan/Unit2/3_HouseholdAndGardenJobs'
-import words4 from '../../Words/2_Macmillan/Unit2/4_RentingPurchasingAndSellingProperty'
-import words5 from '../../Words/2_Macmillan/Unit2/5_Orther'
+import words1 from '../../Words/1_Macmillan/Unit2/1_ThePlaceWhereWeLive'
+import words2 from '../../Words/1_Macmillan/Unit2/2_DescribingHouses'
+import words3 from '../../Words/1_Macmillan/Unit2/3_HouseholdAndGardenJobs'
+import words4 from '../../Words/1_Macmillan/Unit2/4_RentingPurchasingAndSellingProperty'
+import words5 from '../../Words/1_Macmillan/Unit2/5_Orther'
 
 let points = 0;
 

@@ -798,7 +798,7 @@ const words1_FromBook = [
         level: `podstawa (z podręcznika)`,
         type: `basic`,
         image: `url`,
-    }
+    },
 	{
         firstForm: `test`,
         twiceForm: `test2`,

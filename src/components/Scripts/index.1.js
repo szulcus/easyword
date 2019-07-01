@@ -1,8 +1,8 @@
-import words1 from '../../components/Words/2_Macmillan/Unit2/1_ThePlaceWhereWeLive'
-import words2 from '../../components/Words/2_Macmillan/Unit2/2_DescribingHouses'
-import words3 from '../../components/Words/2_Macmillan/Unit2/3_HouseholdAndGardenJobs'
-import words4 from '../../components/Words/2_Macmillan/Unit2/4_RentingPurchasingAndSellingProperty'
-import words5 from '../../components/Words/2_Macmillan/Unit2/5_Orther'
+import words1 from '../../components/Words/1_Macmillan/Unit2/1_ThePlaceWhereWeLive'
+import words2 from '../../components/Words/1_Macmillan/Unit2/2_DescribingHouses'
+import words3 from '../../components/Words/1_Macmillan/Unit2/3_HouseholdAndGardenJobs'
+import words4 from '../../components/Words/1_Macmillan/Unit2/4_RentingPurchasingAndSellingProperty'
+import words5 from '../../components/Words/1_Macmillan/Unit2/5_Orther'
 import endGame from './Functions/endGame()'
 
 function getWord() {
