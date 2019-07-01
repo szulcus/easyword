@@ -32,7 +32,7 @@ const InputElement = styled.input`
 class Input extends Component {
 	render() {
 		return (
-			<InputElement placeholder="Wpisz tłumaczenie" type="text" autoComplete="off" />
+			<InputElement onChange={this.props.onChange} placeholder="Wpisz tłumaczenie" type="text" autoComplete="off" />
 		);
 	}
 }
