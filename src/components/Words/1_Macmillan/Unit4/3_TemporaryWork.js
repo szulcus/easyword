@@ -1,15 +1,9 @@
 const words3_TemporaryWork = [
 	{
-		word1: `au pair`,
-		translation1: `au pair`,
-		level: `basic`,
-		type: `temporary work`,
-		image: `url`,
-	},
-	{
 		word1: `babysitter`,
+		word2: `au pair`,
 		translation1: `opiekun do dzieci`,
-		translation1: `opiekunka do dzieci`,
+		female: `0-ka`,
 		level: `basic`,
 		type: `temporary work`,
 		image: `url`,
@@ -17,7 +11,7 @@ const words3_TemporaryWork = [
 	{
 		word1: `charity worker`,
 		translation1: `wolontariusz`,
-		translation1: `wolontariuszka`,
+		female: `0-ka`,
 		level: `basic`,
 		type: `temporary work`,
 		image: `url`,
@@ -25,7 +19,7 @@ const words3_TemporaryWork = [
 	{
 		word1: `checkout assistant`,
 		translation1: `kasjer w supermarkecie`,
-		translation1: `kasjerka w supermarkecie`,
+		female: `0-ka first t1`,
 		level: `basic`,
 		type: `temporary work`,
 		image: `url`,
@@ -61,6 +55,7 @@ const words3_TemporaryWork = [
 	{
 		word1: `lifeguard`,
 		translation1: `ratownik`,
+		female: `1-czka`,
 		level: `basic`,
 		type: `temporary work`,
 		image: `url`,
@@ -75,7 +70,7 @@ const words3_TemporaryWork = [
 	{
 		word1: `summer camp supervisor`,
 		translation1: `opiekun na obozie`,
-		translation1: `opiekunka na obozie`,
+		female: `0-ka first t1`,
 		level: `basic`,
 		type: `temporary work`,
 		image: `url`,
@@ -90,7 +85,7 @@ const words3_TemporaryWork = [
 	{
 		word1: `tour guide`,
 		translation1: `przewodnik`,
-		translation1: `przewodniczka`,
+		female: `1-czka`,
 		level: `basic`,
 		type: `temporary work`,
 		image: `url`,
@@ -105,7 +100,7 @@ const words3_TemporaryWork = [
 	{
 		word1: `wages`,
 		translation1: `płaca`,
-		translation1: `dniówka`,
+		translation2: `dniówka`,
 		level: `basic`,
 		type: `temporary work`,
 		image: `url`,

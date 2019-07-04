@@ -10,6 +10,7 @@ import MainPage from './pages/index'
 import MacmillanList from './pages/books/1_Macmillan/macmillan'
 import WSiPList from './pages/books/2_WSiP/wsip'
 import OxfordList from './pages/books/3_Oxford/oxford'
+
 import NotFoundPage from './pages/404'
 // STYLED
 import GlobalStyles from './components/Styled/Global/global';
@@ -47,6 +48,8 @@ import GlobalStyles from './components/Styled/Global/global';
 		// IMAGES
 		import working from './images/working.png'
 		import thinking from './images/thinking.png'
+
+		import testWords from './components/Words/_test'
 
 class App extends Component {
 	render() {
@@ -382,7 +385,7 @@ class App extends Component {
 								/>
 							}/>
 								{/* Test */}
-								<Route path="/macmillan/rozdział-5/inne" render={(props) =>
+								<Route path="/macmillan/rozdział-5/test" render={(props) =>
 									<WorkPage
 										{...props}
 										title="Prace trwają"
@@ -421,7 +424,22 @@ class App extends Component {
 					{/* WSIP */}
 					<Route path="/wsip" exact component={WSiPList}/>
 
+				<Route path="/thinking" render={(props) =>
+					<WorkPage
+						{...props}
+						title="Ciągle myślę"
+						image={thinking}
+					/>
+				}/>
 
+				<Route path="/test" render={(props) =>
+					<AppPage
+						{...props}
+						words={[].concat(testWords)}
+						base_language="en"
+						translated_language="pl"
+					/>
+				}/>
 				<Route component={NotFoundPage}/>
 			</Switch>
 		</Router>
