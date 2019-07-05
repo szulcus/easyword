@@ -142,7 +142,7 @@ class App extends Component {
 						feminine_translation3 = `${translation3.slice(0, translation3.indexOf(' ') - howMuch)}${what}${translation3.substring(translation3.indexOf(' '))}`;
 					}
 				}
-				else {
+				else if (female.includes('second')) {
 					if (howMuch === 0) {
 						if (female.includes('t1')) {
 							full_translation1 = `${translation1.replace(translation1.split(' ')[1], `${translation1.split(' ')[1]}(${what})`)}`;

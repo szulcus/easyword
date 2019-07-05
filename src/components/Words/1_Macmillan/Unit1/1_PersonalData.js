@@ -65,6 +65,7 @@ const words1_PersonalData = [
     {
         word1: `married`,
         translation1: `żonaty`,
+        female: `yes`,
         level: `basic`,
         type: `dane osobowe`,
         image: `https://c.pxhere.com/photos/35/e0/beach_wedding_bride_groom_ocean_sea_romantic_romance_sand-911700.jpg!s`,
@@ -100,6 +101,7 @@ const words1_PersonalData = [
     {
         word1: `widowed`,
         translation1: `owdowiały`,
+        female: `yes`,
         level: `basic`,
         type: `dane osobowe`,
         image: `https://c.pxhere.com/photos/bf/b6/solo_reader_old_park_old_sitting_in_the_park_forest_nature_landscape-1188022.jpg!s`,

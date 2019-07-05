@@ -12,6 +12,7 @@ library.add(faFacebookF, faGithub, faLinkedinIn, faUserTie, faReply, faCog);
 
 const Wrapper = styled.main`
 	display: flex;
+	width: 100vw;
 	height: 100vh;
 	
 	${props =>
@@ -22,18 +23,33 @@ const Wrapper = styled.main`
 	}
 
 	${props =>
+		props.small &&
+		css`
+			padding: 20px;
+		`
+	}
+
+	${props =>
+		props.list &&
+		css`
+			padding: 30px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			@media (max-width: 768px) {
+				flex-direction: column;
+				padding: 0 10px;
+			}
+		`
+	}
+
+	${props =>
 		props.center &&
 		css`
 			text-align: center;
 			align-items: center;
 			flex-direction: column;
-		`
-	}
-
-	${props =>
-		props.small &&
-		css`
-			padding: 20px;
 		`
 	}
 
@@ -110,9 +126,27 @@ const BrowserLink = styled.a`
 			}
 		`
 	};
-
 	
+	${props =>
+		props.workMedia &&
+		css`
+		display: block;
+		margin: 0 auto;
+		width: 30px;
+		color: var(--color-decorative);
+		font-size: 30px;
+			:hover {
+				opacity: 0.5;
+			}
+		`
+	};
 	`;
+
+const WebLink = props => (
+	<BrowserLink workMedia={props.workMedia} href={props.to} target="_blank">
+		{props.content}
+	</BrowserLink>
+);
 
 const Icon = styled(FontAwesomeIcon)`
 	${props =>
@@ -156,6 +190,6 @@ const Emoji = props => (
 );
 
 // STYLES
-export {Separator, PageLink, BrowserLink, Wrapper, Icon, Back}
+export {Separator, PageLink, BrowserLink, WebLink, Wrapper, Icon, Back}
 // COMPONENTS
 export {Emoji}

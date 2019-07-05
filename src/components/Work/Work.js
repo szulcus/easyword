@@ -5,8 +5,12 @@ import styled, { css } from 'styled-components'
 import Global from '../../components/Styles/Global'
 import { Wrapper } from '../../components/Styles/Components'
 // COMPONENTS
-import SnapchatImage from './components/SnapchatImage'
-import InstagramImage from './components/InstagramImage'
+import SocialMediaItem from './components/SocialMediaItem'
+// FILES
+import snapchatLogo from '../../images/snapchat-icon.png'
+import snapchatDescription from '../../images/snapchat-d.png'
+import instagramLogo from '../../images/instagram-icon.png'
+import instagramDescription from '../../images/instagram-d.png'
 
 
 const WorkElement = styled.div`
@@ -26,7 +30,7 @@ const WorkTitle = styled.header`
 		margin: 15px 0 0 0;
 		font-size: 35px;
 	}
-	@media(max-height: 360px) {
+	@media(max-height: 450px) {
 		margin: 30px 0;
 	}
 	${props =>
@@ -45,15 +49,10 @@ const WorkImage = styled.img`
 	max-width: 500px;
 	max-width: 90vw;
 	margin: 0 auto;
-	${props =>
-		props.blur &&
-		css`
-			filter: blur(10px);
-	`};
 	@media(max-height: 550px) {
 		height: calc(100px + 2hmin);
 	}
-	@media(max-height: 360px) {
+	@media(max-height: 450px) {
 		display: none;
 	}
 `
@@ -63,16 +62,11 @@ const WorkDescription = styled.p`
 	text-align: center;
 	margin: 30px;
 	@media(max-height: 600px) {
-		margin: 10px;
+		margin: 20px;
 	}
-	${props =>
-		props.blur &&
-		css`
-			filter: blur(10px);
-	`};
 `
 
-const WorkSocialMediaElement = styled.div`
+const SocialMediaWrapper = styled.div`
 	display: flex;
 	width: 100%;
 	justify-content: center;
@@ -81,10 +75,6 @@ const WorkSocialMediaElement = styled.div`
 class Work extends Component {
 	constructor(props) {
 		super(props);
-		this.state = {
-				default: true,
-				preview: false,
-		};
 	}
 
 	render() {
@@ -93,13 +83,13 @@ class Work extends Component {
 				<Global />
 				<Wrapper onClick={this.exit}>
 					<WorkElement>
-						<WorkTitle blur={this.state.previev}>{this.props.title}...</WorkTitle>
-						<WorkImage blur={this.state.preview} src={this.props.image} />
-						<WorkDescription blur={this.state.preview}>Zmiany na bieżąco publikuję na Snapchacie, oraz Instagramie:</WorkDescription>
-						<WorkSocialMediaElement>
-							<SnapchatImage />
-							<InstagramImage />
-						</WorkSocialMediaElement>
+						<WorkTitle>{this.props.title}...</WorkTitle>
+						<WorkImage src={this.props.image} />
+						<WorkDescription>Zmiany na bieżąco publikuję na Snapchacie, oraz Instagramie:</WorkDescription>
+						<SocialMediaWrapper>
+							<SocialMediaItem srcLogo={snapchatLogo} srcDescription={snapchatDescription} link="https://www.snapchat.com/add/szulcus104" />
+							<SocialMediaItem srcLogo={instagramLogo} srcDescription={instagramDescription} link="https://www.instagram.com/easyword_app/?hl=pl" />
+						</SocialMediaWrapper>
 					</WorkElement>
 				</Wrapper>
 			</>

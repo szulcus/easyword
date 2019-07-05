@@ -55,7 +55,7 @@ const words3_TemporaryWork = [
 	{
 		word1: `lifeguard`,
 		translation1: `ratownik`,
-		female: `1-czka`,
+		female: `1-czka t1`,
 		level: `basic`,
 		type: `temporary work`,
 		image: `url`,
@@ -85,7 +85,7 @@ const words3_TemporaryWork = [
 	{
 		word1: `tour guide`,
 		translation1: `przewodnik`,
-		female: `1-czka`,
+		female: `1-czka t1`,
 		level: `basic`,
 		type: `temporary work`,
 		image: `url`,
