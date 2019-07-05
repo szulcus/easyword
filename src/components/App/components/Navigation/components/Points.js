@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 import styled from 'styled-components'
 
 const PointsElement = styled.div`
+	color: var(--color-secondary);
 	strong {
 		color: var(--color-highlighted);
 	}

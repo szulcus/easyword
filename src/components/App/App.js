@@ -1,5 +1,8 @@
 // BASIC
 import React, {Component} from 'react'
+import Lottie from 'react-lottie'
+import animationData from '../../lotties/72-favourite-app-icon.json'
+import styled, { css } from 'styled-components'
 // COMPONENTS
 import Cathegory from './components/Cathegory'
 import Navigation from './components/Navigation/Navigation'
@@ -12,6 +15,7 @@ import SocialMedia from './components/SocialMedia'
 // STYLES
 import Global from '../Styles/Global'
 import { Wrapper } from '../Styles/Components'
+import '../../components/Styles/main-keyframes.css'
 // SCRIPTS
 import getWord from '../Scripts/Functions/getWord()'
 
@@ -22,7 +26,9 @@ class App extends Component {
 			language: this.props.base_language,
 			points: 0,
 			baseWord: getWord(this.props.words),
-			answer: ''
+			answer: '',
+			good: false,
+			great: false,
 		};
 		this.increment = this.increment.bind(this);
 		this.check = this.check.bind(this);
@@ -43,10 +49,13 @@ class App extends Component {
 		console.log(userWord);
 		console.log(translation);
 		if (userWord === translation) {
-			this.setState({answer: 'Brawo!'});
+			this.setState({answer: 'Brawo!', great: true});
 			this.increment();
 			this.getNew();
 			e.target.value = '';
+			setTimeout(function () {
+				this.setState({answer: '', great: false});
+			  }.bind(this), 1000)
 		}
 	}
 	
@@ -254,6 +263,32 @@ class App extends Component {
 				console.log(howMuch);
 			}
 		}
+
+		const defaultOptions = {
+			loop: false,
+			autoplay: true,
+			animationData: animationData,
+			rendererSettings: {
+				preserveAspectRadio: 'xMidYMid slice'
+			}
+		}
+
+		const Animation = styled.div`
+			display: none;
+			position: absolute;
+			top: 50px;
+			left: 50%;
+			width: 90vw;
+			max-width: 500px;
+			transform: translatex(-50%);
+			${props =>
+				props.preview &&
+				css`
+					display: block;
+				`
+			};
+		`
+
 		return (
 			<>
 				<Global />
@@ -265,6 +300,9 @@ class App extends Component {
 					<Input onChange={this.check} />
 					<AppNavigation change={this.getNew}/>
 					<Answer text={this.state.answer} />
+					<Animation preview={this.state.great}>
+						<Lottie options={defaultOptions} />
+					</Animation>
 					<SocialMedia />
 				</Wrapper>
 			</>
