@@ -1,7 +1,7 @@
 // BASIC
 import React, {Component} from 'react'
-import Lottie from 'react-lottie'
-import animationData from '../../lotties/72-favourite-app-icon.json'
+import greatAnimationData from '../../lotties/72-favourite-app-icon.json'
+import goodAnimationData from '../../lotties/433-checked-done.json'
 import styled, { css } from 'styled-components'
 // COMPONENTS
 import Cathegory from './components/Cathegory'
@@ -18,6 +18,10 @@ import { Wrapper } from '../Styles/Components'
 import '../../components/Styles/main-keyframes.css'
 // SCRIPTS
 import getWord from '../Scripts/Functions/getWord()'
+import female from './female'
+import similarTranslation from './similarTranslation'
+// ANIMATIONS
+import LottieAnimation from '../../lotties/Animations'
 
 class App extends Component {
 	constructor(props) {
@@ -29,6 +33,7 @@ class App extends Component {
 			answer: '',
 			good: false,
 			great: false,
+			counter: 0
 		};
 		this.increment = this.increment.bind(this);
 		this.check = this.check.bind(this);
@@ -44,19 +49,54 @@ class App extends Component {
 	}
 
 	check(e) {
+
+		// if (female(this.state.baseWord).feminine_translation1 !== undefined) {
+		// 	console.log('jest')
+		// }
+		this.setState({counter: this.state.counter + 1});
 		let userWord = e.target.value.toLowerCase().trim().replace('ą','a').replace('ć','c').replace('ę','e').replace('ł','l').replace('ń','n').replace('ó','o').replace('ś','s').replace('ź','z').replace('ż','z');
-		const translation = this.state.baseWord.translation1.toLowerCase().replace('ą','a').replace('ć','c').replace('ę','e').replace('ł','l').replace('ń','n').replace('ó','o').replace('ś','s').replace('ź','z').replace('ż','z');
+		const translation1 = similarTranslation(this.state.baseWord.translation1);
+		const feminine_translation1 = female(this.baseWord);
+		const translation2 = similarTranslation(this.state.baseWord.translation2);
+		const feminine_translation2 = female(this.baseWord);
+		const translation3 = similarTranslation(this.state.baseWord.translation3);
+		const feminine_translation3 = female(this.baseWord);
+		console.log(female(this.baseWord).feminine_translation1)
 		console.log(userWord);
-		console.log(translation);
-		if (userWord === translation) {
-			this.setState({answer: 'Brawo!', great: true});
-			this.increment();
-			this.getNew();
-			e.target.value = '';
-			setTimeout(function () {
-				this.setState({answer: '', great: false});
-			  }.bind(this), 1000)
+		console.log(translation1);
+		console.log(this.state.counter);
+		if (userWord === translation1) {
+			const target = e.target
+			if (translation1.length > this.state.counter) {
+				this.setState({
+					answer: 'Brawo!',
+					great: true,
+					points: this.state.points + 2,
+					counter: 0
+				});
+				setTimeout(function () {
+					target.value = '';
+					this.getNew();
+					this.setState({answer: '', great: false});
+				}.bind(this), 1000)
+			}
+			else {
+				this.setState({
+					answer: 'Brawo!',
+					good: true,
+					points: this.state.points + 1,
+					counter: 0
+				});
+				setTimeout(function () {
+					target.value = '';
+					this.getNew();
+					this.setState({answer: '', good: false});
+				}.bind(this), 1000)
+			}
+			
 		}
+		
+
 	}
 	
 	render() {
@@ -92,182 +132,11 @@ class App extends Component {
 		else if(baseWord.word2 !== undefined) {
 			word = `${word} / ${baseWord.word2}`;
 		}
-		// ---------- FEMALE CONDITIONS ----------
-
-		let female = baseWord.female;
-		let translation1 = baseWord.translation1;
-		let translation2 = baseWord.translation2;
-		let translation3 = baseWord.translation3;
-		let feminine_translation1 = undefined;
-		let feminine_translation2 = undefined;
-		let feminine_translation3 = undefined;
-		let full_translation1 = undefined;
-		let full_translation2 = undefined;
-		let full_translation3 = undefined;
-
-		if (baseWord.female !== undefined) {
-			// female === 'yes'
-			if (female === 'yes') {
-				if (translation3 !== undefined) {
-					full_translation1 = `${translation1}(a)`;
-					full_translation2 = `${translation2}(a)`;
-					full_translation3 = `${translation3}(a)`;
-					feminine_translation1 = `${translation1.slice(0, -1)}a`;
-					feminine_translation2 = `${translation2.slice(0, -1)}a`;
-					feminine_translation3 = `${translation3.slice(0, -1)}a`;
-				}
-				else if (translation2 !== undefined) {
-					full_translation1 = `${translation1}(a)`;
-					full_translation2 = `${translation2}(a)`;
-					feminine_translation1 = `${translation1.slice(0, -1)}a`;
-					feminine_translation2 = `${translation2.slice(0, -1)}a`;
-				}
-				else {
-					full_translation1 = `${translation1}(a)`;
-					feminine_translation1 = `${translation1.slice(0, -1)}a`;
-				}
-				console.log(full_translation1);
-				console.log(full_translation2);
-				console.log(full_translation3);
-				console.log(feminine_translation1);
-				console.log(feminine_translation2);
-				console.log(feminine_translation3);
-			}
-			// female === `first in t2`|| `second in t2`...
-			else if (female.includes('first') || female.includes('second')) {
-				const howMuch = parseInt(female.slice(0, female.indexOf('-')));
-				const what = female.slice(female.indexOf('-') + 1, female.indexOf(' '));
-				if (female.includes('first')) {
-					if (female.includes('t1')) {
-						full_translation1 = `${translation1.slice(0, translation1.indexOf(' '))}(${what})${translation1.substring(translation1.indexOf(' '))}`;
-						feminine_translation1 = `${translation1.slice(0, translation1.indexOf(' ') - howMuch)}${what}${translation1.substring(translation1.indexOf(' '))}`;
-					}
-					if (female.includes('t2')) {
-						full_translation2 = `${translation2.slice(0, translation2.indexOf(' '))}(${what})${translation2.substring(translation2.indexOf(' '))}`;
-						feminine_translation2 = `${translation2.slice(0, translation2.indexOf(' ') - howMuch)}${what}${translation2.substring(translation2.indexOf(' '))}`;
-					}
-					if (female.includes('t3')) {
-						full_translation3 = `${translation3.slice(0, translation3.indexOf(' '))}(${what})${translation3.substring(translation3.indexOf(' '))}`;
-						feminine_translation3 = `${translation3.slice(0, translation3.indexOf(' ') - howMuch)}${what}${translation3.substring(translation3.indexOf(' '))}`;
-					}
-				}
-				else if (female.includes('second')) {
-					if (howMuch === 0) {
-						if (female.includes('t1')) {
-							full_translation1 = `${translation1.replace(translation1.split(' ')[1], `${translation1.split(' ')[1]}(${what})`)}`;
-							feminine_translation1 = `${translation1.replace(translation1.split(' ')[1], `${translation1.split(' ')[1]}${what}`)}`;
-						}
-						if (female.includes('t2')) {
-							full_translation2 = `${translation2.replace(translation2.split(' ')[1], `${translation2.split(' ')[1]}(${what})`)}`;
-							feminine_translation2 = `${translation2.replace(translation2.split(' ')[1], `${translation2.split(' ')[1]}${what}`)}`;
-						}
-						if (female.includes('t3')) {
-							full_translation3 = `${translation3.replace(translation3.split(' ')[1], `${translation3.split(' ')[1]}(${what})`)}`;
-							feminine_translation3 = `${translation3.replace(translation3.split(' ')[1], `${translation3.split(' ')[1]}${what}`)}`;
-						}
-					}
-					else {
-						if (female.includes('t1')) {
-							full_translation1 = `${translation1.replace(translation1.split(' ')[1], `${translation1.split(' ')[1]}(${what})`)}`;
-							feminine_translation1 = `${translation1.replace(translation1.split(' ')[1], `${translation1.split(' ')[1].slice(0, -howMuch)}${what}`)}`;
-						}
-						if (female.includes('t2')) {
-							full_translation2 = `${translation2.replace(translation2.split(' ')[1], `${translation2.split(' ')[1]}(${what})`)}`;
-							feminine_translation2 = `${translation2.replace(translation2.split(' ')[1], `${translation2.split(' ')[1].slice(0, -howMuch)}${what}`)}`;
-						}
-						if (female.includes('t3')) {
-							full_translation3 = `${translation3.replace(translation3.split(' ')[1], `${translation3.split(' ')[1]}(${what})`)}`;
-							feminine_translation3 = `${translation3.replace(translation3.split(' ')[1], `${translation3.split(' ')[1].slice(0, -howMuch)}${what}`)}`;
-						}
-					}
-				}
-				console.log(full_translation1);
-				console.log(feminine_translation1);
-				console.log(full_translation2);
-				console.log(feminine_translation2);
-				console.log(full_translation3);
-				console.log(feminine_translation3);
-			}
-			// female === `t1`/`t2`/`t1+t2`...
-			else if (female.indexOf('t') === 0) {
-				if (female.slice(0, 2) === `t1`) {
-					full_translation1 = `${translation1}(a)`;
-					feminine_translation1 = `${translation1.slice(0, -1)}a`;
-				}
-				else if (female.slice(0, 2) === `t2`) {
-					full_translation2 = `${translation2}(a)`;
-					feminine_translation2 = `${translation2.slice(0, -1)}a`;
-				}
-				else if (female.slice(0, 2) === `t3`) {
-					full_translation3 = `${translation3}(a)`;
-					feminine_translation3 = `${translation3.slice(0, -1)}a`;
-				}
-				else if (female.slice(0, 5) === `t1+t2`) {
-					full_translation1 = `${translation1}(a)`;
-					full_translation2 = `${translation2}(a)`;
-					feminine_translation1 = `${translation1.slice(0, -1)}a`;
-					feminine_translation2 = `${translation2.slice(0, -1)}a`;
-				}
-				else if (female.slice(0, 5) === `t1+t3`) {
-					full_translation1 = `${translation1}(a)`;
-					full_translation3 = `${translation3}(a)`;
-					feminine_translation1 = `${translation1.slice(0, -1)}a`;
-					feminine_translation3 = `${translation3.slice(0, -1)}a`;
-				}
-				console.log(full_translation1);
-				console.log(full_translation2);
-				console.log(full_translation3);
-				console.log(feminine_translation1);
-				console.log(feminine_translation2);
-				console.log(feminine_translation3);
-			}
-			// female === `0-czka`/`1-czka`/`2-czka`...
-			else if (female.includes('-')) {
-				const howMuch = parseInt(baseWord.female.slice(0, female.indexOf('-')));
-				if (female.includes(' in ') === false) {
-					const what = female.substring(female.indexOf('-') + 1);
-					full_translation1 = `${translation1}(${what})`;
-					feminine_translation1 = `${translation1.slice(0, -howMuch)}${what}`;
-					console.log(full_translation1);
-					console.log(feminine_translation1);
-					console.log(what);
-				}
-				else {
-					if (female.includes('first')) {
-						const what = female.slice(female.indexOf('-') + 1, female.indexOf(' '));
-						if (howMuch !== 0) {
-							full_translation1 = `${translation1.slice(0, translation1.indexOf(' ') - howMuch)}(${what})${translation1.substring(translation1.indexOf(' '))}`;
-							feminine_translation1 = `${translation1.slice(0, translation1.indexOf(' ') - howMuch)}${what}${translation1.substring(translation1.indexOf(' '))}`;
-						}
-						else {
-							full_translation1 = `${translation1.slice(0, translation1.indexOf(' '))}(${what})${translation1.substring(translation1.indexOf(' '))}`;
-							feminine_translation1 = `${translation1.slice(0, translation1.indexOf(' '))}${what}${translation1.substring(translation1.indexOf(' '))}`;
-						}
-						console.log(what);
-					}
-					else if (female.includes('second')) {
-						const what = female.slice(female.indexOf('-') + 1, female.indexOf(' '));
-						if (howMuch !== 0) {
-							full_translation2 = `${translation2.slice(0, translation2.indexOf(' ') - howMuch)}(${what})${translation2.substring(translation2.indexOf(' '))}`;
-							feminine_translation2 = `${translation2.slice(0, translation2.indexOf(' ') - howMuch)}${what}${translation2.substring(translation2.indexOf(' '))}`;
-						}
-						else {
-							full_translation2 = `${translation2.slice(0, translation2.indexOf(' '))}(${what})${translation2.substring(translation2.indexOf(' '))}`;
-							feminine_translation2 = `${translation2.slice(0, translation2.indexOf(' '))}${what}${translation2.substring(translation2.indexOf(' '))}`;
-						}
-						console.log(what);
-					}
-					console.log(full_translation1);
-					console.log(feminine_translation1);
-				}
-				console.log(howMuch);
-			}
-		}
 
 		const defaultOptions = {
 			loop: false,
 			autoplay: true,
-			animationData: animationData,
+			animationData: this.props.animationData,
 			rendererSettings: {
 				preserveAspectRadio: 'xMidYMid slice'
 			}
@@ -276,10 +145,10 @@ class App extends Component {
 		const Animation = styled.div`
 			display: none;
 			position: absolute;
-			top: 50px;
+			top: calc(100px + 5vw);
 			left: 50%;
-			width: 90vw;
-			max-width: 500px;
+			width: 50vw;
+			max-width: 300px;
 			transform: translatex(-50%);
 			${props =>
 				props.preview &&
@@ -287,6 +156,10 @@ class App extends Component {
 					display: block;
 				`
 			};
+			@media(min-width: 700px) {
+				top: 150px;
+			}
+
 		`
 
 		return (
@@ -301,7 +174,10 @@ class App extends Component {
 					<AppNavigation change={this.getNew}/>
 					<Answer text={this.state.answer} />
 					<Animation preview={this.state.great}>
-						<Lottie options={defaultOptions} />
+						<LottieAnimation animationData={greatAnimationData} />
+					</Animation>
+					<Animation preview={this.state.good}>
+						<LottieAnimation animationData={goodAnimationData} />
 					</Animation>
 					<SocialMedia />
 				</Wrapper>

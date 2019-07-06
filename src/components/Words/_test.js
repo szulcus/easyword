@@ -1,13 +1,13 @@
 const testWords = [
-		// {
-		// 	word1: `clever`,
-		// 	translation1: `mądry`,
-		// 	female: `yes`,
-		// 	level: `basic`,
-		// 	type: `test`,
-		// 	subtype: `y => a`,
-		// 	image: `url`,
-		// },
+		{
+			word1: `clever`,
+			translation1: `mądry`,
+			female: `yes`,
+			level: `basic`,
+			type: `test`,
+			subtype: `y => a`,
+			image: `url`,
+		},
 		// {
 		// 	word1: `confident`,
 		// 	translation1: `pewny siebie dziewczyna`,
@@ -45,17 +45,17 @@ const testWords = [
 		// 	type: `test`,
 		// 	image: `url`,
 		// },
-		{
-			word1: `babysitter`,
-			word2: `au pair`,
-			translation1: `super opiekun do dzieci`,
-			translation2: `super 2opiekun do dzieci`,
-			translation3: `super 3opiekun do dzieci`,
-			female: `0-ka second in t1+t2+t3`,
-			level: `basic`,
-			type: `test`,
-			image: `url`,
-		}
+		// {
+		// 	word1: `babysitter`,
+		// 	word2: `au pair`,
+		// 	translation1: `super opiekun do dzieci`,
+		// 	translation2: `super 2opiekun do dzieci`,
+		// 	translation3: `super 3opiekun do dzieci`,
+		// 	female: `0-ka second in t1+t2+t3`,
+		// 	level: `basic`,
+		// 	type: `test`,
+		// 	image: `url`,
+		// }
 ];
 
 export default testWords

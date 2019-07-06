@@ -1,5 +1,4 @@
 // BASIC
-import React, { Component } from 'react'
 import styled from 'styled-components'
 
 const ListWrapper = styled.div`
