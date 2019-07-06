@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 const CathegoryItem = styled.div`
 	width: calc(100vw - 20px);
-	margin: 0 10px;
+	margin: 0 10px 10px 10px;
 	color: var(--color-secondary);
 	text-align: center;
 	overflow: hidden;

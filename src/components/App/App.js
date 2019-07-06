@@ -55,19 +55,23 @@ class App extends Component {
 		// }
 		this.setState({counter: this.state.counter + 1});
 		let userWord = e.target.value.toLowerCase().trim().replace('ą','a').replace('ć','c').replace('ę','e').replace('ł','l').replace('ń','n').replace('ó','o').replace('ś','s').replace('ź','z').replace('ż','z');
+
 		const translation1 = similarTranslation(this.state.baseWord.translation1);
-		const feminine_translation1 = female(this.baseWord);
 		const translation2 = similarTranslation(this.state.baseWord.translation2);
-		const feminine_translation2 = female(this.baseWord);
 		const translation3 = similarTranslation(this.state.baseWord.translation3);
-		const feminine_translation3 = female(this.baseWord);
-		console.log(female(this.baseWord).feminine_translation1)
+
+		console.log(female(this.state.baseWord));
+
+
+		console.log(similarTranslation(translation1))
+		console.log(translation1)
 		console.log(userWord);
 		console.log(translation1);
 		console.log(this.state.counter);
 		if (userWord === translation1) {
 			const target = e.target
-			if (translation1.length > this.state.counter) {
+			if (translation1.length > this.state.counter ||
+				1 === 2) {
 				this.setState({
 					answer: 'Brawo!',
 					great: true,
