@@ -1,13 +1,22 @@
 const testWords = [
-		{
-			word1: `clever`,
-			translation1: `mądry`,
-			female: `yes`,
-			level: `basic`,
-			type: `test`,
-			subtype: `y => a`,
-			image: `url`,
-		},
+	{
+		word1: `lined`,
+		translation1: `ocieplany`,
+		translation2: `na podszewce`,
+		female: `t1`,
+		level: `extended`,
+		type: `wzory i materiały`,
+		image: `https://c.pxhere.com/photos/dc/f8/winter_jacket_scarf_wool_scarf_woman_girl_modern_young_woman_female-1186579.jpg!s`,
+	}
+		// {
+		// 	word1: `clever`,
+		// 	translation1: `mądry`,
+		// 	female: `yes`,
+		// 	level: `basic`,
+		// 	type: `test`,
+		// 	subtype: `y => a`,
+		// 	image: `url`,
+		// },
 		// {
 		// 	word1: `confident`,
 		// 	translation1: `pewny siebie dziewczyna`,

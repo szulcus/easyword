@@ -41,7 +41,7 @@ function femaleConditions(baseWord) {
 		// console.log(feminine_translation2);
 		// console.log(feminine_translation3);
 	}
-		// female === `first in t2`|| `second in t2`...
+		// female === `first t2`|| `second t2`...
 		else if (female.includes('first') || female.includes('second')) {
 			const howMuch = parseInt(female.slice(0, female.indexOf('-')));
 			const what = female.slice(female.indexOf('-') + 1, female.indexOf(' '));

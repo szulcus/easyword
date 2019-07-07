@@ -240,7 +240,7 @@ const words4_FeaturesOfCharacters = [
 	{
 		word1: `introvert`,
 		translation1: `introwertyk`,
-		female: `1-czka t1`,
+		female: `1-czka`,
 		level: `basic`,
 		type: `cechy charakteru`,
 		image: `https://c.pxhere.com/photos/f0/41/girl_hipster_sexy_shy_hands_hiding_face-710150.jpg!s`,
@@ -364,8 +364,8 @@ const words4_FeaturesOfCharacters = [
 	},
 	{
 		word1: `unreliable`,
-		translation1: `niesolidny`,
-		translation2: `zawodny`,
+		translation1: `zawodny`,
+		translation2: `niesolidny`,
 		female: `yes`,
 		level: `basic`,
 		type: `cechy charakteru`,

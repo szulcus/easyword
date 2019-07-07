@@ -30,6 +30,7 @@ class App extends Component {
 			language: this.props.base_language,
 			points: 0,
 			baseWord: getWord(this.props.words),
+			hideAnswer: true,
 			answer: '',
 			good: false,
 			great: false,
@@ -38,10 +39,13 @@ class App extends Component {
 		this.increment = this.increment.bind(this);
 		this.check = this.check.bind(this);
 		this.getNew = this.getNew.bind(this);
+		this.getAnswer = this.getAnswer.bind(this);
+		this.keyPress = this.keyPress.bind(this);
 	}
 
 	getNew() {
 		this.setState({baseWord: getWord(this.props.words)});
+		console.log(this)
 	}
 
 	increment() {
@@ -49,7 +53,6 @@ class App extends Component {
 	}
 
 	check(e) {
-
 		// if (female(this.state.baseWord).feminine_translation1 !== undefined) {
 		// 	console.log('jest')
 		// }
@@ -62,9 +65,6 @@ class App extends Component {
 		const feminine_translation1 = similarTranslation(female(this.state.baseWord).feminine_translation1);
 		const feminine_translation2 = similarTranslation(female(this.state.baseWord).feminine_translation2);
 		const feminine_translation3 = similarTranslation(female(this.state.baseWord).feminine_translation3);
-		const full_translation1 = female(this.state.baseWord).full_translation1;
-		const full_translation2 = female(this.state.baseWord).full_translation2;
-		const full_translation3 = female(this.state.baseWord).full_translation3;
 
 		console.log(this.state.counter);
 
@@ -74,9 +74,6 @@ class App extends Component {
 		console.log(feminine_translation1)
 		console.log(feminine_translation2)
 		console.log(feminine_translation3)
-		console.log(full_translation1)
-		console.log(full_translation2)
-		console.log(full_translation3)
 
 		if (
 			userWord === translation1 ||
@@ -86,38 +83,87 @@ class App extends Component {
 			userWord === feminine_translation2 ||
 			userWord === feminine_translation3
 			) {
-				console.log('taak!')
+			document.getElementById('answer').style.color = 'var(--color-decorative)';
 			const target = e.target
-			if (translation1.length > this.state.counter) {
+			this.setState({
+				answer: 'Brawo!',
+				hideAnswer: false,
+				counter: 0
+			});
+			if (translation1.length > this.state.counter && this.state.hideAnswer === true) {
 				this.setState({
-					answer: 'Brawo!',
 					great: true,
-					points: this.state.points + 2,
-					counter: 0
+					points: this.state.points + 2
 				});
 				setTimeout(function () {
 					target.value = '';
 					this.getNew();
-					this.setState({answer: '', great: false});
+					this.setState({
+						hideAnswer: true,
+						great: false
+					});
 				}.bind(this), 1000)
 			}
 			else {
 				this.setState({
-					answer: 'Brawo!',
 					good: true,
-					points: this.state.points + 1,
-					counter: 0
+					points: this.state.points + 1
 				});
 				setTimeout(function () {
 					target.value = '';
 					this.getNew();
-					this.setState({answer: '', good: false});
+					this.setState({
+						hideAnswer: true,
+						good: false
+					});
 				}.bind(this), 1000)
 			}
-			
+		}
+	}
+
+	getAnswer() {
+
+		if (this.state.hideAnswer !== false) {
+			let translation1 = this.state.baseWord.translation1;
+			let translation2 = this.state.baseWord.translation2;
+			let translation3 = this.state.baseWord.translation3;
+			const full_translation1 = female(this.state.baseWord).full_translation1;
+			const full_translation2 = female(this.state.baseWord).full_translation2;
+			const full_translation3 = female(this.state.baseWord).full_translation3;
+
+			if (full_translation1 !== undefined) {
+				translation1 = full_translation1;
+			}
+			if (full_translation2 !== undefined) {
+				translation2 = full_translation2;
+			}
+			if (full_translation3 !== undefined) {
+				translation3 = full_translation3;
+			}
+
+			if (this.state.points >= 2) {
+				this.setState({points: this.state.points - 2});
+			}
+
+			else {
+				this.setState({points: 0});
+			}
+
+			document.getElementById('answer').style.color = 'firebrick';
+
+			let answer = [translation1, translation2, translation3].join(' ').replace('  ', ', ').replace(' ', ', ').trim();
+			this.setState({answer: answer, hideAnswer: false})
+		}
+	}
+
+	keyPress(e) {
+		if (e.key === 'Enter' && e.shiftKey) {
+			this.getNew();
 		}
 		
-
+		else if (e.key === 'Enter') {
+			this.getAnswer();
+		}
 	}
 	
 	render() {
@@ -154,15 +200,6 @@ class App extends Component {
 			word = `${word} / ${baseWord.word2}`;
 		}
 
-		const defaultOptions = {
-			loop: false,
-			autoplay: true,
-			animationData: this.props.animationData,
-			rendererSettings: {
-				preserveAspectRadio: 'xMidYMid slice'
-			}
-		}
-
 		const Animation = styled.div`
 			display: none;
 			position: absolute;
@@ -191,9 +228,9 @@ class App extends Component {
 					<Navigation points={this.state.points} />
 					<Word content={word} />
 					<Picture src={image} word={word} url={`https://pxhere.com/${this.state.language}/photos?q=${baseWord.word1}`} />
-					<Input onChange={this.check} />
-					<AppNavigation change={this.getNew}/>
-					<Answer text={this.state.answer} />
+					<Input onChange={this.check} press={this.keyPress} />
+					<AppNavigation check={this.getAnswer} change={this.getNew} />
+					<Answer hideAnswer={this.state.hideAnswer} text={this.state.answer} />
 					<Animation preview={this.state.great}>
 						<LottieAnimation animationData={greatAnimationData} />
 					</Animation>

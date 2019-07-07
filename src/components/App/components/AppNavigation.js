@@ -26,7 +26,7 @@ class AppNavigation extends Component {
 	render() {
 		return (
 			<AppNavigationElement>
-				<AppNavigationButton onClick={this.props.onClick}>Sprawdź</AppNavigationButton>
+				<AppNavigationButton onClick={this.props.check}>Sprawdź</AppNavigationButton>
 				<AppNavigationButton onClick={this.props.change}>Następny</AppNavigationButton>
 			</AppNavigationElement>
 		);

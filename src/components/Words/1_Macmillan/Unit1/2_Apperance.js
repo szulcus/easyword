@@ -27,7 +27,7 @@ const words2_Apperance = [
 		word1: `fit`,
 		translation1: `sprawny`,
 		translation2: `w dobrej formie`,
-		female: `yes`,
+		female: `t1`,
 		level: `basic`,
 		type: `wygląd zewnętrzny`,
 		image: `https://c.pxhere.com/photos/63/3e/blur_person_lifestyle_summer_male_urban_gym_gymnastics-1375404.jpg!s`,
