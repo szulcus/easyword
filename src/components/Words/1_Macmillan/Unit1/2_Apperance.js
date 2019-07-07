@@ -342,7 +342,8 @@ const words2_Apperance = [
 	},
 	{
 		word1: `receding line`,
-		translation1: `włosy rzednące na skroniach`,
+		translation1: `zakola`,
+		translation2: `włosy rzednące na skroniach`,
 		level: `extended`,
 		type: `włosy`,
 		image: `https://c.pxhere.com/photos/a2/a4/adult_businesman_business_confidence_daylight_facial_expression_fine_looking_leadership-965066.jpg!s`,
@@ -421,6 +422,7 @@ const words2_Apperance = [
 	{
 		word1: `spotty`,
 		translation1: `pryszczaty`,
+		female: `yes`,
 		level: `basic`,
 		type: `cechy szczególne`,
 		image: `https://c.pxhere.com/photos/21/86/dalmatians_dog_animal_head_animal_portrait_dog_breed_black_and_white_dog_head-730892.jpg!s`,

@@ -1,6 +1,9 @@
 function femaleConditions(baseWord) {
 	let female = baseWord.female;
 	let translation1 = baseWord.translation1;
+	if (translation1.includes('(')) {
+		translation1 = translation1.replace(translation1.slice(translation1.indexOf('(')-1, translation1.indexOf(')') + 1), '')
+	}
 	let translation2 = baseWord.translation2;
 	let translation3 = baseWord.translation3;
 	let feminine_translation1 = undefined;
@@ -31,12 +34,12 @@ function femaleConditions(baseWord) {
 			full_translation1 = `${translation1}(a)`;
 			feminine_translation1 = `${translation1.slice(0, -1)}a`;
 		}
-		console.log(full_translation1);
-		console.log(full_translation2);
-		console.log(full_translation3);
-		console.log(feminine_translation1);
-		console.log(feminine_translation2);
-		console.log(feminine_translation3);
+		// console.log(full_translation1);
+		// console.log(full_translation2);
+		// console.log(full_translation3);
+		// console.log(feminine_translation1);
+		// console.log(feminine_translation2);
+		// console.log(feminine_translation3);
 	}
 		// female === `first in t2`|| `second in t2`...
 		else if (female.includes('first') || female.includes('second')) {
@@ -86,12 +89,12 @@ function femaleConditions(baseWord) {
 					}
 				}
 			}
-			console.log(full_translation1);
-			console.log(feminine_translation1);
-			console.log(full_translation2);
-			console.log(feminine_translation2);
-			console.log(full_translation3);
-			console.log(feminine_translation3);
+			// console.log(full_translation1);
+			// console.log(feminine_translation1);
+			// console.log(full_translation2);
+			// console.log(feminine_translation2);
+			// console.log(full_translation3);
+			// console.log(feminine_translation3);
 		}
 		// female === `t1`/`t2`/`t1+t2`...
 		else if (female.indexOf('t') === 0) {
@@ -119,12 +122,12 @@ function femaleConditions(baseWord) {
 				feminine_translation1 = `${translation1.slice(0, -1)}a`;
 				feminine_translation3 = `${translation3.slice(0, -1)}a`;
 			}
-			console.log(full_translation1);
-			console.log(full_translation2);
-			console.log(full_translation3);
-			console.log(feminine_translation1);
-			console.log(feminine_translation2);
-			console.log(feminine_translation3);
+			// console.log(full_translation1);
+			// console.log(full_translation2);
+			// console.log(full_translation3);
+			// console.log(feminine_translation1);
+			// console.log(feminine_translation2);
+			// console.log(feminine_translation3);
 		}
 		// female === `0-czka`/`1-czka`/`2-czka`...
 		else if (female.includes('-')) {
@@ -133,9 +136,9 @@ function femaleConditions(baseWord) {
 				const what = female.substring(female.indexOf('-') + 1);
 				full_translation1 = `${translation1}(${what})`;
 				feminine_translation1 = `${translation1.slice(0, -howMuch)}${what}`;
-				console.log(full_translation1);
-				console.log(feminine_translation1);
-				console.log(what);
+				// console.log(full_translation1);
+				// console.log(feminine_translation1);
+				// console.log(what);
 			}
 			else {
 				if (female.includes('first')) {
@@ -148,7 +151,7 @@ function femaleConditions(baseWord) {
 						full_translation1 = `${translation1.slice(0, translation1.indexOf(' '))}(${what})${translation1.substring(translation1.indexOf(' '))}`;
 						feminine_translation1 = `${translation1.slice(0, translation1.indexOf(' '))}${what}${translation1.substring(translation1.indexOf(' '))}`;
 					}
-					console.log(what);
+					// console.log(what);
 				}
 				else if (female.includes('second')) {
 					const what = female.slice(female.indexOf('-') + 1, female.indexOf(' '));
@@ -160,12 +163,12 @@ function femaleConditions(baseWord) {
 						full_translation2 = `${translation2.slice(0, translation2.indexOf(' '))}(${what})${translation2.substring(translation2.indexOf(' '))}`;
 						feminine_translation2 = `${translation2.slice(0, translation2.indexOf(' '))}${what}${translation2.substring(translation2.indexOf(' '))}`;
 					}
-					console.log(what);
+					// console.log(what);
 				}
-				console.log(full_translation1);
-				console.log(feminine_translation1);
+				// console.log(full_translation1);
+				// console.log(feminine_translation1);
 			}
-			console.log(howMuch);
+			// console.log(howMuch);
 		}
 	}
 	return {

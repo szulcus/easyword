@@ -59,19 +59,36 @@ class App extends Component {
 		const translation1 = similarTranslation(this.state.baseWord.translation1);
 		const translation2 = similarTranslation(this.state.baseWord.translation2);
 		const translation3 = similarTranslation(this.state.baseWord.translation3);
+		const feminine_translation1 = similarTranslation(female(this.state.baseWord).feminine_translation1);
+		const feminine_translation2 = similarTranslation(female(this.state.baseWord).feminine_translation2);
+		const feminine_translation3 = similarTranslation(female(this.state.baseWord).feminine_translation3);
+		const full_translation1 = female(this.state.baseWord).full_translation1;
+		const full_translation2 = female(this.state.baseWord).full_translation2;
+		const full_translation3 = female(this.state.baseWord).full_translation3;
 
-		console.log(female(this.state.baseWord));
-
-
-		console.log(similarTranslation(translation1))
-		console.log(translation1)
-		console.log(userWord);
-		console.log(translation1);
 		console.log(this.state.counter);
-		if (userWord === translation1) {
+
+		console.log(translation1)
+		console.log(translation2)
+		console.log(translation3)
+		console.log(feminine_translation1)
+		console.log(feminine_translation2)
+		console.log(feminine_translation3)
+		console.log(full_translation1)
+		console.log(full_translation2)
+		console.log(full_translation3)
+
+		if (
+			userWord === translation1 ||
+			userWord === translation2 ||
+			userWord === translation3 ||
+			userWord === feminine_translation1 ||
+			userWord === feminine_translation2 ||
+			userWord === feminine_translation3
+			) {
+				console.log('taak!')
 			const target = e.target
-			if (translation1.length > this.state.counter ||
-				1 === 2) {
+			if (translation1.length > this.state.counter) {
 				this.setState({
 					answer: 'Brawo!',
 					great: true,
