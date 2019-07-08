@@ -1,21 +1,22 @@
 {
   "files": {
-    "main.css": "/easy-word/static/css/main.b2c18f15.chunk.css",
-    "main.js": "/easy-word/static/js/main.19a50c18.chunk.js",
-    "main.js.map": "/easy-word/static/js/main.19a50c18.chunk.js.map",
+    "main.css": "/easy-word/static/css/main.77949a58.chunk.css",
+    "main.js": "/easy-word/static/js/main.7583d757.chunk.js",
+    "main.js.map": "/easy-word/static/js/main.7583d757.chunk.js.map",
     "runtime~main.js": "/easy-word/static/js/runtime~main.5c3a33a2.js",
     "runtime~main.js.map": "/easy-word/static/js/runtime~main.5c3a33a2.js.map",
-    "static/js/2.92d695a1.chunk.js": "/easy-word/static/js/2.92d695a1.chunk.js",
-    "static/js/2.92d695a1.chunk.js.map": "/easy-word/static/js/2.92d695a1.chunk.js.map",
+    "static/js/2.57de09b4.chunk.js": "/easy-word/static/js/2.57de09b4.chunk.js",
+    "static/js/2.57de09b4.chunk.js.map": "/easy-word/static/js/2.57de09b4.chunk.js.map",
     "index.html": "/easy-word/index.html",
-    "precache-manifest.41d34483617837c64c8de3ed5605f659.js": "/easy-word/precache-manifest.41d34483617837c64c8de3ed5605f659.js",
+    "precache-manifest.5f724690f8f6773fa66adb52d90c6f39.js": "/easy-word/precache-manifest.5f724690f8f6773fa66adb52d90c6f39.js",
     "service-worker.js": "/easy-word/service-worker.js",
-    "static/css/main.b2c18f15.chunk.css.map": "/easy-word/static/css/main.b2c18f15.chunk.css.map",
+    "static/css/main.77949a58.chunk.css.map": "/easy-word/static/css/main.77949a58.chunk.css.map",
     "static/media/instagram-d.png": "/easy-word/static/media/instagram-d.74b52e9d.png",
     "static/media/instagram-icon.png": "/easy-word/static/media/instagram-icon.c5e01a9e.png",
     "static/media/snapchat-d.png": "/easy-word/static/media/snapchat-d.8a2fabcc.png",
     "static/media/snapchat-icon.png": "/easy-word/static/media/snapchat-icon.ecfbbab3.png",
     "static/media/thinking.png": "/easy-word/static/media/thinking.4a9a84f4.png",
-    "static/media/working.png": "/easy-word/static/media/working.15c5ed81.png"
+    "static/media/working.png": "/easy-word/static/media/working.15c5ed81.png",
+    "static/media/wow.png": "/easy-word/static/media/wow.909d1f30.png"
   }
 }

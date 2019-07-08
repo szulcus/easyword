@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "f36e22f2aa025f5396ad461b4f15e685",
+    "revision": "63f6d05ae35b2e71a2f5620b8b48f102",
     "url": "/easy-word/index.html"
   },
   {
-    "revision": "c519b48cd481e0e27a72",
-    "url": "/easy-word/static/css/main.b2c18f15.chunk.css"
+    "revision": "95726bb43e37378143f6",
+    "url": "/easy-word/static/css/main.77949a58.chunk.css"
   },
   {
-    "revision": "887ad8adf4b0f8c2c6c3",
-    "url": "/easy-word/static/js/2.92d695a1.chunk.js"
+    "revision": "6da322928534009800bf",
+    "url": "/easy-word/static/js/2.57de09b4.chunk.js"
   },
   {
-    "revision": "c519b48cd481e0e27a72",
-    "url": "/easy-word/static/js/main.19a50c18.chunk.js"
+    "revision": "95726bb43e37378143f6",
+    "url": "/easy-word/static/js/main.7583d757.chunk.js"
   },
   {
     "revision": "f73a53ad2ca57ac0a35a",
@@ -42,5 +42,9 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "15c5ed818c5ab36f525e6bb0734fe6f9",
     "url": "/easy-word/static/media/working.15c5ed81.png"
+  },
+  {
+    "revision": "909d1f309e06a7fac892da5600c5bebd",
+    "url": "/easy-word/static/media/wow.909d1f30.png"
   }
 ]);
