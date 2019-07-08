@@ -6,7 +6,7 @@ const words5_FeelingsAndEmotions = [
 		female: `yes`,
 		level: `basic`,
 		type: `uczucia i emocje`,
-		image: `url`,
+		image: `https://c.pxhere.com/images/f6/8e/d097c35d7e2bfa238debc923abf3-1418292.jpg!s`,
 	},
 	{
 		word1: `annoyed`,
@@ -15,21 +15,21 @@ const words5_FeelingsAndEmotions = [
 		female: `yes`,
 		level: `basic`,
 		type: `uczucia i emocje`,
-		image: `url`,
+		image: `https://c.pxhere.com/photos/cb/c6/annoyed_caf_coffee_developer_exhausted_frustrated_git_laptop-915107.jpg!s`,
 	},
 	{
 		word1: `be in a good mood`,
 		translation1: `być w dobrym humorze`,
 		level: `basic`,
 		type: `uczucia i emocje`,
-		image: `url`,
+		image: `https://c.pxhere.com/photos/42/24/singer_karaoke_girl_woman_sing_singing_music_headphones-1249513.jpg!s`,
 	},
 	{
 		word1: `be in a bad mood`,
 		translation1: `być w złym humorze`,
 		level: `basic`,
 		type: `uczucia i emocje`,
-		image: `url`,
+		image: `https://c.pxhere.com/photos/81/57/cat_grumpy_mood_bad_portrait_face_moustache_whiskers-1202442.jpg!s`,
 	},
 	{
 		word1: `bored`,
@@ -37,7 +37,7 @@ const words5_FeelingsAndEmotions = [
 		female: `yes`,
 		level: `basic`,
 		type: `uczucia i emocje`,
-		image: `url`,
+		image: `https://c.pxhere.com/photos/d5/78/book_bored_college_education_female_girl_learn_people-1260704.jpg!s`,
 	},
 	{
 		word1: `cross`,
@@ -46,7 +46,7 @@ const words5_FeelingsAndEmotions = [
 		female: `yes`,
 		level: `basic`,
 		type: `uczucia i emocje`,
-		image: `url`,
+		image: `https://c.pxhere.com/photos/04/53/woman_angry_case_bezel_secretariat_office_communicate_business_woman-851534.jpg!s`,
 	},
 	{
 		word1: `depressed`,

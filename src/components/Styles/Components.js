@@ -81,6 +81,13 @@ const PageLink = styled(Link)`
 	}
 	
 	${props =>
+		props.content &&
+		css`
+			display: contents;
+			color: var(--color-decorative)
+	`};
+
+	${props =>
 		props.center &&
 		css`
 			display: flex;

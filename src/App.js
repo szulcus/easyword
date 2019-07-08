@@ -13,7 +13,7 @@ import OxfordList from './pages/books/3_Oxford/oxford'
 
 import List from './components/List/List'
 
-import NotFoundPage from './pages/404'
+import NotFoundPage from './pages/404/404'
 // STYLED
 import GlobalStyles from './components/Styled/Global/global';
 // FILES

@@ -44,8 +44,12 @@ class App extends Component {
 	}
 
 	getNew() {
-		this.setState({baseWord: getWord(this.props.words)});
-		console.log(this)
+		if (this.state.hideAnswer === true || this.state.answer === 'Brawo!') {
+			this.setState({baseWord: getWord(this.props.words)});
+		}
+		else {
+			alert('Najpierw odpowiedz!')
+		}
 	}
 
 	increment() {
@@ -151,7 +155,7 @@ class App extends Component {
 
 			document.getElementById('answer').style.color = 'firebrick';
 
-			let answer = [translation1, translation2, translation3].join(' ').replace('  ', ', ').replace(' ', ', ').trim();
+			let answer = [translation1, translation2, translation3].join('  ').trim().replace('    ', ', ').replace('  ', ', ').trim();
 			this.setState({answer: answer, hideAnswer: false})
 		}
 	}
