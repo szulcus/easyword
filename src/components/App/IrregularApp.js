@@ -40,19 +40,19 @@ class App extends Component {
 			thirdForm: undefined,
 			val: ''
 		};
-		this.increment = this.increment.bind(this);
-		this.check = this.check.bind(this);
-		this.getNew = this.getNew.bind(this);
-		this.getAnswer = this.getAnswer.bind(this);
-		this.keyPress = this.keyPress.bind(this);
-		this.checkFirstVerbForm = this.checkFirstVerbForm.bind(this);
-		this.checkSecondVerbForm = this.checkSecondVerbForm.bind(this);
-		this.checkThirdVerbForm = this.checkThirdVerbForm.bind(this);
-		this.focus = this.focus.bind(this);
-		this.getState = this.getState.bind(this);
+		// this.increment = this.increment.bind(this);
+		// this.check = this.check.bind(this);
+		// this.getNew = this.getNew.bind(this);
+		// this.getAnswer = this.getAnswer.bind(this);
+		// this.keyPress = this.keyPress.bind(this);
+		// this.checkFirstVerbForm = this.checkFirstVerbForm.bind(this);
+		// this.checkSecondVerbForm = this.checkSecondVerbForm.bind(this);
+		// this.checkThirdVerbForm = this.checkThirdVerbForm.bind(this);
+		// this.focus = this.focus.bind(this);
+		// this.getState = this.getState.bind(this);
 	}
 
-	getNew() {
+	getNew = () => {
 		if (this.state.hideAnswer === true || this.state.answer === 'Brawo!') {
 			this.setState({baseWord: getWord(this.props.words)});
 		}
@@ -61,11 +61,11 @@ class App extends Component {
 		}
 	}
 
-	increment() {
+	increment = () => {
 		this.setState({points: this.state.points + 1});
 	}
 
-	check(e, verbForm) {
+	check = (e, verbForm) => {
 		console.log(verbForm)
 
 		this.setState({
@@ -115,15 +115,15 @@ class App extends Component {
 		return false
 	}
 
-	checkFirstVerbForm(e) {
+	checkFirstVerbForm = (e) => {
 		this.check(e, this.state.baseWord.firstForm)
 	}
 
-	checkSecondVerbForm(e) {
+	checkSecondVerbForm = (e) => {
 		this.check(e, this.state.baseWord.secondForm)
 	}
 
-	checkThirdVerbForm(e) {
+	checkThirdVerbForm = (e) => {
 		this.check(e, this.state.baseWord.thirdForm)
 		setTimeout(function () {
 			this.getNew();
@@ -131,24 +131,24 @@ class App extends Component {
 	}
 
 	getState = (e) => {
-		console.log(e.target.value)
-		// this.setState(
+		const value = e.target.value;
+		this.setState(
 
-		// 	() => {
-		// 		return {
-		// 			val: e.target.value
-		// 		};
-		// 	},
+			() => {
+				return {
+					val: value
+				};
+			},
 			
-		// 	() => {
-		// 		console.log(this.state.val);
-		// 	}
+			() => {
+				console.log(this.state.val);
+			}
 			
-		// 	);
+			);
 		// 	// console.log('test')
 	}
 
-	getAnswer() {
+	getAnswer = () => {
 
 		if (this.state.hideAnswer !== false) {
 			let translation1 = this.state.baseWord.translation1;
@@ -183,7 +183,7 @@ class App extends Component {
 		}
 	}
 
-	keyPress(e) {
+	keyPress = (e) => {
 		if (e.key === 'Enter' && e.shiftKey) {
 			this.getNew();
 		}
@@ -193,14 +193,14 @@ class App extends Component {
 		}
 	}
 
-	setFirstForm(e) {
+	setFirstForm = (e) => {
 		// this.setState({counter: this.state.counter + 1});
 		console.log(e.target.value);
 		const user = 'jakub';
 		this.check(e, user);
 	}
 	
-	focus() {
+	focus = () => {
 		// let number = parseInt(e.target.id.substring(e.target.id.length - 1));
 		
 		// if (e.key === 'Enter') {
