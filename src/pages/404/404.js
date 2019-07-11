@@ -1,7 +1,6 @@
 // BASIC
 import React, { Component } from 'react'
 import styled, { css } from 'styled-components'
-import { Link } from 'react-router-dom'
 // STYLED
 import Global from '../../components/Styles/Global'
 import { Wrapper, PageLink } from '../../components/Styles/Components'
@@ -75,10 +74,6 @@ const SocialMediaWrapper = styled.div`
 `
 
 class Work extends Component {
-	constructor(props) {
-		super(props);
-	}
-
 	render() {
 		return (
 			<>

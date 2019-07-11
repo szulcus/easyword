@@ -1,8 +1,8 @@
 const words1_FromBook = [
 	{
 		firstForm: `be`,
-		twiceForm: `was`,
-		twiceForm2: `were`,
+		secondForm: `was`,
+		secondForm2: `were`,
 		thirdForm: `been`,
 		translation1: `być`,
 		level: `podstawa (z podręcznika)`,
@@ -11,7 +11,7 @@ const words1_FromBook = [
 	},
 	{
 		firstForm: `become`,
-		twiceForm: `became`,
+		secondForm: `became`,
 		thirdForm: `become`,
 		translation1: `stawać się`,
 		level: `podstawa (z podręcznika)`,
@@ -20,7 +20,7 @@ const words1_FromBook = [
 	},
 	{
 		firstForm: `begin`,
-		twiceForm: `began`,
+		secondForm: `began`,
 		thirdForm: `begun`,
 		translation1: `zaczynać (się)`,
 		level: `podstawa (z podręcznika)`,
@@ -29,7 +29,7 @@ const words1_FromBook = [
 	},
 	{
 		firstForm: `bend`,
-		twiceForm: `bent`,
+		secondForm: `bent`,
 		thirdForm: `bent`,
 		translation1: `zginać`,
 		level: `podstawa (z podręcznika)`,
@@ -38,7 +38,7 @@ const words1_FromBook = [
 	},
 	{
 		firstForm: `bite`,
-		twiceForm: `bit`,
+		secondForm: `bit`,
 		thirdForm: `bitten`,
 		translation1: `gryźć`,
 		level: `podstawa (z podręcznika)`,
@@ -47,7 +47,7 @@ const words1_FromBook = [
 	},
 	{
 		firstForm: `blow`,
-		twiceForm: `blew`,
+		secondForm: `blew`,
 		thirdForm: `blown`,
 		translation1: `dmuchać`,
 		level: `podstawa (z podręcznika)`,
@@ -56,7 +56,7 @@ const words1_FromBook = [
 	},
 	{
 		firstForm: `break`,
-		twiceForm: `broke`,
+		secondForm: `broke`,
 		thirdForm: `broken`,
 		translation1: `łamać`,
 		translation2: `rozbić`,
@@ -66,7 +66,7 @@ const words1_FromBook = [
 	},
 	{
 		firstForm: `bring`,
-		twiceForm: `brought`,
+		secondForm: `brought`,
 		thirdForm: `brought`,
 		translation1: `przynosić`,
 		level: `podstawa (z podręcznika)`,
@@ -75,7 +75,7 @@ const words1_FromBook = [
 	},
 	{
 		firstForm: `build`,
-		twiceForm: `built`,
+		secondForm: `built`,
 		thirdForm: `built`,
 		translation1: `budować`,
 		level: `podstawa (z podręcznika)`,
@@ -84,8 +84,8 @@ const words1_FromBook = [
 	},
 	{
 		firstForm: `burn`,
-		twiceForm: `burned`,
-		twiceForm2: `burnt`,
+		secondForm: `burned`,
+		secondForm2: `burnt`,
 		thirdForm: `burned`,
 		thirdForm2: `burnt`,
 		translation1: `palić (się)`,
@@ -95,7 +95,7 @@ const words1_FromBook = [
 	},
 	{
 		firstForm: `buy`,
-		twiceForm: `bought`,
+		secondForm: `bought`,
 		thirdForm: `bought`,
 		translation1: `kupować`,
 		level: `podstawa (z podręcznika)`,
@@ -104,7 +104,7 @@ const words1_FromBook = [
 	},
 	{
 		firstForm: `can`,
-		twiceForm: `could`,
+		secondForm: `could`,
 		thirdForm: `been able to`,
 		translation1: `móc`,
 		translation2: `potrafić`,
@@ -114,7 +114,7 @@ const words1_FromBook = [
 	},
 	{
 		firstForm: `catch`,
-		twiceForm: `caught`,
+		secondForm: `caught`,
 		thirdForm: `caught`,
 		translation1: `łapać`,
 		level: `podstawa (z podręcznika)`,
@@ -123,7 +123,7 @@ const words1_FromBook = [
 	},
 	{
 		firstForm: `choose`,
-		twiceForm: `chose`,
+		secondForm: `chose`,
 		thirdForm: `chosen`,
 		translation1: `wybierać`,
 		level: `podstawa (z podręcznika)`,
@@ -132,7 +132,7 @@ const words1_FromBook = [
 	},
 	{
 		firstForm: `come`,
-		twiceForm: `came`,
+		secondForm: `came`,
 		thirdForm: `come`,
 		translation1: `przychodzić`,
 		translation2: `przybywać`,
@@ -142,7 +142,7 @@ const words1_FromBook = [
 	},
 	{
 		firstForm: `cost`,
-		twiceForm: `cost`,
+		secondForm: `cost`,
 		thirdForm: `cost`,
 		translation1: `kosztować`,
 		level: `podstawa (z podręcznika)`,
@@ -151,7 +151,7 @@ const words1_FromBook = [
 	},
 	{
 		firstForm: `cut`,
-		twiceForm: `cut`,
+		secondForm: `cut`,
 		thirdForm: `cut`,
 		translation1: `ciąć`,
 		level: `podstawa (z podręcznika)`,
@@ -160,7 +160,7 @@ const words1_FromBook = [
 	},
 	{
 		firstForm: `do`,
-		twiceForm: `did`,
+		secondForm: `did`,
 		thirdForm: `done`,
 		translation1: `robić`,
 		level: `podstawa (z podręcznika)`,
@@ -169,7 +169,7 @@ const words1_FromBook = [
 	},
 	{
 		firstForm: `draw`,
-		twiceForm: `drew`,
+		secondForm: `drew`,
 		thirdForm: `drawn`,
 		translation1: `rysować`,
 		level: `podstawa (z podręcznika)`,
@@ -178,7 +178,7 @@ const words1_FromBook = [
 	},
 	{
 		firstForm: `drink`,
-		twiceForm: `drank`,
+		secondForm: `drank`,
 		thirdForm: `drunk`,
 		translation1: `pić`,
 		level: `podstawa (z podręcznika)`,
@@ -187,7 +187,7 @@ const words1_FromBook = [
 	},
 	{
 		firstForm: `drive`,
-		twiceForm: `drove`,
+		secondForm: `drove`,
 		thirdForm: `driven`,
 		translation1: `jechać`,
 		translation2: `prowadzić samochód`,
@@ -197,7 +197,7 @@ const words1_FromBook = [
 	},
 	{
 		firstForm: `eat`,
-		twiceForm: `ate`,
+		secondForm: `ate`,
 		thirdForm: `eaten`,
 		translation1: `jeść`,
 		level: `podstawa (z podręcznika)`,
@@ -206,7 +206,7 @@ const words1_FromBook = [
 	},
 	{
 		firstForm: `fall`,
-		twiceForm: `fell`,
+		secondForm: `fell`,
 		thirdForm: `fallen`,
 		translation1: `upadać`,
 		level: `podstawa (z podręcznika)`,
@@ -215,7 +215,7 @@ const words1_FromBook = [
 	},
 	{
 		firstForm: `feel`,
-		twiceForm: `felt`,
+		secondForm: `felt`,
 		thirdForm: `felt`,
 		translation1: `czuć`,
 		level: `podstawa (z podręcznika)`,
@@ -224,7 +224,7 @@ const words1_FromBook = [
 	},
 	{
 		firstForm: `fight`,
-		twiceForm: `fought`,
+		secondForm: `fought`,
 		thirdForm: `fought`,
 		translation1: `walczyć`,
 		level: `podstawa (z podręcznika)`,
@@ -233,7 +233,7 @@ const words1_FromBook = [
 	},
 	{
 		firstForm: `find`,
-		twiceForm: `found`,
+		secondForm: `found`,
 		thirdForm: `found`,
 		translation1: `znaleźć`,
 		level: `podstawa (z podręcznika)`,
@@ -242,7 +242,7 @@ const words1_FromBook = [
 	},
 	{
 		firstForm: `fly`,
-		twiceForm: `flew`,
+		secondForm: `flew`,
 		thirdForm: `flown`,
 		translation1: `latać`,
 		level: `podstawa (z podręcznika)`,
@@ -251,7 +251,7 @@ const words1_FromBook = [
 	},
 	{
 		firstForm: `forget`,
-		twiceForm: `forgot`,
+		secondForm: `forgot`,
 		thirdForm: `forgotten`,
 		translation1: `zapomnieć`,
 		level: `podstawa (z podręcznika)`,
@@ -260,7 +260,7 @@ const words1_FromBook = [
 	},
 	{
 		firstForm: `get`,
-		twiceForm: `got`,
+		secondForm: `got`,
 		thirdForm: `got`,
 		translation1: `dostawać`,
 		level: `podstawa (z podręcznika)`,
@@ -269,7 +269,7 @@ const words1_FromBook = [
 	},
 	{
 		firstForm: `go`,
-		twiceForm: `went`,
+		secondForm: `went`,
 		thirdForm: `gone`,
 		translation1: `iść`,
 		level: `podstawa (z podręcznika)`,
@@ -278,7 +278,7 @@ const words1_FromBook = [
 	},
 	{
 		firstForm: `grow`,
-		twiceForm: `grew`,
+		secondForm: `grew`,
 		thirdForm: `grown`,
 		translation1: `rosnąć`,
 		level: `podstawa (z podręcznika)`,
@@ -287,7 +287,7 @@ const words1_FromBook = [
 	},
 	{
 		firstForm: `hang`,
-		twiceForm: `hung`,
+		secondForm: `hung`,
 		thirdForm: `hung`,
 		translation1: `wieszać`,
 		level: `podstawa (z podręcznika)`,
@@ -296,7 +296,7 @@ const words1_FromBook = [
 	},
 	{
 		firstForm: `have`,
-		twiceForm: `had`,
+		secondForm: `had`,
 		thirdForm: `had`,
 		translation1: `mieć`,
 		level: `podstawa (z podręcznika)`,
@@ -305,7 +305,7 @@ const words1_FromBook = [
 	},
 	{
 		firstForm: `hear`,
-		twiceForm: `heard`,
+		secondForm: `heard`,
 		thirdForm: `heard`,
 		translation1: `słyszeć`,
 		level: `podstawa (z podręcznika)`,
@@ -314,7 +314,7 @@ const words1_FromBook = [
 	},
 	{
 		firstForm: `hide`,
-		twiceForm: `hid`,
+		secondForm: `hid`,
 		thirdForm: `hidden`,
 		translation1: `ukrywać (się)`,
 		level: `podstawa (z podręcznika)`,
@@ -323,7 +323,7 @@ const words1_FromBook = [
 	},
 	{
 		firstForm: `hit`,
-		twiceForm: `hit`,
+		secondForm: `hit`,
 		thirdForm: `hit`,
 		translation1: `uderzać`,
 		level: `podstawa (z podręcznika)`,
@@ -332,7 +332,7 @@ const words1_FromBook = [
 	},
 	{
 		firstForm: `keep`,
-		twiceForm: `kept`,
+		secondForm: `kept`,
 		thirdForm: `kept`,
 		translation1: `trzymać`,
 		level: `podstawa (z podręcznika)`,
@@ -341,7 +341,7 @@ const words1_FromBook = [
 	},
 	{
 		firstForm: `know`,
-		twiceForm: `knew`,
+		secondForm: `knew`,
 		thirdForm: `known`,
 		translation1: `wiedzieć`,
 		translation2: `znać`,
@@ -351,7 +351,7 @@ const words1_FromBook = [
 	},
 	{
 		firstForm: `lay`,
-		twiceForm: `laid`,
+		secondForm: `laid`,
 		thirdForm: `laid`,
 		translation1: `kłaść`,
 		level: `podstawa (z podręcznika)`,
@@ -360,7 +360,7 @@ const words1_FromBook = [
 	},
 	{
 		firstForm: `lead`,
-		twiceForm: `led`,
+		secondForm: `led`,
 		thirdForm: `led`,
 		translation1: `prowadzić`,
 		level: `podstawa (z podręcznika)`,
@@ -369,8 +369,8 @@ const words1_FromBook = [
 	},
 	{
 		firstForm: `learn`,
-		twiceForm: `learned`,
-		twiceForm2: `learnt`,
+		secondForm: `learned`,
+		secondForm2: `learnt`,
 		thirdForm: `learned`,
 		thirdForm2: `learnt`,
 		translation1: `uczyć się`,
@@ -380,7 +380,7 @@ const words1_FromBook = [
 	},
 	{
 		firstForm: `leave`,
-		twiceForm: `left;`,
+		secondForm: `left;`,
 		thirdForm: `left;`,
 		translation1: `opuszczać`,
 		translation2: `wyjeżdżać`,
@@ -390,7 +390,7 @@ const words1_FromBook = [
 	},
 	{
         firstForm: `lend`,
-        twiceForm: `lent`,
+        secondForm: `lent`,
         thirdForm: `lent`,
         translation1: `pożyczyć`,
         level: `podstawa (z podręcznika)`,
@@ -399,7 +399,7 @@ const words1_FromBook = [
     },
     {
         firstForm: `lose`,
-        twiceForm: `lost`,
+        secondForm: `lost`,
         thirdForm: `lost`,
         translation1: `gubić`,
         translation2: `zgubić`,
@@ -409,7 +409,7 @@ const words1_FromBook = [
     },
     {
         firstForm: `make`,
-        twiceForm: `made`,
+        secondForm: `made`,
         thirdForm: `made`,
         translation1: `robić`,
         level: `podstawa (z podręcznika)`,
@@ -418,7 +418,7 @@ const words1_FromBook = [
     },
     {
         firstForm: `mean`,
-        twiceForm: `meant`,
+        secondForm: `meant`,
         thirdForm: `meant`,
         translation1: `znaczyć`,
         translation2: `mieć na myśli`,
@@ -428,7 +428,7 @@ const words1_FromBook = [
     },
     {
         firstForm: `meet`,
-        twiceForm: `met`,
+        secondForm: `met`,
         thirdForm: `met`,
         translation1: `spotykać`,
         translation2: `poznawać`,
@@ -438,7 +438,7 @@ const words1_FromBook = [
     },
     {
         firstForm: `overcome`,
-        twiceForm: `overcame`,
+        secondForm: `overcame`,
         thirdForm: `overcome`,
         translation1: `przezwyciężać`,
         level: `podstawa (z podręcznika)`,
@@ -447,7 +447,7 @@ const words1_FromBook = [
     },
     {
         firstForm: `pay`,
-        twiceForm: `paid`,
+        secondForm: `paid`,
         thirdForm: `paid`,
         translation1: `płacić`,
         level: `podstawa (z podręcznika)`,
@@ -456,7 +456,7 @@ const words1_FromBook = [
     },
     {
         firstForm: `put`,
-        twiceForm: `put`,
+        secondForm: `put`,
         thirdForm: `put`,
         translation1: `kłaść`,
         translation2: `położyć`,
@@ -466,7 +466,7 @@ const words1_FromBook = [
     },
     {
         firstForm: `read`,
-        twiceForm: `read`,
+        secondForm: `read`,
         thirdForm: `read`,
         translation1: `czytać`,
         level: `podstawa (z podręcznika)`,
@@ -475,7 +475,7 @@ const words1_FromBook = [
     },
     {
         firstForm: `ride`,
-        twiceForm: `rode`,
+        secondForm: `rode`,
         thirdForm: `ridden`,
         translation1: `jeździć`,
         level: `podstawa (z podręcznika)`,
@@ -484,7 +484,7 @@ const words1_FromBook = [
     },
     {
         firstForm: `ring`,
-        twiceForm: `rang`,
+        secondForm: `rang`,
         thirdForm: `rung`,
         translation1: `dzwonić`,
         level: `podstawa (z podręcznika)`,
@@ -493,7 +493,7 @@ const words1_FromBook = [
     },
     {
         firstForm: `run`,
-        twiceForm: `ran`,
+        secondForm: `ran`,
         thirdForm: `run`,
         translation1: `biec`,
         level: `podstawa (z podręcznika)`,
@@ -502,7 +502,7 @@ const words1_FromBook = [
     },
     {
         firstForm: `say`,
-        twiceForm: `said`,
+        secondForm: `said`,
         thirdForm: `said`,
         translation1: `mówić`,
         translation2: `powiedzieć`,
@@ -512,7 +512,7 @@ const words1_FromBook = [
     },
     {
         firstForm: `see`,
-        twiceForm: `saw`,
+        secondForm: `saw`,
         thirdForm: `seen`,
         translation1: `widzieć`,
         translation2: `zobaczyć`,
@@ -522,7 +522,7 @@ const words1_FromBook = [
     },
     {
         firstForm: `sell`,
-        twiceForm: `sold`,
+        secondForm: `sold`,
         thirdForm: `sold`,
         translation1: `sprzedać`,
         level: `podstawa (z podręcznika)`,
@@ -531,7 +531,7 @@ const words1_FromBook = [
     },
     {
         firstForm: `send`,
-        twiceForm: `sent`,
+        secondForm: `sent`,
         thirdForm: `sent`,
         translation1: `wysyłać`,
         level: `podstawa (z podręcznika)`,
@@ -540,7 +540,7 @@ const words1_FromBook = [
     },
     {
         firstForm: `set`,
-        twiceForm: `set`,
+        secondForm: `set`,
         thirdForm: `set`,
         translation1: `umieszczać`,
         translation2: `zachodzić (coś)`,
@@ -550,7 +550,7 @@ const words1_FromBook = [
     },
     {
         firstForm: `shake`,
-        twiceForm: `shook`,
+        secondForm: `shook`,
         thirdForm: `shook`,
         translation1: `potrząsnąć`,
         level: `podstawa (z podręcznika)`,
@@ -559,7 +559,7 @@ const words1_FromBook = [
     },
     {
         firstForm: `shine`,
-        twiceForm: `shone`,
+        secondForm: `shone`,
         thirdForm: `shone`,
         translation1: `świecić`,
         level: `podstawa (z podręcznika)`,
@@ -568,7 +568,7 @@ const words1_FromBook = [
     },
     {
         firstForm: `shoot`,
-        twiceForm: `shot`,
+        secondForm: `shot`,
         thirdForm: `shot`,
         translation1: `strzelać`,
         level: `podstawa (z podręcznika)`,
@@ -577,7 +577,7 @@ const words1_FromBook = [
     },
     {
         firstForm: `show`,
-        twiceForm: `showed`,
+        secondForm: `showed`,
         thirdForm: `shown`,
         translation1: `pokazać`,
         level: `podstawa (z podręcznika)`,
@@ -586,7 +586,7 @@ const words1_FromBook = [
     },
     {
         firstForm: `shut`,
-        twiceForm: `shut`,
+        secondForm: `shut`,
         thirdForm: `shut`,
         translation1: `zamykać`,
         level: `podstawa (z podręcznika)`,
@@ -595,7 +595,7 @@ const words1_FromBook = [
     },
     {
         firstForm: `sing`,
-        twiceForm: `sang`,
+        secondForm: `sang`,
         thirdForm: `sung`,
         translation1: `śpiewać`,
         level: `podstawa (z podręcznika)`,
@@ -604,7 +604,7 @@ const words1_FromBook = [
     },
     {
         firstForm: `sink`,
-        twiceForm: `sank`,
+        secondForm: `sank`,
         thirdForm: `sunk`,
         translation1: `tonąć`,
         level: `podstawa (z podręcznika)`,
@@ -613,7 +613,7 @@ const words1_FromBook = [
     },
     {
         firstForm: `sit`,
-        twiceForm: `sat`,
+        secondForm: `sat`,
         thirdForm: `sat`,
         translation1: `siedzieć`,
         level: `podstawa (z podręcznika)`,
@@ -622,7 +622,7 @@ const words1_FromBook = [
     },
     {
         firstForm: `sleep`,
-        twiceForm: `slept`,
+        secondForm: `slept`,
         thirdForm: `slept`,
         translation1: `spać`,
         level: `podstawa (z podręcznika)`,
@@ -631,8 +631,8 @@ const words1_FromBook = [
     },
     {
         firstForm: `smell`,
-        twiceForm: `smelled`,
-        twiceForm2: `smelt`,
+        secondForm: `smelled`,
+        secondForm2: `smelt`,
         thirdForm: `smelled`,
         thirdForm2: `smelt`,
         translation1: `wąchać`,
@@ -642,7 +642,7 @@ const words1_FromBook = [
     },
     {
         firstForm: `speak`,
-        twiceForm: `spoke`,
+        secondForm: `spoke`,
         thirdForm: `spoken`,
         translation1: `mówić`,
         level: `podstawa (z podręcznika)`,
@@ -651,8 +651,8 @@ const words1_FromBook = [
     },
     {
         firstForm: `spell`,
-        twiceForm: `spelled`,
-        twiceForm2: `spelt`,
+        secondForm: `spelled`,
+        secondForm2: `spelt`,
         thirdForm: `spelled`,
         thirdForm2: `spelt`,
         translation1: `literować`,
@@ -662,7 +662,7 @@ const words1_FromBook = [
     },
     {
         firstForm: `spend`,
-        twiceForm: `spent`,
+        secondForm: `spent`,
         thirdForm: `spent`,
         translation1: `spędzać`,
         translation2: `wydawać`,
@@ -672,8 +672,8 @@ const words1_FromBook = [
     },
     {
         firstForm: `spill`,
-        twiceForm: `spilled`,
-        twiceForm2: `spilt`,
+        secondForm: `spilled`,
+        secondForm2: `spilt`,
         thirdForm: `spilled`,
         thirdForm2: `spilt`,
         translation1: `rozlewać`,
@@ -683,7 +683,7 @@ const words1_FromBook = [
     },
     {
         firstForm: `stand`,
-        twiceForm: `stood`,
+        secondForm: `stood`,
         thirdForm: `stood`,
         translation1: `stać`,
         level: `podstawa (z podręcznika)`,
@@ -692,7 +692,7 @@ const words1_FromBook = [
     },
     {
         firstForm: `steal`,
-        twiceForm: `stole`,
+        secondForm: `stole`,
         thirdForm: `stolen`,
         translation1: `kraść`,
         level: `podstawa (z podręcznika)`,
@@ -701,7 +701,7 @@ const words1_FromBook = [
     },
     {
         firstForm: `swim`,
-        twiceForm: `swam`,
+        secondForm: `swam`,
         thirdForm: `swum`,
         translation1: `pływać`,
         level: `podstawa (z podręcznika)`,
@@ -710,7 +710,7 @@ const words1_FromBook = [
     },
     {
         firstForm: `take`,
-        twiceForm: `took`,
+        secondForm: `took`,
         thirdForm: `taken`,
         translation1: `brać`,
         level: `podstawa (z podręcznika)`,
@@ -719,7 +719,7 @@ const words1_FromBook = [
     },
     {
         firstForm: `teach`,
-        twiceForm: `taught`,
+        secondForm: `taught`,
         thirdForm: `taught`,
         translation1: `uczyć (kogoś)`,
         level: `podstawa (z podręcznika)`,
@@ -728,7 +728,7 @@ const words1_FromBook = [
     },
     {
         firstForm: `tell`,
-        twiceForm: `told`,
+        secondForm: `told`,
         thirdForm: `told`,
         translation1: `powiedzieć`,
         level: `podstawa (z podręcznika)`,
@@ -737,7 +737,7 @@ const words1_FromBook = [
     },
     {
         firstForm: `think`,
-        twiceForm: `thought`,
+        secondForm: `thought`,
         thirdForm: `thought`,
         translation1: `sądzić`,
         translation2: `myśleć`,
@@ -747,7 +747,7 @@ const words1_FromBook = [
     },
     {
         firstForm: `throw`,
-        twiceForm: `threw`,
+        secondForm: `threw`,
         thirdForm: `thrown`,
         translation1: `rzucać`,
         level: `podstawa (z podręcznika)`,
@@ -756,7 +756,7 @@ const words1_FromBook = [
     },
     {
         firstForm: `understand`,
-        twiceForm: `understood`,
+        secondForm: `understood`,
         thirdForm: `understood`,
         translation1: `rozumieć`,
         level: `podstawa (z podręcznika)`,
@@ -765,7 +765,7 @@ const words1_FromBook = [
     },
     {
         firstForm: `wake`,
-        twiceForm: `woke`,
+        secondForm: `woke`,
         thirdForm: `woken`,
         translation1: `budzić`,
         level: `podstawa (z podręcznika)`,
@@ -774,7 +774,7 @@ const words1_FromBook = [
     },
     {
         firstForm: `wear`,
-        twiceForm: `wore`,
+        secondForm: `wore`,
         thirdForm: `worn`,
         translation1: `nosić (na sobie)`,
         level: `podstawa (z podręcznika)`,
@@ -783,7 +783,7 @@ const words1_FromBook = [
     },
     {
         firstForm: `win`,
-        twiceForm: `won`,
+        secondForm: `won`,
         thirdForm: `won`,
         translation1: `wygrywać`,
         level: `podstawa (z podręcznika)`,
@@ -792,7 +792,7 @@ const words1_FromBook = [
     },
     {
         firstForm: `write`,
-        twiceForm: `wrote`,
+        secondForm: `wrote`,
         thirdForm: `written`,
         translation1: `pisać`,
         level: `podstawa (z podręcznika)`,
@@ -801,7 +801,7 @@ const words1_FromBook = [
     },
 	{
         firstForm: `test`,
-        twiceForm: `test2`,
+        secondForm: `test2`,
         thirdForm: `test3`,
         translation1: `tłumaczenie`,
 	level: `podstawa (z podręcznika)`,

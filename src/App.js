@@ -2,16 +2,15 @@
 import React, {Component} from 'react';
 import { HashRouter as Router, Switch, Route} from 'react-router-dom';
 // PAGES
-import AppPage from './components/App/App'
+import AppPage from './components/App/WritingApp'
+import IrregularAppPage from './components/App/IrregularApp'
 import WorkPage from './components/Work/Work'
 
 import MainPage from './pages/index'
 
 import MacmillanList from './components/List/MacmillanList'
 import WSiPList from './components/List/WSiPList'
-import OxfordList from './pages/books/3_Oxford/oxford'
-
-import List from './components/List/List'
+// import OxfordList from './pages/books/3_Oxford/oxford'
 
 import NotFoundPage from './pages/404/404'
 // STYLED
@@ -64,6 +63,9 @@ import GlobalStyles from './components/Styled/Global/global';
 				import b2_e2_words6 from './components/Words/2_WSiP/Unit2/6_Kolory'
 				import b2_e2_words7 from './components/Words/2_WSiP/Unit2/7_Przyimki'
 				import b2_e2_words8 from './components/Words/2_WSiP/Unit2/8_Przymiotniki'
+			// Oxford
+				import b3_i1 from './components/Words/3_Oxford/Irregular_Verbs/1_FromBook'
+				import b3_i2 from './components/Words/3_Oxford/Irregular_Verbs/2_FromApp'
 		// IMAGES
 		import working from './images/working.png'
 		import thinking from './images/thinking.png'
@@ -768,12 +770,20 @@ class App extends Component {
 				<Route path="/test" render={(props) =>
 					<AppPage
 						{...props}
-						words={[].concat(testWords)}
+						words={testWords}
 						base_language="en"
 						translated_language="pl"
 					/>
 				}/>
-				<Route path="/list" component={List}/>
+
+				<Route path="/en" render={(props) =>
+					<IrregularAppPage
+						{...props}
+						words={[].concat(b3_i1, b3_i2)}
+						base_language="en"
+						translated_language="pl"
+					/>
+				}/>
 
 				<Route component={NotFoundPage}/>
 			</Switch>

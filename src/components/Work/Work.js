@@ -73,10 +73,6 @@ const SocialMediaWrapper = styled.div`
 `
 
 class Work extends Component {
-	constructor(props) {
-		super(props);
-	}
-
 	render() {
 		return (
 			<>

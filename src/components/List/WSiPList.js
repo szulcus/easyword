@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import { library } from '@fortawesome/fontawesome-svg-core'
 // STYLES
 import Global from '../Styles/Global'
-import { Wrapper, PageLink, Icon } from '../Styles/Components'
+import { Wrapper } from '../Styles/Components'
 // COMPONENTS
 import Book from './components/Book'
 import Header from './components/ListElement/Header'
