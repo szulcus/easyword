@@ -804,7 +804,7 @@ const words1_FromBook = [
         secondForm: `test2`,
         thirdForm: `test3`,
         translation1: `tłumaczenie`,
-	level: `podstawa (z podręcznika)`,
+	    level: `podstawa (z podręcznika)`,
         type: `basic`,
         image: `url`,
     }

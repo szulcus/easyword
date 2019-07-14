@@ -35,21 +35,10 @@ class App extends Component {
 			good: false,
 			great: false,
 			counter: 0,
-			firstForm: undefined,
-			secondForm: undefined,
-			thirdForm: undefined,
-			val: ''
+			form1: '',
+			form2: '',
+			form3: ''
 		};
-		// this.increment = this.increment.bind(this);
-		// this.check = this.check.bind(this);
-		// this.getNew = this.getNew.bind(this);
-		// this.getAnswer = this.getAnswer.bind(this);
-		// this.keyPress = this.keyPress.bind(this);
-		// this.checkFirstVerbForm = this.checkFirstVerbForm.bind(this);
-		// this.checkSecondVerbForm = this.checkSecondVerbForm.bind(this);
-		// this.checkThirdVerbForm = this.checkThirdVerbForm.bind(this);
-		// this.focus = this.focus.bind(this);
-		// this.getState = this.getState.bind(this);
 	}
 
 	getNew = () => {
@@ -65,17 +54,21 @@ class App extends Component {
 		this.setState({points: this.state.points + 1});
 	}
 
-	check = (e, verbForm) => {
-		console.log(verbForm)
-
+	check = () => {
+		console.log(this.state.baseWord);
+		console.log(this.state.form1);
 		this.setState({
 			counter: this.state.counter + 1
 		});
 
-		let userWord = e.target.value.toLowerCase().trim();
+		let form1 = this.state.baseWord.firstForm.toLowerCase().trim();
+		let form2 = this.state.baseWord.secondForm.toLowerCase().trim();
+		let form3 = this.state.baseWord.thirdForm.toLowerCase().trim();
 
 		if (
-			userWord === verbForm
+			this.state.form1 === form1 ||
+			this.state.form2 === form2 ||
+			this.state.form3 === form3
 			) {
 			document.getElementById('answer').style.color = 'var(--color-decorative)';
 			this.setState({
@@ -83,68 +76,57 @@ class App extends Component {
 				hideAnswer: false,
 				counter: 0
 			});
-			if (userWord.length > this.state.counter && this.state.hideAnswer === true) {
+			if (this.state.form1 === form1 && this.state.hideAnswer === true) {
 				this.setState({
 					great: true,
 					points: this.state.points + 1
 				});
-				setTimeout(function () {
+				setTimeout(() => {
 					this.setState({
 						hideAnswer: true,
 						great: false
 					});
-				}.bind(this), 1000)
+				}, 1000)
 			}
-			else {
-				this.setState({
-					good: true,
-					points: this.state.points + 0.5
-				});
-				setTimeout(function () {
-					this.setState({
-						hideAnswer: true,
-						good: false
-					});
-				}.bind(this), 1000)
-			}
-			this.setState({
-				good: true,
-				points: this.state.points + 0.5
-			});
+			// else {
+			// 	this.setState({
+			// 		good: true,
+			// 		points: this.state.points + 0.5
+			// 	});
+			// 	setTimeout(function () {
+			// 		this.setState({
+			// 			hideAnswer: true,
+			// 			good: false
+			// 		});
+			// 	}.bind(this), 1000)
+			// }
+			// this.setState({
+			// 	good: true,
+			// 	points: this.state.points + 0.5
+			// });
 		}
 		return false
 	}
 
-	checkFirstVerbForm = (e) => {
-		this.check(e, this.state.baseWord.firstForm)
-	}
-
-	checkSecondVerbForm = (e) => {
-		this.check(e, this.state.baseWord.secondForm)
-	}
-
-	checkThirdVerbForm = (e) => {
-		this.check(e, this.state.baseWord.thirdForm)
-		setTimeout(function () {
-			this.getNew();
-		}.bind(this), 1000)
-	}
-
 	getState = (e) => {
-		const value = e.target.value;
+		e.persist();
 		this.setState(
-
+			
 			() => {
 				return {
-					val: value
+					[e.target.id]: e.target.value
 				};
 			},
 			
 			() => {
-				console.log(this.state.val);
+				console.log(this.state.form1);
+				console.log(this.state.form2);
+				console.log(this.state.form3);
+				this.check();
 			}
 			
 			);
+			
 		// 	// console.log('test')
 	}
 
@@ -192,29 +174,19 @@ class App extends Component {
 			this.getAnswer();
 		}
 	}
-
-	setFirstForm = (e) => {
-		// this.setState({counter: this.state.counter + 1});
-		console.log(e.target.value);
-		const user = 'jakub';
-		this.check(e, user);
-	}
 	
-	focus = () => {
-		// let number = parseInt(e.target.id.substring(e.target.id.length - 1));
+	focus = (e) => {
+		let number = parseInt(e.target.id.substring(e.target.id.length - 1));
 		
-		// if (e.key === 'Enter') {
-		// 	if (number < 3) {
-		// 		document.getElementById(`form${number + 1}`).focus();
-		// 	}
-		// 	else {
-		// 		document.getElementById(`form1`).focus();
-		// 	}
-		// 	console.log(this.state.firstForm);
-		// 	console.log(this.state.secondForm);
-		// 	console.log(this.state.thirdForm);
-		// }
-		console.log('test')
+		if (e.key === 'Enter') {
+			if (number < 3) {
+				document.getElementById(`form${number + 1}`).focus();
+			}
+			else {
+				document.getElementById(`form1`).focus();
+			}
+		}
+		// console.log('test')
 	}
 	
 	render() {
@@ -275,9 +247,7 @@ class App extends Component {
 					<Word content={translation} />
 					<Picture src={image} word={word} url={`https://pxhere.com/${this.state.language}/photos?q=${baseWord.word1}`} />
 					<Inputs 
-						onChange1={this.getState}
-						onChange2={this.checkSecondVerbForm}
-						onChange3={this.checkThirdVerbForm}
+						onChange={this.getState}
 						press={this.focus}
 					/>
 					<AppNavigation check={this.getAnswer} change={this.getNew} />

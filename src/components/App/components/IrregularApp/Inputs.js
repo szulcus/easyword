@@ -48,9 +48,9 @@ class Input extends Component {
 	render() {
 		return (
 			<InputsWrapper>
-				<InputElement id="form1" onChange={this.props.onChange1} onKeyPress={this.props.press} placeholder="1 forma" type="text" autoComplete="off" />
-				<InputElement id="form2" onChange={this.props.onChange2} onKeyPress={this.props.press} placeholder="2 forma" type="text" autoComplete="off" />
-				<InputElement id="form3" onChange={this.props.onChange3} onKeyPress={this.props.press} placeholder="3 forma" type="text" autoComplete="off" />
+				<InputElement id="form1" onChange={this.props.onChange} onKeyPress={this.props.press} placeholder="1 forma" type="text" autoComplete="off" />
+				<InputElement id="form2" onChange={this.props.onChange} onKeyPress={this.props.press} placeholder="2 forma" type="text" autoComplete="off" />
+				<InputElement id="form3" onChange={this.props.onChange} onKeyPress={this.props.press} placeholder="3 forma" type="text" autoComplete="off" />
 			</InputsWrapper>
 		);
 	}
