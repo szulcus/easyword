@@ -84,10 +84,60 @@ class App extends Component {
 				setTimeout(() => {
 					this.setState({
 						hideAnswer: true,
-						great: false
+						great: false,
+						form1: undefined
 					});
 				}, 1000)
 			}
+			else if (this.state.form2 === form2 && this.state.hideAnswer === true) {
+				this.setState({
+					great: true,
+					points: this.state.points + 1
+				});
+				setTimeout(() => {
+					this.setState({
+						hideAnswer: true,
+						great: false,
+						form2: undefined
+					});
+				}, 1000)
+			}
+			else if (this.state.form3 === form3 && this.state.hideAnswer === true) {
+				if (this.state.form3.length < this.state.counter) {
+					this.setState({
+						great: true,
+						points: this.state.points + 1
+					});
+					setTimeout(() => {
+						this.setState({
+							hideAnswer: true,
+							great: false,
+							form3: undefined
+						});
+					}, 1000)
+				}
+				else {
+					this.setState({
+						great: true,
+						points: this.state.points + 1
+					});
+					setTimeout(() => {
+						this.setState({
+							hideAnswer: true,
+							great: false,
+							form3: undefined
+						});
+					}, 1000)
+				}
+			}
+			// if (
+			// 	this.state.form1 === form1 &&
+			// 	this.state.form2 === form2 &&
+			// 	this.state.form3 === form3
+			// 	) {
+			// 		this.getNew();
+			// 	}
+
 			// else {
 			// 	this.setState({
 			// 		good: true,

@@ -2,6 +2,8 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import styled from 'styled-components';
 import {Wrapper} from '../components/Styled/Global/global'
+import roadSignsBookImage from '../images/road-signs-book.png'
+import irregularVerbsBookImage from '../images/irregular-verbs-book.png'
 
 const PageHeader = styled.header`
 	width: 90vw;
@@ -9,7 +11,7 @@ const PageHeader = styled.header`
 	font-weight: bold;
 	letter-spacing: 2px;
 	color: lightgray;
-	margin: 30px 0 30px 0;
+	margin: 30px 0;
 
 	p {
 		margin: 0;
@@ -17,6 +19,7 @@ const PageHeader = styled.header`
 		letter-spacing: 0;
 	}
 `;
+
 
 const Logo = styled.span`
 	display: block;
@@ -34,11 +37,20 @@ const LogoSeparator = styled.hr`
 	border: solid 0.5px var(--color-decorative);
 `;
 
+const Separator = styled.hr`
+	display: block;
+	width: 60vw;
+	max-width: 700px;
+	min-width: 250px;
+	height: 0;
+	border: groove 0.5px var(--color-decorative);
+	margin-bottom: 50px;
+`;
+
 const BooksWrapper = styled.div`
 	display: flex;
 	justify-content: center;
 	flex-wrap: wrap;
-	height: calc(100vh - 200px);
 `;
 
 const Book = styled.div`
@@ -95,6 +107,20 @@ const IndexPage = () => (
 					</Link>
 				</Book>
 			</BooksWrapper>
+			<Separator/>
+			<BooksWrapper>
+				<Book>
+					<Link to='/znaki-drogowe'>
+						<img src={roadSignsBookImage}/>
+					</Link>
+				</Book>
+				<Book>
+					<Link to='/czasowniki-nieregularne'>
+						<img src={irregularVerbsBookImage}/>
+					</Link>
+				</Book>
+			</BooksWrapper>
+			<Separator/>
 		</Wrapper>
 	</>
 )

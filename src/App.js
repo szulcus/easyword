@@ -762,6 +762,22 @@ class App extends Component {
 					<Route path="/oxford" render={(props) =>
 						<WorkPage
 							{...props}
+							title="Prace trwają"
+							image={working}
+						/>
+					}/>
+					{/* ZNAKI DROGOWE */}
+					<Route path="/znaki-drogowe" render={(props) =>
+						<WorkPage
+							{...props}
+							title="Ciągle myślę"
+							image={thinking}
+						/>
+					}/>
+					{/* CZASOWNIKI NIEREGULARNE */}
+					<Route path="/czasowniki-nieregularne" render={(props) =>
+						<WorkPage
+							{...props}
 							title="Ciągle myślę"
 							image={thinking}
 						/>
