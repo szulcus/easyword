@@ -11,6 +11,7 @@ import MainPage from './pages/index'
 import MacmillanList from './components/List/MacmillanList'
 import WSiPList from './components/List/WSiPList'
 // import OxfordList from './pages/books/3_Oxford/oxford'
+import RoadSignsList from './components/List/RoadSignsList'
 
 import NotFoundPage from './pages/404/404'
 // STYLED
@@ -759,21 +760,127 @@ class App extends Component {
 									/>
 								}/>
 					{/* OXFORD */}
-					<Route path="/oxford" render={(props) =>
-						<WorkPage
-							{...props}
-							title="Prace trwają"
-							image={working}
-						/>
-					}/>
-					{/* ZNAKI DROGOWE */}
-					<Route path="/znaki-drogowe" render={(props) =>
+					{/* <Route path="/oxford" render={(props) =>
 						<WorkPage
 							{...props}
 							title="Ciągle myślę"
 							image={thinking}
 						/>
-					}/>
+					}/> */}
+					{/* ZNAKI DROGOWE */}
+					<Route path="/znaki-drogowe" exact component={RoadSignsList}/>
+						{/* 1 - Znaki drogowe pionowe */}
+							{/* Znaki ostrzegawcze */}
+							<Route path="/znaki-drogowe/rozdział-1/znaki-ostrzegawcze" render={(props) =>
+								<WorkPage
+									{...props}
+									title="Prace trwają"
+									image={working}
+								/>
+							}/>
+							{/* Znaki zakazu */}
+							<Route path="/znaki-drogowe/rozdział-1/znaki-zakazu" render={(props) =>
+								<WorkPage
+									{...props}
+									title="Prace trwają"
+									image={working}
+								/>
+							}/>
+							{/* Znaki nakazu */}
+							<Route path="/znaki-drogowe/rozdział-1/znaki-nakazu" render={(props) =>
+								<WorkPage
+									{...props}
+									title="Prace trwają"
+									image={working}
+								/>
+							}/>
+							{/* Znaki informacyjne */}
+							<Route path="/znaki-drogowe/rozdział-1/znaki-informacyjne" render={(props) =>
+								<WorkPage
+									{...props}
+									title="Prace trwają"
+									image={working}
+								/>
+							}/>
+							{/* Znaki kierunku i miejscowości */}
+							<Route path="/znaki-drogowe/rozdział-1/znaki-kierunku-i-miejscowości" render={(props) =>
+								<WorkPage
+									{...props}
+									title="Prace trwają"
+									image={working}
+								/>
+							}/>
+							{/* Znaki uzupełniające */}
+							<Route path="/znaki-drogowe/rozdział-1/znaki-uzupełniające" render={(props) =>
+								<WorkPage
+									{...props}
+									title="Prace trwają"
+									image={working}
+								/>
+							}/>
+							{/* Tabliczki do znaków drogowych */}
+							<Route path="/znaki-drogowe/rozdział-1/tabliczki-do-znaków-drogowych" render={(props) =>
+								<WorkPage
+									{...props}
+									title="Prace trwają"
+									image={working}
+								/>
+							}/>
+							{/* Znaki dodatkowe */}
+							<Route path="/znaki-drogowe/rozdział-1/znaki-dodatkowe" render={(props) =>
+								<WorkPage
+									{...props}
+									title="Prace trwają"
+									image={working}
+								/>
+							}/>
+								{/* Test */}
+								<Route path="/znaki-drogowe/rozdział-1/test" render={(props) =>
+									<WorkPage
+										{...props}
+										title="Prace trwają"
+										image={working}
+									/>
+								}/>
+						{/* 2 - Znaki drogowe poziome */}
+								{/* Test */}
+								<Route path="/znaki-drogowe/rozdział-2/test" render={(props) =>
+									<WorkPage
+										{...props}
+										title="Prace trwają"
+										image={working}
+									/>
+								}/>
+						{/* 3 - Sygnały świetlne */}
+							{/* Sygnały świetlne dla kierujących i pieszych */}
+							<Route path="/znaki-drogowe/rozdział-3/sygnały-świetlne-dla-kierujących-i-pieszych" render={(props) =>
+								<WorkPage
+									{...props}
+									title="Prace trwają"
+									image={working}
+								/>
+							}/>
+							{/* Sygnały świetlne dla kierujących pojazdami wykonującymi odpłatny przewóz osób na regularnych liniach */}
+							<Route path="/znaki-drogowe/rozdział-3/znaki-drogowe/rozdział-4/sygnały-świetlne-dla-kierujących-pojazdami-wykonującymi-odpłatny-przewóz-osób-na-regularnych-liniach" render={(props) =>
+								<WorkPage
+									{...props}
+									title="Prace trwają"
+									image={working}
+								/>
+							}/>
+								{/* Test */}
+								<Route path="/znaki-drogowe/rozdział-3/test" render={(props) =>
+									<WorkPage
+										{...props}
+										title="Prace trwają"
+										image={working}
+									/>
+								}/>
+
+
+
+
+
 					{/* CZASOWNIKI NIEREGULARNE */}
 					<Route path="/czasowniki-nieregularne" render={(props) =>
 						<WorkPage

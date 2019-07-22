@@ -1,9 +1,10 @@
 // BASIC
 import React, { Component } from 'react'
 import styled, { css } from 'styled-components'
+import { Link } from 'react-router-dom'
 // STYLED
 import Global from '../../components/Styles/Global'
-import { Wrapper, PageLink } from '../../components/Styles/Components'
+import { Wrapper } from '../../components/Styles/Components'
 // COMPONENTS
 import SocialMediaItem from './components/SocialMediaItem'
 // FILES
@@ -81,8 +82,10 @@ class Work extends Component {
 				<Wrapper onClick={this.exit}>
 					<WorkElement>
 						<WorkTitle>Strona nie istnieje!</WorkTitle>
-						<WorkImage src={wow} />
-						<WorkDescription>Wychodzi na to, że strona nie istnieje! <PageLink content to='/'>Wróć do strony głównej</PageLink>, albo wpadnij na moje Social Media: </WorkDescription>
+						<Link to='/'>
+							<WorkImage src={wow} title="Przejdź do biblioteki" alt=""/>
+						</Link>
+						<WorkDescription>Wychodzi na to, że strona nie istnieje! Wróć lub wpadnij na moje Social Media: </WorkDescription>
 						<SocialMediaWrapper>
 							<SocialMediaItem srcLogo={snapchatLogo} srcDescription={snapchatDescription} link="https://www.snapchat.com/add/szulcus104" />
 							<SocialMediaItem srcLogo={instagramLogo} srcDescription={instagramDescription} link="https://www.instagram.com/easyword_app/?hl=pl" />
