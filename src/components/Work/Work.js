@@ -1,6 +1,7 @@
 // BASIC
 import React, { Component } from 'react'
 import styled, { css } from 'styled-components'
+import { Link } from 'react-router-dom'
 // STYLED
 import Global from '../../components/Styles/Global'
 import { Wrapper } from '../../components/Styles/Components'
@@ -30,7 +31,7 @@ const WorkTitle = styled.header`
 		margin: 15px 0 0 0;
 		font-size: 35px;
 	}
-	@media(max-height: 450px) {
+	@media(max-height: 400px) {
 		margin: 30px 0;
 	}
 	${props =>
@@ -41,18 +42,24 @@ const WorkTitle = styled.header`
 `
 
 const WorkImage = styled.img`
+	height: 100%;
+	width: 100%;
+`
+
+const BackLink = styled(Link)`
 	display: block;
-	height: 50vh;
+	/* height: 50vh; */
 	max-height: 500px;
 	max-height: 90vw;
-
+	width: 90vw;
 	max-width: 500px;
-	max-width: 90vw;
 	margin: 0 auto;
-	@media(max-height: 550px) {
-		height: calc(100px + 2hmin);
+	@media(max-height: 800px) {
+		width: 50vh;
+		max-width: 90vw;
+		height: 50vh;
 	}
-	@media(max-height: 450px) {
+	@media(max-height: 400px) {
 		display: none;
 	}
 `
@@ -80,7 +87,9 @@ class Work extends Component {
 				<Wrapper onClick={this.exit}>
 					<WorkElement>
 						<WorkTitle>{this.props.title}...</WorkTitle>
-						<WorkImage src={this.props.image} />
+						<BackLink to='/'>
+							<WorkImage src={this.props.image} title="Przejdź do biblioteki" alt=""/>
+						</BackLink>
 						<WorkDescription>Zmiany na bieżąco publikuję na Snapchacie, oraz Instagramie:</WorkDescription>
 						<SocialMediaWrapper>
 							<SocialMediaItem srcLogo={snapchatLogo} srcDescription={snapchatDescription} link="https://www.snapchat.com/add/szulcus104" />

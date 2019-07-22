@@ -32,17 +32,16 @@ const Logo = styled.span`
 `
 
 const LogoSeparator = styled.hr`
-	max-width: 1000px;
+	max-width: 1200px;
 	height: 0;
 	border: solid 0.5px var(--color-decorative);
 `;
 
 const Separator = styled.hr`
 	display: block;
-	width: 60vw;
+	width: calc(100vw - 100px);
 	max-width: 700px;
-	min-width: 250px;
-	height: 0;
+	clip-path: polygon(10% 0, 90% 0, 100% 100%, 0 100%);
 	border: groove 0.5px var(--color-decorative);
 	margin-bottom: 50px;
 `;
@@ -88,7 +87,7 @@ const IndexPage = () => (
 			<PageHeader>
 				<Logo><span>E</span>asy<span>W</span>ord</Logo>
 				<LogoSeparator/>
-				<p>aplikacja do nauki słówek</p>
+				<p>aplikacja do nauki słówek i definicji</p>
 			</PageHeader>
 			<BooksWrapper>
 				<Book>
