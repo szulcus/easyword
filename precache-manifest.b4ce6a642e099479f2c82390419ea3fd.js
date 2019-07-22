@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "1bad92b91dd25a28003c9b347dd7ffc4",
+    "revision": "915653de77189e85a4cef694eabbfca0",
     "url": "/easy-word/index.html"
   },
   {
-    "revision": "c5dbdeacc0eefa0fb293",
-    "url": "/easy-word/static/css/main.b2c18f15.chunk.css"
+    "revision": "5e64b22e5ad2db01d266",
+    "url": "/easy-word/static/css/main.77949a58.chunk.css"
   },
   {
-    "revision": "016022bd4352e43aa20c",
-    "url": "/easy-word/static/js/2.c5a9368f.chunk.js"
+    "revision": "37573f45cbf5d8760b21",
+    "url": "/easy-word/static/js/2.f77ca742.chunk.js"
   },
   {
-    "revision": "c5dbdeacc0eefa0fb293",
-    "url": "/easy-word/static/js/main.c762d5b1.chunk.js"
+    "revision": "5e64b22e5ad2db01d266",
+    "url": "/easy-word/static/js/main.7f739689.chunk.js"
   },
   {
     "revision": "f73a53ad2ca57ac0a35a",
@@ -26,6 +26,14 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "c5e01a9e81fb6a1bd6ce32e435bd1db8",
     "url": "/easy-word/static/media/instagram-icon.c5e01a9e.png"
+  },
+  {
+    "revision": "e29a707238955e0b6be4e8b0d74a51bc",
+    "url": "/easy-word/static/media/irregular-verbs-book.e29a7072.png"
+  },
+  {
+    "revision": "41db461c28779b39b3756e90e7a1ee11",
+    "url": "/easy-word/static/media/road-signs-book.41db461c.png"
   },
   {
     "revision": "8a2fabccfad38d9158808e24891ddf2a",
