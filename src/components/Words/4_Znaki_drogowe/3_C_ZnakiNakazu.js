@@ -1,0 +1,130 @@
+const words2_ProhibitionSigns = [
+	{
+		word1: `C-1`,
+		translation: `nakaz jazdy w prawo przed znakiem`,
+		type: `znaki nakazu`,
+		image: `https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Znak_C-1.svg/800px-Znak_C-1.svg.png`,
+	},
+	{
+		word1: `C-2`,
+		translation: `nakaz jazdy w prawo za znakiem`,
+		type: `znaki nakazu`,
+		image: `https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Znak_C-2.svg/800px-Znak_C-2.svg.png`,
+	},
+	{
+		word1: `C-3`,
+		translation: `nakaz jazdy w lewo przed znakiem`,
+		type: `znaki nakazu`,
+		image: `https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Znak_C-3.svg/800px-Znak_C-3.svg.png`,
+	},
+	{
+		word1: `C-4`,
+		translation: `nakaz jazdy w lewo za znakiem`,
+		type: `znaki nakazu`,
+		image: `https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Znak_C-4.svg/800px-Znak_C-4.svg.png`,
+	},
+	{
+		word1: `C-5`,
+		translation: `nakaz jazdy prosto`,
+		type: `znaki nakazu`,
+		image: `https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Znak_C-5.svg/800px-Znak_C-5.svg.png`,
+	},
+	{
+		word1: `C-6`,
+		translation: `nakaz jazdy prosto lub w prawo`,
+		type: `znaki nakazu`,
+		image: `https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Znak_C-6.svg/800px-Znak_C-6.svg.png`,
+	},
+	{
+		word1: `C-7`,
+		translation: `nakaz jazdy prosto lub w lewo`,
+		type: `znaki nakazu`,
+		image: `https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Znak_C-7.svg/800px-Znak_C-7.svg.png`,
+	},
+	{
+		word1: `C-8`,
+		translation: `nakaz jazdy w prawo lub w lewo`,
+		type: `znaki nakazu`,
+		image: `https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Znak_C-8.svg/800px-Znak_C-8.svg.png`,
+	},
+	{
+		word1: `C-9`,
+		translation: `nakaz jazdy z prawej strony znaku`,
+		type: `znaki nakazu`,
+		image: `https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Znak_C-9.svg/800px-Znak_C-9.svg.png`,
+	},
+	{
+		word1: `C-10`,
+		translation: `nakaz jazdy z lewej strony znaku`,
+		type: `znaki nakazu`,
+		image: `https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Znak_C-10.svg/800px-Znak_C-10.svg.png`,
+	},
+	{
+		word1: `C-11`,
+		translation: `nakaz jazdy z prawej lub lewej strony znaku`,
+		type: `znaki nakazu`,
+		image: `https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Znak_C-11.svg/800px-Znak_C-11.svg.png`,
+	},
+	{
+		word1: `C-12`,
+		translation: `ruch okrężny`,
+		type: `znaki nakazu`,
+		image: `https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Znak_C-12.svg/800px-Znak_C-12.svg.png`,
+	},
+	{
+		word1: `C-13`,
+		translation: `droga dla rowerów`,
+		type: `znaki nakazu`,
+		image: `https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Znak_C-13.svg/800px-Znak_C-13.svg.png`,
+	},
+	{
+		word1: `C-13a`,
+		translation: `koniec drogi dla rowerów`,
+		type: `znaki nakazu`,
+		image: `https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Znak_C-13a.svg/800px-Znak_C-13a.svg.png`,
+	},
+	{
+		word1: `C-14`,
+		translation: `prędkość minimalna`,
+		type: `znaki nakazu`,
+		image: `https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Znak_C-14.svg/800px-Znak_C-14.svg.png`,
+	},
+	{
+		word1: `C-15`,
+		translation: `koniec minimalnej prędkości`,
+		type: `znaki nakazu`,
+		image: `https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Znak_C-15.svg/800px-Znak_C-15.svg.png`,
+	},
+	{
+		word1: `C-16`,
+		translation: `droga dla pieszych`,
+		type: `znaki nakazu`,
+		image: `https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Znak_C-16.svg/800px-Znak_C-16.svg.png`,
+	},
+	{
+		word1: `C-16a`,
+		translation: `koniec drogi dla pieszych`,
+		type: `znaki nakazu`,
+		image: `https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Znak_C-16a.svg/800px-Znak_C-16a.svg.png`,
+	},
+	{
+		word1: `C-17`,
+		translation: `nakazany kierunek jazdy dla pojazdów z towarami niebezpiecznymi`,
+		type: `znaki nakazu`,
+		image: `https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Znak_C-17.svg/800px-Znak_C-17.svg.png`,
+	},
+	{
+		word1: `C-18`,
+		translation: `nakaz używania łańcuchów przeciwpoślizgowych`,
+		type: `znaki nakazu`,
+		image: `https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Znak_C-18.svg/800px-Znak_C-18.svg.png`,
+	},
+	{
+		word1: `C-19`,
+		translation: `koniec nakazu używania łańcuchów przeciwpoślizgowych`,
+		type: `znaki nakazu`,
+		image: `https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Znak_C-19.svg/800px-Znak_C-19.svg.png`,
+	},
+]
+
+export default words2_ProhibitionSigns

@@ -67,6 +67,24 @@ import GlobalStyles from './components/Styled/Global/global';
 			// Oxford
 				import b3_i1 from './components/Words/3_Oxford/Irregular_Verbs/1_FromBook'
 				import b3_i2 from './components/Words/3_Oxford/Irregular_Verbs/2_FromApp'
+			// --------------------------------- //
+			// Znaki drogowe
+				// Rozdział 1
+				import b4_e1_words1A from './components/Words/4_Znaki_drogowe/1_A_ZnakiOstrzegawcze'
+				import b4_e1_words2B from './components/Words/4_Znaki_drogowe/2_B_ZnakiZakazu'
+				import b4_e1_words3C from './components/Words/4_Znaki_drogowe/3_C_ZnakiNakazu'
+				import b4_e1_words4D from './components/Words/4_Znaki_drogowe/4_D_ZnakiInformacyjne'
+				import b4_e1_words5E from './components/Words/4_Znaki_drogowe/1_A_ZnakiOstrzegawcze'
+				import b4_e1_words6F from './components/Words/4_Znaki_drogowe/1_A_ZnakiOstrzegawcze'
+				import b4_e1_words7T from './components/Words/4_Znaki_drogowe/1_A_ZnakiOstrzegawcze'
+				import b4_e1_words8D from './components/Words/4_Znaki_drogowe/1_A_ZnakiOstrzegawcze'
+				import b4_e1_words9D from './components/Words/4_Znaki_drogowe/1_A_ZnakiOstrzegawcze'
+				// Rozdział 2
+				import b4_e2_words1 from './components/Words/4_Znaki_drogowe/1_A_ZnakiOstrzegawcze'
+				import b4_e2_words2 from './components/Words/3_Oxford/Irregular_Verbs/2_FromApp'
+				// Rozdział 3
+				import b4_e3_words1 from './components/Words/4_Znaki_drogowe/1_A_ZnakiOstrzegawcze'
+				import b4_e3_words2 from './components/Words/3_Oxford/Irregular_Verbs/2_FromApp'
 		// IMAGES
 		import working from './images/working.png'
 		import thinking from './images/thinking.png'
@@ -299,7 +317,7 @@ class App extends Component {
 							<Route path="/macmillan/rozdział-4/zawody-i-związane-z-nimi-czynności" render={(props) =>
 								<AppPage
 									{...props}
-									words={[].concat(b1_e4_words1)}
+									words={b1_e4_words1}
 									base_language='en'
 									translated_language='pl'
 								/>
@@ -308,7 +326,7 @@ class App extends Component {
 							<Route path="/macmillan/rozdział-4/warunki-pracy-i-zatrudnienia" render={(props) =>
 								<AppPage
 									{...props}
-									words={[].concat(b1_e4_words2)}
+									words={b1_e4_words2}
 									base_language='en'
 									translated_language='pl'
 								/>
@@ -317,7 +335,7 @@ class App extends Component {
 							<Route path="/macmillan/rozdział-4/praca-dorywcza" render={(props) =>
 								<AppPage
 									{...props}
-									words={[].concat(b1_e4_words3)}
+									words={b1_e4_words3}
 									base_language='en'
 									translated_language='pl'
 								/>
@@ -326,7 +344,7 @@ class App extends Component {
 							<Route path="/macmillan/rozdział-4/rynek-pracy" render={(props) =>
 								<AppPage
 									{...props}
-									words={[].concat(b1_e4_words4)}
+									words={b1_e4_words4}
 									base_language='en'
 									translated_language='pl'
 								/>
@@ -335,7 +353,7 @@ class App extends Component {
 							<Route path="/macmillan/rozdział-4/inne" render={(props) =>
 								<AppPage
 									{...props}
-									words={[].concat(b1_e4_words5)}
+									words={b1_e4_words5}
 									base_language='en'
 									translated_language='pl'
 								/>
@@ -772,34 +790,38 @@ class App extends Component {
 						{/* 1 - Znaki drogowe pionowe */}
 							{/* Znaki ostrzegawcze */}
 							<Route path="/znaki-drogowe/rozdział-1/znaki-ostrzegawcze" render={(props) =>
-								<WorkPage
+								<AppPage
 									{...props}
-									title="Prace trwają"
-									image={working}
+									words={b4_e1_words1A}
+									base_language='en'
+									translated_language='pl'
 								/>
 							}/>
 							{/* Znaki zakazu */}
 							<Route path="/znaki-drogowe/rozdział-1/znaki-zakazu" render={(props) =>
-								<WorkPage
+								<AppPage
 									{...props}
-									title="Prace trwają"
-									image={working}
+									words={b4_e1_words2B}
+									base_language='en'
+									translated_language='pl'
 								/>
 							}/>
 							{/* Znaki nakazu */}
 							<Route path="/znaki-drogowe/rozdział-1/znaki-nakazu" render={(props) =>
-								<WorkPage
+								<AppPage
 									{...props}
-									title="Prace trwają"
-									image={working}
+									words={b4_e1_words3C}
+									base_language='en'
+									translated_language='pl'
 								/>
 							}/>
 							{/* Znaki informacyjne */}
 							<Route path="/znaki-drogowe/rozdział-1/znaki-informacyjne" render={(props) =>
-								<WorkPage
+								<AppPage
 									{...props}
-									title="Prace trwają"
-									image={working}
+									words={b4_e1_words4D}
+									base_language='en'
+									translated_language='pl'
 								/>
 							}/>
 							{/* Znaki kierunku i miejscowości */}

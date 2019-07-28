@@ -42,7 +42,8 @@ const Separator = styled.hr`
 	width: calc(100vw - 100px);
 	max-width: 700px;
 	clip-path: polygon(10% 0, 90% 0, 100% 100%, 0 100%);
-	border: groove 0.5px var(--color-decorative);
+	border: none;
+	border-bottom: solid 1px var(--color-decorative);
 	margin-bottom: 50px;
 `;
 
