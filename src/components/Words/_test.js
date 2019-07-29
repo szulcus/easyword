@@ -1,13 +1,20 @@
 const testWords = [
 	{
-		word1: `lined`,
-		translation1: `ocieplany`,
-		translation2: `na podszewce`,
-		female: `t1`,
+		word1: `dressing gown`,
+		translation1: `szlafrok`,
 		level: `extended`,
-		type: `wzory i materiały`,
-		image: `https://c.pxhere.com/photos/dc/f8/winter_jacket_scarf_wool_scarf_woman_girl_modern_young_woman_female-1186579.jpg!s`,
-	}
+		type: `ubrania`,
+		image: `https://c.pxhere.com/photos/02/7d/bed_woman_sleep_time_of_work_attractive_stand_up_rested-1374298.jpg!s`,
+	},
+	// {
+	// 	word1: `lined`,
+	// 	translation1: `ocieplany`,
+	// 	translation2: `na podszewce`,
+	// 	female: `t1`,
+	// 	level: `extended`,
+	// 	type: `wzory i materiały`,
+	// 	image: `https://c.pxhere.com/photos/dc/f8/winter_jacket_scarf_wool_scarf_woman_girl_modern_young_woman_female-1186579.jpg!s`,
+	// }
 		// {
 		// 	word1: `clever`,
 		// 	translation1: `mądry`,

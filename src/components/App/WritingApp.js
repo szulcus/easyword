@@ -176,10 +176,15 @@ class App extends Component {
 		// replace empty images
 
 		let image = baseWord.image;
+		// let image2 = baseWord.image2;
 		
 		if (image === `url`) {
 			image = `https://fakeimg.pl/647x400/?text=${baseWord.word1}`;
 		}
+
+		// if (image2 !== undefined) {
+		// 	image = `https://fakeimg.pl/647x400/?text=${baseWord.word1}`;
+		// }
 		
 		// subtype and subsubtype exceptions
 		let cathegory = baseWord.type;
@@ -231,7 +236,7 @@ class App extends Component {
 					<Cathegory content={cathegory} />
 					<Navigation points={this.state.points} />
 					<Word content={word} />
-					<Picture src={image} word={word} url={`https://pxhere.com/${this.state.language}/photos?q=${baseWord.word1}`} />
+					<Picture src={image} word={word} link={`https://pxhere.com/${this.state.language}/photos?q=${baseWord.word1}`} />
 					<Input onChange={this.check} press={this.keyPress} />
 					<AppNavigation check={this.getAnswer} change={this.getNew} />
 					<Answer hideAnswer={this.state.hideAnswer} text={this.state.answer} />

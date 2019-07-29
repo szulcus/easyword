@@ -111,12 +111,12 @@ const IndexPage = () => (
 			<BooksWrapper>
 				<Book>
 					<Link to='/znaki-drogowe'>
-						<img src={roadSignsBookImage}/>
+						<img src={roadSignsBookImage} alt="Znaki drogowe. Okładka wykonana przeze mnie z pomocą pxhere"/>
 					</Link>
 				</Book>
 				<Book>
 					<Link to='/czasowniki-nieregularne'>
-						<img src={irregularVerbsBookImage}/>
+						<img src={irregularVerbsBookImage} alt="Czasowniki nieregularne. Okładka wykonana przeze mnie z pomocą pxhere"/>
 					</Link>
 				</Book>
 			</BooksWrapper>
