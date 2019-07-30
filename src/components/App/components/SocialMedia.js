@@ -1,6 +1,6 @@
 // BASIC
 import React, { Component } from 'react'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import { library } from '@fortawesome/fontawesome-svg-core'
 // STYLES
 import { BrowserLink, Icon } from '../../Styles/Components'
@@ -25,6 +25,7 @@ const SocialMediaElement = styled.ul`
 	transition-duration: 0.5s;
 	animation: floatBottom 0.3s ease-in;
 	z-index: 10;
+
 `
 
 const SocialMediaItem = styled.li`

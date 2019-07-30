@@ -2,8 +2,8 @@
 import React, { Component } from 'react'
 import styled from 'styled-components';
 
-const WordItem = styled.div`
-margin-bottom: 5px;
+const WordElement = styled.div`
+	margin: 5px 0;
 	color: var(--color-highlighted);
 	font-weight: bold;
 `
@@ -11,9 +11,9 @@ margin-bottom: 5px;
 class Word extends Component {
 	render() {
 		return (
-			<WordItem>
-				{this.props.content}
-			</WordItem>
+				<WordElement>
+					{this.props.content}
+				</WordElement>
 		);
 	}
 }

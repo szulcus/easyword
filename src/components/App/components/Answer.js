@@ -5,7 +5,7 @@ import styled, { css } from 'styled-components'
 const AnswerElement = styled.div`
 	font-weight: bold;
 	transition: color 0.2s ease;
-	animation: scale 0.3s ease;
+	animation: scaleIn 0.3s ease;
 	${props =>
 		props.hide &&
 		css`

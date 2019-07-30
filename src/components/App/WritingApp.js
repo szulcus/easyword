@@ -34,7 +34,8 @@ class App extends Component {
 			answer: '',
 			good: false,
 			great: false,
-			counter: 0
+			counter: 0,
+			deleteImage: false
 		};
 		this.increment = this.increment.bind(this);
 		this.check = this.check.bind(this);
@@ -169,6 +170,15 @@ class App extends Component {
 			this.getAnswer();
 		}
 	}
+
+	deleteImg = () => {
+			if (this.state.deleteImage === false) {
+				this.setState({deleteImage: true})
+			}
+			else {
+				this.setState({deleteImage: false})
+			}
+	}
 	
 	render() {
 		let baseWord = this.state.baseWord;
@@ -216,6 +226,7 @@ class App extends Component {
 			left: 50%;
 			width: 50vw;
 			max-width: 300px;
+			max-height: calc(100vh - 336px);
 			transform: translatex(-50%);
 			${props =>
 				props.preview &&
@@ -236,7 +247,7 @@ class App extends Component {
 					<Cathegory content={cathegory} />
 					<Navigation points={this.state.points} />
 					<Word content={word} />
-					<Picture src={image} word={word} link={`https://pxhere.com/${this.state.language}/photos?q=${baseWord.word1}`} />
+					<Picture hide={this.state.deleteImage} onClick={this.deleteImg} src={image} word={word} link={`https://pxhere.com/${this.state.language}/photos?q=${baseWord.word1}`} />
 					<Input onChange={this.check} press={this.keyPress} />
 					<AppNavigation check={this.getAnswer} change={this.getNew} />
 					<Answer hideAnswer={this.state.hideAnswer} text={this.state.answer} />

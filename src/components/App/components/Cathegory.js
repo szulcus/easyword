@@ -1,6 +1,6 @@
 // BASIC
 import React, { Component } from 'react'
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 const CathegoryItem = styled.div`
 	width: calc(100vw - 20px);
