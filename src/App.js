@@ -10,6 +10,8 @@ import MainPage from './pages/index'
 
 import MacmillanList from './components/List/MacmillanList'
 import WSiPList from './components/List/WSiPList'
+
+import Facebook from './components/Facebook/Facebook'
 // import OxfordList from './pages/books/3_Oxford/oxford'
 import RoadSignsList from './components/List/RoadSignsList'
 
@@ -929,6 +931,8 @@ class App extends Component {
 						translated_language="pl"
 					/>
 				}/>
+
+				<Route path="/fb" exact component={Facebook}/>
 
 				<Route component={NotFoundPage}/>
 			</Switch>

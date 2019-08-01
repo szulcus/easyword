@@ -1,6 +1,6 @@
 // BASIC
 import React, { Component } from 'react'
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 import { library } from '@fortawesome/fontawesome-svg-core'
 // STYLES
 import { BrowserLink, Icon } from '../../Styles/Components'
@@ -37,16 +37,24 @@ class SocialMedia extends Component {
 		return (
 			<SocialMediaElement>
 				<SocialMediaItem>
-					<BrowserLink href="https://www.facebook.com/programista.webowy.jakub.schulz" target="_blank"><Icon icon={['fab', 'facebook-f']} /></BrowserLink>
+					<BrowserLink href="https://www.facebook.com/programista.webowy.jakub.schulz" target="_blank">
+						<Icon icon={['fab', 'facebook-f']} />
+					</BrowserLink>
 				</SocialMediaItem>
 				<SocialMediaItem>
-					<BrowserLink href="https://github.com/jakub104" target="_blank"><Icon icon={['fab', 'github']} /></BrowserLink>
+					<BrowserLink href="https://github.com/jakub104" target="_blank">
+						<Icon icon={['fab', 'github']} />
+					</BrowserLink>
 				</SocialMediaItem>
 				<SocialMediaItem>
-					<BrowserLink href="https://www.linkedin.com/in/jakub-schulz-265931186/" target="_blank"><Icon icon={['fab', 'linkedin-in']} /></BrowserLink>
+					<BrowserLink href="https://www.linkedin.com/in/jakub-schulz-265931186/" target="_blank">
+						<Icon icon={['fab', 'linkedin-in']} />
+					</BrowserLink>
 				</SocialMediaItem>
 				<SocialMediaItem>
-					<BrowserLink href="https://programista-webowy-jakub-schulz.000webhostapp.com" target="_blank"><Icon icon={['fas', 'user-tie']} /></BrowserLink>
+					<BrowserLink href="https://programista-webowy-jakub-schulz.000webhostapp.com" target="_blank">
+						<Icon icon={['fas', 'user-tie']} />
+					</BrowserLink>
 				</SocialMediaItem>
 			</SocialMediaElement>
 		);
