@@ -12,6 +12,8 @@ import MacmillanList from './components/List/MacmillanList'
 import WSiPList from './components/List/WSiPList'
 
 import Facebook from './components/Facebook/Facebook'
+
+import Leaves from './components/_Leaves/Leaves'
 // import OxfordList from './pages/books/3_Oxford/oxford'
 import RoadSignsList from './components/List/RoadSignsList'
 
@@ -933,6 +935,8 @@ class App extends Component {
 				}/>
 
 				<Route path="/fb" exact component={Facebook}/>
+
+				<Route path="/leaves" exact component={Leaves}/>
 
 				<Route component={NotFoundPage}/>
 			</Switch>
