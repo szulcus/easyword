@@ -7,7 +7,7 @@ const words1_FromBook = [
 		translation1: `być`,
 		level: `podstawa (z podręcznika)`,
 		type: `basic`,
-		image: `url`,
+		image: `https://c.pxhere.com/photos/ad/06/holding_hands_bible_praying_friends_bible_study_word_christ_heaven-1076203.jpg!s`,
 	},
 	{
 		firstForm: `become`,
@@ -16,7 +16,7 @@ const words1_FromBook = [
 		translation1: `stawać się`,
 		level: `podstawa (z podręcznika)`,
 		type: `basic`,
-		image: `url`,
+		image: `https://c.pxhere.com/photos/fa/04/love_valentine's_day_pose_heart_funny_frog_animal_fun-863596.jpg!s`,
 	},
 	{
 		firstForm: `begin`,
@@ -25,7 +25,7 @@ const words1_FromBook = [
 		translation1: `zaczynać (się)`,
 		level: `podstawa (z podręcznika)`,
 		type: `basic`,
-		image: `url`,
+		image: `https://c.pxhere.com/photos/61/5d/spot_runs_start_la_stadion_jogging_games_sprint-869535.jpg!s`,
 	},
 	{
 		firstForm: `bend`,
@@ -34,7 +34,7 @@ const words1_FromBook = [
 		translation1: `zginać`,
 		level: `podstawa (z podręcznika)`,
 		type: `basic`,
-		image: `url`,
+		image: `https://c.pxhere.com/photos/d4/8b/back_bend_bridge_exercise_female_fitness_flexible_girl-1259029.jpg!s`,
 	},
 	{
 		firstForm: `bite`,
@@ -43,7 +43,7 @@ const words1_FromBook = [
 		translation1: `gryźć`,
 		level: `podstawa (z podręcznika)`,
 		type: `basic`,
-		image: `url`,
+		image: `https://c.pxhere.com/photos/79/21/teeth_carrot_diet_loss_of_flesh_weight_dentist_lips_mouth-558092.jpg!s`,
 	},
 	{
 		firstForm: `blow`,
@@ -52,7 +52,7 @@ const words1_FromBook = [
 		translation1: `dmuchać`,
 		level: `podstawa (z podręcznika)`,
 		type: `basic`,
-		image: `url`,
+		image: `https://c.pxhere.com/photos/14/18/woman_kids_girls_properties_dandelion_dream_fresh_fly-770189.jpg!s`,
 	},
 	{
 		firstForm: `break`,
@@ -62,7 +62,7 @@ const words1_FromBook = [
 		translation2: `rozbić`,
 		level: `podstawa (z podręcznika)`,
 		type: `basic`,
-		image: `url`,
+		image: `https://c.pxhere.com/photos/75/40/photo-440504.jpg!s`,
 	},
 	{
 		firstForm: `bring`,
@@ -71,7 +71,7 @@ const words1_FromBook = [
 		translation1: `przynosić`,
 		level: `podstawa (z podręcznika)`,
 		type: `basic`,
-		image: `url`,
+		image: `https://c.pxhere.com/photos/ec/40/malinois_bring_nature_dog_run_obey_pet_landscape-878727.jpg!s`,
 	},
 	{
 		firstForm: `build`,
@@ -80,7 +80,7 @@ const words1_FromBook = [
 		translation1: `budować`,
 		level: `podstawa (z podręcznika)`,
 		type: `basic`,
-		image: `url`,
+		image: `https://c.pxhere.com/photos/68/2d/hedgehog_hard_working_build_shelter_animals_spur_cute_nature-530187.jpg!s`,
 	},
 	{
 		firstForm: `burn`,
@@ -91,7 +91,7 @@ const words1_FromBook = [
 		translation1: `palić (się)`,
 		level: `podstawa (z podręcznika)`,
 		type: `basic`,
-		image: `url`,
+		image: `https://c.pxhere.com/images/71/2c/adfc4977540d72fbe78eb4ef49b0-1455825.jpg!s`,
 	},
 	{
 		firstForm: `buy`,
@@ -100,7 +100,7 @@ const words1_FromBook = [
 		translation1: `kupować`,
 		level: `podstawa (z podręcznika)`,
 		type: `basic`,
-		image: `url`,
+		image: `https://c.pxhere.com/photos/74/16/shopping_spending_till_slip_purchase_retail_shop_buy_customer-704023.jpg!s`,
 	},
 	{
 		firstForm: `can`,
@@ -110,7 +110,7 @@ const words1_FromBook = [
 		translation2: `potrafić`,
 		level: `podstawa (z podręcznika)`,
 		type: `basic`,
-		image: `url`,
+		image: `https://c.pxhere.com/photos/00/10/pieces_of_the_puzzle_mix_hands_puzzle_play_piecing_together_share_patience-1085240.jpg!s`,
 	},
 	{
 		firstForm: `catch`,
@@ -119,7 +119,7 @@ const words1_FromBook = [
 		translation1: `łapać`,
 		level: `podstawa (z podręcznika)`,
 		type: `basic`,
-		image: `url`,
+		image: `https://c.pxhere.com/photos/07/6b/silhouette_beer_sunset_catch_friend-501807.jpg!s`,
 	},
 	{
 		firstForm: `choose`,
@@ -128,7 +128,7 @@ const words1_FromBook = [
 		translation1: `wybierać`,
 		level: `podstawa (z podręcznika)`,
 		type: `basic`,
-		image: `url`,
+		image: `https://c.pxhere.com/photos/c8/2c/success_failure_opposite_choice_choose_decision_positive_word-666777.jpg!s`,
 	},
 	{
 		firstForm: `come`,
@@ -138,7 +138,7 @@ const words1_FromBook = [
 		translation2: `przybywać`,
 		level: `podstawa (z podręcznika)`,
 		type: `basic`,
-		image: `url`,
+		image: `https://c.pxhere.com/images/93/0d/24dc0c3611485545219620729655-1456023.jpg!s`,
 	},
 	{
 		firstForm: `cost`,
@@ -147,7 +147,7 @@ const words1_FromBook = [
 		translation1: `kosztować`,
 		level: `podstawa (z podręcznika)`,
 		type: `basic`,
-		image: `url`,
+		image: `https://c.pxhere.com/photos/f6/b2/coins_calculator_budget_household_budget_money_cash_currency_saving-1061452.jpg!s`,
 	},
 	{
 		firstForm: `cut`,
@@ -156,7 +156,7 @@ const words1_FromBook = [
 		translation1: `ciąć`,
 		level: `podstawa (z podręcznika)`,
 		type: `basic`,
-		image: `url`,
+		image: `https://c.pxhere.com/images/50/0b/d0539a42aaff0f9e4475d069b527-1449031.jpg!s`,
 	},
 	{
 		firstForm: `do`,
@@ -165,7 +165,7 @@ const words1_FromBook = [
 		translation1: `robić`,
 		level: `podstawa (z podręcznika)`,
 		type: `basic`,
-		image: `url`,
+		image: `https://c.pxhere.com/photos/01/11/life_spiritual_breathing_sea_world_corunna_it_vibrates_beauty-1188436.jpg!s`,
 	},
 	{
 		firstForm: `draw`,
@@ -174,7 +174,7 @@ const words1_FromBook = [
 		translation1: `rysować`,
 		level: `podstawa (z podręcznika)`,
 		type: `basic`,
-		image: `url`,
+		image: `https://c.pxhere.com/photos/0c/a1/colored_pencils_pens_crayons_colour_pencils_colorful_color_writing_accessories_school-1349035.jpg!s`,
 	},
 	{
 		firstForm: `drink`,
@@ -183,17 +183,17 @@ const words1_FromBook = [
 		translation1: `pić`,
 		level: `podstawa (z podręcznika)`,
 		type: `basic`,
-		image: `url`,
+		image: `https://c.pxhere.com/images/9c/f7/c030bcdb496dd1408eea0e43aa28-1432343.jpg!s`,
 	},
 	{
 		firstForm: `drive`,
 		secondForm: `drove`,
 		thirdForm: `driven`,
 		translation1: `jechać`,
-		translation2: `prowadzić samochód`,
+		translation2: `prowadzić (samochód)`,
 		level: `podstawa (z podręcznika)`,
 		type: `basic`,
-		image: `url`,
+		image: `https://c.pxhere.com/photos/e1/34/navigation_car_drive_road_gps_transport_travel_auto-841381.jpg!s`,
 	},
 	{
 		firstForm: `eat`,
@@ -202,7 +202,7 @@ const words1_FromBook = [
 		translation1: `jeść`,
 		level: `podstawa (z podręcznika)`,
 		type: `basic`,
-		image: `url`,
+		image: `https://c.pxhere.com/photos/49/cd/tit_parus_major_paridae_passeri_songbird_bird_sparrow_bird_animal-1132339.jpg!s`,
 	},
 	{
 		firstForm: `fall`,
@@ -211,7 +211,7 @@ const words1_FromBook = [
 		translation1: `upadać`,
 		level: `podstawa (z podręcznika)`,
 		type: `basic`,
-		image: `url`,
+		image: `https://c.pxhere.com/photos/33/63/fall_autumn_leaf_ground_foliage-99035.jpg!s`,
 	},
 	{
 		firstForm: `feel`,
@@ -220,7 +220,7 @@ const words1_FromBook = [
 		translation1: `czuć`,
 		level: `podstawa (z podręcznika)`,
 		type: `basic`,
-		image: `url`,
+		image: `https://c.pxhere.com/photos/b5/bb/wellness_massage_hot_stone_chillout_healing_hot_stone_beauty-1378049.jpg!s`,
 	},
 	{
 		firstForm: `fight`,
@@ -229,7 +229,7 @@ const words1_FromBook = [
 		translation1: `walczyć`,
 		level: `podstawa (z podręcznika)`,
 		type: `basic`,
-		image: `url`,
+		image: `https://c.pxhere.com/photos/e6/97/karate_martial_arts_training_exercise_martial_sport_belt_fight-1040824.jpg!s`,
 	},
 	{
 		firstForm: `find`,
@@ -238,7 +238,7 @@ const words1_FromBook = [
 		translation1: `znaleźć`,
 		level: `podstawa (z podręcznika)`,
 		type: `basic`,
-		image: `url`,
+		image: `https://c.pxhere.com/photos/6d/f8/stamps_philatelist_stamp_collection_collecting_collection_glass_loop_zoom-1173245.jpg!s`,
 	},
 	{
 		firstForm: `fly`,
@@ -247,7 +247,7 @@ const words1_FromBook = [
 		translation1: `latać`,
 		level: `podstawa (z podręcznika)`,
 		type: `basic`,
-		image: `url`,
+		image: `https://c.pxhere.com/images/4d/ab/277d2ee30a21978dc0120c4635b4-1453873.jpg!s`,
 	},
 	{
 		firstForm: `forget`,
@@ -256,7 +256,7 @@ const words1_FromBook = [
 		translation1: `zapomnieć`,
 		level: `podstawa (z podręcznika)`,
 		type: `basic`,
-		image: `url`,
+		image: `https://c.pxhere.com/photos/07/34/dummy_pacifier_baby_silicone_plastic_old_at_that_time_sucking-1247551.jpg!s`,
 	},
 	{
 		firstForm: `get`,
@@ -265,7 +265,7 @@ const words1_FromBook = [
 		translation1: `dostawać`,
 		level: `podstawa (z podręcznika)`,
 		type: `basic`,
-		image: `url`,
+		image: `https://c.pxhere.com/photos/60/70/photo-1400444.jpg!s`,
 	},
 	{
 		firstForm: `go`,
@@ -274,7 +274,7 @@ const words1_FromBook = [
 		translation1: `iść`,
 		level: `podstawa (z podręcznika)`,
 		type: `basic`,
-		image: `url`,
+		image: `https://c.pxhere.com/photos/0c/a8/frog_farewell_travel_luggage_holdall_go_away_holiday_on_the_go-1069213.jpg!s`,
 	},
 	{
 		firstForm: `grow`,
@@ -283,7 +283,7 @@ const words1_FromBook = [
 		translation1: `rosnąć`,
 		level: `podstawa (z podręcznika)`,
 		type: `basic`,
-		image: `url`,
+		image: `https://c.pxhere.com/photos/82/e0/grow_leaves_trunk_plant_nature_growing_environment_natural-725329.jpg!s`,
 	},
 	{
 		firstForm: `hang`,
@@ -292,7 +292,7 @@ const words1_FromBook = [
 		translation1: `wieszać`,
 		level: `podstawa (z podręcznika)`,
 		type: `basic`,
-		image: `url`,
+		image: `https://c.pxhere.com/photos/9a/83/fashion_dress_woman_hanger_clothe-136585.jpg!s`,
 	},
 	{
 		firstForm: `have`,
@@ -301,7 +301,7 @@ const words1_FromBook = [
 		translation1: `mieć`,
 		level: `podstawa (z podręcznika)`,
 		type: `basic`,
-		image: `url`,
+		image: `https://c.pxhere.com/images/35/dc/8d2b8e3777d77b58551af28a7bac-1418357.jpg!s`,
 	},
 	{
 		firstForm: `hear`,
@@ -310,7 +310,7 @@ const words1_FromBook = [
 		translation1: `słyszeć`,
 		level: `podstawa (z podręcznika)`,
 		type: `basic`,
-		image: `url`,
+		image: `https://c.pxhere.com/photos/34/ac/frogs_not_see_not_hear_do_not_speak_funny_cute_figures_fun-540788.jpg!s`,
 	},
 	{
 		firstForm: `hide`,
@@ -319,7 +319,7 @@ const words1_FromBook = [
 		translation1: `ukrywać (się)`,
 		level: `podstawa (z podręcznika)`,
 		type: `basic`,
-		image: `url`,
+		image: `https://c.pxhere.com/photos/b6/2c/girl_red_young_beautiful_sample_sweatshirt_white_woman-1043526.jpg!s`,
 	},
 	{
 		firstForm: `hit`,
@@ -328,7 +328,7 @@ const words1_FromBook = [
 		translation1: `uderzać`,
 		level: `podstawa (z podręcznika)`,
 		type: `basic`,
-		image: `url`,
+		image: `https://c.pxhere.com/photos/0c/1b/punch_fist_hand_strength_isolated_human_fight_wrist-1105720.jpg!s`,
 	},
 	{
 		firstForm: `keep`,
@@ -337,7 +337,7 @@ const words1_FromBook = [
 		translation1: `trzymać`,
 		level: `podstawa (z podręcznika)`,
 		type: `basic`,
-		image: `url`,
+		image: `https://c.pxhere.com/photos/3d/ac/water_water_bottle_drink_sport_cyclists_bike_cycling_triathlon-712421.jpg!s`,
 	},
 	{
 		firstForm: `know`,
@@ -347,7 +347,7 @@ const words1_FromBook = [
 		translation2: `znać`,
 		level: `podstawa (z podręcznika)`,
 		type: `basic`,
-		image: `url`,
+		image: `https://c.pxhere.com/photos/39/f8/library_sky_birds_mystical_clouds_sun_fantastic_mood-942473.jpg!s`,
 	},
 	{
 		firstForm: `lay`,
@@ -356,7 +356,7 @@ const words1_FromBook = [
 		translation1: `kłaść`,
 		level: `podstawa (z podręcznika)`,
 		type: `basic`,
-		image: `url`,
+		image: `https://c.pxhere.com/photos/9e/a3/ux_design_webdesign_app_mobile_business_interface_flat-1325861.jpg!s`,
 	},
 	{
 		firstForm: `lead`,
@@ -365,7 +365,7 @@ const words1_FromBook = [
 		translation1: `prowadzić`,
 		level: `podstawa (z podręcznika)`,
 		type: `basic`,
-		image: `url`,
+		image: `https://c.pxhere.com/photos/cd/3f/on_foot_shoes_leg_patch_pavement_phrase_saying_all_roads_lead_to_rome-1090101.jpg!s`,
 	},
 	{
 		firstForm: `learn`,
@@ -376,17 +376,17 @@ const words1_FromBook = [
 		translation1: `uczyć się`,
 		level: `podstawa (z podręcznika)`,
 		type: `basic`,
-		image: `url`,
+		image: `https://c.pxhere.com/photos/a2/0c/read_book_boy_child_kid_student_think_teen-1105803.jpg!s`,
 	},
 	{
 		firstForm: `leave`,
-		secondForm: `left;`,
-		thirdForm: `left;`,
+		secondForm: `left`,
+		thirdForm: `left`,
 		translation1: `opuszczać`,
 		translation2: `wyjeżdżać`,
 		level: `podstawa (z podręcznika)`,
 		type: `basic`,
-		image: `url`,
+		image: `https://c.pxhere.com/images/2d/29/6b36334fd2508d2b8f40600b8fa4-1418539.jpg!s`,
 	},
 	{
         firstForm: `lend`,
@@ -395,7 +395,7 @@ const words1_FromBook = [
         translation1: `pożyczyć`,
         level: `podstawa (z podręcznika)`,
         type: `basic`,
-        image: `url`,
+        image: `https://c.pxhere.com/photos/c9/28/auto_repair_workshop_brake_disc_brake_change_slow_change_auto_auto_mechanic-1202301.jpg!s`,
     },
     {
         firstForm: `lose`,
@@ -405,7 +405,7 @@ const words1_FromBook = [
         translation2: `zgubić`,
         level: `podstawa (z podręcznika)`,
         type: `basic`,
-        image: `url`,
+        image: `https://c.pxhere.com/photos/c3/f1/doll_old_weird_head_unwanted_isolated_dirty_creepy-561322.jpg!s`,
     },
     {
         firstForm: `make`,
@@ -414,7 +414,7 @@ const words1_FromBook = [
         translation1: `robić`,
         level: `podstawa (z podręcznika)`,
         type: `basic`,
-        image: `url`,
+        image: `https://c.pxhere.com/images/a8/5a/4648082226d579d6a067cb85bc38-1419059.jpg!s`,
     },
     {
         firstForm: `mean`,
@@ -424,7 +424,7 @@ const words1_FromBook = [
         translation2: `mieć na myśli`,
         level: `podstawa (z podręcznika)`,
         type: `basic`,
-        image: `url`,
+        image: `https://c.pxhere.com/photos/fd/b9/thinking_thinking_work_man_face_black_white_eyes_nose-1343966.jpg!s`,
     },
     {
         firstForm: `meet`,
@@ -434,7 +434,7 @@ const words1_FromBook = [
         translation2: `poznawać`,
         level: `podstawa (z podręcznika)`,
         type: `basic`,
-        image: `url`,
+        image: `https://c.pxhere.com/photos/b6/ad/leica_school_girls_holland_boys_netherlands_cross_country-442364.jpg!s`,
     },
     {
         firstForm: `overcome`,
@@ -443,7 +443,7 @@ const words1_FromBook = [
         translation1: `przezwyciężać`,
         level: `podstawa (z podręcznika)`,
         type: `basic`,
-        image: `url`,
+        image: `https://c.pxhere.com/photos/c9/43/crawl_mud_obstacle_soldier_military_pit_water_boots-861003.jpg!s`,
     },
     {
         firstForm: `pay`,
@@ -452,7 +452,7 @@ const words1_FromBook = [
         translation1: `płacić`,
         level: `podstawa (z podręcznika)`,
         type: `basic`,
-        image: `url`,
+        image: `https://c.pxhere.com/photos/98/dc/money_card_business_credit_card_pay_shopping-1109912.jpg!s`,
     },
     {
         firstForm: `put`,
@@ -462,7 +462,7 @@ const words1_FromBook = [
         translation2: `położyć`,
         level: `podstawa (z podręcznika)`,
         type: `basic`,
-        image: `url`,
+        image: `https://c.pxhere.com/photos/46/b4/hands_cards_magic_magician_attention-869927.jpg!s`,
     },
     {
         firstForm: `read`,
@@ -471,7 +471,7 @@ const words1_FromBook = [
         translation1: `czytać`,
         level: `podstawa (z podręcznika)`,
         type: `basic`,
-        image: `url`,
+        image: `https://c.pxhere.com/images/bd/3f/e64f893da4a94324a0e36aae8714-1456589.jpg!s`,
     },
     {
         firstForm: `ride`,
@@ -480,7 +480,7 @@ const words1_FromBook = [
         translation1: `jeździć`,
         level: `podstawa (z podręcznika)`,
         type: `basic`,
-        image: `url`,
+        image: `https://c.pxhere.com/photos/81/7b/mountain_biking_cycling_mountain_bike_bike_sport_biking_exercise_cyclist-570039.jpg!s`,
     },
     {
         firstForm: `ring`,
@@ -489,7 +489,7 @@ const words1_FromBook = [
         translation1: `dzwonić`,
         level: `podstawa (z podręcznika)`,
         type: `basic`,
-        image: `url`,
+        image: `https://c.pxhere.com/photos/44/2a/telephone_mobile_to_call_attainable_samsung_iphone_sms_post-914805.jpg!s`,
     },
     {
         firstForm: `run`,
@@ -498,7 +498,7 @@ const words1_FromBook = [
         translation1: `biec`,
         level: `podstawa (z podręcznika)`,
         type: `basic`,
-        image: `url`,
+        image: `https://c.pxhere.com/photos/84/33/dog_water_run_movement_joy-652125.jpg!s`,
     },
     {
         firstForm: `say`,
@@ -508,7 +508,7 @@ const words1_FromBook = [
         translation2: `powiedzieć`,
         level: `podstawa (z podręcznika)`,
         type: `basic`,
-        image: `url`,
+        image: `https://c.pxhere.com/photos/a2/1e/speak_talk_microphone_tin_can_can_tin_mouth_say-997761.jpg!s`,
     },
     {
         firstForm: `see`,
@@ -518,7 +518,7 @@ const words1_FromBook = [
         translation2: `zobaczyć`,
         level: `podstawa (z podręcznika)`,
         type: `basic`,
-        image: `url`,
+        image: `https://c.pxhere.com/images/2f/e9/7b464aa61dc1ef6e0c735b230a4e-1418358.jpg!s`,
     },
     {
         firstForm: `sell`,
@@ -527,7 +527,7 @@ const words1_FromBook = [
         translation1: `sprzedać`,
         level: `podstawa (z podręcznika)`,
         type: `basic`,
-        image: `url`,
+        image: `https://c.pxhere.com/photos/e6/87/stock_trading_monitor_desk_business_finance_exchange_investment-1170475.jpg!s`,
     },
     {
         firstForm: `send`,
