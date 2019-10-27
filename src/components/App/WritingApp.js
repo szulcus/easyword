@@ -4,6 +4,7 @@ import greatAnimationData from '../../lotties/72-favourite-app-icon.json'
 import goodAnimationData from '../../lotties/433-checked-done.json'
 import styled, { css } from 'styled-components'
 // COMPONENTS
+import Preloader from './Preloader'
 import Cathegory from './components/Cathegory'
 import Navigation from './components/Navigation/Navigation'
 import Word from './components/Word'
@@ -27,6 +28,7 @@ class App extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
+			load: false,
 			language: this.props.base_language,
 			points: 0,
 			baseWord: getWord(this.props.words),
@@ -37,14 +39,12 @@ class App extends Component {
 			counter: 0,
 			deleteImage: false
 		};
-		this.increment = this.increment.bind(this);
-		this.check = this.check.bind(this);
-		this.getNew = this.getNew.bind(this);
-		this.getAnswer = this.getAnswer.bind(this);
-		this.keyPress = this.keyPress.bind(this);
 	}
 
-	getNew() {
+	componentDidMount() {
+		this.setState({load: true})
+	}
+	getNew = () => {
 		if (this.state.hideAnswer === true || this.state.answer === 'Brawo!') {
 			this.setState({baseWord: getWord(this.props.words)});
 		}
@@ -53,11 +53,11 @@ class App extends Component {
 		}
 	}
 
-	increment() {
+	increment = () => {
 		this.setState({points: this.state.points + 1});
 	}
 
-	check(e) {
+	check = (e) => {
 		// if (female(this.state.baseWord).feminine_translation1 !== undefined) {
 		// 	console.log('jest')
 		// }
@@ -126,7 +126,7 @@ class App extends Component {
 		}
 	}
 
-	getAnswer() {
+	getAnswer = () => {
 
 		if (this.state.hideAnswer !== false) {
 			let translation1 = this.state.baseWord.translation1;
@@ -161,7 +161,7 @@ class App extends Component {
 		}
 	}
 
-	keyPress(e) {
+	keyPress = (e) => {
 		if (e.key === 'Enter' && e.shiftKey) {
 			this.getNew();
 		}
@@ -180,7 +180,7 @@ class App extends Component {
 			}
 	}
 	
-	render() {
+	render = () => {
 		let baseWord = this.state.baseWord;
 
 		// replace empty images
@@ -244,6 +244,7 @@ class App extends Component {
 			<>
 				<Global />
 				<Wrapper center small>
+				<Preloader load={this.state.load} />
 					<Cathegory content={cathegory} />
 					<Navigation points={this.state.points} />
 					<Word content={word} />

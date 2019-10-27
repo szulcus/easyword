@@ -1,9 +1,10 @@
-import React from 'react';
+import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import styled from 'styled-components';
 import {Wrapper} from '../components/Styled/Global/global'
 import roadSignsBookImage from '../images/road-signs-book.png'
 import irregularVerbsBookImage from '../images/irregular-verbs-book.png'
+import Preloader from '../components/App/Preloader'
 
 const PageHeader = styled.header`
 	width: 90vw;
@@ -81,48 +82,58 @@ const Book = styled.div`
 		height: 100%;
 	}
 `;
-
-const IndexPage = () => (
-	<>
-		<Wrapper center scroll>
-			<PageHeader>
-				<Logo><span>E</span>asy<span>W</span>ord</Logo>
-				<LogoSeparator/>
-				<p>aplikacja do nauki słówek i definicji</p>
-			</PageHeader>
-			<BooksWrapper>
-				<Book>
-					<Link to='/macmillan'>
-						<img src="https://www.macmillan.pl/components/com_ssshop/cache/500x500/9788376218496.png" alt="Macmillan Education"/>
-					</Link>
-				</Book>
-				<Book>
-					<Link to='/wsip'>
-						<img src="https://sklep.wsip.pl/uploads/tx_evosenk/covers/upload_temp_tF8lhB.jpg" alt="test"/>
-					</Link>
-				</Book>
-				<Book>
-					<Link to='/oxford'>
-						<img src="https://www.gandalf.com.pl/o/oxford-solutions-intermediate,big,578379.jpg" alt="Oxford Solutions Intermediate"/>
-					</Link>
-				</Book>
-			</BooksWrapper>
-			<Separator/>
-			<BooksWrapper>
-				<Book>
-					<Link to='/znaki-drogowe'>
-						<img src={roadSignsBookImage} alt="Znaki drogowe. Okładka wykonana przeze mnie z pomocą pxhere"/>
-					</Link>
-				</Book>
-				<Book>
-					<Link to='/czasowniki-nieregularne'>
-						<img src={irregularVerbsBookImage} alt="Czasowniki nieregularne. Okładka wykonana przeze mnie z pomocą pxhere"/>
-					</Link>
-				</Book>
-			</BooksWrapper>
-			<Separator/>
-		</Wrapper>
-	</>
-)
+class IndexPage extends Component {
+	state = {
+		load: false
+	}
+	componentDidMount() {
+		this.setState({load: true})
+	}
+	render() {
+		return (
+			<>
+				<Preloader load={this.state.load}/>
+				<Wrapper center scroll>
+					<PageHeader>
+						<Logo><span>E</span>asy<span>W</span>ord</Logo>
+						<LogoSeparator/>
+						<p>aplikacja do nauki słówek i definicji</p>
+					</PageHeader>
+					<BooksWrapper>
+						<Book>
+							<Link to='/macmillan'>
+								<img src="https://www.macmillan.pl/components/com_ssshop/cache/500x500/9788376218496.png" alt="Macmillan Education"/>
+							</Link>
+						</Book>
+						<Book>
+							<Link to='/wsip'>
+								<img src="https://sklep.wsip.pl/uploads/tx_evosenk/covers/upload_temp_tF8lhB.jpg" alt="test"/>
+							</Link>
+						</Book>
+						<Book>
+							<Link to='/oxford'>
+								<img src="https://www.gandalf.com.pl/o/oxford-solutions-intermediate,big,578379.jpg" alt="Oxford Solutions Intermediate"/>
+							</Link>
+						</Book>
+					</BooksWrapper>
+					<Separator/>
+					<BooksWrapper>
+						<Book>
+							<Link to='/znaki-drogowe'>
+								<img src={roadSignsBookImage} alt="Znaki drogowe. Okładka wykonana przeze mnie z pomocą pxhere"/>
+							</Link>
+						</Book>
+						<Book>
+							<Link to='/czasowniki-nieregularne'>
+								<img src={irregularVerbsBookImage} alt="Czasowniki nieregularne. Okładka wykonana przeze mnie z pomocą pxhere"/>
+							</Link>
+						</Book>
+					</BooksWrapper>
+					<Separator/>
+				</Wrapper>
+			</>
+		)
+	}
+}
 
 export default IndexPage

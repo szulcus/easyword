@@ -122,6 +122,45 @@
 	}
 }
 
+@keyframes arrow {
+	0% {
+		opacity: 0;
+		transform: scale(0.8) translateX(-200px);
+	}
+	50% {
+		opacity: 1;
+		transform: scale(1);
+	}
+	100% {
+		transform: translateX(0);
+		opacity: 1;
+	}
+}
+
+@keyframes hide {
+	0% {
+		opacity: 1;
+	}
+
+	100% {
+		opacity: 0;
+	}
+}
+
+@keyframes load {
+	0% {
+		transform: scale(1)  rotate(0);
+	}
+
+	50% {
+		transform: scale(0.3) rotate(360deg)
+	}
+
+	100% {
+		transform: scale(1) rotate(710deg);
+	}
+}
+
 .lottie {
 	position: absolute;
 	top: 0;

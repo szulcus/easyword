@@ -3,14 +3,7 @@ import React, { Component } from 'react'
 import styled from 'styled-components'
 // STYLES
 import Global from '../Styles/Global'
-
-const LeavesElement = styled.div`
-	display: flex;
-
-	width: 100%;
-	height: 100%;
-	justify-content: center;
-`
+import { Wrapper } from '../Styles/Components'
 
 const Number = styled.div`
 	font-size: 150px;
@@ -30,9 +23,9 @@ class Leaves extends Component {
 		return (
 			<>
 				<Global />
-				<LeavesElement onClick={this.handleClick}>
+				<Wrapper center onClick={this.handleClick}>
 					<Number>{this.state.counter}</Number>
-				</LeavesElement>
+				</Wrapper>
 			</>
 		);
 	}

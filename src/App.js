@@ -6,7 +6,7 @@ import AppPage from './components/App/WritingApp'
 import IrregularAppPage from './components/App/IrregularApp'
 import WorkPage from './components/Work/Work'
 
-import MainPage from './pages/index'
+import IndexPage from './pages/index'
 
 import MacmillanList from './components/List/MacmillanList'
 import WSiPList from './components/List/WSiPList'
@@ -112,7 +112,7 @@ class App extends Component {
 					/>
 				}/> */}
 				{/* STRONA GŁÓWNA */}
-				<Route path="/" exact component={MainPage}/>
+				<Route path="/" exact component={IndexPage}/>
 					{/* MACMILLAN */}
 					<Route path="/macmillan" exact component={MacmillanList}/>
 						{/* Rozdział 1 - Człowiek */}

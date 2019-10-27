@@ -24,7 +24,7 @@ const PictureElement = styled.div`
 	${props =>
 		props.deleteImage &&
 		css`
-			animation: scaleOut 1s both;
+			animation: scaleOut 0.5s both;
 		`
 	}
 
