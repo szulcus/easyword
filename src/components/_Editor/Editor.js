@@ -1,9 +1,12 @@
 // BASIC
 import React, { Component } from 'react'
 import styled from 'styled-components'
+import ClipboardJS from 'clipboard';
 // STYLES
 import Global from '../Styles/Global'
 import './components/codeFormat.css'
+// ICONS
+import { MdContentCopy } from 'react-icons/md';
 
 const EditorElement = styled.div`
 	display: flex;
@@ -36,12 +39,13 @@ const Code = styled.code`
 	flex-direction: column;
 	width: 100%;
 	height: 50vh;
-	background: none;
+	background: transparent;
 	color: var(--color-primary);
-	font-size: 20px;
+	font-size: 18px;
 	font-weight: bold;
 	font-family: 'Inconsolata', monospace;
 	overflow-y: scroll;
+	outline: none;
 	::-webkit-scrollbar {
 		width: 3px;
 	}
@@ -52,6 +56,16 @@ const Code = styled.code`
 	}
 	::-webkit-scrollbar-thumb {
 		background: var(--color-secondary);
+	}
+	div,
+	span,
+	br {
+		::selection {
+			background-color: transparent;
+		}
+	}
+	@media (min-width: 600px) {
+		font-size: 20px;
 	}
 `
 
@@ -113,6 +127,34 @@ const CheckBox = styled.label`
 
 const Name = styled.div`
 	
+`
+
+const Copy = styled.button`
+	position: absolute;
+	right: 20px;
+	bottom: 20px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 50px;
+	height: 50px;
+	background-color: var(--color-dark);
+	border-radius: 100%;
+	z-index: 2;
+	outline: none;
+	transition: transform 0.05s ease;
+	:hover {
+		cursor: pointer;
+	}
+	:active {
+		transform: scale(0.9);
+	}
+`
+
+const CopyImg = styled(MdContentCopy)`
+	text-decoration: none;
+	color: var(--color-decorative);
+	font-size: 20px;
 `
 
 class Editor extends Component {
@@ -190,6 +232,7 @@ class Editor extends Component {
 			input.value = '';
 		}
 		inputs[0].focus();
+		document.getElementById('copy').click();
 		e.preventDefault();
 	}
 	handleChange = (e) => {
@@ -221,6 +264,7 @@ class Editor extends Component {
 		}
 	}
 	render() {
+		new ClipboardJS('#copy');
 		return (
 			<>
 				<Global/>
@@ -248,7 +292,7 @@ class Editor extends Component {
 						</CheckBox>
 						<Submit type="submit" value="+" />
 					</Form>
-					<Code contentEditable="true">
+					<Code contentEditable="true" id="code">
 						<div spellcheck="false" id="text" onChange={this.handleChange} onKeyPress={this.handleKeyPress}>
 							<Variable>const</Variable> <span class="name">words1_PersonalData</span> = <span class="first-brackets">{'['}</span><br/>
 						</div>
@@ -257,6 +301,9 @@ class Editor extends Component {
 						<span class="export">export default</span> <span class="name">words1_PersonalData</span>
 						</div>
 					</Code>
+					<Copy id="copy" data-clipboard-target="#code" title="Skopiuj text!">
+						<CopyImg>c</CopyImg>
+					</Copy>
 				</EditorElement>
 			</>
 		);
