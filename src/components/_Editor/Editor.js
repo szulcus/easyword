@@ -231,8 +231,8 @@ class Editor extends Component {
 		for (const input of inputs) {
 			input.value = '';
 		}
-		inputs[0].focus();
 		document.getElementById('copy').click();
+		inputs[0].focus();
 		e.preventDefault();
 	}
 	handleChange = (e) => {
