@@ -21,8 +21,14 @@ const EditorElement = styled.div`
 const Form = styled.form`
 	width: 100%;
 	height: 50vh;
-	min-height: 300px;
+	min-height: 350px;
 	color: var(--color-primary);
+	@media (min-height: 600px) {
+		min-height: 400px;
+	}
+	@media (min-height: 800px) {
+		min-height: 450px;
+	}
 `
 const Code = styled.code`
 	display: flex;
@@ -32,9 +38,9 @@ const Code = styled.code`
 	height: 50vh;
 	background: none;
 	color: var(--color-primary);
-	font-size: 18px;
+	font-size: 20px;
 	font-weight: bold;
-	font-family: 'Consolas', monospace;
+	font-family: 'Inconsolata', monospace;
 	overflow-y: scroll;
 	::-webkit-scrollbar {
 		width: 3px;
@@ -57,7 +63,13 @@ const Input = styled.input`
 	padding: 0 10px;
 	font-size: 20px;
 	color: var(--color-white);
-
+	margin: 3px;
+	@media (min-height: 600px) {
+		margin: 5px;
+	}
+	@media (min-height: 800px) {
+		margin: 10px;
+	}
 	::placeholder {
 		transition: all 0.2s ease;
 		color: var(--color-secondary);
@@ -79,8 +91,12 @@ const Submit = styled.input`
 	font-size: 30px;
 	font-weight: bold;
 	outline: none;
-	transition: transform 0.2s ease;
-	:hover {
+	transition: transform 0.1s ease;
+	/* :hover {
+		transform: scale(1.5);
+	} */
+	:active {
+		/* opacity: 0.5; */
 		transform: scale(1.5);
 	}
 	
@@ -90,13 +106,13 @@ const Variable = styled.span`
 	color: #569CD6;
 `
 
-const Name = styled.span`
-	color: #9CDCFE;
-`
-
 const CheckBox = styled.label`
 	display: block;
 	margin: 5px;
+`
+
+const Name = styled.div`
+	
 `
 
 class Editor extends Component {
@@ -134,15 +150,38 @@ class Editor extends Component {
 			
 			);
 	}
+	select = (e) => {
+		// let range = new Range();
+		// let id = e.target.id;
+		// console.log(id)
+		// console.log(range)
+		// let spans = document.querySelectorAll("span[class='name']");
+		// range.setStart(spans[0], 1);
+		// range.setEnd(spans[0], 2);
+		// document.getSelection().removeAllRanges();
+		// document.getSelection().addRange(range);
+	}
 	write = (e) => {
+		// <p id="p">Example: <i>italic</i> and <b>bold</b></p>
+
+		//   button.onclick = () => {
+		//     let range = new Range();
+		
+		//     range.setStart(p, start.value);
+		//     range.setEnd(p, end.value);
+		
+		//     // apply the selection, explained later
+		//     document.getSelection().removeAllRanges();
+		//     document.getSelection().addRange(range);
+		//   };
 		document.getElementById('text').innerHTML +=
 		`
 			&emsp;<span class="second-brackets">{</span><br/>
-			&emsp;&emsp;<span class="name">word1</span>: <span class="string">\`${this.state.word1}\`</span>,<br/>
-			&emsp;&emsp;<span class="name">translation1</span>: <span class="string">\`${this.state.translation1}\`</span>,<br/>
-			&emsp;&emsp;<span class="name">level</span>: <span class="string">\`${this.state.level}\`</span>,<br/>
-			&emsp;&emsp;<span class="name">type</span>: <span class="string">\`${this.state.type}\`</span>,<br/>
-			&emsp;&emsp;<span class="name">image</span>: <span class="string">\`${this.state.image}\`</span>,<br/>
+			&emsp;&emsp;<span class="name">word1</span>: <span onClick={this.select} class="string">\`${this.state.word1.toLowerCase().trim()}\`</span>,<br/>
+			&emsp;&emsp;<span class="name">translation1</span>: <span class="string">\`${this.state.translation1.toLowerCase().trim()}\`</span>,<br/>
+			&emsp;&emsp;<span class="name">level</span>: <span class="string">\`${this.state.level.toLowerCase().trim()}\`</span>,<br/>
+			&emsp;&emsp;<span class="name">type</span>: <span class="string">\`${this.state.type.toLowerCase().trim()}\`</span>,<br/>
+			&emsp;&emsp;<span class="name">image</span>: <span class="string">\`${this.state.image.toLowerCase().trim()}\`</span>,<br/>
 			&emsp;<span class="second-brackets">}</span>,<br/>
 		`
 		console.log(this.state.code);
@@ -150,6 +189,7 @@ class Editor extends Component {
 		for (const input of inputs) {
 			input.value = '';
 		}
+		inputs[0].focus();
 		e.preventDefault();
 	}
 	handleChange = (e) => {
@@ -186,30 +226,35 @@ class Editor extends Component {
 				<Global/>
 				<EditorElement id="box" onChange={this.handleChange}>
 					<Form onSubmit={this.write} id="form">
-						<CheckBox>
-							word: <Input onChange={this.setVariable} onKeyPress={this.focus} id="word1" type="text" name="1" placeholder="słowo" autoComplete="off" /> +
+						<CheckBox onFocus={this.select} id="word1Box">
+							<Name>word:</Name>
+							<Input onChange={this.setVariable} onKeyPress={this.focus} id="word1" type="text" name="1" placeholder="słowo" autoComplete="off" /> +
 						</CheckBox>
-						<CheckBox>
-							translation: <Input onChange={this.setVariable} onKeyPress={this.focus} id="translation1" type="text" name="2" placeholder="tłumaczenie" autoComplete="off" /> +
+						<CheckBox id="translation1Box">
+							<Name>translation:</Name>
+							<Input onChange={this.setVariable} onKeyPress={this.focus} id="translation1" type="text" name="2" placeholder="tłumaczenie" autoComplete="off" /> +
 						</CheckBox>
-						<CheckBox>
-							level: <Input onChange={this.setVariable} onKeyPress={this.focus} id="level" type="text" name="3" placeholder="basic" autoComplete="off" />
+						<CheckBox id="levelBox">
+							<Name>level:</Name>
+							<Input onChange={this.setVariable} onKeyPress={this.focus} id="level" type="text" name="3" placeholder="basic" autoComplete="off" />
 						</CheckBox>
-						<CheckBox>
-							type: <Input onChange={this.setVariable} onKeyPress={this.focus} id="type" type="text" name="4" placeholder="type" autoComplete="off" />
+						<CheckBox id="typeBox">
+							<Name>type:</Name>
+							<Input onChange={this.setVariable} onKeyPress={this.focus} id="type" type="text" name="4" placeholder="type" autoComplete="off" />
 						</CheckBox>
-						<CheckBox>
-							image: <Input onChange={this.setVariable} onKeyPress={this.focus} id="image" type="text" name="5" placeholder="url" autoComplete="off" />
+						<CheckBox id="imageBox">
+							<Name>image:</Name>
+							<Input onChange={this.setVariable} onKeyPress={this.focus} id="image" type="text" name="5" placeholder="url" autoComplete="off" />
 						</CheckBox>
 						<Submit type="submit" value="+" />
 					</Form>
 					<Code contentEditable="true">
 						<div spellcheck="false" id="text" onChange={this.handleChange} onKeyPress={this.handleKeyPress}>
-							<Variable>const</Variable> <Name>words1_PersonalData</Name> = <span class="first-brackets">{'['}</span><br/>
+							<Variable>const</Variable> <span class="name">words1_PersonalData</span> = <span class="first-brackets">{'['}</span><br/>
 						</div>
 						<div spellcheck="false">
 						<span class="first-brackets">{']'}</span>;<br/><br/>
-						<Name><span class="export">export default</span> words1_PersonalData</Name>
+						<span class="export">export default</span> <span class="name">words1_PersonalData</span>
 						</div>
 					</Code>
 				</EditorElement>

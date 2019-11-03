@@ -6,6 +6,29 @@ import roadSignsBookImage from '../images/road-signs-book.png'
 import irregularVerbsBookImage from '../images/irregular-verbs-book.png'
 import Preloader from '../components/App/Preloader'
 
+const HelpTrigger = styled.div`
+	position: absolute;
+	right: 20px;
+	bottom: 20px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 50px;
+	height: 50px;
+	background-color: var(--color-dark);
+	border-radius: 100%;
+	z-index: 2;
+	:hover {
+		cursor: pointer;
+	}
+`
+
+const Help = styled(Link)`
+	text-decoration: none;
+	color: var(--color-decorative);
+	font-weight: bold;
+`
+
 const PageHeader = styled.header`
 	width: 90vw;
 	font-size: 20px;
@@ -94,6 +117,9 @@ class IndexPage extends Component {
 			<>
 				<Preloader load={this.state.load}/>
 				<Wrapper center scroll>
+					<HelpTrigger>
+						<Help to='/editor'>?</Help>
+					</HelpTrigger>
 					<PageHeader>
 						<Logo><span>E</span>asy<span>W</span>ord</Logo>
 						<LogoSeparator/>
