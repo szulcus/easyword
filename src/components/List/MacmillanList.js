@@ -99,6 +99,20 @@ class List extends Component {
 								<ListElement content="Inne" path="/macmillan/rozdział-5/inne" />
 								<ListElementTest content="Test" path="/macmillan/rozdział-5/test" />
 							</SectionList>
+							<SectionTitle>Rozdział 7 - Zakupy i usługi</SectionTitle>
+							<SectionList>
+								<ListElement content="Rodzaje sklepów" path="/macmillan/rozdział-7/rodzaje-sklepów" />
+								<ListElement content="Opisywanie towarów" path="/macmillan/rozdział-7/opisywanie-towarów" />
+								<ListElement content="Sprzedawanie i kupowanie" path="/macmillan/rozdział-7/sprzedawanie-i-kupowanie" />
+								<ListElement content="Reklamacje" path="/macmillan/rozdział-7/reklamacje" />
+								<ListElement content="Reklama" path="/macmillan/rozdział-7/reklama" />
+								<ListElement content="Korzystanie z usług" path="/macmillan/rozdział-7/korzystanie-z-usług" />
+								<ListElement content="Środki płatnicze" path="/macmillan/rozdział-7/środki-płatnicze" />
+								<ListElement content="Banki" path="/macmillan/rozdział-7/banki" />
+								<ListElement content="Ubezpieczenie" path="/macmillan/rozdział-7/ubezpieczenie" />
+								<ListElement content="Inne" path="/macmillan/rozdział-7/inne" />
+								<ListElementTest content="Test" path="/macmillan/rozdział-7/test" />
+							</SectionList>
 						</ListWrapper>
 					</ListElementWrapper>
 				</Wrapper>
