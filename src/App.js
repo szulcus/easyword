@@ -466,7 +466,7 @@ class App extends Component {
 							<Route path="/macmillan/rozdział-7/opisywanie-towarów" render={(props) =>
 								<AppPage
 									{...props}
-									words={b1_e7_words1}
+									words={b1_e7_words2}
 									base_language='en'
 									translated_language='pl'
 								/>
@@ -475,7 +475,7 @@ class App extends Component {
 							<Route path="/macmillan/rozdział-7/sprzedawanie-i-kupowanie" render={(props) =>
 								<AppPage
 									{...props}
-									words={b1_e7_words1}
+									words={b1_e7_words3}
 									base_language='en'
 									translated_language='pl'
 								/>
@@ -484,7 +484,7 @@ class App extends Component {
 							<Route path="/macmillan/rozdział-7/reklamacje" render={(props) =>
 								<AppPage
 									{...props}
-									words={b1_e7_words1}
+									words={b1_e7_words4}
 									base_language='en'
 									translated_language='pl'
 								/>
@@ -493,7 +493,7 @@ class App extends Component {
 							<Route path="/macmillan/rozdział-7/reklama" render={(props) =>
 								<AppPage
 									{...props}
-									words={b1_e7_words1}
+									words={b1_e7_words5}
 									base_language='en'
 									translated_language='pl'
 								/>
@@ -502,7 +502,7 @@ class App extends Component {
 							<Route path="/macmillan/rozdział-7/korzystanie-z-usług" render={(props) =>
 								<AppPage
 									{...props}
-									words={b1_e7_words1}
+									words={b1_e7_words6}
 									base_language='en'
 									translated_language='pl'
 								/>
@@ -511,7 +511,7 @@ class App extends Component {
 							<Route path="/macmillan/rozdział-7/środki-płatnicze" render={(props) =>
 								<AppPage
 									{...props}
-									words={b1_e7_words1}
+									words={b1_e7_words7}
 									base_language='en'
 									translated_language='pl'
 								/>
@@ -520,7 +520,7 @@ class App extends Component {
 							<Route path="/macmillan/rozdział-7/banki" render={(props) =>
 								<AppPage
 									{...props}
-									words={b1_e7_words1}
+									words={b1_e7_words8}
 									base_language='en'
 									translated_language='pl'
 								/>
@@ -529,7 +529,7 @@ class App extends Component {
 							<Route path="/macmillan/rozdział-7/ubezpieczenie" render={(props) =>
 								<AppPage
 									{...props}
-									words={b1_e7_words1}
+									words={b1_e7_words9}
 									base_language='en'
 									translated_language='pl'
 								/>
@@ -538,7 +538,7 @@ class App extends Component {
 							<Route path="/macmillan/rozdział-7/inne" render={(props) =>
 								<AppPage
 									{...props}
-									words={b1_e7_words5}
+									words={b1_e7_words10}
 									base_language='en'
 									translated_language='pl'
 								/>
