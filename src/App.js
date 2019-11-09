@@ -16,6 +16,8 @@ import Facebook from './components/Facebook/Facebook'
 import Leaves from './components/_Leaves/Leaves'
 
 import Editor from './components/_Editor/Editor'
+
+import Automatic from './components/Automatic/Auto'
 // import OxfordList from './pages/books/3_Oxford/oxford'
 import RoadSignsList from './components/List/RoadSignsList'
 
@@ -1049,6 +1051,7 @@ class App extends Component {
 				<Route path="/leaves" exact component={Leaves}/>
 
 				<Route path="/editor" exact component={Editor}/>
+				<Route path="/auto" exact component={Automatic}/>
 
 				<Route component={NotFoundPage}/>
 			</Switch>

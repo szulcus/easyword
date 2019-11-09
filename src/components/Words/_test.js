@@ -1,11 +1,32 @@
 const testWords = [
 	{
-		word1: `dressing gown`,
-		translation1: `szlafrok`,
+		word1: `dressing2`,
+		translation1: `szlafrok2`,
 		level: `extended`,
 		type: `ubrania`,
 		image: `https://c.pxhere.com/photos/02/7d/bed_woman_sleep_time_of_work_attractive_stand_up_rested-1374298.jpg!s`,
 	},
+	{
+		word1: `dressing1`,
+		translation1: `szlafrok1`,
+		level: `extended`,
+		type: `ubrania`,
+		image: `https://c.pxhere.com/photos/02/7d/bed_woman_sleep_time_of_work_attractive_stand_up_rested-1374298.jpg!s`,
+	},
+	{
+		word1: `dressing3`,
+		translation1: `szlafrok3`,
+		level: `extended`,
+		type: `ubrania`,
+		image: `https://c.pxhere.com/photos/02/7d/bed_woman_sleep_time_of_work_attractive_stand_up_rested-1374298.jpg!s`,
+	},
+	// {
+	// 	word1: `dressing gown`,
+	// 	translation1: `szlafrok`,
+	// 	level: `extended`,
+	// 	type: `ubrania`,
+	// 	image: `https://c.pxhere.com/photos/02/7d/bed_woman_sleep_time_of_work_attractive_stand_up_rested-1374298.jpg!s`,
+	// },
 	// {
 	// 	word1: `lined`,
 	// 	translation1: `ocieplany`,
