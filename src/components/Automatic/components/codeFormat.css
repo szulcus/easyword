@@ -1,0 +1,24 @@
+.name,
+.third-brackets {
+	color: #9cdcfe;
+}
+
+.string {
+	color: #ce9178;
+}
+
+.first-brackets {
+	color: gold;
+}
+
+.second-brackets {
+	color: orchid;
+}
+
+.export {
+	color: #c586c0;
+}
+
+.tab2 {
+	tab-size: 6;
+}

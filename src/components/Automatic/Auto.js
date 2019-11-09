@@ -17,7 +17,11 @@ const ConvertButton = styled.button`
 
 class Auto extends Component {
 	state = {
-		text: ''
+		text: '',
+		chapterName: '6_Other',
+		level: 'basic',
+		type: 'inne',
+		image: 'url'
 	}
 	updateText = (e) => {
 		e.persist()
@@ -40,33 +44,24 @@ class Auto extends Component {
 		let text = document.getElementById('text');
 		text.value += '\n\n';
 
-		text.value = text.value.replace(/[ -z]+\n\n/g, (x) => {
-			return `\ttranslation1: \`${x.replace(/\n/g, '')}\`,\n\n`
+		text.value = text.value.replace(/[a-zA-Zą-żĄ-Żó ,\-'()/]+\n\n/g, (x) => {
+			return `\t\ttranslation1: \`${x.replace(/\n/g, '')}\`,\n\t\tlevel: \`${this.state.level}\`,\n\t\ttype: \`${this.state.type}\`,\n\t\timage: \`${this.state.image}\`\n\t},\n`
 		});
 
-		text.value = text.value.replace(/[a-z]+\n/g, (x) => {
-			return `\tword1: \`${x.replace(/\n/g, '')}\`,\n`
+		text.value = text.value.replace(/[a-zA-Zą-żĄ-Żó \-'()/]+\n/g, (x) => {
+			return `\t{\n\t\tword1: \`${x.replace(/\n/g, '')}\`,\n`
 		});
 
-		
-
-
-		// text.value = text.value.replace(/[ -z]+\n\n/g, (x) => {
-		// 	return `\`${x.replace(/\n/g, '')}\`\n\n`
-		// });
-
-		// text.value = text.value.replace(/[ -z]+\n/g, (x) => {
-		// 	return `\`${x.replace(/\n/g, '')}\`\n`
-		// });
+		text.value = `const words${this.state.chapterName} = [\n${text.value}];\n\nexport default words${this.state.chapterName}`
 	}
 	render() {
 		return (
 			<>
 				<Global />
 				<AutoElement>
-					coś
-					<Text id="text" onChange={this.updateText}>{`coo\nbaker's\n\ncoo\ncoo\n\ncoo\ncoo\n\ncoo\ncoo`}</Text>
+					<Text id="text" placeholder="Wpisz text" onChange={this.updateText}></Text>
 					<ConvertButton onClick={this.convert}>Konwertuj</ConvertButton>
+					<ConvertButton onClick={this.createFile}>Stwórz plik</ConvertButton>
 				</AutoElement>
 			</>
 		);
