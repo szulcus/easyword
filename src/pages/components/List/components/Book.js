@@ -10,7 +10,7 @@ const BookElement = styled(Link)`
 
 const BookImage = styled.img`
 	display: none;
-	@media (min-width: 768px) {
+	@media (min-width: 800px) {
 		display: block;
 		width: 300px;
 		transition: all 0.2s ease;

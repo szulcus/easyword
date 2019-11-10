@@ -20,7 +20,7 @@ const ListElementWrapper = styled.div``
 
 const Separator = styled.hr`
 	display: none;
-	@media (min-width: 768px) {
+	@media (min-width: 800px) {
 		display: flex;
 		width: 0;
 		border: 0.5px solid gold;

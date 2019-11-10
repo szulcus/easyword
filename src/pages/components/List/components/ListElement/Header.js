@@ -12,7 +12,7 @@ library.add(faReply);
 const HeaderElement = styled.header`
 	text-align: center;
 	margin-bottom: 5px;
-	@media (min-width: 768px) {
+	@media (min-width: 800px) {
 		display: block;
 		width: 100%;
 		color: white;
@@ -23,24 +23,11 @@ const Title = styled.h1`
 	margin-bottom: 0;
 `
 
-const Back = styled(PageLink)`
-	display: none;
-	font-size: 25px;
-	margin: 0;
-	color: var(--color-decorative);
-	@media (max-width: 768px) {
-		display: block;
-	}
-`
-
 class Header extends Component {
 	render() {
 		return (
 			<HeaderElement>
 				<Title>Spis treści:</Title>
-				<Back to='/'>
-					<Icon list icon={['fas', 'reply']}/>
-				</Back>
 			</HeaderElement>
 		);
 	}

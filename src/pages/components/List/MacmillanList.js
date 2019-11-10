@@ -19,7 +19,7 @@ library.add(faReply);
 
 const Separator = styled.hr`
 	display: none;
-	@media (min-width: 768px) {
+	@media (min-width: 800px) {
 		display: flex;
 		width: 0;
 		border: 0.5px solid gold;
@@ -31,31 +31,34 @@ const Separator = styled.hr`
 const ListElementWrapper = styled.div``
 
 const Advertisement = styled.div`
-	text-align: center;
 	background-color: var(--color-dark);
-	padding: 20px;
-	margin: 30px 0;
+	padding: 10px;
+	margin-bottom: 50px;
 	border-radius: 20px;
+	@media (min-width: 600px) {
+		padding: 10px 20px;
+	}
 `
 
 const AdTitle = styled.h3`
+text-align: center;
 	margin-top: 10px;
 `
 
 const Term = styled.div`
 	display: flex;
 	justify-content: center;
-	align-items: center;
 `
 
 const TimeIcon = styled(IoIosTimer)`
 	line-height: 100%;
-	margin-right: 5px;
+	margin: 20px;
 	font-size: 30px;
-color: var(--color-decorative);
+	color: var(--color-decorative);
 `
 
-const SectionTitle = styled.h3``;
+const SectionTitle = styled.h3`
+`;
 
 const SectionList = styled.ul`
 	list-style: none;
@@ -72,11 +75,11 @@ class List extends Component {
 					<ListElementWrapper>
 						<Header />
 						<ListWrapper>
-							<Advertisement>
 								<Term>
 									<TimeIcon />
 									{/* 19.10.2019r | 00:00:00 */}
 								</Term>
+							<Advertisement>
 								<AdTitle>Rozdział 8 - Podróżowanie i turystyka</AdTitle>
 							<SectionList>
 								<ListElement content="Podróżowanie i środki transportu" path="/macmillan/rozdział-8/podróżowanie-i-środki-transportu" />

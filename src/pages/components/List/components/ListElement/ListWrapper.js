@@ -20,7 +20,7 @@ const ListWrapper = styled.div`
 		background: var(--color-secondary);
 	}
 
-	@media (min-width: 768px) {
+	@media (min-width: 800px) {
 		width: 50vw;
 		height: calc(100vh - 200px);
 		padding-right: 30px;
