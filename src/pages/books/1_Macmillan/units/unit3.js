@@ -11,7 +11,7 @@ import b1_e3_words4 from '../../../components/Words/1_Macmillan/Unit3/4_Extracur
 import b1_e3_words5 from '../../../components/Words/1_Macmillan/Unit3/5_EducationSystem'
 import b1_e3_words6 from '../../../components/Words/1_Macmillan/Unit3/6_Orther'
 
-class Unit1 extends Component {
+class Unit3 extends Component {
 	render() {
 		return (
 			<>
@@ -84,4 +84,4 @@ class Unit1 extends Component {
 	}
 }
 
-export default Unit1;
+export default Unit3;

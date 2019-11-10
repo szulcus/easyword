@@ -8,8 +8,9 @@ import Unit2 from './Units/Unit2'
 import Unit3 from './Units/Unit3'
 import Unit4 from './Units/Unit4'
 import Unit5 from './Units/Unit5'
-import Unit7 from './Units/Unit5'
+import Unit7 from './Units/Unit7'
 import Unit8 from './Units/Unit8'
+import Unit9 from './Units/Unit9'
 
 class index extends Component {
 	render() {
@@ -24,6 +25,7 @@ class index extends Component {
 				<Unit5 />
 				<Unit7 />
 				<Unit8 />
+				<Unit9 />
 			</>
 		);
 	}

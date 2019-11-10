@@ -13,10 +13,9 @@ import ListElement from './components/ListElement/ListElement'
 import ListElementTest from './components/ListElement/ListElementTest'
 // ICONS
 import { faReply } from '@fortawesome/free-solid-svg-icons'
+import {IoIosTimer} from 'react-icons/io'
 
 library.add(faReply);
-
-const ListElementWrapper = styled.div``
 
 const Separator = styled.hr`
 	display: none;
@@ -29,9 +28,34 @@ const Separator = styled.hr`
 	}
 `
 
-const SectionTitle = styled.h3`
-	color: lightgray;
-`;
+const ListElementWrapper = styled.div``
+
+const Advertisement = styled.div`
+	text-align: center;
+	background-color: var(--color-dark);
+	padding: 20px;
+	margin: 30px 0;
+	border-radius: 20px;
+`
+
+const AdTitle = styled.h3`
+	margin-top: 10px;
+`
+
+const Term = styled.div`
+	display: flex;
+	justify-content: center;
+	align-items: center;
+`
+
+const TimeIcon = styled(IoIosTimer)`
+	line-height: 100%;
+	margin-right: 5px;
+	font-size: 30px;
+color: var(--color-decorative);
+`
+
+const SectionTitle = styled.h3``;
 
 const SectionList = styled.ul`
 	list-style: none;
@@ -48,6 +72,22 @@ class List extends Component {
 					<ListElementWrapper>
 						<Header />
 						<ListWrapper>
+							<Advertisement>
+								<Term>
+									<TimeIcon />
+									{/* 19.10.2019r | 00:00:00 */}
+								</Term>
+								<AdTitle>Rozdział 8 - Podróżowanie i turystyka</AdTitle>
+							<SectionList>
+								<ListElement content="Podróżowanie i środki transportu" path="/macmillan/rozdział-8/podróżowanie-i-środki-transportu" />
+								<ListElement content="Informacja turystyczna" path="/macmillan/rozdział-8/informacja-turystyczna" />
+								<ListElement content="Baza noclegowa" path="/macmillan/rozdział-8/baza-noclegowa" />
+								<ListElement content="Wycieczki i zwiedzanie" path="/macmillan/rozdział-8/wycieczki-i-zwiedzanie" />
+								<ListElement content="Wypadki" path="/macmillan/rozdział-8/wypadki" />
+								<ListElement content="Inne" path="/macmillan/rozdział-8/inne" />
+								<ListElementTest content="Test" path="/macmillan/rozdział-8/test" />
+							</SectionList>
+							</Advertisement>
 							<SectionTitle>Rozdział 1 - Człowiek</SectionTitle>
 							<SectionList>
 								<ListElement content="Dane osobowe" path="/macmillan/rozdział-1/dane-osobowe" />
@@ -113,6 +153,35 @@ class List extends Component {
 								<ListElement content="Inne" path="/macmillan/rozdział-7/inne" />
 								<ListElementTest content="Test" path="/macmillan/rozdział-7/test" />
 							</SectionList>
+							<SectionTitle>Rozdział 8 - Podróżowanie i turystyka</SectionTitle>
+							<SectionList>
+								<ListElement content="Podróżowanie i środki transportu" path="/macmillan/rozdział-8/podróżowanie-i-środki-transportu" />
+								<ListElement content="Informacja turystyczna" path="/macmillan/rozdział-8/informacja-turystyczna" />
+								<ListElement content="Baza noclegowa" path="/macmillan/rozdział-8/baza-noclegowa" />
+								<ListElement content="Wycieczki i zwiedzanie" path="/macmillan/rozdział-8/wycieczki-i-zwiedzanie" />
+								<ListElement content="Wypadki" path="/macmillan/rozdział-8/wypadki" />
+								<ListElement content="Inne" path="/macmillan/rozdział-8/inne" />
+								<ListElementTest content="Test" path="/macmillan/rozdział-8/test" />
+							</SectionList>
+							<SectionTitle>Rozdział 9 - Kultura</SectionTitle>
+							<SectionList>
+								<ListElement content="Dziedziny kultury" path="/macmillan/rozdział-9/dziedziny-kultury" />
+								<ListElement content="Twórcy i ich dzieła" path="/macmillan/rozdział-9/twórcy-i-ich-dzieła" />
+								<ListElement content="Uczestnictwo w kulturze" path="/macmillan/rozdział-9/uczestnictwo-w-kulturze" />
+								<ListElement content="Media" path="/macmillan/rozdział-9/media" />
+								<ListElement content="Inne" path="/macmillan/rozdział-9/inne" />
+								<ListElementTest content="Test" path="/macmillan/rozdział-9/test" />
+							</SectionList>
+							{/* <SectionTitle>Rozdział</SectionTitle>
+							<SectionList>
+								<ListElement content="content" path="/macmillan/rozdział" />
+								<ListElement content="content" path="/macmillan/rozdział" />
+								<ListElement content="content" path="/macmillan/rozdział" />
+								<ListElement content="content" path="/macmillan/rozdział" />
+								<ListElement content="content" path="/macmillan/rozdział" />
+								<ListElement content="Inne" path="/macmillan/rozdział-?/inne" />
+								<ListElementTest content="Test" path="/macmillan/rozdział-?/test" />
+							</SectionList> */}
 						</ListWrapper>
 					</ListElementWrapper>
 				</Wrapper>

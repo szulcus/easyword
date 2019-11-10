@@ -15,7 +15,7 @@ import b1_e7_words8 from '../../../components/Words/1_Macmillan/Unit7/8_Banks'
 import b1_e7_words9 from '../../../components/Words/1_Macmillan/Unit7/9_Insurance'
 import b1_e7_words10 from '../../../components/Words/1_Macmillan/Unit7/10_Other'
 
-class Unit1 extends Component {
+class Unit7 extends Component {
 	render() {
 		return (
 			<>
@@ -124,4 +124,4 @@ class Unit1 extends Component {
 	}
 }
 
-export default Unit1;
+export default Unit7;

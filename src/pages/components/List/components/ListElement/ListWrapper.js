@@ -7,7 +7,6 @@ const ListWrapper = styled.div`
 	
 	overflow-y: scroll;
 	padding: 0 20px;
-	
 
 	::-webkit-scrollbar {
 		width: 3px;
