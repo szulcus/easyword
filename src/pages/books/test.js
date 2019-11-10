@@ -1,5 +1,5 @@
 import React from 'react'
-import {Link} from 'gatsby'
+import {Link} from './node_modules/gatsby'
 import Global from '../../components/Styled/Global/global';
 
 const Test = () => (

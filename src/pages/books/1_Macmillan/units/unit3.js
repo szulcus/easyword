@@ -1,502 +1,87 @@
 // BASIC
 import React, {Component} from 'react';
-import styled from 'styled-components';
-import { library } from '@fortawesome/fontawesome-svg-core'
-// SCRIPTS
-import getNew from '../../../../components/Scripts/en/en3_getNew()'
-import expand from '../../../../components/Scripts/menu-hamburger'
-import deleteImage from '../../../../components/Scripts/Functions/deleteImage()'
-import removeButtons from '../../../../components/Scripts/removeButtons()'
-// STYLES
-import Global, {Wrapper, PageLink, BrowserLink, Emoji, Icon} from '../../../../components/Styled/Global/global';
-import '../../../../components/Styled/Keyframes/main-keyframes.css'
+import {Route} from 'react-router-dom';
+// COMPONENTS
+import AppPage from '../../../../components/App/WritingApp'
 // FILES
-import information from '../../../../images/information.png'
-// ICONS
-import { faFacebookF, faGithub, faLinkedinIn } from '@fortawesome/free-brands-svg-icons'
-import { faUserTie, faReply, faCog } from '@fortawesome/free-solid-svg-icons'
+import b1_e3_words1 from '../../../components/Words/1_Macmillan/Unit3/1_SchoolSubjects'
+import b1_e3_words2 from '../../../components/Words/1_Macmillan/Unit3/2_GradesAndCourseRequirements'
+import b1_e3_words3 from '../../../components/Words/1_Macmillan/Unit3/3_SchoolLive'
+import b1_e3_words4 from '../../../components/Words/1_Macmillan/Unit3/4_ExtracurricularActivities'
+import b1_e3_words5 from '../../../components/Words/1_Macmillan/Unit3/5_EducationSystem'
+import b1_e3_words6 from '../../../components/Words/1_Macmillan/Unit3/6_Orther'
 
-library.add(faFacebookF, faGithub, faLinkedinIn, faUserTie, faReply, faCog);
-
-const Loader = styled.div`
-	display: none;
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100vw;
-	height: 100vh;
-	background: black;
-	animation: opacity 0.1s ease;
-`
-
-const Cathegory = styled.div`
-	width: 90vw;
-	margin-bottom: 10px;
-	color: var(--color-secondary);
-	text-align: center;
-	overflow: hidden;
-	text-overflow: ellipsis;
-	white-space: nowrap;
-	text-transform: uppercase;
-`;
-
-const Navigation = styled.nav`
-	display: flex;
-	width: 100%;
-	justify-content: space-between;
-`;
-
-const Points = styled.div`
-	display: block;
-	color: var(--color-secondary);
-	strong {
-		font-weight: bold;
-		color: var(--color-primary);
-	}
-`;
-
-
-const Hamburger = styled.div`
-	display: block;
-	position: relative;
-
-	.hamburger {
-		display: flex;
-		border: 0;
-		background-color: transparent;
-		cursor: pointer;
-	}
-
-	.hamburger__container {
-		display: flex;
-		align-items: center;
-		position: relative;
-		width: 35px;
-		height: 30px;
-	}
-
-	.hamburger__bars {
-		position: absolute;
-		width: 35px;
-		height: 2px;
-		background-color: gray;
-		transition: transform 220ms ease-in-out;
-	}
-
-	.hamburger__bars:before,
-	.hamburger__bars:after {
-		display: block;
-		position: absolute;
-		width: 35px;
-		height: 2px;
-		background-color: gray;
-		content: '';
-	}
-
-	.hamburger__bars:before {
-		top: -12px;
-		transition: top 100ms 250ms ease-in, transform 220ms ease-in-out;
-	}
-
-	.hamburger__bars:after {
-		bottom: -12px;
-		transition: bottom 100ms 250ms ease-in, transform 220ms ease-in-out;
-	}
-
-	.hamburger--active .hamburger__bars {
-		transform: rotate(225deg);
-		transition: transform 220ms 120ms ease-in-out;
-	}
-
-	.hamburger--active .hamburger__bars:before {
-		top: 0;
-		transition: top 100ms ease-out;
-	}
-
-	.hamburger--active .hamburger__bars:after {
-		bottom: 0;
-		transform: rotate(-90deg);
-		transition: bottom 100ms ease-out, transform 220ms 120ms ease-in-out;
-	}
-
-	.hamburger:focus,
-	.hamburger__container:focus {
-		outline: none;
-	}
-
-	#hamburger-list {
-		position: absolute;
-		top: -12px;
-		right: 70px;
-		display: flex;
-		transition: 0.5s;
-		transform: translateX(100vw);
-
-	@media(max-width: 550px) {
-		top: 20vh;
-		right: 20vw;
-		width: 60vw;
-		height: 60vh;
-		transform: translateY(-100vh);
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		top: 0;
-	}
-
-
-		li {
-			margin: 0 15px;
-			font-size: 17px;
-			list-style-type: none;
-			cursor: pointer;
-			text-transform: uppercase;
-		
-			:hover {
-				animation: opacity 1s ease;
-			}
-
-			:nth-child(1) {
-				transition-duration: 0.3s;
-			}
-
-			:nth-child(2) {
-				transition-duration: 0.4s;
-			}
-
-			:nth-child(3) {
-				transition-duration: 0.5s;
-			}
-
-			:nth-child(4) {
-				transition-duration: 0.6s;
-			}
-
-			@media(max-width: 700px) {
-				margin: 0 10px;
-
-				:hover {
-					animation: none;
-				}
-
-				:nth-child(1) {
-					transition-duration: 0.6s;
-				}
-
-				:nth-child(2) {
-					transition-duration: 0.5s;
-				}
-
-				:nth-child(3) {
-					transition-duration: 0.4s;
-				}
-
-				:nth-child(4) {
-					transition-duration: 0.3s;
-				}
-			}
-			@media(max-width: 550px) {
-				font-size: 20px;
-				width: 100%;
-				padding: 30px 0;
-				border-bottom: 1px solid gold;
-				text-align: center;
-				:last-child {
-					border-bottom: 0;
-				}
-			}
-			@media(max-width: 350px) {
-				padding: 20px 0;
-			}
-		}
-	}
-`;
-
-const SocialMedia = styled.ul`
-	position: absolute;
-	bottom: 0;
-	right: 20vw;
-	display: flex;
-	justify-content: center;
-	list-style: none;
-	width: 60vw;
-	padding: 0;
-	text-align: center;
-	font-size: 30px;
-	opacity: 0.5;
-	transition-duration: 0.5s;
-	animation: floatBottom 0.3s ease-in;
-	z-index: 10;
-
-	li {
-		margin: 0 10px;
-	}
-`
-
-const Firework = styled.img`
-	width: 400px;
-	@media(max-width: 700px) {
-		width: 55vw;
-	}
-`
-
-const Word = styled.div`
-	font-weight: bold;
-	margin: 10px 0 5px 0;
-`
-
-const Picture = styled.div`
-	width: 647px;
-	height: 400px;
-	margin: 0 auto;
-	background-color: gray;
-	border-radius: 20px;
-	
-	img {
-		width: 100%;
-		height: 100%;
-		border-radius: 20px;
-	}
-
-	@media(max-width: 700px) {
-		width: 90vw;
-		height: calc(90vw / 1.618)
-	}
-`
-
-const DeleteImage = styled.div`
-	position: absolute;
-	top: 25vh;
-	left: 25vw;
-	display: none;
-	justify-content: center;
-	align-items: center;
-	flex-direction: column;
-	width: 50vw;
-	height: 50vh;
-	padding: 5vh 5vw;
-	text-align: center;
-	background: var(--color-dark);
-	animation: scale 0.3s ease-in;
-
-	h1 {
-		display: block;
-		padding: 0;
-		margin: 0;
-	}
-
-	hr {
-		width: 100%;
-		border: 0.5px solid var(--color-decorative);
-		margin: 3vh 0;
-	}
-
-	ul {
-		display: flex;
-		list-style: none;
-		padding: 0;
-		margin: 0;
-		font-size: 25px;
-
-		li {
-			padding: 0 20px;
-			transition: opacity 0.15s ease-in-out;
-			text-transform: uppercase;
-
-			:hover {
-				opacity: 0.5;
-				cursor: pointer;
-			}
-		}
-	}
-
-	@media(max-width: 768px) {
-		top: 0;
-		left: 0;
-		width: 100vw;
-		height: 100vh;
-	}
-`
-
-const Win = styled.div`
-	position: absolute;
-	top: 0;
-	left: 0;
-	display: none;
-	flex-direction: column-reverse;
-	justify-content: center;
-	width: 100vw;
-	height: 100vh;
-	padding: 50px;
-	background: var(--color-dark);
-	font-size: 30px;
-	text-align: center;
-
-	@media(max-width: 768px) {
-		padding: 0 30px;
-	}
-`
-
-const Information = styled.div`
-	padding: 30px 0;
-	border-top: 1px solid var(--color-decorative);
-	border-bottom: 1px solid var(--color-decorative);
-	margin-top: -10vh;
-	animation: scale 0.3s ease-in;
-
-	p {
-		margin: 30px 0;
-	}
-
-	@media(max-width: 768px) {
-		padding: 20px 0;
-		font-size: 20px;
-		p {
-			margin: 20px 0;
-		}
-	}
-`
-
-const Nav = styled.div`
-	button {
-		width: 110px;
-		font-weight: bold;
-		background: var(--color-secondary);
-		padding: 7px;
-		margin: 0 5px;
-		margin-bottom: 5px;
-		border-radius: 20px;
-		outline: none;
-		color: lightgray;
-		transition: opacity 0.1s ease-in;
-		font-family: 'Ubuntu', sans-serif;
-		text-transform: uppercase;
-		
-		:hover {
-			cursor: pointer;
-			opacity: 0.9;
-		}
-	}
-`
-const Input = styled.input`
-	width: 500px;
-	margin: 15px 0;
-	padding: 5px;
-	border: 0;
-	border-radius: 20px;
-	font-size: 20px;
-	text-align: center;
-	outline: none;
-	font-family: 'Ubuntu', sans-serif;
-	
-	::placeholder {
-		transition: all 0.2s ease-in-out;
-		color: var(--color-secondary);
-	}
-
-	:focus::placeholder {
-		opacity: 0;
-		transform: scale(0);
-	}
-	@media(max-width: 550px) {
-		width: 90vw;
-		margin: 10px 0;
-
-	}
-`
-
-const Answer = styled.div`
-	text-align: center;
-	transition: all 0.15s ease-out;
-	animation: scale 0.2s ease-in-out;
-`
-
-const Settings = styled.div`
-	display: none;
-	position: absolute;
-	top: 54px;
-	left: 26px;
-	font-size: 30px;
-	color: var(--color-secondary);
-	animation: rotate 0.8s ease-out;
-`
-
-const Back = styled(PageLink)`
-	font-size: 20px;
-	line-height: 20px;
-`
-class Unit3 extends Component {
+class Unit1 extends Component {
 	render() {
-	return (
-		<>
-			<Global/>
-			<Loader id="loader-bg"/>
-			<Wrapper center small onLoad={getNew}>
-				<Cathegory id="cathegory">Jakaś bardzo długa i zawiła kategoria</Cathegory>
-				<Navigation id="navigation">
-					<Points>Punkty: <strong id="pointCounter">0</strong></Points>
-					<Settings id="settings" onClick={removeButtons}><Icon icon={['fas', 'cog']}/></Settings>
-					<Hamburger>
-						<button onClick={expand} id="hamburger-menu" className="hamburger" aria-label="Menu">
-								<span className="hamburger__container" tabIndex="-1">
-									<span className="hamburger__bars"></span>
-								</span>
-						</button>
-						<ul id="hamburger-list">
-							<li id="hamburger-list-element-1">Angielski</li>
-							<li id="hamburger-list-element-2">Polski</li>
-							<li id="hamburger-list-element-3">Przemiennie</li>
-							<li id="back"><Back to='/macmillan'><Icon icon={['fas', 'reply']}/></Back></li>
-						</ul>
-					</Hamburger>
-					<SocialMedia id="social-media">
-						<li>
-							<BrowserLink href="https://www.facebook.com/programista.webowy.jakub.schulz"><Icon icon={['fab', 'facebook-f']} /></BrowserLink>
-						</li>
-						<li>
-							<BrowserLink href="https://github.com/jakub104"><Icon icon={['fab', 'github']} /></BrowserLink>
-						</li>
-						<li>
-							<BrowserLink href="https://www.linkedin.com/in/jakub-schulz-265931186/"><Icon icon={['fab', 'linkedin-in']} /></BrowserLink>
-						</li>
-						<li>
-							<BrowserLink href="https://programista-webowy-jakub-schulz.000webhostapp.com"><Icon icon={['fas', 'user-tie']} /></BrowserLink>
-						</li>
-					</SocialMedia>
-				</Navigation>
-				<Firework id="firework"></Firework>
-				<Word id="baseWord">...</Word>
-
-				<Picture id="picture" onClick={deleteImage}>
-					<a href="https://www.google.pl/chrome/?brand=CHBD&gclid=CjwKCAjwp_zkBRBBEiwAndwD9ayiRmEEnDSbN1hUD5bnVb9VYCRjdh87Rm68PNSXyMi1PSjBeSkm-hoCJUcQAvD_BwE&gclsrc=aw.ds">
-						<img src={information} alt="Twoja przeglądarka nie wspiera Standardu JavaScript ES6!" title="Pobierz Google Chrome!"/>
-					</a>
-				</Picture>
-				<DeleteImage id="delete-information">
-					<h1>Usunąć?</h1>
-					<hr/>
-					<ul>
-						<li id="yes">Tak</li>
-						<li id="no">Nie</li>
-					</ul>
-				</DeleteImage>
-				<Win id="end-game">
-					<Information id="information">
-						<p>Gratulacje! Zdobyłeś już 50 punktów <Emoji symbol="😁"/>.</p>
-						<p>Odpocznij chwilę, lub <PageLink to='/macmillan'>zacznij inną grę</PageLink> <Emoji symbol="😃"/>.</p>
-					</Information>
-				</Win>
-				<Input placeholder="Wpisz tłumaczenie" id="userText" type="text" autoComplete="off"/>
-				<Nav id="nav">
-					<button id="checkButton">Sprawdź</button>
-					<button id="newButton">Następny</button>
-				</Nav>
-
-				<Answer id="answer"></Answer>
-			</Wrapper>
-	</>
-	)
+		return (
+			<>
+				{/* Rozdział 3 - Szkoła */}
+				{/* Przedmioty szkolne */}
+				<Route path="/macmillan/rozdział-3/przedmioty-szkolne" render={(props) =>
+					<AppPage
+						{...props}
+						words={b1_e3_words1}
+						base_language='en'
+						translated_language='pl'
+					/>
+				}/>
+				{/* Oceny i wymagania */}
+				<Route path="/macmillan/rozdział-3/oceny-i-wymagania" render={(props) =>
+					<AppPage
+						{...props}
+						words={b1_e3_words2}
+						base_language='en'
+						translated_language='pl'
+					/>
+				}/>
+				{/* Życie szkolne */}
+				<Route path="/macmillan/rozdział-3/życie-szkolne" render={(props) =>
+					<AppPage
+						{...props}
+						words={b1_e3_words3}
+						base_language='en'
+						translated_language='pl'
+					/>
+				}/>
+				{/* Zajęcia pozalekcyjne */}
+				<Route path="/macmillan/rozdział-3/zajęcia-pozalekcyjne" render={(props) =>
+					<AppPage
+						{...props}
+						words={b1_e3_words4}
+						base_language='en'
+						translated_language='pl'
+					/>
+				}/>
+				{/* System oświaty */}
+				<Route path="/macmillan/rozdział-3/system-oświaty" render={(props) =>
+					<AppPage
+						{...props}
+						words={b1_e3_words5}
+						base_language='en'
+						translated_language='pl'
+					/>
+				}/>
+				{/* Inne */}
+				<Route path="/macmillan/rozdział-3/inne" render={(props) =>
+					<AppPage
+						{...props}
+						words={b1_e3_words6}
+						base_language='en'
+						translated_language='pl'
+					/>
+				}/>
+				{/* Test */}
+				<Route path="/macmillan/rozdział-3/test" render={(props) =>
+					<AppPage
+						{...props}
+						words={[].concat(b1_e3_words1, b1_e3_words2, b1_e3_words3, b1_e3_words4, b1_e3_words5, b1_e3_words6)}
+						base_language='en'
+						translated_language='pl'
+					/>
+				}/>
+			</>
+		);
 	}
 }
 
-export default Unit3
+export default Unit1;
