@@ -3,8 +3,8 @@ import React, { Component } from 'react'
 import styled from 'styled-components'
 import { library } from '@fortawesome/fontawesome-svg-core'
 // STYLES
-import Global from '../Styles/Global'
-import { Wrapper } from '../Styles/Components'
+import Global from '../../../components/Styles/Global'
+import { Wrapper } from '../../../components/Styles/Components'
 // COMPONENTS
 import Book from './components/Book'
 import Header from './components/ListElement/Header'

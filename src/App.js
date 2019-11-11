@@ -9,8 +9,9 @@ import WorkPage from './components/Work/Work'
 import IndexPage from './pages/index'
 
 import MacmillanBook from './pages/Books/1_Macmillan'
+import WSiPBook from './pages/Books/2_WSiP'
 
-import WSiPList from './components/List/WSiPList'
+import Books from './pages/Books'
 
 import Facebook from './components/Facebook/Facebook'
 
@@ -20,7 +21,7 @@ import Editor from './components/_Editor/Editor'
 
 import Automatic from './components/Automatic/Auto'
 // import OxfordList from './pages/books/3_Oxford/oxford'
-import RoadSignsList from './components/List/RoadSignsList'
+import RoadSignsList from './pages/components/List/RoadSignsList'
 
 import NotFoundPage from './pages/404/404'
 // STYLED
@@ -29,21 +30,9 @@ import GlobalStyles from './components/Styled/Global/global';
 		// WORDS
 			// WSiP
 				// Rozdział 1
-				import b2_e1_words1 from './components/Words/2_WSiP/Unit1/1_Rzeczowniki'
-				import b2_e1_words2 from './components/Words/2_WSiP/Unit1/2_StronyŚwiata'
-				import b2_e1_words3 from './components/Words/2_WSiP/Unit1/3_PytaniaOMiejsceIKierunek'
-				import b2_e1_words4 from './components/Words/2_WSiP/Unit1/4_PoryRokuINazwyMiesięcy'
-				import b2_e1_words5 from './components/Words/2_WSiP/Unit1/5_ZjawiskaPogodowe'
-				import b2_e1_words6 from './components/Words/2_WSiP/Unit1/6_TypyKrajobrazuRosji'
+				
 				// Rozdział 2
-				import b2_e2_words1 from './components/Words/2_WSiP/Unit2/1_Rzeczowniki'
-				import b2_e2_words2 from './components/Words/2_WSiP/Unit2/2_RzeczownikiNieodmienne'
-				import b2_e2_words3 from './components/Words/2_WSiP/Unit2/3_OkreślanieCzasu'
-				import b2_e2_words4 from './components/Words/2_WSiP/Unit2/4_Sztuka'
-				import b2_e2_words5 from './components/Words/2_WSiP/Unit2/5_Kolej'
-				import b2_e2_words6 from './components/Words/2_WSiP/Unit2/6_Kolory'
-				import b2_e2_words7 from './components/Words/2_WSiP/Unit2/7_Przyimki'
-				import b2_e2_words8 from './components/Words/2_WSiP/Unit2/8_Przymiotniki'
+				
 			// Oxford
 				import b3_i1 from './components/Words/3_Oxford/Irregular_Verbs/1_FromBook'
 				import b3_i2 from './components/Words/3_Oxford/Irregular_Verbs/2_FromApp'
@@ -89,327 +78,11 @@ class App extends Component {
 				}/> */}
 				{/* STRONA GŁÓWNA */}
 				<Route path="/" exact component={IndexPage}/>
-					
-					<MacmillanBook />
-
-					{/* WSIP */}
-					<Route path="/wsip" exact component={WSiPList}/>
-						{/* Rozdział 1 - Podróże* /}
-							{/* Rzeczowniki */}
-							<Route path="/wsip/rozdział-1/rzeczowniki" render={(props) =>
-								<AppPage
-									{...props}
-									words={b2_e1_words1}
-									base_language='ru'
-									translated_language='pl'
-								/>
-							}/>
-							{/* Strony świata */}
-							<Route path="/wsip/rozdział-1/strony-świata" render={(props) =>
-								<AppPage
-									{...props}
-									words={b2_e1_words2}
-									base_language='ru'
-									translated_language='pl'
-								/>
-							}/>
-							{/* Pytania o miejsce i kierunek */}
-							<Route path="/wsip/rozdział-1/pytania-o-miejsce-i-kierunek" render={(props) =>
-								<AppPage
-									{...props}
-									words={b2_e1_words3}
-									base_language='ru'
-									translated_language='pl'
-								/>
-							}/>
-							{/* Pory roku i nazwy miesięcy */}
-							<Route path="/wsip/rozdział-1/pory-roku-i-nazwy-miesięcy" render={(props) =>
-								<AppPage
-									{...props}
-									words={b2_e1_words4}
-									base_language='ru'
-									translated_language='pl'
-								/>
-							}/>
-							{/* Zjawiska pogodowe */}
-							<Route path="/wsip/rozdział-1/zjawiska-pogodowe" render={(props) =>
-								<AppPage
-									{...props}
-									words={b2_e1_words5}
-									base_language='ru'
-									translated_language='pl'
-								/>
-							}/>
-							{/* Typy krajobrazu Rosji */}
-							<Route path="/wsip/rozdział-1/typy-krajobrazu-rosji" render={(props) =>
-								<AppPage
-									{...props}
-									words={b2_e1_words6}
-									base_language='ru'
-									translated_language='pl'
-								/>
-							}/>
-							{/* Przyroda */}
-							<Route path="/wsip/rozdział-1/przyroda" render={(props) =>
-								<WorkPage
-									{...props}
-									title="Prace trwają"
-									image={working}
-								/>
-							}/>
-							{/* Aktywny wypoczynek */}
-							<Route path="/wsip/rozdział-1/aktywny-wypoczynek" render={(props) =>
-								<WorkPage
-									{...props}
-									title="Prace trwają"
-									image={working}
-								/>
-							}/>
-							{/* Wyposażenie turysty */}
-							<Route path="/wsip/rozdział-1/wyposażenie-turysty" render={(props) =>
-								<WorkPage
-									{...props}
-									title="Prace trwają"
-									image={working}
-								/>
-							}/>
-							{/* Czasowniki */}
-							<Route path="/wsip/rozdział-1/czasowniki" render={(props) =>
-								<WorkPage
-									{...props}
-									title="Prace trwają"
-									image={working}
-								/>
-							}/>
-							{/* Zwroty i wyrażenia */}
-							<Route path="/wsip/rozdział-1/zwroty-i-wyrażenia" render={(props) =>
-								<WorkPage
-									{...props}
-									title="Prace trwają"
-									image={working}
-								/>
-							}/>
-							{/* Przyimki */}
-							<Route path="/wsip/rozdział-1/przyimki" render={(props) =>
-								<WorkPage
-									{...props}
-									title="Prace trwają"
-									image={working}
-								/>
-							}/>
-								{/* Test */}
-								<Route path="/wsip/rozdział-1/test" render={(props) =>
-									<AppPage
-										{...props}
-										words={[].concat(b2_e1_words1, b2_e1_words2, b2_e1_words3, b2_e1_words4, b2_e1_words5, b2_e1_words6)}
-										base_language='ru'
-										translated_language='pl'
-									/>
-								}/>
-						{/* Rozdział 2 - W stolicy Polski */}
-							{/* Rzeczowniki */}
-							<Route path="/wsip/rozdział-2/rzeczowniki" render={(props) =>
-								<AppPage
-									{...props}
-									words={b2_e2_words1}
-									base_language='ru'
-									translated_language='pl'
-								/>
-							}/>
-							{/* Rzeczowniki nieodmienne */}
-							<Route path="/wsip/rozdział-2/rzeczowniki-nieodmienne" render={(props) =>
-								<AppPage
-									{...props}
-									words={b2_e2_words2}
-									base_language='ru'
-									translated_language='pl'
-								/>
-							}/>
-							{/* Określanie czasu */}
-							<Route path="/wsip/rozdział-2/określanie-czasu" render={(props) =>
-								<AppPage
-									{...props}
-									words={b2_e2_words3}
-									base_language='ru'
-									translated_language='pl'
-								/>
-							}/>
-							{/* Sztuka */}
-							<Route path="/wsip/rozdział-2/sztuka" render={(props) =>
-								<AppPage
-									{...props}
-									words={b2_e2_words4}
-									base_language='ru'
-									translated_language='pl'
-								/>
-							}/>
-							{/* Kolej */}
-							<Route path="/wsip/rozdział-2/kolej" render={(props) =>
-								<AppPage
-									{...props}
-									words={b2_e2_words5}
-									base_language='ru'
-									translated_language='pl'
-								/>
-							}/>
-							{/* Kolory */}
-							<Route path="/wsip/rozdział-2/kolory" render={(props) =>
-								<AppPage
-									{...props}
-									words={b2_e2_words6}
-									base_language='ru'
-									translated_language='pl'
-								/>
-							}/>
-							{/* Przyimki */}
-							<Route path="/wsip/rozdział-2/przyimki" render={(props) =>
-								<AppPage
-									{...props}
-									words={b2_e2_words7}
-									base_language='ru'
-									translated_language='pl'
-								/>
-							}/>
-							{/* Przymiotniki */}
-							<Route path="/wsip/rozdział-2/przymiotniki" render={(props) =>
-								<AppPage
-									{...props}
-									words={b2_e2_words8}
-									base_language='ru'
-									translated_language='pl'
-								/>
-							}/>
-							{/* Czasowniki */}
-							<Route path="/wsip/rozdział-2/czasowniki" render={(props) =>
-								<WorkPage
-									{...props}
-									title="Prace trwają"
-									image={working}
-								/>
-							}/>
-							{/* Przysłówki */}
-							<Route path="/wsip/rozdział-2/przysłówki" render={(props) =>
-								<WorkPage
-									{...props}
-									title="Prace trwają"
-									image={working}
-								/>
-							}/>
-							{/* Liczebniki główne */}
-							<Route path="/wsip/rozdział-2/liczebniki-główne" render={(props) =>
-								<WorkPage
-									{...props}
-									title="Prace trwają"
-									image={working}
-								/>
-							}/>
-							{/* Zwroty i wyrażenia */}
-							<Route path="/wsip/rozdział-2/zwroty-i-wyrażenia" render={(props) =>
-								<WorkPage
-									{...props}
-									title="Prace trwają"
-									image={working}
-								/>
-							}/>
-							
-								{/* Test */}
-								<Route path="/wsip/rozdział-2/test" render={(props) =>
-									<AppPage
-										{...props}
-										words={[].concat(b2_e2_words1, b2_e2_words2, b2_e2_words3, b2_e2_words4, b2_e2_words5, b2_e2_words6, b2_e2_words7, b2_e2_words8)}
-										base_language='ru'
-										translated_language='pl'
-									/>
-								}/>
-						{/* Rozdział 3 - Wśród przyjaciół */}
-							{/* Rzeczowniki */}
-							<Route path="/wsip/rozdział-3/rzeczowniki" render={(props) =>
-								<WorkPage
-									{...props}
-									title="Prace trwają"
-									image={working}
-								/>
-							}/>
-							{/* Rodzaje budynków mieszkalnych */}
-							<Route path="/wsip/rozdział-3/rodzaje-budynków-mieszkalnych" render={(props) =>
-								<WorkPage
-									{...props}
-									title="Prace trwają"
-									image={working}
-								/>
-							}/>
-							{/* Rodzaje pomieszczeń */}
-							<Route path="/wsip/rozdział-3/rodzaje-pomieszczeń" render={(props) =>
-								<WorkPage
-									{...props}
-									title="Prace trwają"
-									image={working}
-								/>
-							}/>
-							{/* Umeblowanie */}
-							<Route path="/wsip/rozdział-3/umeblowanie" render={(props) =>
-								<WorkPage
-									{...props}
-									title="Prace trwają"
-									image={working}
-								/>
-							}/>
-							{/* Wygląd zewnętrzny człowieka */}
-							<Route path="/wsip/rozdział-3/wygląd-zewnętrzny-człowieka" render={(props) =>
-								<WorkPage
-									{...props}
-									title="Prace trwają"
-									image={working}
-								/>
-							}/>
-							{/* Cechy charakteru */}
-							<Route path="/wsip/rozdział-3/cechy-charakteru" render={(props) =>
-								<WorkPage
-									{...props}
-									title="Prace trwają"
-									image={working}
-								/>
-							}/>
-							{/* Przymiotniki */}
-							<Route path="/wsip/rozdział-3/przymiotniki" render={(props) =>
-								<WorkPage
-									{...props}
-									title="Prace trwają"
-									image={working}
-								/>
-							}/>
-							{/* Czasowniki */}
-							<Route path="/wsip/rozdział-3/czasowniki" render={(props) =>
-								<WorkPage
-									{...props}
-									title="Prace trwają"
-									image={working}
-								/>
-							}/>
-							{/* Określenia położenia */}
-							<Route path="/wsip/rozdział-3/określenia-położenia" render={(props) =>
-								<WorkPage
-									{...props}
-									title="Prace trwają"
-									image={working}
-								/>
-							}/>
-							{/* Zwroty i wyrażenia */}
-							<Route path="/wsip/rozdział-3/zwroty-i-wyrażenia" render={(props) =>
-								<WorkPage
-									{...props}
-									title="Prace trwają"
-									image={working}
-								/>
-							}/>
-								{/* Test */}
-								<Route path="/wsip/rozdział-3/test" render={(props) =>
-									<WorkPage
-										{...props}
-										title="Prace trwają"
-										image={working}
-									/>
-								}/>
+				{/* <WSiPBook /> */}
+				{/* <MacmillanBook /> */}
+				
+						
+						
 					{/* OXFORD */}
 					{/* <Route path="/oxford" render={(props) =>
 						<WorkPage
@@ -570,7 +243,7 @@ class App extends Component {
 				<Route path="/editor" exact component={Editor}/>
 				<Route path="/auto" exact component={Automatic}/>
 
-				<Route component={NotFoundPage}/>
+				<Books />
 			</Switch>
 		</Router>
 	);
