@@ -1,6 +1,6 @@
 // BASIC
 import React, { Component } from 'react'
-import styled from 'styled-components'
+import styled, {css} from 'styled-components'
 import { library } from '@fortawesome/fontawesome-svg-core'
 // STYLES
 import Global from '../../../components/Styles/Global'
@@ -47,14 +47,33 @@ text-align: center;
 
 const Term = styled.div`
 	display: flex;
-	justify-content: center;
-`
-
-const TimeIcon = styled(IoIosTimer)`
+	justify-content: space-around;
 	line-height: 100%;
 	margin: 20px;
 	font-size: 30px;
 	color: var(--color-decorative);
+`
+
+const Time = styled.div`
+	display: none;
+		@media (min-width: 600px) {
+			display: block;
+			font-size: 20px;
+		}
+	width: 200px;
+	text-align: center;
+	${props =>
+		props.hide &&
+		css`
+			display: none;
+		`
+	}
+`
+
+const Date = styled.div`
+	font-size: 20px;
+	width: 200px;
+	text-align: center;
 `
 
 const SectionTitle = styled.h3`
@@ -65,7 +84,49 @@ const SectionList = styled.ul`
 `
 
 class List extends Component {
+	state = {
+		dateNow: new window.Date(),
+		plannedDate: {
+			year: 2019,
+			month: 12,
+			day: 12,
+			hour: 12,
+			minute: 0,
+		},
+		timeLeft: {
+			years: 0,
+			months: 0,
+			days: 0,
+			hours: 0,
+			minutes: 0,
+			seconds: 0,
+		},
+		hideTime: false
+	}
+	componentDidMount() {
+		let plannedState = this.state.plannedDate;
+		let plannedDateObject = new window.Date(plannedState.year,plannedState.month-1,plannedState.day,plannedState.hour,plannedState.minute,0);
+		// setInterval(
+		// 	() => {
+		// 		this.setState({
+		// 			timeLeft: {
+		// 				miliseconds: plannedDateObject - this.state.dateNow,
+		// 				seconds: Math.floor(this.state.milisecondsLeft / 1000),
+		// 				minutes: Math.floor(this.state.milisecondsLeft / 1000 / 60),
+		// 				hours: Math.floor(this.state.milisecondsLeft / 1000 / 60 / 60),
+		// 				days: Math.floor(this.state.milisecondsLeft / 1000 / 60 / 60 / 24)
+		// 			}
+		// 		})
+		// 	}, 1000
+		// );
+		setInterval(() => this.setState({dateNow: new window.Date()}), 1000);
+		setInterval(() => console.log(this.state.dateNow), 1000);
+	}
+	time = (e) => {
+		return `${e.days} dni, ${e.hours - e.days*24}godzin, ${e.minutes - e.hours * 60}minut, ${e.seconds - e.minutes * 60}`
+	}
 	render() {
+		let data = this.state.plannedDate;
 		return (
 			<>
 				<Global />
@@ -75,21 +136,22 @@ class List extends Component {
 					<ListElementWrapper>
 						<Header />
 						<ListWrapper>
-								<Term>
-									<TimeIcon />
-									{/* 19.10.2019r | 00:00:00 */}
-								</Term>
+							<Term>
+								<Date>{data.day}.{data.month}.{data.year}r</Date>
+								<IoIosTimer />
+								<Time>{this.time(this.state.timeLeft)}</Time>
+							</Term>
 							<Advertisement>
 								<AdTitle>Rozdział 8 - Podróżowanie i turystyka</AdTitle>
-							<SectionList>
-								<ListElement content="Podróżowanie i środki transportu" path="/macmillan/rozdział-8/podróżowanie-i-środki-transportu" />
-								<ListElement content="Informacja turystyczna" path="/macmillan/rozdział-8/informacja-turystyczna" />
-								<ListElement content="Baza noclegowa" path="/macmillan/rozdział-8/baza-noclegowa" />
-								<ListElement content="Wycieczki i zwiedzanie" path="/macmillan/rozdział-8/wycieczki-i-zwiedzanie" />
-								<ListElement content="Wypadki" path="/macmillan/rozdział-8/wypadki" />
-								<ListElement content="Inne" path="/macmillan/rozdział-8/inne" />
-								<ListElementTest content="Test" path="/macmillan/rozdział-8/test" />
-							</SectionList>
+								<SectionList>
+									<ListElement content="Podróżowanie i środki transportu" path="/macmillan/rozdział-8/podróżowanie-i-środki-transportu" />
+									<ListElement content="Informacja turystyczna" path="/macmillan/rozdział-8/informacja-turystyczna" />
+									<ListElement content="Baza noclegowa" path="/macmillan/rozdział-8/baza-noclegowa" />
+									<ListElement content="Wycieczki i zwiedzanie" path="/macmillan/rozdział-8/wycieczki-i-zwiedzanie" />
+									<ListElement content="Wypadki" path="/macmillan/rozdział-8/wypadki" />
+									<ListElement content="Inne" path="/macmillan/rozdział-8/inne" />
+									<ListElementTest content="Test" path="/macmillan/rozdział-8/test" />
+								</SectionList>
 							</Advertisement>
 							<SectionTitle>Rozdział 1 - Człowiek</SectionTitle>
 							<SectionList>
