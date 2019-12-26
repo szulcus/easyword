@@ -2,19 +2,19 @@
 import React, {Component} from 'react';
 import {Route} from 'react-router-dom';
 // COMPONENTS
-import AppPage from '../../../../components/App/WritingApp'
-import WorkPage from '../../../../components/Work/Work'
+import AppPage from '../../../../Components/App/WritingApp'
+import WorkPage from '../../../../Components/Work/Work'
 // FILES
-import b2_e2_words1 from '../../../../components/Words/2_WSiP/Unit2/1_Rzeczowniki'
-import b2_e2_words2 from '../../../../components/Words/2_WSiP/Unit2/2_RzeczownikiNieodmienne'
-import b2_e2_words3 from '../../../../components/Words/2_WSiP/Unit2/3_OkreślanieCzasu'
-import b2_e2_words4 from '../../../../components/Words/2_WSiP/Unit2/4_Sztuka'
-import b2_e2_words5 from '../../../../components/Words/2_WSiP/Unit2/5_Kolej'
-import b2_e2_words6 from '../../../../components/Words/2_WSiP/Unit2/6_Kolory'
-import b2_e2_words7 from '../../../../components/Words/2_WSiP/Unit2/7_Przyimki'
-import b2_e2_words8 from '../../../../components/Words/2_WSiP/Unit2/8_Przymiotniki'
+import b2_e2_words1 from '../../../../Components/Words/2_WSiP/Unit2/1_Rzeczowniki'
+import b2_e2_words2 from '../../../../Components/Words/2_WSiP/Unit2/2_RzeczownikiNieodmienne'
+import b2_e2_words3 from '../../../../Components/Words/2_WSiP/Unit2/3_OkreślanieCzasu'
+import b2_e2_words4 from '../../../../Components/Words/2_WSiP/Unit2/4_Sztuka'
+import b2_e2_words5 from '../../../../Components/Words/2_WSiP/Unit2/5_Kolej'
+import b2_e2_words6 from '../../../../Components/Words/2_WSiP/Unit2/6_Kolory'
+import b2_e2_words7 from '../../../../Components/Words/2_WSiP/Unit2/7_Przyimki'
+import b2_e2_words8 from '../../../../Components/Words/2_WSiP/Unit2/8_Przymiotniki'
 // IMAGES
-import working from '../../../../images/working.png'
+import working from '../../../../Components/Images/working.png'
 
 class Unit2 extends Component {
 	render() {

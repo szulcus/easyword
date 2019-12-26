@@ -93,22 +93,6 @@ class Picture extends Component {
 						<Image entry={this.state.animatedImage} id="img" src={this.props.src} alt={`${this.props.word} image`} title={`${this.props.word} image`}
 							delete={this.state.deleteImage}
 							longImage={this.state.longImage}
-							onLoad={
-								() => {
-									const width = document.getElementById('img').width;
-									const height = document.getElementById('img').height;
-									const elementHeight = document.getElementById('imgElement').height;
-									// console.log(`szerokość: ${width} wysokość: ${height}`)
-									// console.log(height*1.618);
-									console.log(this.props.src);
-									if (height * 1.618 < width) {
-										this.setState({longImage: true});
-									}
-									else {
-										this.setState({longImage: false});
-									}
-								}
-							}
 						/>
 					</BrowserLink>
 				</PictureElement>

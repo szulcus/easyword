@@ -3,18 +3,14 @@ import React, { Component } from 'react'
 import styled from 'styled-components'
 import { library } from '@fortawesome/fontawesome-svg-core'
 // STYLES
-import Global from '../../../components/Styles/Global'
-import { Wrapper } from '../../../components/Styles/Components'
+import Global from '../../../Components/Styles/Global'
+import { Wrapper } from '../../../Components/Styles/Components'
 // COMPONENTS
 import Book from './components/Book'
 import Header from './components/ListElement/Header'
 import ListWrapper from './components/ListElement/ListWrapper'
 import ListElement from './components/ListElement/ListElement'
 import ListElementTest from './components/ListElement/ListElementTest'
-// ICONS
-import { faReply } from '@fortawesome/free-solid-svg-icons'
-
-library.add(faReply);
 
 const ListElementWrapper = styled.div``
 

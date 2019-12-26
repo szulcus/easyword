@@ -2,9 +2,9 @@
 import React, { Component } from 'react'
 import styled, { css } from 'styled-components'
 // IMAGES
-import loader from '../../images/arrows/loader.svg'
-import LeftArrow from '../../images/arrows/left-arrow.svg'
-import RightArrow from '../../images/arrows/right-arrow.svg'
+import loader from '../Images/arrows/loader.svg'
+import LeftArrow from '../Images/arrows/left-arrow.svg'
+import RightArrow from '../Images/arrows/right-arrow.svg'
 // ANIMATIONS
 import '../Styles/main-keyframes.css'
 

@@ -15,7 +15,7 @@ import SocialMedia from './components/SocialMedia'
 // STYLES
 import Global from '../Styles/Global'
 import { Wrapper } from '../Styles/Components'
-import '../../components/Styles/main-keyframes.css'
+import '../../Components/Styles/main-keyframes.css'
 // SCRIPTS
 import getWord from '../Scripts/Functions/getWord()'
 import female from './female'

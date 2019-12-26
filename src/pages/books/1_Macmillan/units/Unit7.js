@@ -2,18 +2,18 @@
 import React, {Component} from 'react';
 import {Route} from 'react-router-dom';
 // COMPONENTS
-import AppPage from '../../../../components/App/WritingApp'
+import AppPage from '../../../../Components/App/WritingApp'
 // FILES
-import b1_e7_words1 from '../../../components/Words/1_Macmillan/Unit7/1_TypesOfShops'
-import b1_e7_words2 from '../../../components/Words/1_Macmillan/Unit7/2_DescribingProducts'
-import b1_e7_words3 from '../../../components/Words/1_Macmillan/Unit7/3_SellingAndBuying'
-import b1_e7_words4 from '../../../components/Words/1_Macmillan/Unit7/4_Complaining'
-import b1_e7_words5 from '../../../components/Words/1_Macmillan/Unit7/5_Advertising'
-import b1_e7_words6 from '../../../components/Words/1_Macmillan/Unit7/6_Services'
-import b1_e7_words7 from '../../../components/Words/1_Macmillan/Unit7/7_MeansOfPayment'
-import b1_e7_words8 from '../../../components/Words/1_Macmillan/Unit7/8_Banks'
-import b1_e7_words9 from '../../../components/Words/1_Macmillan/Unit7/9_Insurance'
-import b1_e7_words10 from '../../../components/Words/1_Macmillan/Unit7/10_Other'
+import b1_e7_words1 from '../../../../Components/Words/1_Macmillan/Unit7/1_TypesOfShops'
+import b1_e7_words2 from '../../../../Components/Words/1_Macmillan/Unit7/2_DescribingProducts'
+import b1_e7_words3 from '../../../../Components/Words/1_Macmillan/Unit7/3_SellingAndBuying'
+import b1_e7_words4 from '../../../../Components/Words/1_Macmillan/Unit7/4_Complaining'
+import b1_e7_words5 from '../../../../Components/Words/1_Macmillan/Unit7/5_Advertising'
+import b1_e7_words6 from '../../../../Components/Words/1_Macmillan/Unit7/6_Services'
+import b1_e7_words7 from '../../../../Components/Words/1_Macmillan/Unit7/7_MeansOfPayment'
+import b1_e7_words8 from '../../../../Components/Words/1_Macmillan/Unit7/8_Banks'
+import b1_e7_words9 from '../../../../Components/Words/1_Macmillan/Unit7/9_Insurance'
+import b1_e7_words10 from '../../../../Components/Words/1_Macmillan/Unit7/10_Other'
 
 class Unit7 extends Component {
 	render() {

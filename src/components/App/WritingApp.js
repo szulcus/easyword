@@ -3,6 +3,11 @@ import React, {Component} from 'react'
 import greatAnimationData from '../../lotties/72-favourite-app-icon.json'
 import goodAnimationData from '../../lotties/433-checked-done.json'
 import styled, { css } from 'styled-components'
+import firebase from 'firebase/app'
+import 'firebase/app'
+import 'firebase/auth'
+import 'firebase/firestore'
+import 'firebase/functions'
 // COMPONENTS
 import Preloader from './Preloader'
 import Cathegory from './components/Cathegory'
@@ -16,7 +21,7 @@ import SocialMedia from './components/SocialMedia'
 // STYLES
 import Global from '../Styles/Global'
 import { Wrapper } from '../Styles/Components'
-import '../../components/Styles/main-keyframes.css'
+import '../../Components/Styles/main-keyframes.css'
 // SCRIPTS
 import getWord from '../Scripts/Functions/getWord()'
 import female from './female'
@@ -42,7 +47,32 @@ class App extends Component {
 	}
 
 	componentDidMount() {
-		this.setState({load: true})
+		const db = firebase.firestore();
+		this.setState({load: true});
+		firebase.auth().onAuthStateChanged(user => {
+			if(user) {
+				console.log(user);
+				this.setState({userId: user.uid});
+				// firebase.firestore().collection('users').doc(user.uid).get().then(doc => {
+				// 	// if (doc.data()) {
+				// 	// 	this.setState({points: doc.data().points.macmillan.unit1_1})
+				// 	// }
+				// 	// console.log("======");
+				// 	// console.log(doc.collection('points'));
+				// });
+				db.collection('users').doc(user.uid).get().then(doc => {
+					console.log(doc.data().bio);
+				});
+			}
+		})
+	}
+	flattenDoc = (doc) => {
+		return {id: doc.id, ...doc.data()};
+	}
+	setUpPoints = (data) => {
+		if (data) {
+			this.setState({points: data.points});
+		}
 	}
 	getNew = () => {
 		if (this.state.hideAnswer === true || this.state.answer === 'Brawo!') {
@@ -96,10 +126,11 @@ class App extends Component {
 				counter: 0
 			});
 			if (translation1.length > this.state.counter && this.state.hideAnswer === true) {
-				this.setState({
-					great: true,
-					points: this.state.points + 2
-				});
+				e.persist();
+				this.setState({great: true,});
+				firebase.firestore().collection('users').doc(this.state.userId).set({
+					points: 45,
+				})
 				setTimeout(function () {
 					target.value = '';
 					this.getNew();

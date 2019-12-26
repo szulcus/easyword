@@ -1,6 +1,6 @@
 import React from 'react'
 import {Link} from './node_modules/gatsby'
-import Global from '../../components/Styled/Global/global';
+import Global from '../../components/Styles/Global';
 
 const Test = () => (
     <>

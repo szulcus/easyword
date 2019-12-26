@@ -1,13 +1,10 @@
 // BASIC
 import React, { Component } from 'react'
 import styled from 'styled-components'
-import { library } from '@fortawesome/fontawesome-svg-core'
 // STYLES
-import {PageLink, Icon} from '../../../../../components/Styles/Components'
+import {PageLink} from '../../../../../Components/Styles/Components'
 // ICONS
-import { faAngleRight } from '@fortawesome/free-solid-svg-icons'
-
-library.add(faAngleRight);
+import { FaAngleRight } from 'react-icons/fa'
 
 const ListElementItem = styled.li`
 	padding: 3px;
@@ -17,7 +14,7 @@ class ListElement extends Component {
 	render() {
 		return (
 			<ListElementItem>
-				<Icon list icon={['fas', 'angle-right']}/>
+				<FaAngleRight />
 				<PageLink list to={this.props.path}>{this.props.content}</PageLink>
 			</ListElementItem>
 		);

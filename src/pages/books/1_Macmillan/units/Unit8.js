@@ -2,14 +2,14 @@
 import React, {Component} from 'react';
 import {Route} from 'react-router-dom';
 // COMPONENTS
-import AppPage from '../../../../components/App/WritingApp'
+import AppPage from '../../../../Components/App/WritingApp'
 // FILES
-import b1_e8_words1 from '../../../components/Words/1_Macmillan/Unit8/1_TravellingAndMeansOfTransport'
-import b1_e8_words2 from '../../../components/Words/1_Macmillan/Unit8/2_TouristInformation'
-import b1_e8_words3 from '../../../components/Words/1_Macmillan/Unit8/3_Accomodation'
-import b1_e8_words4 from '../../../components/Words/1_Macmillan/Unit8/4_TipsAndSightseeing'
-import b1_e8_words5 from '../../../components/Words/1_Macmillan/Unit8/5_Accidents'
-import b1_e8_words6 from '../../../components/Words/1_Macmillan/Unit8/6_Other'
+import b1_e8_words1 from '../../../../Components/Words/1_Macmillan/Unit8/1_TravellingAndMeansOfTransport'
+import b1_e8_words2 from '../../../../Components/Words/1_Macmillan/Unit8/2_TouristInformation'
+import b1_e8_words3 from '../../../../Components/Words/1_Macmillan/Unit8/3_Accomodation'
+import b1_e8_words4 from '../../../../Components/Words/1_Macmillan/Unit8/4_TipsAndSightseeing'
+import b1_e8_words5 from '../../../../Components/Words/1_Macmillan/Unit8/5_Accidents'
+import b1_e8_words6 from '../../../../Components/Words/1_Macmillan/Unit8/6_Other'
 
 class Unit8 extends Component {
 	render() {

@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import {Link} from 'react-router-dom'
-import Global, {PageLink} from '../../../components/Styled/Global/global'
+import Global, {PageLink} from '../../../components/Styles/Global'
 
 const ListWrapper = styled.div`
 	padding: 30px;

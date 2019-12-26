@@ -2,17 +2,17 @@
 import React, {Component} from 'react';
 import {Route} from 'react-router-dom';
 // COMPONENTS
-import AppPage from '../../../../components/App/WritingApp'
-import WorkPage from '../../../../components/Work/Work'
+import AppPage from '../../../../Components/App/WritingApp'
+import WorkPage from '../../../../Components/Work/Work'
 // FILES
-import b2_e1_words1 from '../../../components/Words/2_WSiP/Unit1/1_Rzeczowniki'
-import b2_e1_words2 from '../../../components/Words/2_WSiP/Unit1/2_StronyŚwiata'
-import b2_e1_words3 from '../../../components/Words/2_WSiP/Unit1/3_PytaniaOMiejsceIKierunek'
-import b2_e1_words4 from '../../../components/Words/2_WSiP/Unit1/4_PoryRokuINazwyMiesięcy'
-import b2_e1_words5 from '../../../components/Words/2_WSiP/Unit1/5_ZjawiskaPogodowe'
-import b2_e1_words6 from '../../../components/Words/2_WSiP/Unit1/6_TypyKrajobrazuRosji'
+import b2_e1_words1 from '../../../../Components/Words/2_WSiP/Unit1/1_Rzeczowniki'
+import b2_e1_words2 from '../../../../Components/Words/2_WSiP/Unit1/2_StronyŚwiata'
+import b2_e1_words3 from '../../../../Components/Words/2_WSiP/Unit1/3_PytaniaOMiejsceIKierunek'
+import b2_e1_words4 from '../../../../Components/Words/2_WSiP/Unit1/4_PoryRokuINazwyMiesięcy'
+import b2_e1_words5 from '../../../../Components/Words/2_WSiP/Unit1/5_ZjawiskaPogodowe'
+import b2_e1_words6 from '../../../../Components/Words/2_WSiP/Unit1/6_TypyKrajobrazuRosji'
 // IMAGES
-import working from '../../../../images/working.png'
+import working from '../../../../Components/Images/working.png'
 
 class Unit1 extends Component {
 	render() {

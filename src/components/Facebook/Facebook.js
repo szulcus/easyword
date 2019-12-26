@@ -1,22 +1,18 @@
 // BASIC
 import React, { Component } from 'react'
 import styled, { css } from 'styled-components'
-import { Link } from 'react-router-dom'
-import { library } from '@fortawesome/fontawesome-svg-core'
 	// LOGIN
 	import FacebookLogin from 'react-facebook-login/dist/facebook-login-render-props'
 	import { GoogleLogin } from 'react-google-login';
 // STYLE
 import Global from '../Styles/Global'
-import { Wrapper, Icon } from '../Styles/Components'
+import { Wrapper } from '../Styles/Components'
 // ICONS
-import { faFacebookF, faGoogle } from '@fortawesome/free-brands-svg-icons'
+import { FaFacebookF, FaGoogle } from 'react-icons/fa'
 // FILES
-import good from '../../images/good.png'
-import hello from '../../images/hello.png'
-import logo from '../../images/logo.png'
-
-library.add(faFacebookF, faGoogle);
+import good from '../Images/good.png'
+import hello from '../Images/hello.png'
+import logo from '../Images/logo.png'
 
 const LoginElement = styled.div`
 	color: var(--color-highlighted);
@@ -57,14 +53,14 @@ const LoginImage = styled.img`
 	}
 `
 
-const LoginDescription = styled.p`
-	font-size: 20px;
-	text-align: center;
-	margin: 30px;
-	@media(max-height: 600px) {
-		margin: 20px;
-	}
-`
+// const LoginDescription = styled.p`
+// 	font-size: 20px;
+// 	text-align: center;
+// 	margin: 30px;
+// 	@media(max-height: 600px) {
+// 		margin: 20px;
+// 	}
+// `
 
 const Choise = styled.div`
 	display: grid;
@@ -239,7 +235,7 @@ class Login extends Component {
 					render={renderProps => (
 						<LoginButton fb onClick={renderProps.onClick}>
 							<Content>Zaloguj się</Content>
-							<Icon icon={['fab', 'facebook-f']} />
+							<FaFacebookF />
 						</LoginButton>
 					)}
 				/>
@@ -250,7 +246,7 @@ class Login extends Component {
 					render={renderProps => (
 						<LoginButton gplus onClick={renderProps.onClick} disabled={renderProps.disabled}>
 							<Content>Zaloguj się</Content>
-							<Icon icon={['fab', 'google']} />
+							<FaGoogle />
 						</LoginButton>
 					)}
 					// buttonText="Login"
@@ -265,7 +261,6 @@ class Login extends Component {
 		return (
 			<>
 				<Global />
-						
 				<Wrapper onClick={this.exit}>
 					<LoginElement>
 						<LoginTitle>{this.state.title}</LoginTitle>

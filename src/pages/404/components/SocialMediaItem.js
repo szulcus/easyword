@@ -1,14 +1,11 @@
 // BASIC
 import React, { Component } from 'react'
 import styled, { css } from 'styled-components'
-import { library } from '@fortawesome/fontawesome-svg-core'
 // STYLES
-import '../../../components/Styles/main-keyframes.css'
-import { WebLink, Icon } from '../../../components/Styles/Components'
+import '../../../Components/Styles/main-keyframes.css'
+import { WebLink } from '../../../Components/Styles/Components'
 // ICONS
-import { faLocationArrow } from '@fortawesome/free-solid-svg-icons'
-
-library.add(faLocationArrow);
+import { FaLocationArrow } from 'react-icons/fa'
 
 const SocialMediaElement = styled.img`
 	display: block;
@@ -87,7 +84,7 @@ class SocialMediaItem extends Component {
 				<SocialMediaElement onClick={this.changePreview} src={this.props.srcLogo} alt=""/>
 				<Preview onClick={this.changePreview} preview={this.state.preview} animation={this.state.animation}>
 					<PreviewImage src={this.props.srcDescription} alt=""/>
-					<WebLink workMedia={true} to={this.props.link} content={<Icon icon={['fas', 'location-arrow']}/>} />
+					<WebLink workMedia={true} to={this.props.link} content={<FaLocationArrow />} />
 				</Preview>
 			</>
 		);

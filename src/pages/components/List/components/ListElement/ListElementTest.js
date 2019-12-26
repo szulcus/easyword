@@ -1,20 +1,17 @@
 // BASIC
 import React, { Component } from 'react'
 import styled from 'styled-components'
-import { library } from '@fortawesome/fontawesome-svg-core'
 // STYLES
-import {PageLink, Icon} from '../../../../../components/Styles/Components'
+import {PageLink} from '../../../../../Components/Styles/Components'
 // ICONS
-import { faStar } from '@fortawesome/free-solid-svg-icons'
-
-library.add(faStar);
+import { FaStar } from 'react-icons/fa'
 
 const ListElementTestItem = styled.li`
 	padding: 3px;
 	padding-top: 10px;
 `
 
-const RightIcon = styled(Icon)`
+const RightIcon = styled(FaStar)`
 	margin-left: 7px;
 `
 
@@ -22,9 +19,9 @@ class ListElementTest extends Component {
 	render() {
 		return (
 			<ListElementTestItem>
-				<Icon list icon={['fas', 'star']}/>
+				<FaStar />
 				<PageLink list to={this.props.path}>{this.props.content}</PageLink>
-				<RightIcon list icon={['fas', 'star']}/>
+				<RightIcon />
 			</ListElementTestItem>
 		);
 	}

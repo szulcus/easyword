@@ -2,12 +2,11 @@
 import React, {Component} from 'react';
 import {Route} from 'react-router-dom';
 // COMPONENTS
-// import AppPage from '../../../../components/App/WritingApp'
-import WorkPage from '../../../../components/Work/Work'
+import WorkPage from '../../../../Components/Work/Work'
 // FILES
 
 // IMAGES
-import working from '../../../../images/working.png'
+import working from '../../../../Components/Images/working.png'
 
 class Unit3 extends Component {
 	render() {

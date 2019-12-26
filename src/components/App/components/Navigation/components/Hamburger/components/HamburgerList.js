@@ -1,8 +1,9 @@
 // BASIC
 import React, { Component } from 'react'
 import styled from 'styled-components'
-// STYLES
-import { Back } from '../../../../../../Styles/Components'
+import { Link } from 'react-router-dom'
+// ICONS
+import { FaReply } from 'react-icons/fa'
 // KEYFRAMES
 import '../../../../../../Keyframes/main-keyframes.css'
 
@@ -99,7 +100,11 @@ class HamburgerList extends Component {
 				<HamburgerListItem id="hamburger-list-element-1">Angielski</HamburgerListItem>
 				<HamburgerListItem id="hamburger-list-element-2">Polski</HamburgerListItem>
 				<HamburgerListItem id="hamburger-list-element-3">Przemiennie</HamburgerListItem>
-				<HamburgerListItem id="back"><Back to='/macmillan' /></HamburgerListItem>
+				<HamburgerListItem id="back">
+					<Link to='/macmillan'>
+						<FaReply />
+					</Link>
+				</HamburgerListItem>
 			</HamburgerListElement>
 		);
 	}

@@ -2,30 +2,30 @@
 import React, {Component} from 'react';
 import { HashRouter as Router, Switch, Route} from 'react-router-dom';
 // PAGES
-import AppPage from './components/App/WritingApp'
-import IrregularAppPage from './components/App/IrregularApp'
-import WorkPage from './components/Work/Work'
+import AppPage from './Components/App/WritingApp'
+import IrregularAppPage from './Components/App/IrregularApp'
+import WorkPage from './Components/Work/Work'
 
 import IndexPage from './pages/index'
 
-import MacmillanBook from './pages/Books/1_Macmillan'
-import WSiPBook from './pages/Books/2_WSiP'
-
 import Books from './pages/Books'
 
-import Facebook from './components/Facebook/Facebook'
+import Facebook from './Components/Facebook/Facebook'
 
-import Leaves from './components/_Leaves/Leaves'
+import Login from './Components/Login/LoginApp'
+import Registration from './Components/Login/Registration'
+import UserProfile from './Components/Login/UserProfile'
 
-import Editor from './components/_Editor/Editor'
+import Leaves from './Components/_Leaves/Leaves'
 
-import Automatic from './components/Automatic/Auto'
+import Editor from './Components/_Editor/Editor'
+
+import Automatic from './Components/Automatic/Auto'
 // import OxfordList from './pages/books/3_Oxford/oxford'
 import RoadSignsList from './pages/components/List/RoadSignsList'
 
-import NotFoundPage from './pages/404/404'
 // STYLED
-import GlobalStyles from './components/Styled/Global/global';
+import Global from './Components/Styles/Global';
 // FILES
 		// WORDS
 			// WSiP
@@ -34,37 +34,37 @@ import GlobalStyles from './components/Styled/Global/global';
 				// Rozdział 2
 				
 			// Oxford
-				import b3_i1 from './components/Words/3_Oxford/Irregular_Verbs/1_FromBook'
-				import b3_i2 from './components/Words/3_Oxford/Irregular_Verbs/2_FromApp'
+				import b3_i1 from './Components/Words/3_Oxford/Irregular_Verbs/1_FromBook'
+				import b3_i2 from './Components/Words/3_Oxford/Irregular_Verbs/2_FromApp'
 			// --------------------------------- //
 			// Znaki drogowe
 				// Rozdział 1
-				import b4_e1_words1A from './components/Words/4_Znaki_drogowe/1_A_ZnakiOstrzegawcze'
-				import b4_e1_words2B from './components/Words/4_Znaki_drogowe/2_B_ZnakiZakazu'
-				import b4_e1_words3C from './components/Words/4_Znaki_drogowe/3_C_ZnakiNakazu'
-				import b4_e1_words4D from './components/Words/4_Znaki_drogowe/4_D_ZnakiInformacyjne'
-				// import b4_e1_words5E from './components/Words/4_Znaki_drogowe/1_A_ZnakiOstrzegawcze'
-				// import b4_e1_words6F from './components/Words/4_Znaki_drogowe/1_A_ZnakiOstrzegawcze'
-				// import b4_e1_words7T from './components/Words/4_Znaki_drogowe/1_A_ZnakiOstrzegawcze'
-				// import b4_e1_words8D from './components/Words/4_Znaki_drogowe/1_A_ZnakiOstrzegawcze'
-				// import b4_e1_words9D from './components/Words/4_Znaki_drogowe/1_A_ZnakiOstrzegawcze'
+				import b4_e1_words1A from './Components/Words/4_Znaki_drogowe/1_A_ZnakiOstrzegawcze'
+				import b4_e1_words2B from './Components/Words/4_Znaki_drogowe/2_B_ZnakiZakazu'
+				import b4_e1_words3C from './Components/Words/4_Znaki_drogowe/3_C_ZnakiNakazu'
+				import b4_e1_words4D from './Components/Words/4_Znaki_drogowe/4_D_ZnakiInformacyjne'
+				// import b4_e1_words5E from './Components/Words/4_Znaki_drogowe/1_A_ZnakiOstrzegawcze'
+				// import b4_e1_words6F from './Components/Words/4_Znaki_drogowe/1_A_ZnakiOstrzegawcze'
+				// import b4_e1_words7T from './Components/Words/4_Znaki_drogowe/1_A_ZnakiOstrzegawcze'
+				// import b4_e1_words8D from './Components/Words/4_Znaki_drogowe/1_A_ZnakiOstrzegawcze'
+				// import b4_e1_words9D from './Components/Words/4_Znaki_drogowe/1_A_ZnakiOstrzegawcze'
 				// Rozdział 2
-				// import b4_e2_words1 from './components/Words/4_Znaki_drogowe/1_A_ZnakiOstrzegawcze'
-				// import b4_e2_words2 from './components/Words/3_Oxford/Irregular_Verbs/2_FromApp'
+				// import b4_e2_words1 from './Components/Words/4_Znaki_drogowe/1_A_ZnakiOstrzegawcze'
+				// import b4_e2_words2 from './Components/Words/3_Oxford/Irregular_Verbs/2_FromApp'
 				// Rozdział 3
-				// import b4_e3_words1 from './components/Words/4_Znaki_drogowe/1_A_ZnakiOstrzegawcze'
-				// import b4_e3_words2 from './components/Words/3_Oxford/Irregular_Verbs/2_FromApp'
+				// import b4_e3_words1 from './Components/Words/4_Znaki_drogowe/1_A_ZnakiOstrzegawcze'
+				// import b4_e3_words2 from './Components/Words/3_Oxford/Irregular_Verbs/2_FromApp'
 		// IMAGES
-		import working from './images/working.png'
-		import thinking from './images/thinking.png'
+		import working from './Components/Images/working.png'
+		import thinking from './Components/Images/thinking.png'
 
-		import testWords from './components/Words/_test'
+		import testWords from './Components/Words/_test'
 
 class App extends Component {
 	render() {
 	return (
 		<Router>
-		<GlobalStyles/>
+		<Global/>
 			<Switch>
 				{/* <Route path="/app" render={(props) =>
 					<AppPage
@@ -78,19 +78,6 @@ class App extends Component {
 				}/> */}
 				{/* STRONA GŁÓWNA */}
 				<Route path="/" exact component={IndexPage}/>
-				{/* <WSiPBook /> */}
-				{/* <MacmillanBook /> */}
-				
-						
-						
-					{/* OXFORD */}
-					{/* <Route path="/oxford" render={(props) =>
-						<WorkPage
-							{...props}
-							title="Ciągle myślę"
-							image={thinking}
-						/>
-					}/> */}
 					{/* ZNAKI DROGOWE */}
 					<Route path="/znaki-drogowe" exact component={RoadSignsList}/>
 						{/* 1 - Znaki drogowe pionowe */}
@@ -204,11 +191,6 @@ class App extends Component {
 										image={working}
 									/>
 								}/>
-
-
-
-
-
 					{/* CZASOWNIKI NIEREGULARNE */}
 					<Route path="/czasowniki-nieregularne" render={(props) =>
 						<WorkPage
@@ -237,6 +219,9 @@ class App extends Component {
 				}/>
 
 				<Route path="/fb" exact component={Facebook}/>
+				<Route path="/login" exact component={Login}/>
+				<Route path="/rejestracja" exact component={Registration}/>
+				<Route path="/users/:id" exact component={UserProfile}/>
 
 				<Route path="/leaves" exact component={Leaves}/>
 

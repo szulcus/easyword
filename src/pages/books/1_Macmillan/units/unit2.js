@@ -2,13 +2,13 @@
 import React, {Component} from 'react';
 import {Route} from 'react-router-dom';
 // COMPONENTS
-import AppPage from '../../../../components/App/WritingApp'
+import AppPage from '../../../../Components/App/WritingApp'
 // FILES
-import b1_e2_words1 from '../../../components/Words/1_Macmillan/Unit2/1_ThePlaceWhereWeLive'
-import b1_e2_words2 from '../../../components/Words/1_Macmillan/Unit2/2_DescribingHouses'
-import b1_e2_words3 from '../../../components/Words/1_Macmillan/Unit2/3_HouseholdAndGardenJobs'
-import b1_e2_words4 from '../../../components/Words/1_Macmillan/Unit2/4_RentingPurchasingAndSellingProperty'
-import b1_e2_words5 from '../../../components/Words/1_Macmillan/Unit2/5_Orther'
+import b1_e2_words1 from '../../../../Components/Words/1_Macmillan/Unit2/1_ThePlaceWhereWeLive'
+import b1_e2_words2 from '../../../../Components/Words/1_Macmillan/Unit2/2_DescribingHouses'
+import b1_e2_words3 from '../../../../Components/Words/1_Macmillan/Unit2/3_HouseholdAndGardenJobs'
+import b1_e2_words4 from '../../../../Components/Words/1_Macmillan/Unit2/4_RentingPurchasingAndSellingProperty'
+import b1_e2_words5 from '../../../../Components/Words/1_Macmillan/Unit2/5_Orther'
 
 class Unit2 extends Component {
 	render() {

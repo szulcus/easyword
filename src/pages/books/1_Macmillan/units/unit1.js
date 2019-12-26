@@ -2,16 +2,16 @@
 import React, {Component} from 'react';
 import {Route} from 'react-router-dom';
 // COMPONENTS
-import AppPage from '../../../../components/App/WritingApp'
+import AppPage from '../../../../Components/App/WritingApp'
 // FILES
-import b1_e1_words1 from '../../../components/Words/1_Macmillan/Unit1/1_PersonalData'
-import b1_e1_words2 from '../../../components/Words/1_Macmillan/Unit1/2_Apperance'
-import b1_e1_words3 from '../../../components/Words/1_Macmillan/Unit1/3_Clothes'
-import b1_e1_words4 from '../../../components/Words/1_Macmillan/Unit1/4_FeaturesOfCharacters'
-import b1_e1_words5 from '../../../components/Words/1_Macmillan/Unit1/5_FeelingsAndEmotions'
-import b1_e1_words6 from '../../../components/Words/1_Macmillan/Unit1/6_Interests'
-import b1_e1_words7 from '../../../components/Words/1_Macmillan/Unit1/7_EthnicalProblems'
-import b1_e1_words8 from '../../../components/Words/1_Macmillan/Unit1/8_Orther'
+import b1_e1_words1 from '../../../../Components/Words/1_Macmillan/Unit1/1_PersonalData'
+import b1_e1_words2 from '../../../../Components/Words/1_Macmillan/Unit1/2_Apperance'
+import b1_e1_words3 from '../../../../Components/Words/1_Macmillan/Unit1/3_Clothes'
+import b1_e1_words4 from '../../../../Components/Words/1_Macmillan/Unit1/4_FeaturesOfCharacters'
+import b1_e1_words5 from '../../../../Components/Words/1_Macmillan/Unit1/5_FeelingsAndEmotions'
+import b1_e1_words6 from '../../../../Components/Words/1_Macmillan/Unit1/6_Interests'
+import b1_e1_words7 from '../../../../Components/Words/1_Macmillan/Unit1/7_EthnicalProblems'
+import b1_e1_words8 from '../../../../Components/Words/1_Macmillan/Unit1/8_Orther'
 
 class Unit1 extends Component {
 	render() {

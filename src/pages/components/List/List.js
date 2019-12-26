@@ -1,20 +1,15 @@
 // BASIC
 import React, { Component } from 'react'
 import styled from 'styled-components'
-import { library } from '@fortawesome/fontawesome-svg-core'
 // STYLES
 import Global from '../Styles/Global'
-import { Wrapper, PageLink, Icon } from '../Styles/Components'
+import { Wrapper } from '../Styles/Components'
 // COMPONENTS
 import Book from './components/Book'
 import Header from './components/ListElement/Header'
 import ListWrapper from './components/ListElement/ListWrapper'
 import ListElement from './components/ListElement/ListElement'
 import ListElementTest from './components/ListElement/ListElementTest'
-// ICONS
-import { faReply } from '@fortawesome/free-solid-svg-icons'
-
-library.add(faReply);
 
 const ListElementWrapper = styled.div``
 

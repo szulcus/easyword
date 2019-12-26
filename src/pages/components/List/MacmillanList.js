@@ -1,10 +1,9 @@
 // BASIC
 import React, { Component } from 'react'
 import styled, {css} from 'styled-components'
-import { library } from '@fortawesome/fontawesome-svg-core'
 // STYLES
-import Global from '../../../components/Styles/Global'
-import { Wrapper } from '../../../components/Styles/Components'
+import Global from '../../../Components/Styles/Global'
+import { Wrapper } from '../../../Components/Styles/Components'
 // COMPONENTS
 import Book from './components/Book'
 import Header from './components/ListElement/Header'
@@ -12,10 +11,7 @@ import ListWrapper from './components/ListElement/ListWrapper'
 import ListElement from './components/ListElement/ListElement'
 import ListElementTest from './components/ListElement/ListElementTest'
 // ICONS
-import { faReply } from '@fortawesome/free-solid-svg-icons'
-import {IoIosTimer} from 'react-icons/io'
-
-library.add(faReply);
+import { IoIosTimer } from 'react-icons/io'
 
 const Separator = styled.hr`
 	display: none;
@@ -104,8 +100,8 @@ class List extends Component {
 		hideTime: false
 	}
 	componentDidMount() {
-		let plannedState = this.state.plannedDate;
-		let plannedDateObject = new window.Date(plannedState.year,plannedState.month-1,plannedState.day,plannedState.hour,plannedState.minute,0);
+		// let plannedState = this.state.plannedDate;
+		// let plannedDateObject = new window.Date(plannedState.year,plannedState.month-1,plannedState.day,plannedState.hour,plannedState.minute,0);
 		// setInterval(
 		// 	() => {
 		// 		this.setState({
@@ -119,8 +115,8 @@ class List extends Component {
 		// 		})
 		// 	}, 1000
 		// );
-		setInterval(() => this.setState({dateNow: new window.Date()}), 1000);
-		setInterval(() => console.log(this.state.dateNow), 1000);
+		// setInterval(() => this.setState({dateNow: new window.Date()}), 1000);
+		// setInterval(() => console.log(this.state.dateNow), 1000);
 	}
 	time = (e) => {
 		return `${e.days} dni, ${e.hours - e.days*24}godzin, ${e.minutes - e.hours * 60}minut, ${e.seconds - e.minutes * 60}`

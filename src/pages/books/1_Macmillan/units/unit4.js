@@ -2,13 +2,13 @@
 import React, {Component} from 'react';
 import {Route} from 'react-router-dom';
 // COMPONENTS
-import AppPage from '../../../../components/App/WritingApp'
+import AppPage from '../../../../Components/App/WritingApp'
 // FILES
-import b1_e4_words1 from '../../../components/Words/1_Macmillan/Unit4/1_JobsAndResponsibilities'
-import b1_e4_words2 from '../../../components/Words/1_Macmillan/Unit4/2_EmploymentAndWorkConditions'
-import b1_e4_words3 from '../../../components/Words/1_Macmillan/Unit4/3_TemporaryWork'
-import b1_e4_words4 from '../../../components/Words/1_Macmillan/Unit4/4_JobMarket'
-import b1_e4_words5 from '../../../components/Words/1_Macmillan/Unit4/5_Orther'
+import b1_e4_words1 from '../../../../Components/Words/1_Macmillan/Unit4/1_JobsAndResponsibilities'
+import b1_e4_words2 from '../../../../Components/Words/1_Macmillan/Unit4/2_EmploymentAndWorkConditions'
+import b1_e4_words3 from '../../../../Components/Words/1_Macmillan/Unit4/3_TemporaryWork'
+import b1_e4_words4 from '../../../../Components/Words/1_Macmillan/Unit4/4_JobMarket'
+import b1_e4_words5 from '../../../../Components/Words/1_Macmillan/Unit4/5_Orther'
 
 class Unit4 extends Component {
 	render() {

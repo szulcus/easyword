@@ -2,14 +2,14 @@
 import React, {Component} from 'react';
 import {Route} from 'react-router-dom';
 // COMPONENTS
-import AppPage from '../../../../components/App/WritingApp'
+import AppPage from '../../../../Components/App/WritingApp'
 // FILES
-import b1_e3_words1 from '../../../components/Words/1_Macmillan/Unit3/1_SchoolSubjects'
-import b1_e3_words2 from '../../../components/Words/1_Macmillan/Unit3/2_GradesAndCourseRequirements'
-import b1_e3_words3 from '../../../components/Words/1_Macmillan/Unit3/3_SchoolLive'
-import b1_e3_words4 from '../../../components/Words/1_Macmillan/Unit3/4_ExtracurricularActivities'
-import b1_e3_words5 from '../../../components/Words/1_Macmillan/Unit3/5_EducationSystem'
-import b1_e3_words6 from '../../../components/Words/1_Macmillan/Unit3/6_Orther'
+import b1_e3_words1 from '../../../../Components/Words/1_Macmillan/Unit3/1_SchoolSubjects'
+import b1_e3_words2 from '../../../../Components/Words/1_Macmillan/Unit3/2_GradesAndCourseRequirements'
+import b1_e3_words3 from '../../../../Components/Words/1_Macmillan/Unit3/3_SchoolLive'
+import b1_e3_words4 from '../../../../Components/Words/1_Macmillan/Unit3/4_ExtracurricularActivities'
+import b1_e3_words5 from '../../../../Components/Words/1_Macmillan/Unit3/5_EducationSystem'
+import b1_e3_words6 from '../../../../Components/Words/1_Macmillan/Unit3/6_Orther'
 
 class Unit3 extends Component {
 	render() {

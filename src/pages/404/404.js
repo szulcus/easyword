@@ -3,16 +3,16 @@ import React, { Component } from 'react'
 import styled, { css } from 'styled-components'
 import { Link } from 'react-router-dom'
 // STYLED
-import Global from '../../components/Styles/Global'
-import { Wrapper } from '../../components/Styles/Components'
+import Global from '../../Components/Styles/Global'
+import { Wrapper } from '../../Components/Styles/Components'
 // COMPONENTS
 import SocialMediaItem from './components/SocialMediaItem'
 // FILES
-import snapchatLogo from '../../images/snapchat-icon.png'
-import snapchatDescription from '../../images/snapchat-d.png'
-import instagramLogo from '../../images/instagram-icon.png'
-import instagramDescription from '../../images/instagram-d.png'
-import wow from '../../images/wow.png'
+import snapchatLogo from '../../Components/Images/snapchat-icon.png'
+import snapchatDescription from '../../Components/Images/snapchat-d.png'
+import instagramLogo from '../../Components/Images/instagram-icon.png'
+import instagramDescription from '../../Components/Images/instagram-d.png'
+import wow from '../../Components/Images/wow.png'
 
 
 const WorkElement = styled.div`

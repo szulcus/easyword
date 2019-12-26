@@ -2,13 +2,13 @@
 import React, {Component} from 'react';
 import {Route} from 'react-router-dom';
 // COMPONENTS
-import AppPage from '../../../../components/App/WritingApp'
+import AppPage from '../../../../Components/App/WritingApp'
 // FILES
-import b1_e9_words1 from '../../../components/Words/1_Macmillan/Unit9/1_FormsOfCulture'
-import b1_e9_words2 from '../../../components/Words/1_Macmillan/Unit9/2_ArtistsAndTheirWork'
-import b1_e9_words3 from '../../../components/Words/1_Macmillan/Unit9/3_ParticipatingInCulturalEvents'
-import b1_e9_words4 from '../../../components/Words/1_Macmillan/Unit9/4_MassMedia'
-import b1_e9_words5 from '../../../components/Words/1_Macmillan/Unit9/5_Other'
+import b1_e9_words1 from '../../../../Components/Words/1_Macmillan/Unit9/1_FormsOfCulture'
+import b1_e9_words2 from '../../../../Components/Words/1_Macmillan/Unit9/2_ArtistsAndTheirWork'
+import b1_e9_words3 from '../../../../Components/Words/1_Macmillan/Unit9/3_ParticipatingInCulturalEvents'
+import b1_e9_words4 from '../../../../Components/Words/1_Macmillan/Unit9/4_MassMedia'
+import b1_e9_words5 from '../../../../Components/Words/1_Macmillan/Unit9/5_Other'
 
 class Unit9 extends Component {
 	render() {

@@ -1,13 +1,9 @@
 // BASIC
 import React, { Component } from 'react'
 import styled, { css } from 'styled-components'
-import { library } from '@fortawesome/fontawesome-svg-core'
 // ICONS
-import { faTimes } from '@fortawesome/free-solid-svg-icons'
-// STYLES
-import { Icon } from '../../Styles/Components'
+import { FaTimes } from 'react-icons/fa'
 
-library.add(faTimes);
 
 const DeleteElement = styled.div`
 	display: flex;
@@ -37,7 +33,7 @@ const DeleteElement = styled.div`
 	}
 `
 
-const Cross = styled(Icon)`
+const Cross = styled(FaTimes)`
 	display: block;
 	color: gold;
 	transition: all ease 0.2s;
@@ -47,7 +43,7 @@ class Delete extends Component {
 	render() {
 		return (
 			<DeleteElement up={this.props.up} onClick={this.props.onClick}>
-				<Cross icon={['fas', 'times']} />
+				<Cross />
 			</DeleteElement>
 		);
 	}

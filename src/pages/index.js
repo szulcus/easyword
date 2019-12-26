@@ -1,10 +1,10 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import styled from 'styled-components';
-import {Wrapper} from '../components/Styled/Global/global'
-import roadSignsBookImage from '../images/road-signs-book.png'
-import irregularVerbsBookImage from '../images/irregular-verbs-book.png'
-import Preloader from '../components/App/Preloader'
+import {Wrapper} from '../Components/Styles/Components'
+import roadSignsBookImage from '../Components/Images/road-signs-book.png'
+import irregularVerbsBookImage from '../Components/Images/irregular-verbs-book.png'
+import Preloader from '../Components/App/Preloader'
 
 const HelpTrigger = styled.div`
 	position: absolute;

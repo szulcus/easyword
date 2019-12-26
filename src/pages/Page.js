@@ -1,13 +1,10 @@
 // BASIC
 import React, {Component} from 'react'
 import styled from 'styled-components'
-import { library } from '@fortawesome/fontawesome-svg-core'
 // STYLED
-import Global, {Wrapper, PageLink, Separator, Icon, Back} from '../components/Styled/Global/global'
+import Global, {Wrapper, PageLink, Separator, Back} from '../components/Styles/Global'
 // ICONS
-import { faPencilAlt, faCopy, faFire, faReply } from '@fortawesome/free-solid-svg-icons'
-
-library.add(faPencilAlt, faCopy, faFire, faReply);
+import { FaPencilAlt, FaCopy, FaFire, FaReply } from 'react-icons/fa'
 
 const Header = styled.header`
 	font-size: 30px;
@@ -52,25 +49,25 @@ class Page extends Component {
 					<SelectWrapper>
 						<Game>
 							<PageLink to='/macmillan'>
-								<StyledIcon icon={['fas', 'pencil-alt']}/>
+								<FaPencilAlt />
 								<div>Pisanie</div>
 							</PageLink>
 						</Game>
 						<Game>
 							<PageLink to='/macmillan'>
-								<StyledIcon icon={['fas', 'copy']}/>
+								<FaCopy />
 								<div>Dopasowywanie</div>
 							</PageLink>
 						</Game>
 						<Game>
 							<PageLink to='/macmillan'>
-								<StyledIcon icon={['fas', 'fire']}/>
+								<FaFire />
 								<div>Tinder</div>
 							</PageLink>
 						</Game>
 					</SelectWrapper>
 					<Back to='/wsip'>
-						<Icon icon={['fas', 'reply']}/>
+						<FaReply />
 					</Back>
 				</Wrapper>
 			</>

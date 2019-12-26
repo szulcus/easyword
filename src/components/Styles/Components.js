@@ -1,14 +1,9 @@
 // BASIC
 import React from 'react'
 import styled, { css } from 'styled-components'
-import { library } from '@fortawesome/fontawesome-svg-core'
 import {Link} from 'react-router-dom'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 // ICONS
-import { faFacebookF, faGithub, faLinkedinIn } from '@fortawesome/free-brands-svg-icons'
-import { faUserTie, faReply, faCog } from '@fortawesome/free-solid-svg-icons'
-
-library.add(faFacebookF, faGithub, faLinkedinIn, faUserTie, faReply, faCog);
+import { FaFacebookF, FaGithub, FaLinkedinIn, FaUserTie, FaReply, FaCog } from 'react-icons/fa'
 
 const Wrapper = styled.main`
 	display: flex;
@@ -16,7 +11,7 @@ const Wrapper = styled.main`
 	height: 100vh;
 	
 	${props =>
-		props.default &&
+		props.deFault &&
 		css`
 			padding: 50px;
 		`
@@ -155,34 +150,6 @@ const WebLink = props => (
 	</BrowserLink>
 );
 
-const Icon = styled(FontAwesomeIcon)`
-	${props =>
-		props.list &&
-		css`
-			color: var(--color-decorative);
-			margin-right: 5px;
-			margin-left: -15px;
-		`
-	};
-
-	${props =>
-		props.test &&
-		css`
-			margin: 0 5px;
-			color: var(--color-decorative);
-			:first-child {
-				margin-left: 10px;
-			}
-		`
-	};
-`
-
-const Back = props => (
-	<PageLink to={props.to}>
-		<Icon icon={['fas', 'reply']} />
-	</PageLink>
-);
-
 // // //
 
 const Emoji = props => (
@@ -190,13 +157,13 @@ const Emoji = props => (
 		className="emoji"
 		role="img"
 		aria-label={props.label ? props.label : ""}
-		aria-hidden={props.label ? "false" : "true"}
+		aria-hidden={props.label ? "False" : "true"}
 	>
 		{props.symbol}
 	</span>
 );
 
 // STYLES
-export {Separator, PageLink, BrowserLink, WebLink, Wrapper, Icon, Back}
+export {Separator, PageLink, BrowserLink, WebLink, Wrapper}
 // COMPONENTS
 export {Emoji}

@@ -2,9 +2,9 @@
 import React, {Component} from 'react';
 import {Route} from 'react-router-dom';
 // COMPONENTS
-import WorkPage from '../../../../components/Work/Work'
+import WorkPage from '../../../../Components/Work/Work'
 // IMAGES
-import working from '../../../../images/working.png'
+import working from '../../../../Components/Images/working.png'
 
 class Unit5 extends Component {
 	render() {
