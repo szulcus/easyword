@@ -11,17 +11,17 @@ const ListElementTestItem = styled.li`
 	padding-top: 10px;
 `
 
-const RightIcon = styled(FaStar)`
-	margin-left: 7px;
+const Icon = styled(FaStar)`
+	color: var(--color-decorative);
 `
 
 class ListElementTest extends Component {
 	render() {
 		return (
 			<ListElementTestItem>
-				<FaStar />
-				<PageLink list to={this.props.path}>{this.props.content}</PageLink>
-				<RightIcon />
+				<Icon />
+					<PageLink list to={this.props.path}> {this.props.content} </PageLink>
+				<Icon />
 			</ListElementTestItem>
 		);
 	}

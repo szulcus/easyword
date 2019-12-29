@@ -21,6 +21,11 @@ class Unit8 extends Component {
 					<AppPage
 						{...props}
 						words={b1_e8_words1}
+						info={{
+							book: 'book_01',
+							unit: 'unit_08',
+							part: 'part_01'
+						}}
 						base_language='en'
 						translated_language='pl'
 					/>
@@ -30,6 +35,11 @@ class Unit8 extends Component {
 					<AppPage
 						{...props}
 						words={b1_e8_words2}
+						info={{
+							book: 'book_01',
+							unit: 'unit_08',
+							part: 'part_02'
+						}}
 						base_language='en'
 						translated_language='pl'
 					/>
@@ -39,6 +49,11 @@ class Unit8 extends Component {
 					<AppPage
 						{...props}
 						words={b1_e8_words3}
+						info={{
+							book: 'book_01',
+							unit: 'unit_08',
+							part: 'part_03'
+						}}
 						base_language='en'
 						translated_language='pl'
 					/>
@@ -48,6 +63,11 @@ class Unit8 extends Component {
 					<AppPage
 						{...props}
 						words={b1_e8_words4}
+						info={{
+							book: 'book_01',
+							unit: 'unit_08',
+							part: 'part_04'
+						}}
 						base_language='en'
 						translated_language='pl'
 					/>
@@ -57,6 +77,11 @@ class Unit8 extends Component {
 					<AppPage
 						{...props}
 						words={b1_e8_words5}
+						info={{
+							book: 'book_01',
+							unit: 'unit_08',
+							part: 'part_05'
+						}}
 						base_language='en'
 						translated_language='pl'
 					/>
@@ -66,6 +91,11 @@ class Unit8 extends Component {
 					<AppPage
 						{...props}
 						words={b1_e8_words6}
+						info={{
+							book: 'book_01',
+							unit: 'unit_08',
+							part: 'part_06'
+						}}
 						base_language='en'
 						translated_language='pl'
 					/>
@@ -75,6 +105,11 @@ class Unit8 extends Component {
 					<AppPage
 						{...props}
 						words={[].concat(b1_e8_words1, b1_e8_words2, b1_e8_words3, b1_e8_words4, b1_e8_words5, b1_e8_words6)}
+						info={{
+							book: 'book_01',
+							unit: 'unit_08',
+							part: 'test'
+						}}
 						base_language='en'
 						translated_language='pl'
 					/>

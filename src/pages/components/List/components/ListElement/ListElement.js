@@ -10,11 +10,15 @@ const ListElementItem = styled.li`
 	padding: 3px;
 `
 
+const Icon = styled(FaAngleRight)`
+	color: var(--color-decorative);
+`
+
 class ListElement extends Component {
 	render() {
 		return (
 			<ListElementItem>
-				<FaAngleRight />
+				<Icon />
 				<PageLink list to={this.props.path}>{this.props.content}</PageLink>
 			</ListElementItem>
 		);

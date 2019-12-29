@@ -6,7 +6,7 @@ const LottieAnimation = props => (
 	<Lottie options={{
 		loop: false,
 		autoplay: true,
-		animationData: props.animationData,
+		animationData: props.data,
 		rendererSettings: {
 			preserveAspectRadio: 'xMidYMid slice'
 		}

@@ -1,7 +1,7 @@
 // BASIC
 import React, {Component} from 'react'
-import greatAnimationData from '../../lotties/72-favourite-app-icon.json'
-import goodAnimationData from '../../lotties/433-checked-done.json'
+import greatAnimationData from '../lotties/data/72-favourite-app-icon.json'
+import goodAnimationData from '../lotties/data/433-checked-done.json'
 import styled, { css } from 'styled-components'
 // COMPONENTS
 import Cathegory from './components/Cathegory'
@@ -21,7 +21,7 @@ import getWord from '../Scripts/Functions/getWord()'
 import female from './female'
 // import similarTranslation from './similarTranslation'
 // ANIMATIONS
-import LottieAnimation from '../../lotties/Animations'
+import LottieAnimation from '../lotties/LottieAnimation'
 
 class App extends Component {
 	constructor(props) {

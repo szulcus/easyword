@@ -10,6 +10,42 @@ const entry = keyframes`
 	}
 `
 
+const speedEntry = keyframes`
+	from {
+		transform: scale(0.5);
+		opacity: 0;
+	}
+	to {
+		transform: scale(1);
+		opacity: 1;
+	}
+`
+
+const speedAbsoluteEntry = keyframes`
+	from {
+		transform: translate(-50%, -40%) scale(0.9);
+		opacity: 0;
+	}
+	to {
+		transform: translate(-50%, -50%) scale(1);
+		opacity: 1;
+	}
+`
+
+const speedAbsoluteBack = keyframes`
+	0% {
+		transform: translate(-50%, -50%) scale(1);
+		opacity: 1;
+	}
+	99% {
+		transform: translate(-50%, -40%) scale(0.9);
+		opacity: 0;
+	}
+	100% {
+		transform: scale(0);
+	}
+`
+
 const opacity = keyframes`
 	from {
 		opacity: 0;
@@ -26,8 +62,43 @@ const editOpacity = keyframes`
 		opacity: 0.5;
 	}
 `
+const flyGift = keyframes`
+	0% {
+		transform: scale(1) rotate(0);
+	}
+	25% {
+		transform: scale(0.99) rotate(1deg);
+	}
+	50% {
+		transform: scale(1) rotate(0);
+	}
+	75% {
+		transform: scale(0.99) rotate(-1deg);
+	}
+	100% {
+		transform: scale(1) rotate(0);
+	}
+`
+const hide = keyframes`
+	0% {
+		transform: scale(1);
+	}
+	99% {
+		transform: scale(0.5) rotate(200deg);
+		opacity: 0
+	}
+	100% {
+		transform: scale(0);
+	}
+`
+
 export {
 	entry,
+	speedEntry,
+	speedAbsoluteEntry,
+	speedAbsoluteBack,
 	opacity,
-	editOpacity
+	editOpacity,
+	flyGift,
+	hide
 }

@@ -12,6 +12,7 @@ import { Wrapper } from '../Styles/Components'
 // COMPONENTS
 import LogIn from './components/LogIn'
 import LogOut from './components/LogOut'
+import Achievements from './components/Achievements'
 // ICONS
 import {FaPencilAlt} from 'react-icons/fa'
 // KEYFRAMES
@@ -68,19 +69,6 @@ const Avatar = styled.div`
 	position: relative;
 	border-radius: 100%;
 	overflow: hidden;
-	/* :hover {
-		::before {
-			content: '';
-			display: block;
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
-			background-color: var(--color-dark);
-			opacity: 0.5;
-		}
-	} */
 `
 const AvatarImage = styled.img`
 	display: block;
@@ -114,13 +102,8 @@ class UserProfile extends Component {
 			isAdmin: false,
 			id: '',
 		},
-		guides: '',
-		cafes: '',
-		findedCity: '',
-		findedSign: '>',
-		name: '',
-		title: 'Rejestracja',
-		userPoints: 0
+		points: null,
+		previewUserAchievements: false,
 	}
 	componentDidMount() {
 		firebase.auth().onAuthStateChanged(user => {
@@ -173,14 +156,13 @@ class UserProfile extends Component {
 					}
 					user.admin = idTokenResult.claims.admin
 				})
+				
 				db.collection('users').doc(user.uid).get().then(doc => {
 					if (doc.data()) {
-						this.setState(prevState => ({
-							user: {
-								...prevState.user,
-								points: doc.data().points
-							}
-						}))
+						this.setState({
+							points: doc.data().points
+						})
+						console.log(this.state.points);
 					}
 				});
 			}
@@ -215,7 +197,12 @@ class UserProfile extends Component {
 	editAvatar = () => {
 		alert("Edycja zdjęcia")
 	}
+	handleUserAchievements = () => {
+		this.state.previewUserAchievements ? this.setState({previewUserAchievements: false}) : this.setState({previewUserAchievements: true})
+		
+	}
 	render() {
+			console.log(this.state.points);
 		return (
 			<>
 				<Global />
@@ -239,12 +226,14 @@ class UserProfile extends Component {
 								<Edit onClick={this.editAvatar} />
 							</Avatar>
 							<div>Wygrane rundy: </div>
-							<div>Doświadczenie: {this.state.user.points} XP</div>
+							<div>Doświadczenie: {!this.state.points ? '---' : this.state.points.experience} XP</div>
 						</UserContent>
+						<button onClick={this.handleUserAchievements}>Zobacz swoje wyniki</button>
+						<button>Przejdź do tablicy wyników</button>
 						<LogIn onClick={this.logIn} hide={this.state.user.isLoggedIn} />
 						<LogOut onClick={this.logOut} preview />
-						{/* <LogOut onClick={this.logOut} preview={this.state.user.isLoggedIn} /> */}
 					</LoginElement>
+					<Achievements preview={this.state.previewUserAchievements} points={this.state.points} back={this.handleUserAchievements} />
 				</Wrapper>
 			</>
 		);

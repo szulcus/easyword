@@ -1,8 +1,8 @@
 // BASIC
 import React, {Component} from 'react'
-import greatAnimationData from '../../lotties/72-favourite-app-icon.json'
-import goodAnimationData from '../../lotties/433-checked-done.json'
 import styled, { css } from 'styled-components'
+import greatAnimationData from '../lotties/data/72-favourite-app-icon.json'
+import goodAnimationData from '../lotties/data/433-checked-done.json'
 import firebase from 'firebase/app'
 import 'firebase/app'
 import 'firebase/auth'
@@ -18,6 +18,7 @@ import Input from './components/WritingApp/Input'
 import AppNavigation from './components/AppNavigation';
 import Answer from './components/Answer'
 import SocialMedia from './components/SocialMedia'
+import Congratulations from './components/Congratulations'
 // STYLES
 import Global from '../Styles/Global'
 import { Wrapper } from '../Styles/Components'
@@ -27,7 +28,7 @@ import getWord from '../Scripts/Functions/getWord()'
 import female from './female'
 import similarTranslation from './similarTranslation'
 // ANIMATIONS
-import LottieAnimation from '../../lotties/Animations'
+import LottieAnimation from '../lotties/LottieAnimation'
 
 class App extends Component {
 	constructor(props) {
@@ -36,13 +37,17 @@ class App extends Component {
 			load: false,
 			language: this.props.base_language,
 			points: 0,
+			appLevel: 1,
+			goal: 15,
+			experience: 0,
 			baseWord: getWord(this.props.words),
 			hideAnswer: true,
 			answer: '',
 			good: false,
 			great: false,
 			counter: 0,
-			deleteImage: false
+			deleteImage: false,
+			message: false
 		};
 	}
 
@@ -53,26 +58,63 @@ class App extends Component {
 			if(user) {
 				console.log(user);
 				this.setState({userId: user.uid});
-				// firebase.firestore().collection('users').doc(user.uid).get().then(doc => {
-				// 	// if (doc.data()) {
-				// 	// 	this.setState({points: doc.data().points.macmillan.unit1_1})
-				// 	// }
-				// 	// console.log("======");
-				// 	// console.log(doc.collection('points'));
-				// });
-				db.collection('users').doc(user.uid).get().then(doc => {
-					console.log(doc.data().bio);
+				const {book, unit, part} = this.props.info;
+				// const appPoints = `testPoints.book1.units.unit1.parts.part1`;
+				db.collection('users').doc(user.uid).onSnapshot(snapshot => {
+					const points = snapshot.data().points.books[book].units[unit].parts[part].points;
+					const appLevel = snapshot.data().points.books[book].units[unit].parts[part].level;
+					const experience = snapshot.data().points.experience;
+					this.setState({ points, experience, appLevel })
+					if (appLevel === 1) {
+						this.setState({goal: 10});
+					}
+					else if (appLevel === 2) {
+						this.setState({goal: 30});
+					}
+					else if (appLevel === 3) {
+						this.setState({goal: 60});
+					}
+					else if (appLevel === 4) {
+						this.setState({goal: 100});
+					}
+					else if (appLevel === 5) {
+						this.setState({goal: 150});
+					}
+					else if (appLevel === 6) {
+						this.setState({goal: 210});
+					}
+					else if (appLevel === 7) {
+						this.setState({goal: 280});
+					}
+					else if (appLevel === 8) {
+						this.setState({goal: 460});
+					}
+					else if (appLevel === 9) {
+						this.setState({goal: 550});
+					}
+					else if (appLevel === 10) {
+						this.setState({goal: 650});
+					}
+					
+					if (this.state.points >= this.state.goal) {
+						this.showNotification();
+					}
 				});
+				// db.collection('users').doc(user.uid).update({
+				// 	[appPoints]: 19
+				// })
 			}
 		})
 	}
-	flattenDoc = (doc) => {
-		return {id: doc.id, ...doc.data()};
-	}
-	setUpPoints = (data) => {
-		if (data) {
-			this.setState({points: data.points});
-		}
+	showNotification = () => {
+		const {book, unit, part} = this.props.info;
+		const appLevel = `points.books.${book}.units.${unit}.parts.${part}.level`;
+		this.setState({prize: this.state.goal * this.state.appLevel});
+		firebase.firestore().collection('users').doc(this.state.userId).update({
+			'points.experience': this.state.experience + this.state.goal * this.state.appLevel,
+			[appLevel]: this.state.appLevel + 1
+		})
+		this.handleMessage()
 	}
 	getNew = () => {
 		if (this.state.hideAnswer === true || this.state.answer === 'Brawo!') {
@@ -83,14 +125,7 @@ class App extends Component {
 		}
 	}
 
-	increment = () => {
-		this.setState({points: this.state.points + 1});
-	}
-
 	check = (e) => {
-		// if (female(this.state.baseWord).feminine_translation1 !== undefined) {
-		// 	console.log('jest')
-		// }
 		this.setState({counter: this.state.counter + 1});
 		let userWord = e.target.value.toLowerCase().trim().replace('ą','a').replace('ć','c').replace('ę','e').replace('ł','l').replace('ń','n').replace('ó','o').replace('ś','s').replace('ź','z').replace('ż','z');
 
@@ -101,14 +136,16 @@ class App extends Component {
 		const feminine_translation2 = similarTranslation(female(this.state.baseWord).feminine_translation2);
 		const feminine_translation3 = similarTranslation(female(this.state.baseWord).feminine_translation3);
 
-		console.log(this.state.counter);
+		// console.log(this.state.counter);
+		// console.log(translation1)
+		// console.log(translation2)
+		// console.log(translation3)
+		// console.log(feminine_translation1)
+		// console.log(feminine_translation2)
+		// console.log(feminine_translation3)
 
-		console.log(translation1)
-		console.log(translation2)
-		console.log(translation3)
-		console.log(feminine_translation1)
-		console.log(feminine_translation2)
-		console.log(feminine_translation3)
+		const {book, unit, part} = this.props.info;
+		const appPoints = `points.books.${book}.units.${unit}.parts.${part}.points`;
 
 		if (
 			userWord === translation1 ||
@@ -127,32 +164,39 @@ class App extends Component {
 			});
 			if (translation1.length > this.state.counter && this.state.hideAnswer === true) {
 				e.persist();
-				this.setState({great: true,});
-				firebase.firestore().collection('users').doc(this.state.userId).set({
-					points: 45,
+				this.setState({
+					great: true,
+				});
+				firebase.firestore().collection('users').doc(this.state.userId).update({
+					[appPoints]: this.state.points + 2,
+					'points.experience': this.state.experience + 2
 				})
-				setTimeout(function () {
+				setTimeout(() => {
 					target.value = '';
 					this.getNew();
 					this.setState({
 						hideAnswer: true,
 						great: false
 					});
-				}.bind(this), 1000)
+				}, 1000)
 			}
 			else {
+				e.persist();
 				this.setState({
 					good: true,
-					points: this.state.points + 1
 				});
-				setTimeout(function () {
+				firebase.firestore().collection('users').doc(this.state.userId).update({
+					[appPoints]: this.state.points + 1,
+					'points.experience': this.state.experience + 1
+				})
+				setTimeout(() => {
 					target.value = '';
 					this.getNew();
 					this.setState({
 						hideAnswer: true,
 						good: false
 					});
-				}.bind(this), 1000)
+				}, 1000)
 			}
 		}
 	}
@@ -160,12 +204,11 @@ class App extends Component {
 	getAnswer = () => {
 
 		if (this.state.hideAnswer !== false) {
-			let translation1 = this.state.baseWord.translation1;
-			let translation2 = this.state.baseWord.translation2;
-			let translation3 = this.state.baseWord.translation3;
-			const full_translation1 = female(this.state.baseWord).full_translation1;
-			const full_translation2 = female(this.state.baseWord).full_translation2;
-			const full_translation3 = female(this.state.baseWord).full_translation3;
+			let {translation1, translation2, translation3} = this.state.baseWord;
+			const {full_translation1, full_translation2, full_translation3} = female(this.state.baseWord);
+
+			const {book, unit, part} = this.props.info;
+			const appPoints = `points.books.${book}.units.${unit}.parts.${part}.points`;
 
 			if (full_translation1 !== undefined) {
 				translation1 = full_translation1;
@@ -178,7 +221,9 @@ class App extends Component {
 			}
 
 			if (this.state.points >= 2) {
-				this.setState({points: this.state.points - 2});
+				firebase.firestore().collection('users').doc(this.state.userId).update({
+					[appPoints]: this.state.points - 2
+				})
 			}
 
 			else {
@@ -210,26 +255,25 @@ class App extends Component {
 				this.setState({deleteImage: false})
 			}
 	}
+
+	handleMessage = () => {
+		!this.state.message ? this.setState({message: true}) : this.setState({message: false});
+		// alert('o')
+	}
 	
 	render = () => {
 		let baseWord = this.state.baseWord;
-
 		// replace empty images
-
 		let image = baseWord.image;
 		// let image2 = baseWord.image2;
-		
 		if (image === `url`) {
 			image = `https://fakeimg.pl/647x400/?text=${baseWord.word1}`;
 		}
-
 		// if (image2 !== undefined) {
 		// 	image = `https://fakeimg.pl/647x400/?text=${baseWord.word1}`;
 		// }
-		
 		// subtype and subsubtype exceptions
 		let cathegory = baseWord.type;
-
 		if(baseWord.subtype !== undefined) {
 			cathegory = `${cathegory} (${baseWord.subtype})`;
 		}
@@ -237,19 +281,15 @@ class App extends Component {
 		else if (baseWord.subsubtype !== undefined) {
 			cathegory = `${cathegory} (${baseWord.subsubtype})`;
 		}
-		
 		// word2 and word3 exceptions
 		let word = baseWord.word1;
 		console.log(baseWord);
-
 		if(baseWord.word3 !== undefined) {
 			word = `${word} / ${baseWord.word2} / ${baseWord.word3}`;
 		}
-		
 		else if(baseWord.word2 !== undefined) {
 			word = `${word} / ${baseWord.word2}`;
 		}
-
 		const Animation = styled.div`
 			display: none;
 			position: absolute;
@@ -268,9 +308,7 @@ class App extends Component {
 			@media(min-width: 700px) {
 				top: 150px;
 			}
-
 		`
-
 		return (
 			<>
 				<Global />
@@ -280,15 +318,17 @@ class App extends Component {
 					<Navigation points={this.state.points} />
 					<Word content={word} />
 					<Picture hide={this.state.deleteImage} onClick={this.deleteImg} src={image} word={word} link={`https://pxhere.com/${this.state.language}/photos?q=${baseWord.word1}`} />
-					<Input onChange={this.check} press={this.keyPress} />
+					<Input onChange={this.check} press={this.keyPress} points={this.state.points} max={this.state.goal} />
 					<AppNavigation check={this.getAnswer} change={this.getNew} />
 					<Answer hideAnswer={this.state.hideAnswer} text={this.state.answer} />
+					<button onClick={this.handleMessage}>Klik {this.state.experience}</button>
 					<Animation preview={this.state.great}>
-						<LottieAnimation animationData={greatAnimationData} />
+						<LottieAnimation data={greatAnimationData} />
 					</Animation>
 					<Animation preview={this.state.good}>
-						<LottieAnimation animationData={goodAnimationData} />
+						<LottieAnimation data={goodAnimationData} />
 					</Animation>
+					<Congratulations preview={this.state.message} level={this.state.appLevel} prize={this.state.prize} onClick={this.handleMessage} />
 					<SocialMedia />
 				</Wrapper>
 			</>

@@ -15,7 +15,7 @@ import b1_e7_words8 from '../../../../Components/Words/1_Macmillan/Unit7/8_Banks
 import b1_e7_words9 from '../../../../Components/Words/1_Macmillan/Unit7/9_Insurance'
 import b1_e7_words10 from '../../../../Components/Words/1_Macmillan/Unit7/10_Other'
 
-class Unit7 extends Component {
+class unit_07 extends Component {
 	render() {
 		return (
 			<>
@@ -25,6 +25,11 @@ class Unit7 extends Component {
 					<AppPage
 						{...props}
 						words={b1_e7_words1}
+						info={{
+							book: 'book_01',
+							unit: 'unit_07',
+							part: 'part_01'
+						}}
 						base_language='en'
 						translated_language='pl'
 					/>
@@ -34,6 +39,11 @@ class Unit7 extends Component {
 					<AppPage
 						{...props}
 						words={b1_e7_words2}
+						info={{
+							book: 'book_01',
+							unit: 'unit_07',
+							part: 'part_02'
+						}}
 						base_language='en'
 						translated_language='pl'
 					/>
@@ -43,6 +53,11 @@ class Unit7 extends Component {
 					<AppPage
 						{...props}
 						words={b1_e7_words3}
+						info={{
+							book: 'book_01',
+							unit: 'unit_07',
+							part: 'part_03'
+						}}
 						base_language='en'
 						translated_language='pl'
 					/>
@@ -52,6 +67,11 @@ class Unit7 extends Component {
 					<AppPage
 						{...props}
 						words={b1_e7_words4}
+						info={{
+							book: 'book_01',
+							unit: 'unit_07',
+							part: 'part_04'
+						}}
 						base_language='en'
 						translated_language='pl'
 					/>
@@ -61,6 +81,11 @@ class Unit7 extends Component {
 					<AppPage
 						{...props}
 						words={b1_e7_words5}
+						info={{
+							book: 'book_01',
+							unit: 'unit_07',
+							part: 'part_05'
+						}}
 						base_language='en'
 						translated_language='pl'
 					/>
@@ -70,6 +95,11 @@ class Unit7 extends Component {
 					<AppPage
 						{...props}
 						words={b1_e7_words6}
+						info={{
+							book: 'book_01',
+							unit: 'unit_07',
+							part: 'part_06'
+						}}
 						base_language='en'
 						translated_language='pl'
 					/>
@@ -79,6 +109,11 @@ class Unit7 extends Component {
 					<AppPage
 						{...props}
 						words={b1_e7_words7}
+						info={{
+							book: 'book_01',
+							unit: 'unit_07',
+							part: 'part_07'
+						}}
 						base_language='en'
 						translated_language='pl'
 					/>
@@ -88,6 +123,11 @@ class Unit7 extends Component {
 					<AppPage
 						{...props}
 						words={b1_e7_words8}
+						info={{
+							book: 'book_01',
+							unit: 'unit_07',
+							part: 'part_08'
+						}}
 						base_language='en'
 						translated_language='pl'
 					/>
@@ -97,6 +137,11 @@ class Unit7 extends Component {
 					<AppPage
 						{...props}
 						words={b1_e7_words9}
+						info={{
+							book: 'book_01',
+							unit: 'unit_07',
+							part: 'part_09'
+						}}
 						base_language='en'
 						translated_language='pl'
 					/>
@@ -106,6 +151,11 @@ class Unit7 extends Component {
 					<AppPage
 						{...props}
 						words={b1_e7_words10}
+						info={{
+							book: 'book_01',
+							unit: 'unit_07',
+							part: 'part_10'
+						}}
 						base_language='en'
 						translated_language='pl'
 					/>
@@ -115,6 +165,11 @@ class Unit7 extends Component {
 					<AppPage
 						{...props}
 						words={[].concat(b1_e7_words1, b1_e7_words2, b1_e7_words3, b1_e7_words4, b1_e7_words5, b1_e7_words6, b1_e7_words7, b1_e7_words8, b1_e7_words9, b1_e7_words10)}
+						info={{
+							book: 'book_01',
+							unit: 'unit_07',
+							part: 'part_11'
+						}}
 						base_language='en'
 						translated_language='pl'
 					/>
@@ -124,4 +179,4 @@ class Unit7 extends Component {
 	}
 }
 
-export default Unit7;
+export default unit_07;
