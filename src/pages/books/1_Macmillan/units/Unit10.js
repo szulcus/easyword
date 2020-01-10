@@ -10,9 +10,9 @@ class Unit10 extends Component {
 	render() {
 		return (
 			<>
-				{/* Rozdział 10 - Sport */}
+				{/* Rozdzial 10 - Sport */}
 				{/* Dyscypliny sportu */}
-				<Route path="/macmillan/rozdział-10/dyscypliny-sportu" render={(props) =>
+				<Route path="/macmillan/rozdzial-10/dyscypliny-sportu" render={(props) =>
 					<WorkPage
 						{...props}
 						title="Prace trwają"
@@ -20,7 +20,7 @@ class Unit10 extends Component {
 					/>
 				}/>
 				{/* Imprezy sportowe */}
-				<Route path="/macmillan/rozdział-10/imprezy-sportowe" render={(props) =>
+				<Route path="/macmillan/rozdzial-10/imprezy-sportowe" render={(props) =>
 					<WorkPage
 						{...props}
 						title="Prace trwają"
@@ -28,7 +28,7 @@ class Unit10 extends Component {
 					/>
 				}/>
 				{/* Sport wyczynowy */}
-				<Route path="/macmillan/rozdział-10/sport-wyczynowy" render={(props) =>
+				<Route path="/macmillan/rozdzial-10/sport-wyczynowy" render={(props) =>
 					<WorkPage
 						{...props}
 						title="Prace trwają"
@@ -36,7 +36,7 @@ class Unit10 extends Component {
 					/>
 				}/>
 				{/* Inne */}
-				<Route path="/macmillan/rozdział-10/inne" render={(props) =>
+				<Route path="/macmillan/rozdzial-10/inne" render={(props) =>
 					<WorkPage
 						{...props}
 						title="Prace trwają"
@@ -44,7 +44,7 @@ class Unit10 extends Component {
 					/>
 				}/>
 				{/* Test */}
-				<Route path="/macmillan/rozdział-10/test" render={(props) =>
+				<Route path="/macmillan/rozdzial-10/test" render={(props) =>
 					<WorkPage
 						{...props}
 						title="Prace trwają"

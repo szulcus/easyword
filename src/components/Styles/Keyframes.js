@@ -92,6 +92,27 @@ const hide = keyframes`
 	}
 `
 
+const listEntry = keyframes`
+	0% {
+		transform: translateX(-50%);
+		opacity: 0;
+	}
+	100% {
+		transform: translateX(0);
+		opacity: 1;
+	}
+`
+const listHover = keyframes`
+	0% {
+		opacity: 1;
+		transform: scale(1);
+	}
+	100% {
+		opacity: 0.8;
+		transform: scale(0.98);
+	}
+`
+
 export {
 	entry,
 	speedEntry,
@@ -100,5 +121,7 @@ export {
 	opacity,
 	editOpacity,
 	flyGift,
-	hide
+	hide,
+	listEntry,
+	listHover
 }

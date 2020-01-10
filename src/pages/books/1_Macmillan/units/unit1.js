@@ -3,6 +3,7 @@ import React, {Component} from 'react';
 import {Route} from 'react-router-dom';
 // COMPONENTS
 import AppPage from '../../../../Components/App/WritingApp'
+import WordList from '../../../../Components/WordList'
 // FILES
 import b1_e1_words1 from '../../../../Components/Words/1_Macmillan/Unit1/1_PersonalData'
 import b1_e1_words2 from '../../../../Components/Words/1_Macmillan/Unit1/2_Apperance'
@@ -17,9 +18,9 @@ class Unit1 extends Component {
 	render() {
 		return (
 			<>
-				{/* Rozdział 1 - Człowiek */}
+				{/* Rozdzial 1 - Czlowiek */}
 				{/* Dane osobowe */}
-				<Route path="/macmillan/rozdział-1/dane-osobowe" render={(props) =>
+				<Route exact path="/macmillan/rozdzial-1/dane-osobowe" render={(props) =>
 					<AppPage
 						{...props}
 						words={b1_e1_words1}
@@ -32,8 +33,12 @@ class Unit1 extends Component {
 						translated_language='pl'
 					/>
 				}/>
+				{/* <Route exact path="/macmillan/rozdzial-1/dane-osobowe/list">
+					<WordList />
+				</Route> */}
+				
 				{/* Wygląd zewnętrzny */}
-				<Route path="/macmillan/rozdział-1/wygląd-zewnętrzny" render={(props) =>
+				<Route exact path="/macmillan/rozdzial-1/wygląd-zewnętrzny" render={(props) =>
 					<AppPage
 						{...props}
 						words={b1_e1_words2}
@@ -47,7 +52,7 @@ class Unit1 extends Component {
 					/>
 				}/>
 				{/* Ubrania */}
-				<Route path="/macmillan/rozdział-1/ubrania" render={(props) =>
+				<Route exact path="/macmillan/rozdzial-1/ubrania" render={(props) =>
 					<AppPage
 						{...props}
 						words={b1_e1_words3}
@@ -61,7 +66,7 @@ class Unit1 extends Component {
 					/>
 				}/>
 				{/* Cechy charakteru */}
-				<Route path="/macmillan/rozdział-1/cechy-charakteru" render={(props) =>
+				<Route exact path="/macmillan/rozdzial-1/cechy-charakteru" render={(props) =>
 					<AppPage
 						{...props}
 						words={b1_e1_words4}
@@ -75,7 +80,7 @@ class Unit1 extends Component {
 					/>
 				}/>
 				{/* Uczucia i emocje */}
-				<Route path="/macmillan/rozdział-1/uczucia-i-emocje" render={(props) =>
+				<Route exact path="/macmillan/rozdzial-1/uczucia-i-emocje" render={(props) =>
 					<AppPage
 						{...props}
 						words={b1_e1_words5}
@@ -89,7 +94,7 @@ class Unit1 extends Component {
 					/>
 				}/>
 				{/* Zainteresowania */}
-				<Route path="/macmillan/rozdział-1/zainteresowania" render={(props) =>
+				<Route exact path="/macmillan/rozdzial-1/zainteresowania" render={(props) =>
 					<AppPage
 						{...props}
 						words={b1_e1_words6}
@@ -103,7 +108,7 @@ class Unit1 extends Component {
 					/>
 				}/>
 				{/* Problemy etyczne */}
-				<Route path="/macmillan/rozdział-1/problemy-etyczne" render={(props) =>
+				<Route exact path="/macmillan/rozdzial-1/problemy-etyczne" render={(props) =>
 					<AppPage
 						{...props}
 						words={b1_e1_words7}
@@ -117,7 +122,7 @@ class Unit1 extends Component {
 					/>
 				}/>
 				{/* Inne */}
-				<Route path="/macmillan/rozdział-1/inne" render={(props) =>
+				<Route exact path="/macmillan/rozdzial-1/inne" render={(props) =>
 					<AppPage
 						{...props}
 						words={b1_e1_words8}
@@ -131,7 +136,7 @@ class Unit1 extends Component {
 					/>
 				}/>
 				{/* Test */}
-				<Route path="/macmillan/rozdział-1/test" render={(props) =>
+				<Route exact path="/macmillan/rozdzial-1/test" render={(props) =>
 					<AppPage
 						{...props}
 						words={[].concat(b1_e1_words1, b1_e1_words2, b1_e1_words3, b1_e1_words4, b1_e1_words5, b1_e1_words6, b1_e1_words7, b1_e1_words8)}

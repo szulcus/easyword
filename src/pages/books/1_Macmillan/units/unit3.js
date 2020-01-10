@@ -15,9 +15,9 @@ class Unit3 extends Component {
 	render() {
 		return (
 			<>
-				{/* Rozdział 3 - Szkoła */}
+				{/* Rozdzial 3 - Szkola */}
 				{/* Przedmioty szkolne */}
-				<Route path="/macmillan/rozdział-3/przedmioty-szkolne" render={(props) =>
+				<Route path="/macmillan/rozdzial-3/przedmioty-szkolne" render={(props) =>
 					<AppPage
 						{...props}
 						words={b1_e3_words1}
@@ -31,7 +31,7 @@ class Unit3 extends Component {
 					/>
 				}/>
 				{/* Oceny i wymagania */}
-				<Route path="/macmillan/rozdział-3/oceny-i-wymagania" render={(props) =>
+				<Route path="/macmillan/rozdzial-3/oceny-i-wymagania" render={(props) =>
 					<AppPage
 						{...props}
 						words={b1_e3_words2}
@@ -45,7 +45,7 @@ class Unit3 extends Component {
 					/>
 				}/>
 				{/* Życie szkolne */}
-				<Route path="/macmillan/rozdział-3/życie-szkolne" render={(props) =>
+				<Route path="/macmillan/rozdzial-3/życie-szkolne" render={(props) =>
 					<AppPage
 						{...props}
 						words={b1_e3_words3}
@@ -59,7 +59,7 @@ class Unit3 extends Component {
 					/>
 				}/>
 				{/* Zajęcia pozalekcyjne */}
-				<Route path="/macmillan/rozdział-3/zajęcia-pozalekcyjne" render={(props) =>
+				<Route path="/macmillan/rozdzial-3/zajęcia-pozalekcyjne" render={(props) =>
 					<AppPage
 						{...props}
 						words={b1_e3_words4}
@@ -73,7 +73,7 @@ class Unit3 extends Component {
 					/>
 				}/>
 				{/* System oświaty */}
-				<Route path="/macmillan/rozdział-3/system-oświaty" render={(props) =>
+				<Route path="/macmillan/rozdzial-3/system-oświaty" render={(props) =>
 					<AppPage
 						{...props}
 						words={b1_e3_words5}
@@ -87,7 +87,7 @@ class Unit3 extends Component {
 					/>
 				}/>
 				{/* Inne */}
-				<Route path="/macmillan/rozdział-3/inne" render={(props) =>
+				<Route path="/macmillan/rozdzial-3/inne" render={(props) =>
 					<AppPage
 						{...props}
 						words={b1_e3_words6}
@@ -101,7 +101,7 @@ class Unit3 extends Component {
 					/>
 				}/>
 				{/* Test */}
-				<Route path="/macmillan/rozdział-3/test" render={(props) =>
+				<Route path="/macmillan/rozdzial-3/test" render={(props) =>
 					<AppPage
 						{...props}
 						words={[].concat(b1_e3_words1, b1_e3_words2, b1_e3_words3, b1_e3_words4, b1_e3_words5, b1_e3_words6)}

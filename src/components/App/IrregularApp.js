@@ -18,7 +18,7 @@ import { Wrapper } from '../Styles/Components'
 import '../../Components/Styles/main-keyframes.css'
 // SCRIPTS
 import getWord from '../Scripts/Functions/getWord()'
-import female from './female'
+import female from './components/Functions/createFemaleTranslations'
 // import similarTranslation from './similarTranslation'
 // ANIMATIONS
 import LottieAnimation from '../lotties/LottieAnimation'

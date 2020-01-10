@@ -43,22 +43,12 @@ import Global from './Components/Styles/Global';
 				import b4_e1_words2B from './Components/Words/4_Znaki_drogowe/2_B_ZnakiZakazu'
 				import b4_e1_words3C from './Components/Words/4_Znaki_drogowe/3_C_ZnakiNakazu'
 				import b4_e1_words4D from './Components/Words/4_Znaki_drogowe/4_D_ZnakiInformacyjne'
-				// import b4_e1_words5E from './Components/Words/4_Znaki_drogowe/1_A_ZnakiOstrzegawcze'
-				// import b4_e1_words6F from './Components/Words/4_Znaki_drogowe/1_A_ZnakiOstrzegawcze'
-				// import b4_e1_words7T from './Components/Words/4_Znaki_drogowe/1_A_ZnakiOstrzegawcze'
-				// import b4_e1_words8D from './Components/Words/4_Znaki_drogowe/1_A_ZnakiOstrzegawcze'
-				// import b4_e1_words9D from './Components/Words/4_Znaki_drogowe/1_A_ZnakiOstrzegawcze'
-				// Rozdział 2
-				// import b4_e2_words1 from './Components/Words/4_Znaki_drogowe/1_A_ZnakiOstrzegawcze'
-				// import b4_e2_words2 from './Components/Words/3_Oxford/Irregular_Verbs/2_FromApp'
-				// Rozdział 3
-				// import b4_e3_words1 from './Components/Words/4_Znaki_drogowe/1_A_ZnakiOstrzegawcze'
-				// import b4_e3_words2 from './Components/Words/3_Oxford/Irregular_Verbs/2_FromApp'
 		// IMAGES
 		import working from './Components/Images/working.png'
 		import thinking from './Components/Images/thinking.png'
 
 		import testWords from './Components/Words/_test'
+import WordList from './Components/WordList';
 
 class App extends Component {
 	render() {
@@ -222,6 +212,7 @@ class App extends Component {
 				<Route path="/login" exact component={Login}/>
 				<Route path="/rejestracja" exact component={Registration}/>
 				<Route path="/users/:id" exact component={UserProfile}/>
+				<Route path="/:book/spis-slowek/rozdzial-:unitNumber/:unitName" exact component={WordList}/>
 
 				<Route path="/leaves" exact component={Leaves}/>
 

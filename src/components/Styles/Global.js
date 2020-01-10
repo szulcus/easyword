@@ -16,7 +16,9 @@ const Global = createGlobalStyle`
 		--color-light: #ffffff;
 		--color-dark: #000000;
 	}
-	
+	html {
+		scroll-behavior: smooth;
+	}
 	body {
 		width: 100vw;
 		height: 100vh;

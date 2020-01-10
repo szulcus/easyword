@@ -14,9 +14,9 @@ class Unit9 extends Component {
 	render() {
 		return (
 			<>
-				{/* Rozdział 9 - Kultura */}
+				{/* Rozdzial 9 - Kultura */}
 				{/* Dziedziny kultury */}
-				<Route path="/macmillan/rozdział-9/dziedziny-kultury" render={(props) =>
+				<Route path="/macmillan/rozdzial-9/dziedziny-kultury" render={(props) =>
 					<AppPage
 						{...props}
 						words={b1_e9_words1}
@@ -29,8 +29,8 @@ class Unit9 extends Component {
 						translated_language='pl'
 					/>
 				}/>
-				{/* Twórcy i ich dzieła */}
-				<Route path="/macmillan/rozdział-9/twórcy-i-ich-dzieła" render={(props) =>
+				{/* Twórcy i ich dziela */}
+				<Route path="/macmillan/rozdzial-9/twórcy-i-ich-dziela" render={(props) =>
 					<AppPage
 						{...props}
 						words={b1_e9_words2}
@@ -44,7 +44,7 @@ class Unit9 extends Component {
 					/>
 				}/>
 				{/* Uczestnictwo w kulturze */}
-				<Route path="/macmillan/rozdział-9/uczestnictwo-w-kulturze" render={(props) =>
+				<Route path="/macmillan/rozdzial-9/uczestnictwo-w-kulturze" render={(props) =>
 					<AppPage
 						{...props}
 						words={b1_e9_words3}
@@ -58,7 +58,7 @@ class Unit9 extends Component {
 					/>
 				}/>
 				{/* Media */}
-				<Route path="/macmillan/rozdział-9/media" render={(props) =>
+				<Route path="/macmillan/rozdzial-9/media" render={(props) =>
 					<AppPage
 						{...props}
 						words={b1_e9_words4}
@@ -72,7 +72,7 @@ class Unit9 extends Component {
 					/>
 				}/>
 				{/* Inne */}
-				<Route path="/macmillan/rozdział-9/inne" render={(props) =>
+				<Route path="/macmillan/rozdzial-9/inne" render={(props) =>
 					<AppPage
 						{...props}
 						words={b1_e9_words5}
@@ -86,7 +86,7 @@ class Unit9 extends Component {
 					/>
 				}/>
 				{/* Test */}
-				<Route path="/macmillan/rozdział-9/test" render={(props) =>
+				<Route path="/macmillan/rozdzial-9/test" render={(props) =>
 					<AppPage
 						{...props}
 						words={[].concat(b1_e9_words1, b1_e9_words2, b1_e9_words3, b1_e9_words4, b1_e9_words5)}

@@ -23,9 +23,9 @@ import Congratulations from './components/Congratulations'
 import Global from '../Styles/Global'
 import { Wrapper } from '../Styles/Components'
 import '../../Components/Styles/main-keyframes.css'
-// SCRIPTS
-import getWord from '../Scripts/Functions/getWord()'
-import female from './female'
+// FUNCTIONS
+import getWord from './components/Functions/chooseWord'
+import female from './components/Functions/createFemaleTranslations'
 import similarTranslation from './similarTranslation'
 // ANIMATIONS
 import LottieAnimation from '../lotties/LottieAnimation'

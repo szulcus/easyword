@@ -1,10 +1,13 @@
 // BASIC
 import React, { Component } from 'react'
 import styled from 'styled-components'
+import {Link} from 'react-router-dom'
+import latinize from 'latinize'
 // ICONS
-import { FaAngleRight, FaStar} from 'react-icons/fa'
+import { FaAngleRight, FaStar, FaListUl} from 'react-icons/fa'
 // STYLES
 import { PageLink } from '../../../../../Components/Styles/Components'
+import { listEntry, listHover } from '../../../../../Components/Styles/Keyframes'
 
 const UnitElement = styled.div`
 	
@@ -18,10 +21,32 @@ const UnitList = styled.ul`
 	list-style: none;
 `
 
-const UnitListItem = styled.li`
+const Go = styled(Link)`
+	position: absolute;
+	top: 1.5px;
+	right: 0px;
+	display: none;
 	padding: 3px;
+	color: var(--color-decorative);
+	opacity: 0;
+	animation: ${listEntry} 0.3s 0.1s both;
+	transition: all 0.1s ease;
+	:hover {
+		animation: ${listHover} 0.3s both;
+	}
 `
-
+const UnitListItem = styled.li`
+	position: relative;
+	display: flex;
+	align-items: center;
+	padding: 3px;
+	:hover ${Go} {
+		display: block;
+	}
+	:hover ${PageLink} {
+		color: var(--color-primary);
+	}
+`
 const Arrow = styled(FaAngleRight)`
 	color: var(--color-decorative);
 `
@@ -30,6 +55,9 @@ const Star = styled(FaStar)`
 `
 
 class Unit extends Component {
+	getLinkTitle = title => {
+		return latinize(title.toLowerCase()).split(' ').join('-').replace(/,/g, '');
+	}
 	render() {
 		// Get links
 		const link = this.props.links[0].path;
@@ -43,20 +71,30 @@ class Unit extends Component {
 				<UnitList>
 					{this.props.links.map(({title, path}) => {
 						return (
-							<UnitListItem>
+							<UnitListItem key={`${title} link`}>
 								<Arrow />
-								<PageLink list to={path}>{title}</PageLink>
+								<PageLink list="true" to={path}>{title}</PageLink>
+								{/* {this.getLinkTitle(title)} */}
+								<Go to={`macmillan/spis-slowek/rozdzial-${this.props.number}/${this.getLinkTitle(title)}`}>
+									<FaListUl />
+								</Go>
 							</UnitListItem>
 						)
 					})}
 					<UnitListItem>
 						<Arrow />
-						<PageLink list to={innerLink}>Inne</PageLink>
+						<PageLink list="true" to={innerLink}>Inne</PageLink>
+						<Go to={`macmillan/spis-slowek/rozdzial-${this.props.number}/inne`}>
+							<FaListUl />
+						</Go>
 					</UnitListItem>
 					<UnitListItem>
 						<Star />
-						<PageLink list to={testLink}> Test </PageLink>
+						<PageLink list="true" to={testLink}> Test </PageLink>
 						<Star />
+						<Go to={`macmillan/spis-slowek/rozdzial-${this.props.number}/test`}>
+							<FaListUl />
+						</Go>
 					</UnitListItem>
 				</UnitList>
 			</UnitElement>

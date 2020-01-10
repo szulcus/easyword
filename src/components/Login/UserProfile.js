@@ -165,6 +165,9 @@ class UserProfile extends Component {
 						console.log(this.state.points);
 					}
 				});
+				
+				
+
 			}
 			else {
 				console.log('not logged in');

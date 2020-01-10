@@ -19,9 +19,9 @@ class unit_07 extends Component {
 	render() {
 		return (
 			<>
-				{/* Rozdział 7 - Zakupy i usługi */}
+				{/* Rozdzial 7 - Zakupy i uslugi */}
 				{/* Rodzaje sklepów */}
-				<Route path="/macmillan/rozdział-7/rodzaje-sklepów" render={(props) =>
+				<Route path="/macmillan/rozdzial-7/rodzaje-sklepów" render={(props) =>
 					<AppPage
 						{...props}
 						words={b1_e7_words1}
@@ -35,7 +35,7 @@ class unit_07 extends Component {
 					/>
 				}/>
 				{/* Opisywanie towarów */}
-				<Route path="/macmillan/rozdział-7/opisywanie-towarów" render={(props) =>
+				<Route path="/macmillan/rozdzial-7/opisywanie-towarów" render={(props) =>
 					<AppPage
 						{...props}
 						words={b1_e7_words2}
@@ -49,7 +49,7 @@ class unit_07 extends Component {
 					/>
 				}/>
 				{/* Sprzedawanie i kupowanie */}
-				<Route path="/macmillan/rozdział-7/sprzedawanie-i-kupowanie" render={(props) =>
+				<Route path="/macmillan/rozdzial-7/sprzedawanie-i-kupowanie" render={(props) =>
 					<AppPage
 						{...props}
 						words={b1_e7_words3}
@@ -63,7 +63,7 @@ class unit_07 extends Component {
 					/>
 				}/>
 				{/* Reklamacje */}
-				<Route path="/macmillan/rozdział-7/reklamacje" render={(props) =>
+				<Route path="/macmillan/rozdzial-7/reklamacje" render={(props) =>
 					<AppPage
 						{...props}
 						words={b1_e7_words4}
@@ -77,7 +77,7 @@ class unit_07 extends Component {
 					/>
 				}/>
 				{/* Reklama */}
-				<Route path="/macmillan/rozdział-7/reklama" render={(props) =>
+				<Route path="/macmillan/rozdzial-7/reklama" render={(props) =>
 					<AppPage
 						{...props}
 						words={b1_e7_words5}
@@ -90,8 +90,8 @@ class unit_07 extends Component {
 						translated_language='pl'
 					/>
 				}/>
-				{/* Korzystanie z usług */}
-				<Route path="/macmillan/rozdział-7/korzystanie-z-usług" render={(props) =>
+				{/* Korzystanie z uslug */}
+				<Route path="/macmillan/rozdzial-7/korzystanie-z-uslug" render={(props) =>
 					<AppPage
 						{...props}
 						words={b1_e7_words6}
@@ -104,8 +104,8 @@ class unit_07 extends Component {
 						translated_language='pl'
 					/>
 				}/>
-				{/* Środki płatnicze */}
-				<Route path="/macmillan/rozdział-7/środki-płatnicze" render={(props) =>
+				{/* Środki platnicze */}
+				<Route path="/macmillan/rozdzial-7/środki-platnicze" render={(props) =>
 					<AppPage
 						{...props}
 						words={b1_e7_words7}
@@ -119,7 +119,7 @@ class unit_07 extends Component {
 					/>
 				}/>
 				{/* Banki */}
-				<Route path="/macmillan/rozdział-7/banki" render={(props) =>
+				<Route path="/macmillan/rozdzial-7/banki" render={(props) =>
 					<AppPage
 						{...props}
 						words={b1_e7_words8}
@@ -133,7 +133,7 @@ class unit_07 extends Component {
 					/>
 				}/>
 				{/* Ubezpieczenie */}
-				<Route path="/macmillan/rozdział-7/ubezpieczenie" render={(props) =>
+				<Route path="/macmillan/rozdzial-7/ubezpieczenie" render={(props) =>
 					<AppPage
 						{...props}
 						words={b1_e7_words9}
@@ -147,7 +147,7 @@ class unit_07 extends Component {
 					/>
 				}/>
 				{/* Inne */}
-				<Route path="/macmillan/rozdział-7/inne" render={(props) =>
+				<Route path="/macmillan/rozdzial-7/inne" render={(props) =>
 					<AppPage
 						{...props}
 						words={b1_e7_words10}
@@ -161,7 +161,7 @@ class unit_07 extends Component {
 					/>
 				}/>
 				{/* Test */}
-				<Route path="/macmillan/rozdział-7/test" render={(props) =>
+				<Route path="/macmillan/rozdzial-7/test" render={(props) =>
 					<AppPage
 						{...props}
 						words={[].concat(b1_e7_words1, b1_e7_words2, b1_e7_words3, b1_e7_words4, b1_e7_words5, b1_e7_words6, b1_e7_words7, b1_e7_words8, b1_e7_words9, b1_e7_words10)}

@@ -21,11 +21,14 @@
 		"react-dom": "^16.8.6",
 		"react-facebook-login": "^4.1.1",
 		"react-google-login": "^5.0.4",
+		"react-html-parser": "^2.0.2",
 		"react-icons": "^3.8.0",
 		"react-lottie": "^1.2.3",
+		"react-placeholder-image": "^0.1.8",
 		"react-router-dom": "^5.0.0",
 		"react-scripts": "^3.3.0",
-		"styled-components": "^4.2.0"
+		"styled-components": "^4.2.0",
+		"translate": "^1.1.0"
 	},
 	"scripts": {
 		"start": "react-scripts start",

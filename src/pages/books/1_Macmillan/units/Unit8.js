@@ -15,9 +15,9 @@ class Unit8 extends Component {
 	render() {
 		return (
 			<>
-				{/* Rozdział 8 - Podróżowanie i turystyka */}
+				{/* Rozdzial 8 - Podróżowanie i turystyka */}
 				{/* Podróżowanie i środki transportu */}
-				<Route path="/macmillan/rozdział-8/podróżowanie-i-środki-transportu" render={(props) =>
+				<Route path="/macmillan/rozdzial-8/podróżowanie-i-środki-transportu" render={(props) =>
 					<AppPage
 						{...props}
 						words={b1_e8_words1}
@@ -31,7 +31,7 @@ class Unit8 extends Component {
 					/>
 				}/>
 				{/* Informacja turystyczna */}
-				<Route path="/macmillan/rozdział-8/informacja-turystyczna" render={(props) =>
+				<Route path="/macmillan/rozdzial-8/informacja-turystyczna" render={(props) =>
 					<AppPage
 						{...props}
 						words={b1_e8_words2}
@@ -45,7 +45,7 @@ class Unit8 extends Component {
 					/>
 				}/>
 				{/* Baza noclegowa */}
-				<Route path="/macmillan/rozdział-8/baza-noclegowa" render={(props) =>
+				<Route path="/macmillan/rozdzial-8/baza-noclegowa" render={(props) =>
 					<AppPage
 						{...props}
 						words={b1_e8_words3}
@@ -59,7 +59,7 @@ class Unit8 extends Component {
 					/>
 				}/>
 				{/* Wycieczki i zwiedzanie */}
-				<Route path="/macmillan/rozdział-8/wycieczki-i-zwiedzanie" render={(props) =>
+				<Route path="/macmillan/rozdzial-8/wycieczki-i-zwiedzanie" render={(props) =>
 					<AppPage
 						{...props}
 						words={b1_e8_words4}
@@ -73,7 +73,7 @@ class Unit8 extends Component {
 					/>
 				}/>
 				{/* Wypadki */}
-				<Route path="/macmillan/rozdział-8/wypadki" render={(props) =>
+				<Route path="/macmillan/rozdzial-8/wypadki" render={(props) =>
 					<AppPage
 						{...props}
 						words={b1_e8_words5}
@@ -87,7 +87,7 @@ class Unit8 extends Component {
 					/>
 				}/>
 				{/* Inne */}
-				<Route path="/macmillan/rozdział-8/inne" render={(props) =>
+				<Route path="/macmillan/rozdzial-8/inne" render={(props) =>
 					<AppPage
 						{...props}
 						words={b1_e8_words6}
@@ -101,7 +101,7 @@ class Unit8 extends Component {
 					/>
 				}/>
 				{/* Test */}
-				<Route path="/macmillan/rozdział-8/test" render={(props) =>
+				<Route path="/macmillan/rozdzial-8/test" render={(props) =>
 					<AppPage
 						{...props}
 						words={[].concat(b1_e8_words1, b1_e8_words2, b1_e8_words3, b1_e8_words4, b1_e8_words5, b1_e8_words6)}

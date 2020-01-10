@@ -2,6 +2,11 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
 import {Link} from 'react-router-dom'
+import firebase from 'firebase/app'
+import 'firebase/app'
+import 'firebase/auth'
+import 'firebase/firestore'
+import 'firebase/functions'
 // ICONS
 import { FaFacebookF, FaGithub, FaLinkedinIn, FaUserTie, FaReply, FaCog } from 'react-icons/fa'
 
@@ -11,7 +16,7 @@ const Wrapper = styled.main`
 	height: 100vh;
 	
 	${props =>
-		props.deFault &&
+		props.default &&
 		css`
 			padding: 50px;
 		`

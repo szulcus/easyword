@@ -90,9 +90,6 @@ class List extends Component {
 	state = {
 		plannedDate: '20200103',
 	}
-	componentDidMount() {
-
-	}
 	render() {
 		moment.locale('pl')
 		return (
@@ -111,418 +108,433 @@ class List extends Component {
 							</Term>
 							<Advertisement>
 								<Unit
-									number = '9'
+									book='macmillan'
+									number = '09'
 									title = 'Kultura'
 									links = {[
 										{
 											title: 'Dziedziny kultury',
-											path: '/macmillan/rozdział-9/dziedziny-kultury'
+											path: '/macmillan/rozdzial-9/dziedziny-kultury'
 										},
 										{
-											title: 'Twórcy i ich dzieła',
-											path: '/macmillan/rozdział-9/twórcy-i-ich-dzieła'
+											title: 'Twórcy i ich dziela',
+											path: '/macmillan/rozdzial-9/twórcy-i-ich-dziela'
 										},
 										{
 											title: 'Uczestnictwo w kulturze',
-											path: '/macmillan/rozdział-9/uczestnictwo-w-kulturze'
+											path: '/macmillan/rozdzial-9/uczestnictwo-w-kulturze'
 										},
 										{
 											title: 'Media',
-											path: '/macmillan/rozdział-9/media'
+											path: '/macmillan/rozdzial-9/media'
 										}
 									]}
 								/>
 							</Advertisement>
 							<Unit
-								number = '1'
-								title = 'Człowiek'
+								book='macmillan'
+								number = '01'
+								title = 'Czlowiek'
 								links = {[
 									{
 										title: 'Dane osobowe',
-										path: '/macmillan/rozdział-1/dane-osobowe'
+										path: '/macmillan/rozdzial-1/dane-osobowe'
 									},
 									{
 										title: 'Wygląd zewnętrzny',
-										path: '/macmillan/rozdział-1/wygląd-zewnętrzny'
+										path: '/macmillan/rozdzial-1/wygląd-zewnętrzny'
 									},
 									{
 										title: 'Ubrania',
-										path: '/macmillan/rozdział-1/ubrania'
+										path: '/macmillan/rozdzial-1/ubrania'
 									},
 									{
 										title: 'Cechy charakteru',
-										path: '/macmillan/rozdział-1/cechy-charakteru'
+										path: '/macmillan/rozdzial-1/cechy-charakteru'
 									},
 									{
 										title: 'Uczucia i emocje',
-										path: '/macmillan/rozdział-1/uczucia-i-emocje'
+										path: '/macmillan/rozdzial-1/uczucia-i-emocje'
 									},
 									{
 										title: 'Zainteresowania',
-										path: '/macmillan/rozdział-1/zainteresowania'
+										path: '/macmillan/rozdzial-1/zainteresowania'
 									},
 									{
 										title: 'Problemy etyczne',
-										path: '/macmillan/rozdział-1/problemy-etyczne'
+										path: '/macmillan/rozdzial-1/problemy-etyczne'
 									}
 								]}
 							/>
 							<Unit
-								number = '2'
+								book='macmillan'
+								number = '02'
 								title = 'Dom'
 								links = {[
 									{
 										title: 'Miejsce zamieszkania',
-										path: '/macmillan/rozdział-2/dom'
+										path: '/macmillan/rozdzial-2/dom'
 									},
 									{
 										title: 'Opis Domu',
-										path: '/macmillan/rozdział-2/opis-domu'
+										path: '/macmillan/rozdzial-2/opis-domu'
 									},
 									{
 										title: 'Prace w domu i ogrodzie',
-										path: '/macmillan/rozdział-2/prace-w-domu-i-ogrodzie'
+										path: '/macmillan/rozdzial-2/prace-w-domu-i-ogrodzie'
 									},
 									{
 										title: 'Wynajem, kupno i sprzedaż nieruchomości',
-										path: '/macmillan/rozdział-2/wynajem-kupno-i-sprzedaż-nieruchomości'
+										path: '/macmillan/rozdzial-2/wynajem-kupno-i-sprzedaż-nieruchomości'
 									}
 								]}
 							/>
 							<Unit
-								number = '3'
-								title = 'Szkoła'
+								book='macmillan'
+								number = '03'
+								title = 'Szkola'
 								links = {[
 									{
 										title: 'Przedmioty szkolne',
-										path: '/rozdział-3/przedmioty-szkolne'
+										path: '/rozdzial-3/przedmioty-szkolne'
 									},
 									{
 										title: 'Oceny i wymagania',
-										path: '/macmillan/rozdział-3/oceny-i-wymagania'
+										path: '/macmillan/rozdzial-3/oceny-i-wymagania'
 									},
 									{
 										title: 'Życie szkolne',
-										path: '/macmillan/rozdział-3/życie-szkolne'
+										path: '/macmillan/rozdzial-3/życie-szkolne'
 									},
 									{
 										title: 'Zajęcia pozalekcyjne',
-										path: '/macmillan/rozdział-3/zajęcia-pozalekcyjne'
+										path: '/macmillan/rozdzial-3/zajęcia-pozalekcyjne'
 									},
 									{
 										title: 'System oświaty',
-										path: '/macmillan/rozdział-3/system-oświaty'
+										path: '/macmillan/rozdzial-3/system-oświaty'
 									}
 								]}
 							/>
 							<Unit
-								number = '4'
+								book='macmillan'
+								number = '04'
 								title = 'Praca'
 								links = {[
 									{
 										title: 'Zawody i związane z nimi czynności',
-										path: '/macmillan/rozdział-4/zawody-i-związane-z-nimi-czynności'
+										path: '/macmillan/rozdzial-4/zawody-i-związane-z-nimi-czynności'
 									},
 									{
 										title: 'Warunki pracy i zatrudnienia',
-										path: '/macmillan/rozdział-4/warunki-pracy-i-zatrudnienia'
+										path: '/macmillan/rozdzial-4/warunki-pracy-i-zatrudnienia'
 									},
 									{
 										title: 'Praca dorywcza',
-										path: '/macmillan/rozdział-4/praca-dorywcza'
+										path: '/macmillan/rozdzial-4/praca-dorywcza'
 									},
 									{
 										title: 'Rynek pracy',
-										path: '/macmillan/rozdział-4/rynek-pracy'
+										path: '/macmillan/rozdzial-4/rynek-pracy'
 									}
 								]}
 							/>
 							<Unit
-								number = '5'
+								book='macmillan'
+								number = '05'
 								title = 'Życie rodzinne i towarzyskie'
 								links = {[
 									{
 										title: 'Etapy życia',
-										path: '/macmillan/rozdział-5/etapy-życia'
+										path: '/macmillan/rozdzial-5/etapy-życia'
 									},
 									{
-										title: 'Członkowie rodziny, koledzy i przyjaciele',
-										path: '/macmillan/rozdział-5/członkowie-rodziny-koledzy-i-przyjaciele'
+										title: 'Czlonkowie rodziny, koledzy i przyjaciele',
+										path: '/macmillan/rozdzial-5/czlonkowie-rodziny-koledzy-i-przyjaciele'
 									},
 									{
 										title: 'Czynności życia codziennego',
-										path: '/macmillan/rozdział-5/czynności-życia-codziennego'
+										path: '/macmillan/rozdzial-5/czynności-życia-codziennego'
 									},
 									{
 										title: 'Formy spędzania czasu wolnego',
-										path: '/macmillan/rozdział-5/formy-spędzania-czasu-wolnego'
+										path: '/macmillan/rozdzial-5/formy-spędzania-czasu-wolnego'
 									},
 									{
 										title: 'Święta i uroczystości',
-										path: '/macmillan/rozdział-5/święta-i-uroczystości'
+										path: '/macmillan/rozdzial-5/święta-i-uroczystości'
 									},
 									{
 										title: 'Styl życia, konflikty i problemy',
-										path: '/macmillan/rozdział-5/styl-życia-konflikty-i-problemy'
+										path: '/macmillan/rozdzial-5/styl-życia-konflikty-i-problemy'
 									}
 								]}
 							/>
 							<Unit
-								number = '6'
-								title = 'Zakupy i usługi'
+								book='macmillan'
+								number = '06'
+								title = 'Zakupy i uslugi'
 								links = {[
 									{
-										title: 'Artykuły spożywcze',
-										path: '/macmillan/rozdział-5/artykuly-spozywcze'
+										title: 'Artykuly spożywcze',
+										path: '/macmillan/rozdzial-5/artykuly-spozywcze'
 									},
 									{
-										title: 'Posiłki i ich przygotowanie',
-										path: '/macmillan/rozdział-5/posilki-i-ich-przygotowanie'
+										title: 'Posilki i ich przygotowanie',
+										path: '/macmillan/rozdzial-5/posilki-i-ich-przygotowanie'
 									},
 									{
 										title: 'Lokale gastronomiczne',
-										path: '/macmillan/rozdział-5/lokale-gastronomiczne'
+										path: '/macmillan/rozdzial-5/lokale-gastronomiczne'
 									},
 									{
 										title: 'Diety',
-										path: '/macmillan/rozdział-5/diety'
+										path: '/macmillan/rozdzial-5/diety'
 									}
 								]}
 							/>
 							<Unit
-								number = '7'
-								title = 'Zakupy i usługi'
+								book='macmillan'
+								number = '07'
+								title = 'Zakupy i uslugi'
 								links = {[
 									{
 										title: 'Rodzaje sklepów',
-										path: '/macmillan/rozdział-7/rodzaje-sklepów'
+										path: '/macmillan/rozdzial-7/rodzaje-sklepów'
 									},
 									{
 										title: 'Opisywanie towarów',
-										path: '/macmillan/rozdział-7/opisywanie-towarów'
+										path: '/macmillan/rozdzial-7/opisywanie-towarów'
 									},
 									{
 										title: 'Sprzedawanie i kupowanie',
-										path: '/macmillan/rozdział-7/sprzedawanie-i-kupowanie'
+										path: '/macmillan/rozdzial-7/sprzedawanie-i-kupowanie'
 									},
 									{
 										title: 'Reklamacje',
-										path: '/macmillan/rozdział-7/reklamacje'
+										path: '/macmillan/rozdzial-7/reklamacje'
 									},
 									{
 										title: 'Reklama',
-										path: '/macmillan/rozdział-7/reklama'
+										path: '/macmillan/rozdzial-7/reklama'
 									},
 									{
-										title: 'Korzystanie z usług',
-										path: '/macmillan/rozdział-7/korzystanie-z-usług'
+										title: 'Korzystanie z uslug',
+										path: '/macmillan/rozdzial-7/korzystanie-z-uslug'
 									},
 									{
-										title: 'Środki płatnicze',
-										path: '/macmillan/rozdział-7/środki-płatnicze'
+										title: 'Środki platnicze',
+										path: '/macmillan/rozdzial-7/środki-platnicze'
 									},
 									{
 										title: 'Banki',
-										path: '/macmillan/rozdział-7/banki'
+										path: '/macmillan/rozdzial-7/banki'
 									},
 									{
 										title: 'Ubezpieczenie',
-										path: '/macmillan/rozdział-7/ubezpieczenie'
+										path: '/macmillan/rozdzial-7/ubezpieczenie'
 									}
 								]}
 							/>
 							<Unit
-								number = '8'
+								book='macmillan'
+								number = '08'
 								title = 'Podróżowanie i turystyka'
 								links = {[
 									{
 										title: 'Podróżowanie i środki transportu',
-										path: '/macmillan/rozdział-8/podróżowanie-i-środki-transportu'
+										path: '/macmillan/rozdzial-8/podróżowanie-i-środki-transportu'
 									},
 									{
 										title: 'Informacja turystyczna',
-										path: '/macmillan/rozdział-8/informacja-turystyczna'
+										path: '/macmillan/rozdzial-8/informacja-turystyczna'
 									},
 									{
 										title: 'Baza noclegowa',
-										path: '/macmillan/rozdział-8/baza-noclegowa'
+										path: '/macmillan/rozdzial-8/baza-noclegowa'
 									},
 									{
 										title: 'Wycieczki i zwiedzanie',
-										path: '/macmillan/rozdział-8/wycieczki-i-zwiedzanie'
+										path: '/macmillan/rozdzial-8/wycieczki-i-zwiedzanie'
 									},
 									{
 										title: 'Wypadki',
-										path: '/macmillan/rozdział-8/wypadki'
+										path: '/macmillan/rozdzial-8/wypadki'
 									}
 								]}
 							/>
 							<Unit
-								number = '9'
+								book='macmillan'
+								number = '09'
 								title = 'Kultura'
 								links = {[
 									{
 										title: 'Dziedziny kultury',
-										path: '/macmillan/rozdział-9/dziedziny-kultury'
+										path: '/macmillan/rozdzial-9/dziedziny-kultury'
 									},
 									{
-										title: 'Twórcy i ich dzieła',
-										path: '/macmillan/rozdział-9/twórcy-i-ich-dzieła'
+										title: 'Twórcy i ich dziela',
+										path: '/macmillan/rozdzial-9/twórcy-i-ich-dziela'
 									},
 									{
 										title: 'Uczestnictwo w kulturze',
-										path: '/macmillan/rozdział-9/uczestnictwo-w-kulturze'
+										path: '/macmillan/rozdzial-9/uczestnictwo-w-kulturze'
 									},
 									{
 										title: 'Media',
-										path: '/macmillan/rozdział-9/media'
+										path: '/macmillan/rozdzial-9/media'
 									}
 								]}
 							/>
 							<Unit
+								book='macmillan'
 								number = '10'
 								title = 'Sport'
 								links = {[
 									{
 										title: 'Dyscypliny sportu',
-										path: '/macmillan/rozdział-10/dyscypliny-sportu'
+										path: '/macmillan/rozdzial-10/dyscypliny-sportu'
 									},
 									{
 										title: 'Imprezy sportowe',
-										path: '/macmillan/rozdział-10/imprezy-sportowe'
+										path: '/macmillan/rozdzial-10/imprezy-sportowe'
 									},
 									{
 										title: 'Sport wyczynowy',
-										path: '/macmillan/rozdział-10/sport-wyczynowy'
+										path: '/macmillan/rozdzial-10/sport-wyczynowy'
 									}
 								]}
 							/>
 							<Unit
+								book='macmillan'
 								number = '11'
 								title = 'Zdrowie'
 								links = {[
 									{
 										title: 'Samopoczucie',
-										path: '/macmillan/rozdział-11/samopoczucie'
+										path: '/macmillan/rozdzial-11/samopoczucie'
 									},
 									{
-										title: 'Częsci ciała',
-										path: '/macmillan/rozdział-11/czesci-ciala'
-									},
-									{
-										title: 'Zdrowy styl życia',
-										path: '/macmillan/rozdział-11/zdrowy-styl-zycia'
+										title: 'Częsci ciala',
+										path: '/macmillan/rozdzial-11/czesci-ciala'
 									},
 									{
 										title: 'Zdrowy styl życia',
-										path: '/macmillan/rozdział-11/niepelnosprawni'
+										path: '/macmillan/rozdzial-11/zdrowy-styl-zycia'
+									},
+									{
+										title: 'Niepelnosprawni',
+										path: '/macmillan/rozdzial-11/niepelnosprawni'
 									},
 									{
 										title: 'Uzależnienia',
-										path: '/macmillan/rozdział-11/uzaleznienia'
+										path: '/macmillan/rozdzial-11/uzaleznienia'
 									},
 									{
 										title: 'Ochrona zdrowia',
-										path: '/macmillan/rozdział-11/ochrona-zdrowia'
+										path: '/macmillan/rozdzial-11/ochrona-zdrowia'
 									},
 									
 								]}
 							/>
 							<Unit
+								book='macmillan'
 								number = '12'
 								title = 'Nauka i technika'
 								links = {[
 									{
 										title: 'Dziedziny nauki i naukowcy',
-										path: '/macmillan/rozdział-12/dziedziny-nauki-i-naukowcy'
+										path: '/macmillan/rozdzial-12/dziedziny-nauki-i-naukowcy'
 									},
 									{
 										title: 'Wynalazki i odkrycia',
-										path: '/macmillan/rozdział-12/wynalazki-i-odkrycia'
+										path: '/macmillan/rozdzial-12/wynalazki-i-odkrycia'
 									},
 									{
 										title: 'Badania naukowe',
-										path: '/macmillan/rozdział-12/badania-naukowe'
+										path: '/macmillan/rozdzial-12/badania-naukowe'
 									},
 									{
 										title: 'Korzystanie z urządzeń technicznych',
-										path: '/macmillan/rozdział-12/korzystanie-z-urzadzen-technicznych'
+										path: '/macmillan/rozdzial-12/korzystanie-z-urzadzen-technicznych'
 									},
 									{
 										title: 'Technologie informacyjno-komunikacyjne',
-										path: '/macmillan/rozdział-12/technologie-informacyjno-komunikacyjne'
+										path: '/macmillan/rozdzial-12/technologie-informacyjno-komunikacyjne'
 									},
 									{
 										title: 'Awarie techniczne',
-										path: '/macmillan/rozdział-12/awarie-techniczne'
+										path: '/macmillan/rozdzial-12/awarie-techniczne'
 									}
 								]}
 							/>
 							<Unit
+								book='macmillan'
 								number = '13'
 								title = 'Świat przyrody'
 								links = {[
 									{
 										title: 'Pogoda i klimat',
-										path: '/macmillan/rozdział-13/pogoda-i-klimat'
+										path: '/macmillan/rozdzial-13/pogoda-i-klimat'
 									},
 									{
 										title: 'Świat roślin i zwierząt',
-										path: '/macmillan/rozdział-13/swiat-roslin-i-zwierzat'
+										path: '/macmillan/rozdzial-13/swiat-roslin-i-zwierzat'
 									},
 									{
 										title: 'Krajobraz',
-										path: '/macmillan/rozdział-13/krajobraz'
+										path: '/macmillan/rozdzial-13/krajobraz'
 									},
 									{
 										title: 'Zagrożenia środowiska naturalnego',
-										path: '/macmillan/rozdział-13/zagrozenia-srodowiska-naturalnego'
+										path: '/macmillan/rozdzial-13/zagrozenia-srodowiska-naturalnego'
 									},
 									{
 										title: 'Ochrona środowiska naturalnego',
-										path: '/macmillan/rozdział-13/ochrona-srodowiska-naturalnego'
+										path: '/macmillan/rozdzial-13/ochrona-srodowiska-naturalnego'
 									},
 									{
-										title: 'Klęski żywiołowe',
-										path: '/macmillan/rozdział-13/kleski-zywiolowe'
+										title: 'Klęski żywiolowe',
+										path: '/macmillan/rozdzial-13/kleski-zywiolowe'
 									},
 									{
 										title: 'Przestrzeń kosmiczna',
-										path: '/macmillan/rozdział-13/przestrzen-kosmiczna'
+										path: '/macmillan/rozdzial-13/przestrzen-kosmiczna'
 									}
 								]}
 							/>
 							<Unit
+								book='macmillan'
 								number = '14'
-								title = 'Państwo i społeczeństwo'
+								title = 'Państwo i spoleczeństwo'
 								links = {[
 									{
 										title: 'Struktura państwa i urzędy',
-										path: '/macmillan/rozdział-14/struktura-panstwa-i-urzedy'
+										path: '/macmillan/rozdzial-14/struktura-panstwa-i-urzedy'
 									},
 									{
-										title: 'Organizacje społeczne i międzynarodowe',
-										path: '/macmillan/rozdział-14/organizacje-spoleczne-i-miedzynarodowe'
+										title: 'Organizacje spoleczne i międzynarodowe',
+										path: '/macmillan/rozdzial-14/organizacje-spoleczne-i-miedzynarodowe'
 									},
 									{
 										title: 'Konflikty wewnętrzne i międzynarodowe',
-										path: '/macmillan/rozdział-14/konflikty-wewnetrzne-i-miedzynarodowe'
+										path: '/macmillan/rozdzial-14/konflikty-wewnetrzne-i-miedzynarodowe'
 									},
 									{
 										title: 'Przestępczość',
-										path: '/macmillan/rozdział-14/przestepczosc'
+										path: '/macmillan/rozdzial-14/przestepczosc'
 									},
 									{
 										title: 'Wymiar sprawiedliwości',
-										path: '/macmillan/rozdział-14/wymiar-sprawiedliwosci'
+										path: '/macmillan/rozdzial-14/wymiar-sprawiedliwosci'
 									},
 									{
-										title: 'Polityka społeczna',
-										path: '/macmillan/rozdział-14/polityka-spoleczna'
+										title: 'Polityka spoleczna',
+										path: '/macmillan/rozdzial-14/polityka-spoleczna'
 									},
 									{
 										title: 'Gospodarka',
-										path: '/macmillan/rozdział-14/gospodarka'
+										path: '/macmillan/rozdzial-14/gospodarka'
 									}
 								]}
 							/>

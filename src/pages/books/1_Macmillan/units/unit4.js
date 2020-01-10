@@ -14,9 +14,9 @@ class Unit4 extends Component {
 	render() {
 		return (
 			<>
-				{/* Rozdział 4 - Praca */}
+				{/* Rozdzial 4 - Praca */}
 				{/* Zawody i związane z nimi czynności */}
-				<Route path="/macmillan/rozdział-4/zawody-i-związane-z-nimi-czynności" render={(props) =>
+				<Route path="/macmillan/rozdzial-4/zawody-i-związane-z-nimi-czynności" render={(props) =>
 					<AppPage
 						{...props}
 						words={b1_e4_words1}
@@ -30,7 +30,7 @@ class Unit4 extends Component {
 					/>
 				}/>
 				{/* Warunki pracy i zatrudnienia */}
-				<Route path="/macmillan/rozdział-4/warunki-pracy-i-zatrudnienia" render={(props) =>
+				<Route path="/macmillan/rozdzial-4/warunki-pracy-i-zatrudnienia" render={(props) =>
 					<AppPage
 						{...props}
 						words={b1_e4_words2}
@@ -44,7 +44,7 @@ class Unit4 extends Component {
 					/>
 				}/>
 				{/* Praca dorywcza */}
-				<Route path="/macmillan/rozdział-4/praca-dorywcza" render={(props) =>
+				<Route path="/macmillan/rozdzial-4/praca-dorywcza" render={(props) =>
 					<AppPage
 						{...props}
 						words={b1_e4_words3}
@@ -58,7 +58,7 @@ class Unit4 extends Component {
 					/>
 				}/>
 				{/* Rynek pracy */}
-				<Route path="/macmillan/rozdział-4/rynek-pracy" render={(props) =>
+				<Route path="/macmillan/rozdzial-4/rynek-pracy" render={(props) =>
 					<AppPage
 						{...props}
 						words={b1_e4_words4}
@@ -72,7 +72,7 @@ class Unit4 extends Component {
 					/>
 				}/>
 				{/* Inne */}
-				<Route path="/macmillan/rozdział-4/inne" render={(props) =>
+				<Route path="/macmillan/rozdzial-4/inne" render={(props) =>
 					<AppPage
 						{...props}
 						words={b1_e4_words5}
@@ -86,7 +86,7 @@ class Unit4 extends Component {
 					/>
 				}/>
 				{/* Test */}
-				<Route path="/macmillan/rozdział-4/test" render={(props) =>
+				<Route path="/macmillan/rozdzial-4/test" render={(props) =>
 					<AppPage
 						{...props}
 						words={[].concat(b1_e4_words1, b1_e4_words2, b1_e4_words3, b1_e4_words4, b1_e4_words5)}

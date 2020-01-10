@@ -14,9 +14,9 @@ class Unit2 extends Component {
 	render() {
 		return (
 			<>
-				{/* Rozdział 2 - Dom */}
+				{/* Rozdzial 2 - Dom */}
 				{/* Miejsce zamieszkania */}
-				<Route path="/macmillan/rozdział-2/dom" render={(props) =>
+				<Route path="/macmillan/rozdzial-2/dom" render={(props) =>
 					<AppPage
 						{...props}
 						words={b1_e2_words1}
@@ -30,7 +30,7 @@ class Unit2 extends Component {
 					/>
 				}/>
 				{/* Opis domu */}
-				<Route path="/macmillan/rozdział-2/opis-domu" render={(props) =>
+				<Route path="/macmillan/rozdzial-2/opis-domu" render={(props) =>
 					<AppPage
 						{...props}
 						words={b1_e2_words2}
@@ -44,7 +44,7 @@ class Unit2 extends Component {
 					/>
 				}/>
 				{/* Prace w domu i ogrodzie */}
-				<Route path="/macmillan/rozdział-2/prace-w-domu-i-ogrodzie" render={(props) =>
+				<Route path="/macmillan/rozdzial-2/prace-w-domu-i-ogrodzie" render={(props) =>
 					<AppPage
 						{...props}
 						words={b1_e2_words3}
@@ -58,7 +58,7 @@ class Unit2 extends Component {
 					/>
 				}/>
 				{/* Wynajem, kupno i sprzedaż nieruchomości */}
-				<Route path="/macmillan/rozdział-2/wynajem-kupno-i-sprzedaż-nieruchomości" render={(props) =>
+				<Route path="/macmillan/rozdzial-2/wynajem-kupno-i-sprzedaż-nieruchomości" render={(props) =>
 					<AppPage
 						{...props}
 						words={b1_e2_words4}
@@ -72,7 +72,7 @@ class Unit2 extends Component {
 					/>
 				}/>
 				{/* Inne */}
-				<Route path="/macmillan/rozdział-2/inne" render={(props) =>
+				<Route path="/macmillan/rozdzial-2/inne" render={(props) =>
 					<AppPage
 						{...props}
 						words={b1_e2_words5}
@@ -86,7 +86,7 @@ class Unit2 extends Component {
 					/>
 				}/>
 				{/* Test */}
-				<Route path="/macmillan/rozdział-2/test" render={(props) =>
+				<Route path="/macmillan/rozdzial-2/test" render={(props) =>
 					<AppPage
 						{...props}
 						words={[].concat(b1_e2_words1, b1_e2_words2, b1_e2_words3, b1_e2_words4, b1_e2_words5)}
