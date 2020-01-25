@@ -62,7 +62,7 @@ class Unit extends Component {
 		// Get links
 		const link = this.props.links[0].path;
 		const index = link.lastIndexOf('/');
-		const beginning = this.props.links[0].path.slice(0, index);
+		const beginning = this.props.links[0].path.slice(0, index).replace('.1', '');
 		const innerLink = `${beginning}/inne`;
 		const testLink = `${beginning}/test`;
 		return (

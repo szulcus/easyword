@@ -31,66 +31,70 @@ import similarTranslation from './similarTranslation'
 import LottieAnimation from '../lotties/LottieAnimation'
 
 class App extends Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			load: false,
-			points: 0,
-			appLevel: 1,
-			goal: 15,
-			experience: 0,
-			words: null,
-			baseWord: null,
-			hideAnswer: true,
-			answer: '',
-			good: false,
-			great: false,
-			counter: 0,
-			deleteImage: false,
-			message: false,
-			info: {}
-		};
+	state = {
+		load: false,
+		points: 0,
+		appLevel: 1,
+		goal: 15,
+		experience: 0,
+		words: null,
+		baseWord: null,
+		hideAnswer: true,
+		answer: '',
+		good: false,
+		great: false,
+		counter: 0,
+		deleteImage: false,
+		message: false,
+		info: {}
 	}
-
 	componentDidMount() {
 		const db = firebase.firestore();
 		this.setState({load: true});
+
+		let {bookName, unitNumber} = this.props.match.params;
+		if (bookName === 'macmillan') {
+			bookName = 'book_01'
+		}
+		else if (bookName === 'wsip') {
+			bookName = 'book_02'
+		}
+		else if (bookName === 'oxford') {
+			bookName = 'book_03'
+		}
+		else if (bookName === 'znaki-drogowe') {
+			bookName = 'book_04'
+		}
+		else if (bookName === 'czasowniki-nieregularne') {
+			bookName = 'book_05'
+		}
+		let partNumber;
+		if (unitNumber.includes('.') && Number(unitNumber)) {
+			partNumber = unitNumber.replace(/[0-9]*\./g,'').replace(/[0-9]*/g, x => x.length === 1 ? `0${x}` : x);
+			unitNumber = unitNumber.replace(/\.[0-9]*/g, '').replace(/[0-9]*/g, x => x.length === 1 ? `0${x}` : x);
+		}
+		else if (Number(unitNumber)) {
+			unitNumber = unitNumber.replace(/[0-9]*/g, x => x.length === 1 ? `0${x}` : x);
+		}
+		else {
+			alert('nie ma strony!');
+		}
+		if (unitNumber.length === 1) {
+			unitNumber = `0${unitNumber}`;
+		}
+
 		firebase.auth().onAuthStateChanged(user => {
 			if(user) {
 				console.log(user);
 				this.setState({userId: user.uid});
-				// const {book, unit, part} = this.props.info;
-
-				let {bookName, unitNumber} = this.props.match.params;
-				if (bookName === 'macmillan') {
-					bookName = 'book_01'
-				}
-				else if (bookName === 'wsip') {
-					bookName = 'book_02'
-				}
-				let partNumber;
-				if (unitNumber.includes('.') && Number(unitNumber)) {
-					partNumber = unitNumber.replace(/[0-9]*\./g,'').replace(/[0-9]*/g, x => x.length === 1 ? `0${x}` : x);
-					unitNumber = unitNumber.replace(/\.[0-9]*/g, '').replace(/[0-9]*/g, x => x.length === 1 ? `0${x}` : x);
-				}
-				else if (Number(unitNumber)) {
-					unitNumber = unitNumber.replace(/[0-9]*/g, x => x.length === 1 ? `0${x}` : x);
-				}
-				else {
-					alert('nie ma strony!');
-				}
-				if (unitNumber.length === 1) {
-					unitNumber = `0${unitNumber}`;
-				}
-
-
-				// const appPoints = `testPoints.book1.units.unit1.parts.part1`;
 				db.collection('users').doc(user.uid).onSnapshot(snapshot => {
 					const unit = `unit_${unitNumber}`;
-					const points = snapshot.data().points.books[bookName].units[unit].parts[`part_${partNumber}`].points;
-					const appLevel = snapshot.data().points.books[bookName].units[unit].parts[`part_${partNumber}`].level;
+					const part = partNumber ? `part_${partNumber}` : 'test';
+					const book = bookName;
+					const points = snapshot.data().points.books[book].units[unit].parts[part].points;
+					const appLevel = snapshot.data().points.books[book].units[unit].parts[part].level;
 					const experience = snapshot.data().points.experience;
-					this.setState({ points, experience, appLevel })
+					this.setState({ points, experience, appLevel });
 					if (appLevel === 1) {
 						this.setState({goal: 10});
 					}
@@ -122,31 +126,34 @@ class App extends Component {
 						this.setState({goal: 650});
 					}
 					
-					if (this.state.points >= this.state.goal) {
-						this.showNotification();
-					}
+					// if (this.state.points >= this.state.goal) {
+					// 	this.showNotification();
+					// }
 				});
-				db.collection('books').doc('macmillan').onSnapshot((snap) => {
-					let partWords;
-					const unit = `unit_${unitNumber}`
-					const words = snap.data()[unit];
-					if (partNumber) {
-						partWords = words.parts[`part_${partNumber}`].words;
-					}
-					else {
-						partWords = words.parts.part_01.words;
-					}
-					this.setState({
-						words: partWords,
-						baseWord: getWord(partWords),
-						info: {
-							unitNumber,
-							partNumber,
-							bookName //dodać!
-						}
-					})
-				})
 			}
+			db.collection('books').doc(this.props.match.params.bookName).onSnapshot((snap) => {
+				let partWords;
+				const unit = `unit_${unitNumber}`
+				const words = snap.data()[unit];
+				if (partNumber) {
+					partWords = words.parts[`part_${partNumber}`].words;
+				}
+				else {
+					partWords = words.parts.part_01.words;
+				}
+				this.setState({
+					words: partWords,
+					baseWord: getWord(partWords),
+					info: {
+						unitNumber,
+						partNumber,
+						bookName
+					}
+				})
+			});
+
+			
+			
 		})
 	}
 	showNotification = () => {
@@ -158,7 +165,9 @@ class App extends Component {
 			book = 'book_02'
 		}
 		const {unitNumber, partNumber} = this.state.info;
-		const appLevel = `points.books.${book}.units.${unitNumber}.parts.${partNumber}.level`;
+		const unit = `unit_${unitNumber}`;
+		const part = partNumber ? `part_${partNumber}` : 'test';
+		const appLevel = `points.books.${book}.units.${unit}.parts.${part}.level`;
 		this.setState({prize: this.state.goal * this.state.appLevel});
 		firebase.firestore().collection('users').doc(this.state.userId).update({
 			'points.experience': this.state.experience + this.state.goal * this.state.appLevel,
@@ -171,7 +180,7 @@ class App extends Component {
 			this.setState({baseWord: getWord(this.state.words)});
 		}
 		else {
-			alert('Najpierw odpowiedz!')
+			alert('Najpierw odpowiedz!');
 		}
 	}
 
@@ -186,17 +195,10 @@ class App extends Component {
 		const feminine_translation2 = similarTranslation(female(this.state.baseWord).feminine_translation2);
 		const feminine_translation3 = similarTranslation(female(this.state.baseWord).feminine_translation3);
 
-		// console.log(this.state.counter);
-		// console.log(translation1)
-		// console.log(translation2)
-		// console.log(translation3)
-		// console.log(feminine_translation1)
-		// console.log(feminine_translation2)
-		// console.log(feminine_translation3)
-
-		const {book} = this.props.info;
-		const {unitNumber, partNumber} = this.state.info;
-		const appPoints = `points.books.${book}.units.${unitNumber}.parts.${partNumber}.points`;
+		const {bookName, unitNumber, partNumber} = this.state.info;
+		const unit = `unit_${unitNumber}`;
+		const part = partNumber ? `part_${partNumber}` : 'test';
+		const appPoints = `points.books.${bookName}.units.${unit}.parts.${part}.points`;
 
 		if (
 			userWord === translation1 ||
@@ -258,9 +260,10 @@ class App extends Component {
 			let {translation1, translation2, translation3} = this.state.baseWord;
 			const {full_translation1, full_translation2, full_translation3} = female(this.state.baseWord);
 
-			const {book} = this.props.info;
-			const {unitNumber, partNumber} = this.state.info;
-			const appPoints = `points.books.${book}.units.${unitNumber}.parts.${partNumber}.points`;
+			const {bookName, unitNumber, partNumber} = this.state.info;
+			const unit = `unit_${unitNumber}`;
+			const part = partNumber ? `part_${partNumber}` : 'test';
+			const appPoints = `points.books.${bookName}.units.${unit}.parts.${part}.points`;
 
 			if (full_translation1 !== undefined) {
 				translation1 = full_translation1;
@@ -372,14 +375,11 @@ class App extends Component {
 					<Cathegory content={cathegory} />
 					<Navigation points={this.state.points} />
 					<Word content={word} />
-
-					{this.props.match.params.unitNumber}
-
 					<Picture hide={this.state.deleteImage} onClick={this.deleteImg} src={image} word={word} link={`https://pxhere.com/pl/photos?q=${baseWord.word1}`} />
 					<Input onChange={this.check} press={this.keyPress} points={this.state.points} max={this.state.goal} />
 					<AppNavigation check={this.getAnswer} change={this.getNew} />
 					<Answer hideAnswer={this.state.hideAnswer} text={this.state.answer} />
-					<button onClick={this.handleMessage}>Klik {this.state.experience}</button>
+					{/* <button onClick={this.handleMessage}>Klik {this.state.experience}</button> */}
 					<Animation preview={this.state.great}>
 						<LottieAnimation data={greatAnimationData} />
 					</Animation>
