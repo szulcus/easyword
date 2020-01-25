@@ -106,7 +106,6 @@ const PageLink = styled(Link)`
 	${props =>
 		props.list &&
 		css`
-			display: contents;
 			color: var(--color-secondary);
 			:hover {
 				color: var(--color-light);
