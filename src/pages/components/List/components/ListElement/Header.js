@@ -1,9 +1,6 @@
 // BASIC
 import React, { Component } from 'react'
 import styled from 'styled-components'
-import { library } from '@fortawesome/fontawesome-svg-core'
-// ICONS
-import { FaReply } from 'react-icons/fa'
 
 const HeaderElement = styled.header`
 	text-align: center;

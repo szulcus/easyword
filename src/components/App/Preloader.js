@@ -78,8 +78,7 @@ class Preloader extends Component {
 		hide: false,
 		delete: false
 	}
-	componentWillReceiveProps(nextProps) {
-		console.log(nextProps);
+	componentWillReceiveProps() {
 		this.setState({isLoaded: true, isLoading: false})
 		setTimeout(() => {this.setState({hide: true})}, 1000);
 		setTimeout(() => {this.setState({delete: true})}, 1300);

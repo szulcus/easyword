@@ -1,8 +1,6 @@
 // BASIC
 import React, { Component } from 'react'
 import styled from 'styled-components'
-// Components
-import Level from './Level'
 
 const InputComponent = styled.div`
 	position: relative;

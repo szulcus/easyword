@@ -16,8 +16,7 @@ import Achievements from './components/Achievements'
 // ICONS
 import {FaPencilAlt} from 'react-icons/fa'
 // KEYFRAMES
-import { entry, editOpacity } from '../Styles/Keyframes'
-import { faPenAlt } from '@fortawesome/free-solid-svg-icons';
+import { editOpacity } from '../Styles/Keyframes'
 
 const LoginElement = styled.div`
 	display: flex;

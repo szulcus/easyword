@@ -18,8 +18,6 @@ const DeleteElement = styled.div`
 	border-bottom-left-radius: 20px;
 	border-top-right-radius: 10px;
 	transition: transform 0.5s ease; 
-	/* border: 3px dotted gold; */
-	/* border-radius: 20px; */
 	z-index: 2;
 	:hover {
 		cursor: pointer;

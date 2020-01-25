@@ -3,7 +3,6 @@ import React, {Component} from 'react';
 import {Route} from 'react-router-dom';
 // COMPONENTS
 import AppPage from '../../../../Components/App/WritingApp'
-import WordList from '../../../../Components/WordList'
 // FILES
 import b1_e1_words1 from '../../../../Components/Words/1_Macmillan/Unit1/1_PersonalData'
 import b1_e1_words2 from '../../../../Components/Words/1_Macmillan/Unit1/2_Apperance'

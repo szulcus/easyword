@@ -1,6 +1,6 @@
 // BASIC
 import React, { Component } from 'react'
-import styled, {css} from 'styled-components'
+import styled from 'styled-components'
 import LoginButton from './LoginButton'
 // ICONS
 import { FaGooglePlusG } from 'react-icons/fa'

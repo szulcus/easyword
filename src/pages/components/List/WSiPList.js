@@ -1,7 +1,6 @@
 // BASIC
 import React, { Component } from 'react'
 import styled from 'styled-components'
-import { library } from '@fortawesome/fontawesome-svg-core'
 // STYLES
 import Global from '../../../Components/Styles/Global'
 import { Wrapper } from '../../../Components/Styles/Components'

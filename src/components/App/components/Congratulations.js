@@ -3,7 +3,6 @@ import React, { Component } from 'react'
 import styled, {css} from 'styled-components'
 import Lottie from 'react-lottie'
 // DATA
-import backgroundAnimationData from '../../lotties/data/11309-change-background-color.json'
 import gift from '../../lotties/data/427-happy-birthday.json'
 import badge from '../../lotties/data/9639-badge-earned.json'
 // KEYFRAMES

@@ -1,15 +1,12 @@
 // BASIC
 import React, { Component } from 'react'
 import styled, { css, keyframes } from 'styled-components'
-import latinize from 'latinize';
-import camelCase from 'camelcase'
 // ICONS
 import { GiAchievement } from 'react-icons/gi'
 import { FaUser, FaHome, FaUsers, FaHamburger, FaShoppingBasket, FaPlane, FaTheaterMasks, FaRunning, FaHeartbeat, FaUserShield, FaCity, FaReply } from 'react-icons/fa'
 import { MdSchool, MdWork } from 'react-icons/md'
 import { GiChemicalDrop, GiHighGrass } from 'react-icons/gi'
 // STYLES
-import { Wrapper } from '../../Styles/Components'
 import { speedAbsoluteEntry, speedAbsoluteBack } from '../../Styles/Keyframes'
 
 const AchievementsComponent = styled.div`

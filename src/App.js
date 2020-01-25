@@ -5,7 +5,6 @@ import { HashRouter as Router, Switch, Route} from 'react-router-dom';
 import AppPage from './Components/App/WritingApp'
 import IrregularAppPage from './Components/App/IrregularApp'
 import WorkPage from './Components/Work/Work'
-
 import IndexPage from './pages/index'
 
 import Books from './pages/Books'
@@ -49,6 +48,7 @@ import Global from './Components/Styles/Global';
 
 		import testWords from './Components/Words/_test'
 import WordList from './Components/WordList';
+import b1_e1_words1 from './Components/Words/1_Macmillan/Unit1/1_PersonalData'
 
 class App extends Component {
 	render() {
@@ -212,14 +212,27 @@ class App extends Component {
 				<Route path="/login" exact component={Login}/>
 				<Route path="/rejestracja" exact component={Registration}/>
 				<Route path="/users/:id" exact component={UserProfile}/>
+				<Route path="/:bookName/rozdzial-:unitNumber/:unitName" exact render={(props) =>
+					<AppPage
+						{...props}
+						words={b1_e1_words1}
+						info={{
+							book: 'book_01',
+							unit: 'unit_01',
+							part: 'part_04'
+						}}
+						base_language='en'
+						translated_language='pl'
+					/>
+				} />
 				<Route path="/:book/spis-slowek/rozdzial-:unitNumber/:unitName" exact component={WordList}/>
 
 				<Route path="/leaves" exact component={Leaves}/>
 
 				<Route path="/editor" exact component={Editor}/>
 				<Route path="/auto" exact component={Automatic}/>
-
 				<Books />
+				{/* <Route component={NotFoundPage} /> */}
 			</Switch>
 		</Router>
 	);

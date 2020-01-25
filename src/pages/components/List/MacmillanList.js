@@ -1,6 +1,6 @@
 // BASIC
 import React, { Component } from 'react'
-import styled, {css} from 'styled-components'
+import styled from 'styled-components'
 import moment from 'moment'
 import 'moment/locale/pl'
 // STYLES
@@ -10,11 +10,7 @@ import { Wrapper } from '../../../Components/Styles/Components'
 import Book from './components/Book'
 import Header from './components/ListElement/Header'
 import ListWrapper from './components/ListElement/ListWrapper'
-import ListElement from './components/ListElement/ListElement'
-import ListElementTest from './components/ListElement/ListElementTest'
 import Unit from './components/Unit'
-// ICONS
-import { IoIosTimer } from 'react-icons/io'
 
 const Separator = styled.hr`
 	display: none;
@@ -37,11 +33,6 @@ const Advertisement = styled.div`
 	@media (min-width: 600px) {
 		padding: 10px 20px;
 	}
-`
-
-const AdTitle = styled.h3`
-text-align: center;
-	margin-top: 10px;
 `
 
 const Term = styled.div`
@@ -77,13 +68,6 @@ const Date = styled.div`
 		@media (min-width: 600px) {
 			display: block;
 		}
-`
-
-const SectionTitle = styled.h3`
-`;
-
-const SectionList = styled.ul`
-	list-style: none;
 `
 
 class List extends Component {

@@ -35,19 +35,20 @@ class App extends Component {
 		super(props);
 		this.state = {
 			load: false,
-			language: this.props.base_language,
 			points: 0,
 			appLevel: 1,
 			goal: 15,
 			experience: 0,
-			baseWord: getWord(this.props.words),
+			words: null,
+			baseWord: null,
 			hideAnswer: true,
 			answer: '',
 			good: false,
 			great: false,
 			counter: 0,
 			deleteImage: false,
-			message: false
+			message: false,
+			info: {}
 		};
 	}
 
@@ -58,11 +59,36 @@ class App extends Component {
 			if(user) {
 				console.log(user);
 				this.setState({userId: user.uid});
-				const {book, unit, part} = this.props.info;
+				// const {book, unit, part} = this.props.info;
+
+				let {bookName, unitNumber} = this.props.match.params;
+				if (bookName === 'macmillan') {
+					bookName = 'book_01'
+				}
+				else if (bookName === 'wsip') {
+					bookName = 'book_02'
+				}
+				let partNumber;
+				if (unitNumber.includes('.') && Number(unitNumber)) {
+					partNumber = unitNumber.replace(/[0-9]*\./g,'').replace(/[0-9]*/g, x => x.length === 1 ? `0${x}` : x);
+					unitNumber = unitNumber.replace(/\.[0-9]*/g, '').replace(/[0-9]*/g, x => x.length === 1 ? `0${x}` : x);
+				}
+				else if (Number(unitNumber)) {
+					unitNumber = unitNumber.replace(/[0-9]*/g, x => x.length === 1 ? `0${x}` : x);
+				}
+				else {
+					alert('nie ma strony!');
+				}
+				if (unitNumber.length === 1) {
+					unitNumber = `0${unitNumber}`;
+				}
+
+
 				// const appPoints = `testPoints.book1.units.unit1.parts.part1`;
 				db.collection('users').doc(user.uid).onSnapshot(snapshot => {
-					const points = snapshot.data().points.books[book].units[unit].parts[part].points;
-					const appLevel = snapshot.data().points.books[book].units[unit].parts[part].level;
+					const unit = `unit_${unitNumber}`;
+					const points = snapshot.data().points.books[bookName].units[unit].parts[`part_${partNumber}`].points;
+					const appLevel = snapshot.data().points.books[bookName].units[unit].parts[`part_${partNumber}`].level;
 					const experience = snapshot.data().points.experience;
 					this.setState({ points, experience, appLevel })
 					if (appLevel === 1) {
@@ -100,15 +126,39 @@ class App extends Component {
 						this.showNotification();
 					}
 				});
-				// db.collection('users').doc(user.uid).update({
-				// 	[appPoints]: 19
-				// })
+				db.collection('books').doc('macmillan').onSnapshot((snap) => {
+					let partWords;
+					const unit = `unit_${unitNumber}`
+					const words = snap.data()[unit];
+					if (partNumber) {
+						partWords = words.parts[`part_${partNumber}`].words;
+					}
+					else {
+						partWords = words.parts.part_01.words;
+					}
+					this.setState({
+						words: partWords,
+						baseWord: getWord(partWords),
+						info: {
+							unitNumber,
+							partNumber,
+							bookName //dodać!
+						}
+					})
+				})
 			}
 		})
 	}
 	showNotification = () => {
-		const {book, unit, part} = this.props.info;
-		const appLevel = `points.books.${book}.units.${unit}.parts.${part}.level`;
+		let book;
+		if (this.state.info.book === 'macmillan') {
+			book = 'book_01'
+		}
+		else if (this.state.info.book === 'macmillan') {
+			book = 'book_02'
+		}
+		const {unitNumber, partNumber} = this.state.info;
+		const appLevel = `points.books.${book}.units.${unitNumber}.parts.${partNumber}.level`;
 		this.setState({prize: this.state.goal * this.state.appLevel});
 		firebase.firestore().collection('users').doc(this.state.userId).update({
 			'points.experience': this.state.experience + this.state.goal * this.state.appLevel,
@@ -118,7 +168,7 @@ class App extends Component {
 	}
 	getNew = () => {
 		if (this.state.hideAnswer === true || this.state.answer === 'Brawo!') {
-			this.setState({baseWord: getWord(this.props.words)});
+			this.setState({baseWord: getWord(this.state.words)});
 		}
 		else {
 			alert('Najpierw odpowiedz!')
@@ -144,8 +194,9 @@ class App extends Component {
 		// console.log(feminine_translation2)
 		// console.log(feminine_translation3)
 
-		const {book, unit, part} = this.props.info;
-		const appPoints = `points.books.${book}.units.${unit}.parts.${part}.points`;
+		const {book} = this.props.info;
+		const {unitNumber, partNumber} = this.state.info;
+		const appPoints = `points.books.${book}.units.${unitNumber}.parts.${partNumber}.points`;
 
 		if (
 			userWord === translation1 ||
@@ -207,8 +258,9 @@ class App extends Component {
 			let {translation1, translation2, translation3} = this.state.baseWord;
 			const {full_translation1, full_translation2, full_translation3} = female(this.state.baseWord);
 
-			const {book, unit, part} = this.props.info;
-			const appPoints = `points.books.${book}.units.${unit}.parts.${part}.points`;
+			const {book} = this.props.info;
+			const {unitNumber, partNumber} = this.state.info;
+			const appPoints = `points.books.${book}.units.${unitNumber}.parts.${partNumber}.points`;
 
 			if (full_translation1 !== undefined) {
 				translation1 = full_translation1;
@@ -262,7 +314,10 @@ class App extends Component {
 	}
 	
 	render = () => {
-		let baseWord = this.state.baseWord;
+		let baseWord = {};
+		if (this.state.baseWord) {
+			baseWord = this.state.baseWord;
+		}
 		// replace empty images
 		let image = baseWord.image;
 		// let image2 = baseWord.image2;
@@ -283,7 +338,7 @@ class App extends Component {
 		}
 		// word2 and word3 exceptions
 		let word = baseWord.word1;
-		console.log(baseWord);
+		// console.log(baseWord);
 		if(baseWord.word3 !== undefined) {
 			word = `${word} / ${baseWord.word2} / ${baseWord.word3}`;
 		}
@@ -313,11 +368,14 @@ class App extends Component {
 			<>
 				<Global />
 				<Wrapper center small>
-				<Preloader load={this.state.load} />
+					<Preloader load={this.state.load} />
 					<Cathegory content={cathegory} />
 					<Navigation points={this.state.points} />
 					<Word content={word} />
-					<Picture hide={this.state.deleteImage} onClick={this.deleteImg} src={image} word={word} link={`https://pxhere.com/${this.state.language}/photos?q=${baseWord.word1}`} />
+
+					{this.props.match.params.unitNumber}
+
+					<Picture hide={this.state.deleteImage} onClick={this.deleteImg} src={image} word={word} link={`https://pxhere.com/pl/photos?q=${baseWord.word1}`} />
 					<Input onChange={this.check} press={this.keyPress} points={this.state.points} max={this.state.goal} />
 					<AppNavigation check={this.getAnswer} change={this.getNew} />
 					<Answer hideAnswer={this.state.hideAnswer} text={this.state.answer} />

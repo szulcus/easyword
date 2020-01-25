@@ -14,7 +14,6 @@ import SignUp from './components/SignUp'
 import LogIn from './components/LogIn'
 import SignInWithFacebook from './components/SignInWithFacebook'
 import SignInWithGoogle from './components/SignInWithGoogle'
-import LogOut from './components/LogOut'
 
 const LoginElement = styled.div`
 	display: flex;
@@ -42,14 +41,6 @@ const LoginTitle = styled.header`
 	@media(max-height: 450px) {
 		margin: 30px 0;
 	}
-`
-const AddAdmin = styled.form`
-	display: none;
-	${props =>
-			props.preview &&
-			css`
-				display: block;
-	`};
 `
 const Form = styled.form`
 	display: block;
@@ -112,22 +103,6 @@ const Choise = styled.div`
 			css`
 				display: none;
 	`};
-`
-const UserContent = styled.ul`
-	display: none;
-	text-align: center;
-	li {
-		list-style: none;
-	}
-	${props =>
-			props.preview &&
-			css`
-				display: block;
-	`};
-`
-const CreateGuide = styled.button`
-	padding: 5px;
-	border-radius: 5px;
 `
 const Error = styled.p`
 

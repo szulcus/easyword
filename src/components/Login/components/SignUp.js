@@ -12,10 +12,6 @@ const SignUpComponent = styled(LoginButton)`
 		background-color: var(--color-dark);
 	}
 `
-const Img = styled.img`
-	height: 20px;
-`
-
 const Content = styled.span`
 	margin-right: 10px;
 `

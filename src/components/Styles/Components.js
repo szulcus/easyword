@@ -2,13 +2,10 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
 import {Link} from 'react-router-dom'
-import firebase from 'firebase/app'
 import 'firebase/app'
 import 'firebase/auth'
 import 'firebase/firestore'
 import 'firebase/functions'
-// ICONS
-import { FaFacebookF, FaGithub, FaLinkedinIn, FaUserTie, FaReply, FaCog } from 'react-icons/fa'
 
 const Wrapper = styled.main`
 	display: flex;
@@ -84,15 +81,15 @@ const PageLink = styled(Link)`
 		props.content &&
 		css`
 			display: contents;
-			color: var(--color-decorative)
-	`};
+			color: var(--color-decorative);
+	`}
 
 	${props =>
 		props.center &&
 		css`
 			display: flex;
 			justify-content: center;
-	`};
+	`}
 			
 	${props =>
 		props.styled &&
@@ -106,7 +103,6 @@ const PageLink = styled(Link)`
 				padding: 0px 50px 5px 50px;
 			}
 	`};
-			
 	${props =>
 		props.list &&
 		css`
@@ -118,13 +114,12 @@ const PageLink = styled(Link)`
 			}
 		`
 	};
-`;
+`
 
 const BrowserLink = styled.a`
 	transition: all .15s ease;
 	text-decoration: none;
 	color: var(--color-light);
-	
 	${props =>
 		props.socialMedia &&
 		css`
@@ -132,8 +127,7 @@ const BrowserLink = styled.a`
 				opacity: 0.5;
 			}
 		`
-	};
-	
+	}
 	${props =>
 		props.workMedia &&
 		css`
@@ -146,8 +140,8 @@ const BrowserLink = styled.a`
 				opacity: 0.5;
 			}
 		`
-	};
-	`;
+	}
+`
 
 const WebLink = props => (
 	<BrowserLink workMedia={props.workMedia} href={props.to} target="_blank">
@@ -166,9 +160,20 @@ const Emoji = props => (
 	>
 		{props.symbol}
 	</span>
-);
+)
+
+const Go = styled(Link)`
+	text-decoration: none;
+	color: var(--color-primary);
+	${props =>
+		props.gold &&
+		css`
+			color: var(--color-decorative);
+		`
+	}
+`
 
 // STYLES
-export {Separator, PageLink, BrowserLink, WebLink, Wrapper}
+export {Separator, PageLink, BrowserLink, WebLink, Wrapper, Go}
 // COMPONENTS
 export {Emoji}
