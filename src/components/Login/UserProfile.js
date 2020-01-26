@@ -2,6 +2,7 @@
 import React, {Component} from 'react';
 import styled, {css} from 'styled-components'
 import firebase from 'firebase/app'
+import {Link} from 'react-router-dom'
 import 'firebase/app'
 import 'firebase/auth'
 import 'firebase/firestore'
@@ -243,6 +244,7 @@ class UserProfile extends Component {
 						</UserContent>
 						<button onClick={this.handleUserAchievements}>Zobacz swoje wyniki</button>
 						<button>Przejdź do tablicy wyników</button>
+						<Link to='/'>Wróć do strony głównej</Link>
 						<LogIn onClick={this.logIn} hide={this.state.user.isLoggedIn} />
 						<LogOut onClick={this.logOut} preview />
 					</LoginElement>

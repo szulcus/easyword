@@ -19,6 +19,7 @@ import AppNavigation from './components/AppNavigation';
 import Answer from './components/Answer'
 import SocialMedia from './components/SocialMedia'
 import Congratulations from './components/Congratulations'
+import Information from './components/Information'
 // STYLES
 import Global from '../Styles/Global'
 import { Wrapper } from '../Styles/Components'
@@ -32,10 +33,12 @@ import LottieAnimation from '../lotties/LottieAnimation'
 
 class App extends Component {
 	state = {
+		userId: null,
+		showInformation: false,
 		load: false,
 		points: 0,
-		appLevel: 1,
-		goal: 15,
+		appLevel: 0,
+		goal: 30,
 		experience: 0,
 		words: null,
 		baseWord: null,
@@ -82,8 +85,28 @@ class App extends Component {
 		if (unitNumber.length === 1) {
 			unitNumber = `0${unitNumber}`;
 		}
-
 		firebase.auth().onAuthStateChanged(user => {
+			db.collection('books').doc(this.props.match.params.bookName).onSnapshot((snap) => {
+				let partWords;
+				const unit = `unit_${unitNumber}`
+				const words = snap.data()[unit];
+				if (partNumber) {
+					partWords = words.parts[`part_${partNumber}`].words;
+				}
+				else {
+					partWords = words.parts.part_01.words;
+				}
+				this.setState({
+					words: partWords,
+					baseWord: getWord(partWords),
+					info: {
+						unitNumber,
+						partNumber,
+						bookName
+					}
+				})
+			});
+
 			if(user) {
 				console.log(user);
 				this.setState({userId: user.uid});
@@ -126,53 +149,28 @@ class App extends Component {
 						this.setState({goal: 650});
 					}
 					
-					// if (this.state.points >= this.state.goal) {
-					// 	this.showNotification();
-					// }
+					if (this.state.points >= this.state.goal) {
+						this.showNotification();
+					}
 				});
 			}
-			db.collection('books').doc(this.props.match.params.bookName).onSnapshot((snap) => {
-				let partWords;
-				const unit = `unit_${unitNumber}`
-				const words = snap.data()[unit];
-				if (partNumber) {
-					partWords = words.parts[`part_${partNumber}`].words;
-				}
-				else {
-					partWords = words.parts.part_01.words;
-				}
-				this.setState({
-					words: partWords,
-					baseWord: getWord(partWords),
-					info: {
-						unitNumber,
-						partNumber,
-						bookName
-					}
-				})
-			});
-
-			
-			
+			else {
+				this.setState({showInformation: true})
+			}
 		})
 	}
 	showNotification = () => {
-		let book;
-		if (this.state.info.book === 'macmillan') {
-			book = 'book_01'
-		}
-		else if (this.state.info.book === 'macmillan') {
-			book = 'book_02'
-		}
-		const {unitNumber, partNumber} = this.state.info;
+		const {unitNumber, partNumber, bookName} = this.state.info;
 		const unit = `unit_${unitNumber}`;
 		const part = partNumber ? `part_${partNumber}` : 'test';
-		const appLevel = `points.books.${book}.units.${unit}.parts.${part}.level`;
+		const appLevel = `points.books.${bookName}.units.${unit}.parts.${part}.level`;
 		this.setState({prize: this.state.goal * this.state.appLevel});
-		firebase.firestore().collection('users').doc(this.state.userId).update({
-			'points.experience': this.state.experience + this.state.goal * this.state.appLevel,
-			[appLevel]: this.state.appLevel + 1
-		})
+		if (this.state.userId) {
+			firebase.firestore().collection('users').doc(this.state.userId).update({
+				'points.experience': this.state.experience + this.state.goal * this.state.appLevel,
+				[appLevel]: this.state.appLevel + 1
+			})
+		}
 		this.handleMessage()
 	}
 	getNew = () => {
@@ -220,10 +218,15 @@ class App extends Component {
 				this.setState({
 					great: true,
 				});
-				firebase.firestore().collection('users').doc(this.state.userId).update({
-					[appPoints]: this.state.points + 2,
-					'points.experience': this.state.experience + 2
-				})
+				if (this.state.userId) {
+					firebase.firestore().collection('users').doc(this.state.userId).update({
+						[appPoints]: this.state.points + 2,
+						'points.experience': this.state.experience + 2
+					})
+				}
+				else {
+					this.setState({points: this.state.points + 2})
+				}
 				setTimeout(() => {
 					target.value = '';
 					this.getNew();
@@ -238,10 +241,15 @@ class App extends Component {
 				this.setState({
 					good: true,
 				});
-				firebase.firestore().collection('users').doc(this.state.userId).update({
-					[appPoints]: this.state.points + 1,
-					'points.experience': this.state.experience + 1
-				})
+				if (this.state.userId) {
+					firebase.firestore().collection('users').doc(this.state.userId).update({
+						[appPoints]: this.state.points + 1,
+						'points.experience': this.state.experience + 1
+					})
+				}
+				else {
+					this.setState({points: this.state.points + 1})
+				}
 				setTimeout(() => {
 					target.value = '';
 					this.getNew();
@@ -276,9 +284,14 @@ class App extends Component {
 			}
 
 			if (this.state.points >= 2) {
-				firebase.firestore().collection('users').doc(this.state.userId).update({
-					[appPoints]: this.state.points - 2
-				})
+				if (this.state.userId) {
+					firebase.firestore().collection('users').doc(this.state.userId).update({
+						[appPoints]: this.state.points - 2
+					})
+				}
+				else {
+					this.setState({points: this.state.points - 2})
+				}
 			}
 
 			else {
@@ -314,6 +327,14 @@ class App extends Component {
 	handleMessage = () => {
 		!this.state.message ? this.setState({message: true}) : this.setState({message: false});
 		// alert('o')
+	}
+
+	closeInformation = () => {
+		this.setState({showInformation: false});
+	}
+
+	logIn = () => {
+		this.props.history.push(`/login`);
 	}
 	
 	render = () => {
@@ -386,6 +407,7 @@ class App extends Component {
 					<Animation preview={this.state.good}>
 						<LottieAnimation data={goodAnimationData} />
 					</Animation>
+					{this.state.showInformation ? <Information onClick={this.logIn} onBack={this.closeInformation} /> : ''}
 					<Congratulations preview={this.state.message} level={this.state.appLevel} prize={this.state.prize} onClick={this.handleMessage} />
 					<SocialMedia />
 				</Wrapper>
