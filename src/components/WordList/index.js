@@ -117,23 +117,15 @@ class WordList extends Component {
 		activeElements: null
 	}
 	componentDidMount() {
-		firebase.auth().onAuthStateChanged(user => {
-			if(user) {
-				console.log(user.uid);
-				const db = firebase.firestore();
-				db.collection('books').doc('macmillan').onSnapshot((snap) => {
-					const unit = `unit_${this.props.match.params.unitNumber}`
-					const words = snap.data()[unit];
-					this.setState({words});
-					const element = document.getElementById(this.props.match.params.unitName);
-					if (element) {
-						console.log(element);
-						element.scrollIntoView();
-					}
-				})
-			}
-			else {
-				console.log('not logged in');
+		const db = firebase.firestore();
+		db.collection('books').doc('macmillan').onSnapshot((snap) => {
+			const unit = `unit_${this.props.match.params.unitNumber}`
+			const words = snap.data()[unit];
+			this.setState({words});
+			const element = document.getElementById(this.props.match.params.unitName);
+			if (element) {
+				console.log(element);
+				element.scrollIntoView();
 			}
 		})
 	}
