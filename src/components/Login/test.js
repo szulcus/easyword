@@ -60,47 +60,47 @@ db.collection('users').doc(user.uid).update({
 						parts: {
 							part_01: {
 								name: 'Dane osobowe',
-								points: 3,
+								points: 0,
 								level: 1
 							},
 							part_02: {
 								name: 'Wygląd zewnętrzny',
-								points: 12,
+								points: 0,
 								level: 1
 							},
 							part_03: {
 								name: 'Ubrania',
-								points: 3,
+								points: 0,
 								level: 1
 							},
 							part_04: {
 								name: 'Cechy charakteru',
-								points: 43,
+								points: 0,
 								level: 1
 							},
 							part_05: {
 								name: 'Uczucia i emocje',
-								points: 14,
+								points: 0,
 								level: 1
 							},
 							part_06: {
 								name: 'Zainteresowania',
-								points: 17,
+								points: 0,
 								level: 1
 							},
 							part_07: {
 								name: 'Problemy etyczne',
-								points: 33,
+								points: 0,
 								level: 1
 							},
 							part_08: {
 								name: 'Inne',
-								points: 23,
+								points: 0,
 								level: 1
 							},
 							test: {
 								name: 'Test',
-								points: 33,
+								points: 0,
 								level: 1
 							}
 						}

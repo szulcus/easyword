@@ -8,7 +8,7 @@ import Delete from './Delete'
 
 const PictureElement = styled.div`
 	width: 90vw;
-	height: calc(90vw / 1.618);
+	height: calc(100vw / 1.618);
 	max-height: calc(100vh - 341px);
 	margin: 0 auto;
 	border-radius: 20px;
@@ -69,7 +69,7 @@ class Picture extends Component {
 		super(props);
 		this.state = {
 			longImage: false,
-			deleteImage: false,
+			deleteImage: true,
 			animatedImage: false
 		};
 	}

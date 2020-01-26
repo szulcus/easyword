@@ -8,6 +8,7 @@ import { FaFacebookF, FaGithub, FaLinkedinIn, FaUserTie } from 'react-icons/fa'
 
 
 const SocialMediaElement = styled.ul`
+	/* display: none; */
 	position: absolute;
 	bottom: 0;
 	right: 20vw;
@@ -21,8 +22,10 @@ const SocialMediaElement = styled.ul`
 	opacity: 0.5;
 	transition-duration: 0.5s;
 	animation: floatBottom 0.3s ease-in;
-	z-index: 10;
-
+	z-index: 2;
+	@media(max-height: 550px) {
+		display: none;
+	}
 `
 
 const SocialMediaItem = styled.li`

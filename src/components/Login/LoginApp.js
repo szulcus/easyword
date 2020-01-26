@@ -122,26 +122,6 @@ class App extends Component {
 	componentDidMount() {
 		firebase.auth().onAuthStateChanged(user => {
 			if(user) {
-				// console.log(user);
-				// this.setState({isLoggedIn: true, userEmail: user.email});
-				// const db = firebase.firestore();
-				// user.getIdTokenResult().then(idTokenResult => {
-				// 	if (idTokenResult.claims.admin) {
-				// 		this.setState({isAdmin: true})
-				// 	}
-				// 	else {
-				// 		this.setState({isAdmin: false})
-				// 	}
-				// 	user.admin = idTokenResult.claims.admin
-				// })
-				// db.collection('users').doc(user.uid).get().then(doc => {
-				// 	this.setState({userId: doc.data().bio})
-				// });
-				// db.collection('guides').onSnapshot(snap => {
-				// this.setUpGuides(snap.docs);
-				// }, err => {
-				// 	console.log(err.message)
-				// });
 				this.props.history.push(`/users/${user.uid}`);
 			}
 			else {
@@ -216,6 +196,9 @@ class App extends Component {
 			console.log(error);
 		})
 	}
+	signUp = () => {
+		this.props.history.push(`/rejestracja`);
+	}
 	render() {
 		return (
 			<>
@@ -223,11 +206,7 @@ class App extends Component {
 				<Wrapper scroll onClick={this.exit}>
 					<LoginElement>
 						<LoginTitle>
-							{this.state.isLoggedIn ? (
-								`Witaj ${this.state.userEmail} ${this.state.userId}`
-							) : (
-								"Zarejestruj się"
-							)}
+							Zaloguj się
 						</LoginTitle>
 						<Form id="userForm" hide={this.state.isLoggedIn}>
 							<Field>

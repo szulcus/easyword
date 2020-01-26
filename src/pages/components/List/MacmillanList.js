@@ -72,7 +72,7 @@ const Date = styled.div`
 
 class List extends Component {
 	state = {
-		plannedDate: '20200103',
+		plannedDate: '20200128',
 	}
 	render() {
 		moment.locale('pl')
@@ -86,7 +86,7 @@ class List extends Component {
 						<Header />
 						<ListWrapper>
 							<Term>
-								<Date>{`${moment(this.state.plannedDate, "YYYYMMDD").format('LL')}r`}</Date>
+								<Date>{`${moment(this.state.plannedDate, "YYYYMMDD").add(11, 'hours').add(40, 'minutes').format('LL')}r`}</Date>
 								<Line>|</Line>
 								<Time>{moment(this.state.plannedDate, "YYYYMMDD").fromNow()}</Time>
 							</Term>

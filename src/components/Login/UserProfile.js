@@ -17,6 +17,7 @@ import Achievements from './components/Achievements'
 import {FaPencilAlt} from 'react-icons/fa'
 // KEYFRAMES
 import { editOpacity } from '../Styles/Keyframes'
+import points from './BlankPointsObject';
 
 const LoginElement = styled.div`
 	display: flex;
@@ -157,10 +158,20 @@ class UserProfile extends Component {
 				})
 				
 				db.collection('users').doc(user.uid).get().then(doc => {
-					if (doc.data()) {
-						this.setState({
-							points: doc.data().points
+					if (!doc.data() || (!doc.data().points && !doc.data().nick)) {
+						db.collection('users').doc(user.uid).update({
+							points: points,
+							nick: user.displayName
 						})
+					}
+					else if (doc.data().points) {
+						this.setState(prevState => ({
+							points: doc.data().points,
+							user: {
+								...prevState.user,
+								nick: doc.data().nick
+							}
+						}))
 						console.log(this.state.points);
 					}
 				});
@@ -216,7 +227,7 @@ class UserProfile extends Component {
 							) : (
 								"Nie jesteś zalogowany!"
 							)} */}
-							{`Witaj ${this.state.user.name}!`}
+							Witaj {this.state.user.nick}!
 						</LoginTitle>
 						<AddAdmin onSubmit={this.addAdminCloudFunction} className="admin" preview={this.state.user.isAdmin}>
 							<input type="email" placeholder="User email" id="adminEmail" required />
@@ -228,7 +239,7 @@ class UserProfile extends Component {
 								<Edit onClick={this.editAvatar} />
 							</Avatar>
 							<div>Wygrane rundy: </div>
-							<div>Doświadczenie: {!this.state.points ? '---' : this.state.points.experience} XP</div>
+							<div>Doświadczenie: {!this.state.points ? '-' : this.state.points.experience} XP</div>
 						</UserContent>
 						<button onClick={this.handleUserAchievements}>Zobacz swoje wyniki</button>
 						<button>Przejdź do tablicy wyników</button>

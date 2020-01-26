@@ -14,6 +14,7 @@ import SignUp from './components/SignUp'
 import SignInWithFacebook from './components/SignInWithFacebook'
 import SignInWithGoogle from './components/SignInWithGoogle'
 import LogOut from './components/LogOut'
+import points from './BlankPointsObject';
 
 const LoginElement = styled.div`
 	display: flex;
@@ -96,13 +97,17 @@ const ContentLabel = styled.span`
 const Choise = styled.div`
 	display: grid;
 	justify-content: center;
-	grid-template-columns: 250px 250px;
+	grid-template-columns: 1fr 1fr;
 	grid-template-rows: auto auto;
 	${props =>
 			props.hide &&
 			css`
 				display: none;
 	`};
+	@media(max-width: 500px) {
+		display: flex;
+		align-items: center;
+	}
 `
 const UserContent = styled.ul`
 	display: none;
@@ -121,83 +126,13 @@ const Error = styled.p`
 `
 class App extends Component {
 	state = {
-		isLoggedIn: false,
-		isAdmin: false,
-		userContent: '',
-		userId: '',
-		name: '',
-		email: '',
-		avatar: '',
-		title: 'Rejestracja',
-		userPoints: 0
+		error: null
 	}
 	componentDidMount() {
 		firebase.auth().onAuthStateChanged(user => {
 			if(user) {
-				console.log(user);
-				this.setState({isLoggedIn: true, userEmail: user.email});
-				const db = firebase.firestore();
-				user.getIdTokenResult().then(idTokenResult => {
-					if (idTokenResult.claims.admin) {
-						this.setState({isAdmin: true})
-					}
-					else {
-						this.setState({isAdmin: false})
-					}
-					user.admin = idTokenResult.claims.admin
-				})
-				db.collection('users').doc(user.uid).get().then(doc => {
-					if (doc.data()) {
-						this.setState({userId: doc.data().bio})
-					}
-				});
-				db.collection('guides').onSnapshot(snap => {
-				this.setUpGuides(snap.docs);
-				}, err => {
-					console.log(err.message)
-				});
+				this.props.history.push(`/users/${user.uid}`);
 			}
-			else {
-				console.log('not logged in');
-				this.setState({isLoggedIn: false, isAdmin: false, userEmail: ''});
-				this.setUpGuides([]);
-			}
-		})
-	}
-	setUpGuides = (data) => {
-		if (data.length) {
-			let html = data.map(doc => {
-				const guide = doc.data();
-				return <li key={guide.title}>
-						<h1>{guide.title}</h1>
-						<p>{guide.content}</p>
-					</li>
-			})
-			this.setState({userContent: html})
-		}
-		else {
-			this.setState({userContent: ''})
-		}
-	}
-	createNewGuides = (e) => {
-		e.preventDefault();
-		const titleElement = document.getElementById('title');
-		const contentElement = document.getElementById('content');
-		firebase.firestore().collection('guides').add({
-			title: titleElement.value,
-			content: contentElement.value
-		}).then(() => {
-			document.getElementById('userForm').reset();
-			titleElement.value = '';
-			contentElement.value = '';
-		})
-	}
-	addAdminCloudFunction = (e) => {
-		e.preventDefault();
-		const adminEmail = document.getElementById('adminEmail').value;
-		const addAdminRole = firebase.functions().httpsCallable('addAdminRole');
-		addAdminRole({email: adminEmail}).then(result => {
-			console.log(result);
 		})
 	}
 	signInWithGoogle = () => {
@@ -214,6 +149,7 @@ class App extends Component {
 
 		firebase.auth().signInWithPopup(provider).then(result => {
 			console.log(result);
+			console.log(result.uid);
 		}).catch(error => {
 			console.log(error);
 		})
@@ -233,14 +169,16 @@ class App extends Component {
 			this.props.history.push(`/users/${cred.user.uid}`);
 				return db.collection('users').doc(cred.user.uid).set({
 					bio: txtBiography.value,
-					nick: txtNick.value
+					nick: txtNick.value,
+					points: points
 				})
 			}).then((cred) => {
 				console.log(cred);
-				document.getElementById('error').innerHTML = '';
+				this.setState({error: ''});
 
 			}).catch(err => {
-				document.getElementById('error').innerHTML = `${err.message}`;
+				console.log(err);
+				this.setState({error: err.message});
 			})
 	}
 	render() {
@@ -283,7 +221,7 @@ class App extends Component {
 							<SignInWithFacebook onClick={this.signInWithFacebook} />
 							<SignInWithGoogle onClick={this.signInWithGoogle} />
 							<SignUp onClick={this.signUp} />
-							<Error id="error"></Error>
+							<Error id="error">{this.state.error}</Error>
 						</Choise>
 						<LogOut onClick={this.logOut} preview={this.state.isLoggedIn} />
 					</LoginElement>
