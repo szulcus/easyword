@@ -431,7 +431,7 @@ class App extends Component {
 					<Input onChange={this.check} press={this.keyPress} points={this.state.points} max={this.state.goal} />
 					<AppNavigation check={this.getAnswer} change={this.getNew} />
 					<Answer hideAnswer={this.state.hideAnswer} text={this.state.answer} />
-					<button onClick={this.handleMessage}>Klik {this.state.experience}</button>
+					{/* <button onClick={this.handleMessage}>Klik {this.state.experience}</button> */}
 					<Animation preview={this.state.great}>
 						<LottieAnimation data={greatAnimationData} />
 					</Animation>
