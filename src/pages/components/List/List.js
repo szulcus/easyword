@@ -1,17 +1,26 @@
 // BASIC
 import React, { Component } from 'react'
 import styled from 'styled-components'
+import moment from 'moment'
+import 'moment/locale/pl'
+import firebase from 'firebase/app'
+import 'firebase/app'
+import 'firebase/auth'
+import 'firebase/firestore'
+import 'firebase/functions'
+import {Link} from 'react-router-dom'
+import latinize from 'latinize'
 // STYLES
-import Global from '../Styles/Global'
-import { Wrapper } from '../Styles/Components'
+import Global from '../../../Components/Styles/Global'
+import { Wrapper, PageLink } from '../../../Components/Styles/Components'
+import { listEntry, listHover } from '../../../Components/Styles/Keyframes'
 // COMPONENTS
 import Book from './components/Book'
 import Header from './components/ListElement/Header'
 import ListWrapper from './components/ListElement/ListWrapper'
-import ListElement from './components/ListElement/ListElement'
-import ListElementTest from './components/ListElement/ListElementTest'
-
-const ListElementWrapper = styled.div``
+import Unit from './components/Unit'
+// ICONS
+import { FaAngleRight, FaStar, FaListUl} from 'react-icons/fa'
 
 const Separator = styled.hr`
 	display: none;
@@ -24,79 +33,197 @@ const Separator = styled.hr`
 	}
 `
 
-const SectionTitle = styled.h3`
-	color: lightgray;
+const ListElementWrapper = styled.div``
+
+const Advertisement = styled.div`
+	background-color: var(--color-dark);
+	padding: 10px;
+	margin-bottom: 50px;
+	border-radius: 20px;
+	@media (min-width: 600px) {
+		padding: 10px 20px;
+	}
+`
+
+const Term = styled.div`
+	display: flex;
+	justify-content: space-around;
+	line-height: 100%;
+	margin: 20px;
+	font-size: 30px;
+	color: var(--color-decorative);
+`
+
+const Line = styled.div`
+	display: none;
+		@media (min-width: 600px) {
+			display: block;
+		}
+`
+
+const Time = styled.div`
+	width: 200px;
+	font-size: 20px;
+	text-align: center;
+	::after {
+		content: ' 😉';
+	}
+`
+
+const Date = styled.div`
+	width: 200px;
+	font-size: 20px;
+	text-align: center;
+	display: none;
+		@media (min-width: 600px) {
+			display: block;
+		}
+`
+
+
+
+
+const UnitElement = styled.div`
+	
+`
+
+const UnitTitle = styled.h3`
+
 `;
 
-const SectionList = styled.ul`
+const UnitList = styled.ul`
 	list-style: none;
 `
 
+const Go = styled(Link)`
+	position: absolute;
+	top: 1.5px;
+	right: 0px;
+	display: none;
+	padding: 3px;
+	color: var(--color-decorative);
+	opacity: 0;
+	animation: ${listEntry} 0.3s 0.1s both;
+	transition: all 0.1s ease;
+	:hover {
+		animation: ${listHover} 0.3s both;
+	}
+`
+const UnitListItem = styled.li`
+	position: relative;
+	display: flex;
+	align-items: center;
+	padding: 3px;
+	:hover ${Go} {
+		display: block;
+	}
+	:hover ${PageLink} {
+		color: var(--color-primary);
+	}
+`
+const Arrow = styled(FaAngleRight)`
+	color: var(--color-decorative);
+`
+const Star = styled(FaStar)`
+	color: var(--color-decorative);
+`
+
+
 class List extends Component {
+	state = {
+		plannedDate: '20200128',
+	}
+	componentDidMount() {
+		const db = firebase.firestore();
+
+		let {bookName} = this.props.match.params;
+		this.setState({bookName});
+		if (bookName === 'macmillan') {
+			bookName = 'book_01'
+		}
+		else if (bookName === 'wsip') {
+			bookName = 'book_02'
+		}
+		else if (bookName === 'jezyk-angielski-zawodowy') {
+			bookName = 'book_03'
+		}
+		else if (bookName === 'znaki-drogowe') {
+			bookName = 'book_04'
+		}
+		else if (bookName === 'czasowniki-nieregularne') {
+			bookName = 'book_05'
+		}
+		else {
+			this.props.history.push('not-found-page')
+		}
+		db.collection('books').doc(this.props.match.params.bookName).onSnapshot((snap) => {
+			this.setState({
+				data: snap.data()
+			})
+			// console.log(this.state.data);
+			// console.log(Object.values(this.state.data));
+		});
+	}
+	flat = (name) => {
+		return name ? latinize(name.toLowerCase()).split(' ').join('-').replace(/,/g, '') : '';
+	}
 	render() {
+		moment.locale('pl')
 		return (
 			<>
 				<Global />
-				<Wrapper list>
-					<Book src='https://www.macmillan.pl/components/com_ssshop/cache/500x500/9788376218496.png' men='Macmillan Education. Nr MEN: 916/2017'/>
+				{!this.state.data ? 'Wczytywanie...' : <Wrapper list>
+					<Book src={this.state.data.info.src} information='WSiP - język angielski zawodowy w logistyce i spedycji. Zeszyt ćwiczeń'/>
 					<Separator />
 					<ListElementWrapper>
 						<Header />
 						<ListWrapper>
-							<SectionTitle>Rozdział 1 - Człowiek</SectionTitle>
-							<SectionList>
-								<ListElement content="Dane osobowe" path="/macmillan/rozdział-1/dane-osobowe" />
-								<ListElement content="Wygląd zewnętrzny" path="/macmillan/rozdział-1/wygląd-zewnętrzny" />
-								<ListElement content="Ubrania" path="/macmillan/rozdział-1/ubrania" />
-								<ListElement content="Cechy charakteru" path="/macmillan/rozdział-1/cechy-charakteru" />
-								<ListElement content="Uczucia i emocje" path="/macmillan/rozdział-1/uczucia-i-emocje" />
-								<ListElement content="Zainteresowania" path="/macmillan/rozdział-1/zainteresowania" />
-								<ListElement content="Problemy etyczne" path="/macmillan/rozdział-1/problemy-etyczne" />
-								<ListElement content="Inne" path="/macmillan/rozdział-1/inne" />
-								<ListElementTest content="Test" path="/macmillan/rozdział-1/test" />
-							</SectionList>
-							<SectionTitle>Rozdział 2 - Dom</SectionTitle>
-							<SectionList>
-								<ListElement content="Miejsce zamieszkania" path="/macmillan/rozdział-2/dom" />
-								<ListElement content="Opis Domu" path="/macmillan/rozdział-2/opis-domu" />
-								<ListElement content="Prace w domu i ogrodzie" path="/macmillan/rozdział-2/prace-w-domu-i-ogrodzie" />
-								<ListElement content="Wynajem, kupno i sprzedaż nieruchomości" path="/macmillan/rozdział-2/wynajem-kupno-i-sprzedaż-nieruchomości" />
-								<ListElement content="Inne" path="/macmillan/rozdział-2/inne" />
-								<ListElementTest content="Test" path="/macmillan/rozdział-2/test" />
-							</SectionList>
-							<SectionTitle>Rozdział 3 - Szkoła</SectionTitle>
-							<SectionList>
-								<ListElement content="Przedmioty szkolne" path="/rozdział-3/przedmioty-szkolne" />
-								<ListElement content="Oceny i wymagania" path="/macmillan/rozdział-3/oceny-i-wymagania" />
-								<ListElement content="Życie szkolne" path="/macmillan/rozdział-3/życie-szkolne" />
-								<ListElement content="Zajęcia pozalekcyjne" path="/macmillan/rozdział-3/zajęcia-pozalekcyjne" />
-								<ListElement content="System oświaty" path="/macmillan/rozdział-3/system-oświaty" />
-								<ListElement content="Inne" path="/macmillan/rozdział-3/inne" />
-								<ListElementTest content="Test" path="/macmillan/rozdział-3/test" />
-							</SectionList>
-							<SectionTitle>Rozdział 4 - Praca</SectionTitle>
-							<SectionList>
-								<ListElement content="Zawody i związane z nimi czynności" path="/macmillan/rozdział-4/zawody-i-związane-z-nimi-czynności" />
-								<ListElement content="Warunki pracy i zatrudnienia" path="/macmillan/rozdział-4/warunki-pracy-i-zatrudnienia" />
-								<ListElement content="Praca dorywcza" path="/macmillan/praca-dorywcza" />
-								<ListElement content="Rynek pracy" path="/macmillan/rynek-pracy" />
-								<ListElement content="Inne" path="/macmillan/rozdział-4/inne" />
-								<ListElementTest content="Test" path="/macmillan/rozdział-4/test" />
-							</SectionList>
-							<SectionTitle>Rozdział 5 - Życie rodzinne i towarzyskie</SectionTitle>
-							<SectionList>
-								<ListElement content="Etapy życia" path="/macmillan/rozdział-5/etapy-życia" />
-								<ListElement content="Członkowie rodziny, koledzy i przyjaciele" path="/macmillan/rozdział" />
-								<ListElement content="Czynności życia codziennego" path="/macmillan/rozdział-5/członkowie-rodziny-koledzy-i-przyjaciele" />
-								<ListElement content="Formy spędzania czasu wolnego" path="/macmillan/rozdział-5/formy-spędzania-czasu-wolnego" />
-								<ListElement content="Święta i uroczystości" path="/macmillan/rozdział-5/święta-i-uroczystości" />
-								<ListElement content="Styl życia, konflikty i problemy" path="/macmillan/rozdział-5/styl-życia-konflikty-i-problemy" />
-								<ListElement content="Inne" path="/macmillan/rozdział-5/inne" />
-								<ListElementTest content="Test" path="/macmillan/rozdział-5/test" />
-							</SectionList>
+							{/* <Term>
+								<Date>{`${moment(this.state.plannedDate, "YYYYMMDD").format('LL')}r`}</Date>
+								<Line>|</Line>
+								<Time>{moment(this.state.plannedDate, "YYYYMMDD").add(11, 'hours').add(40, 'minutes').fromNow()}</Time>
+							</Term> */}
+							{/* <Advertisement>
+								<Unit
+									book='jezyk-angielski-zawodowy'
+									number = '6'
+									title = 'Materiały i towary'
+								/>
+							</Advertisement> */}
+
+							{Object.values(this.state.data).slice(1).map(({title, parts}, unitIndex) => {
+								return(
+									<>
+										<UnitTitle>Rozdział {unitIndex + 1} - {title}</UnitTitle>
+										<UnitList>
+											{Object.values(parts).length === 1 ? '' : Object.values(parts).map(({name}, partIndex) => {
+												return(
+													<UnitListItem>
+														<Arrow />
+														<PageLink list="true" to={`${this.state.bookName}/rozdzial-${unitIndex + 1}.${partIndex + 1}/${this.flat(name)}`}>{name}</PageLink>
+														<Go to={`${this.state.bookName}/spis-slowek/rozdzial-${unitIndex + 1}.${partIndex + 1}/${this.flat(name)}`}>
+															<FaListUl />
+														</Go>
+														{}
+													</UnitListItem>
+												)
+											})}
+											<UnitListItem>
+												<Star />
+												<PageLink list="true" to={`${this.state.bookName}/rozdzial-${unitIndex + 1}/test`}>&nbsp;Test&nbsp;</PageLink>
+												<Star />
+												<Go to={`${this.state.bookName}/spis-slowek/rozdzial-${this.props.number}/test`}>
+													<FaListUl />
+												</Go>
+											</UnitListItem>
+										</UnitList>
+									</>
+								)
+							})}
+
 						</ListWrapper>
 					</ListElementWrapper>
-				</Wrapper>
+				</Wrapper>}
 			</>
 		);
 	}

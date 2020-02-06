@@ -162,8 +162,8 @@ class Auto extends Component {
 			);
 	}
 	convert = () => {
-		const expWord = /[a-zą-żó ,\-'()/]+\n\n/gi;
-		const expTranslation = /[a-zą-żó \-'()/]+\n/gi;
+		const expWord = /[a-zą-żó ,\-'()/0-9.?]+\n\n/gi;
+		const expTranslation = /[a-zą-żó \-'()/0-9.?]+\n/gi;
 		let text = document.getElementById('text');
 		if (this.state.text === '') {
 			alert("Nic jeszcze nie wpisałeś!");
@@ -178,11 +178,11 @@ class Auto extends Component {
 			// text.value += '\n\n';
 	
 			text.value = text.value.replace(expWord, (x) => {
-				return `\t\ttranslation1: \`${x.replace(/\n/g, '')}\`,\n\t\tlevel: \`${this.state.level}\`,\n\t\ttype: \`${this.state.type}\`,\n\t\timage: \`${this.state.image}\`\n\t},\n`
+				return `\t\tword1: \`${x.replace(/\n/g, '')}\`,\n\t\tlevel: \`${this.state.level}\`,\n\t\ttype: \`${this.state.type}\`,\n\t\timage: \`${this.state.image}\`\n\t},\n`
 			});
 	
 			text.value = text.value.replace(expTranslation, (x) => {
-				return `\t{\n\t\tword1: \`${x.replace(/\n/g, '')}\`,\n`
+				return `\t{\n\t\ttranslation1: \`${x.replace(/\n/g, '')}\`,\n`
 			});
 	
 			text.value = `const words${this.state.chapterName} = [\n${text.value}];\n\nexport default words${this.state.chapterName}`

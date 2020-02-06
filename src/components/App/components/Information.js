@@ -1,7 +1,6 @@
 // BASIC
 import React, { Component } from 'react'
 import styled from 'styled-components'
-import { useHistory } from "react-router-dom";
 // COMPONENTS
 import LogIn from '../../Login/components/LogIn'
 // Images

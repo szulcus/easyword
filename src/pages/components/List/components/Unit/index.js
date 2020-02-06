@@ -56,43 +56,48 @@ const Star = styled(FaStar)`
 
 class Unit extends Component {
 	getLinkTitle = title => {
-		return latinize(title.toLowerCase()).split(' ').join('-').replace(/,/g, '');
+		// return latinize(title.toLowerCase()).split(' ').join('-').replace(/,/g, '');
+		return title;
 	}
 	render() {
-		// Get links
-		const link = this.props.links[0].path;
-		const index = link.lastIndexOf('/');
-		const beginning = this.props.links[0].path.slice(0, index).replace('.1', '');
-		const innerLink = `${beginning}/inne`;
-		const testLink = `${beginning}/test`;
+		// const link = this.props.links[0].path;
+		// const index = link.lastIndexOf('/');
+		// const beginning = this.props.links[0].path.slice(0, index).replace('.1', '');
+		// const innerLink = `${beginning}/inne`;
+		// const testLink = `${beginning}/test`;
+		const testLink = `/${this.props.book}/rozdzial-${this.props.number}/test`
 		return (
 			<UnitElement>
 				<UnitTitle>Rozdział {this.props.number} - {this.props.title}</UnitTitle>
 				<UnitList>
-					{this.props.links.map(({title, path}) => {
-						return (
-							<UnitListItem key={`${title} link`}>
-								<Arrow />
-								<PageLink list="true" to={path}>{title}</PageLink>
-								{/* {this.getLinkTitle(title)} */}
-								<Go to={`macmillan/spis-slowek/rozdzial-${this.props.number}/${this.getLinkTitle(title)}`}>
-									<FaListUl />
-								</Go>
-							</UnitListItem>
-						)
-					})}
-					<UnitListItem>
-						<Arrow />
-						<PageLink list="true" to={innerLink}>Inne</PageLink>
-						<Go to={`macmillan/spis-slowek/rozdzial-${this.props.number}/inne`}>
-							<FaListUl />
-						</Go>
-					</UnitListItem>
+					{// this.props.links ? (this.props.links.map(({title, path}) => {
+						// return (
+						// 	<>
+						// 		<UnitListItem key={`${title} link`}>
+						// 			<Arrow />
+						// 			<PageLink list="true" to={path}>{title}</PageLink>
+						// 			{/* {this.getLinkTitle(title)} */}
+						// 			<Go to={`${this.props.book}/spis-slowek/rozdzial-${this.props.number}/${this.getLinkTitle(title)}`}>
+						// 				<FaListUl />
+						// 			</Go>
+						// 		</UnitListItem>
+						// 		{this.props.inner ? 
+						// 			<UnitListItem>
+						// 				<Arrow />
+						// 				<PageLink list="true" to={innerLink}>Inne</PageLink>
+						// 				<Go to={`${this.props.book}/spis-slowek/rozdzial-${this.props.number}/inne`}>
+						// 					<FaListUl />
+						// 				</Go>
+						// 			</UnitListItem> : '' }
+						// 	</>
+						// )
+					// })) : ''
+				}
 					<UnitListItem>
 						<Star />
-						<PageLink list="true" to={testLink}> Test </PageLink>
+						<PageLink list="true" to={testLink}>&nbsp;Test&nbsp;</PageLink>
 						<Star />
-						<Go to={`macmillan/spis-slowek/rozdzial-${this.props.number}/test`}>
+						<Go to={`${this.props.book}/spis-slowek/rozdzial-${this.props.number}/test`}>
 							<FaListUl />
 						</Go>
 					</UnitListItem>

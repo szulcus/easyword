@@ -18,10 +18,13 @@ import UserProfile from './Components/Login/UserProfile'
 import Leaves from './Components/_Leaves/Leaves'
 
 import Editor from './Components/_Editor/Editor'
+import NotFoundPage from './pages/404/404'
 
 import Automatic from './Components/Automatic/Auto'
+import TinderApp from './Components/App/TinderApp'
 // import OxfordList from './pages/books/3_Oxford/oxford'
 import RoadSignsList from './pages/components/List/RoadSignsList'
+import List from './pages/components/List/List'
 
 // STYLED
 import Global from './Components/Styles/Global';
@@ -212,6 +215,13 @@ class App extends Component {
 				<Route path="/login" exact component={Login}/>
 				<Route path="/rejestracja" exact component={Registration}/>
 				<Route path="/users/:id" exact component={UserProfile}/>
+				<Route path="/leaves" exact component={Leaves}/>
+
+				<Route path="/editor" exact component={Editor}/>
+				<Route path="/auto" exact component={Automatic}/>
+				<Route path="/tinder" exact component={TinderApp}/>
+				<Route path="/not-found-page" exact component={NotFoundPage}/>
+				<Route path="/:bookName" exact component={List}/>
 				<Route path="/:bookName/rozdzial-:unitNumber/:unitName" exact render={(props) =>
 					<AppPage
 						{...props}
@@ -227,10 +237,6 @@ class App extends Component {
 				} />
 				<Route path="/:book/spis-slowek/rozdzial-:unitNumber/:unitName" exact component={WordList}/>
 
-				<Route path="/leaves" exact component={Leaves}/>
-
-				<Route path="/editor" exact component={Editor}/>
-				<Route path="/auto" exact component={Automatic}/>
 				<Books />
 				{/* <Route component={NotFoundPage} /> */}
 			</Switch>

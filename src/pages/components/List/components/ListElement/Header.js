@@ -4,7 +4,7 @@ import styled from 'styled-components'
 
 const HeaderElement = styled.header`
 	text-align: center;
-	margin-bottom: 5px;
+	margin: 10px;
 	@media (min-width: 800px) {
 		display: block;
 		width: 100%;

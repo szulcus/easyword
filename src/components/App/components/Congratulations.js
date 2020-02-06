@@ -15,6 +15,7 @@ const CongratulationsElement = styled.div`
 	width: 100%;
 	height: 100vh;
 	display: none;
+	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	background-color: var(--color-dark);
@@ -35,21 +36,30 @@ const Message = styled.div`
 	padding: 30px;
 `
 const Animations = styled.div`
-	position: relative;
-	width: 30vw;
-	height: 30vw;
+	/* position: relative; */
+	width: 100vw;
 `
 
 class Congratulations extends Component {
 	state = {
-		open: false
+		open: false,
+		load: false
+	}
+	componentDidMount() {
+		setTimeout(() => {
+			this.setState({load: true})
+		}, 5000);
 	}
 	open = () => {
 		this.setState({open: true});
-		// setTimeout(() => alert('?'), 2180)
+		setTimeout(() => {
+			this.setState({open: false})
+			this.props.onClick();
+		}, 2180)
 	}
 	render() {
 		const Animation = styled.div`
+			display: flex;
 			position: absolute;
 			top: 50%;
 			left: 50%;
@@ -96,16 +106,15 @@ class Congratulations extends Component {
 		return (
 			<CongratulationsElement preview={this.props.preview}>
 				<Animations>
-					<Animation gift open={this.state.open} onClick={this.open}>
+					{this.state.load ? <Animation gift open={this.state.open} onClick={this.open}>
 						<Lottie
 							options={{
 								loop: false,
-								autoplay: true,
+								// autoplay: false,
 								animationData: gift,
 							}}
-							isStopped={this.state.open}
 						/>
-					</Animation>
+					</Animation> : ''}
 					<Animation badge preview={this.state.open}>
 						<Lottie options={{
 							loop: false,
@@ -113,14 +122,8 @@ class Congratulations extends Component {
 							animationData: badge,
 						}} />
 					</Animation>
-					<Animation points preview={this.state.open}>{this.props.prize}</Animation>
+					<Animation points='true' preview={this.state.open}>{this.props.prize}</Animation>
 				</Animations>
-				<Message>
-					<h1>Brawo!!</h1>
-					{/* <p>Uzyskałeś już 50 punktów! W nagrodę dostajesz 50 punktów doswiadczenia. Przyda ci się teraz chwila odpoczynku, ale możesz tez kontunuować i zawalczyc o nowy rekord</p> */}
-					<p>Uzyskałeś już {this.props.level} poziom! W nagrodę dostajesz {this.props.prize} punktów doswiadczenia. Chcesz zawalczyć o kolejną nagrodę?</p>
-					<button onClick={this.props.onClick}>Kontynuuj</button>
-				</Message>
 			</CongratulationsElement>
 		);
 	}

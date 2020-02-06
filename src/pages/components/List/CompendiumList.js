@@ -80,7 +80,7 @@ class List extends Component {
 			<>
 				<Global />
 				<Wrapper list>
-					<Book src='https://www.macmillan.pl/components/com_ssshop/cache/500x500/9788376218496.png' information='Macmillan Education. Nr MEN: 916/2017'/>
+					<Book src='https://www.macmillan.pl/components/com_ssshop/cache/500x500/9788376218496.png' information='Macmillan dla uczniów liceów i techników. Repetytorium'/>
 					<Separator />
 					<ListElementWrapper>
 						<Header />

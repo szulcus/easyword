@@ -137,8 +137,8 @@ class IndexPage extends Component {
 							</Link>
 						</Book>
 						<Book>
-							<Link to='/oxford'>
-								<img src="https://www.gandalf.com.pl/o/oxford-solutions-intermediate,big,578379.jpg" alt="Oxford Solutions Intermediate"/>
+							<Link to='/jezyk-angielski-zawodowy'>
+								<img src="https://sklep.wsip.pl/typo3temp/pics/upload_temp_kyFIwn_1a19bdf063.jpg" alt="WSiP - język angielski zawodowy w logistyce i spedycji. Zeszyt ćwiczeń"/>
 							</Link>
 						</Book>
 					</BooksWrapper>

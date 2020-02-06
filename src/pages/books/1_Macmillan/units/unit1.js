@@ -17,7 +17,7 @@ class Unit1 extends Component {
 	render() {
 		return (
 			<>
-				{/* Rozdzial 1 - Czlowiek */}
+				{/* Rozdzial 1 - Człowiek */}
 				{/* Dane osobowe */}
 				<Route exact path="/macmillan/rozdzial-1/dane-osobowe" render={(props) =>
 					<AppPage
