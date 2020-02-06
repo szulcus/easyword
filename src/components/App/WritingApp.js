@@ -162,21 +162,21 @@ class App extends Component {
 					else if (appLevel === 10) {
 						this.setState({goal: 650});
 					}
-					else if (appLevel === 11) {
-						this.setState({goal: 760});
-					}
-					else if (appLevel === 12) {
-						this.setState({goal: 880});
-					}
-					else if (appLevel === 13) {
-						this.setState({goal: 1100});
-					}
-					else if (appLevel === 14) {
-						this.setState({goal: 1240});
-					}
-					else if (appLevel === 15) {
-						this.setState({goal: 1380});
-					}
+					// else if (appLevel === 11) {
+					// 	this.setState({goal: 760});
+					// }
+					// else if (appLevel === 12) {
+					// 	this.setState({goal: 880});
+					// }
+					// else if (appLevel === 13) {
+					// 	this.setState({goal: 1100});
+					// }
+					// else if (appLevel === 14) {
+					// 	this.setState({goal: 1240});
+					// }
+					// else if (appLevel === 15) {
+					// 	this.setState({goal: 1380});
+					// }
 					
 					if (this.state.points >= this.state.goal) {
 						this.showNotification();
@@ -193,7 +193,7 @@ class App extends Component {
 		const unit = `unit_${unitNumber}`;
 		const part = partNumber ? `part_${partNumber}` : 'test';
 		const appLevel = `points.books.${bookName}.units.${unit}.parts.${part}.level`;
-		if (this.state.appLevel < 15) {
+		if (this.state.appLevel <= 10) {
 			this.setState({prize: this.state.goal * this.state.appLevel});
 			if (this.state.userId) {
 				firebase.firestore().collection('users').doc(this.state.userId).update({
