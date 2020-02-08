@@ -124,6 +124,9 @@ class App extends Component {
 			if(user) {
 				console.log(user);
 				this.setState({userId: user.uid});
+				// db.collection('users').doc(user.uid).onSnapshot(snap => {snap.data()})
+				// tjADUsSGLGdWLKzuLCDJ62HMpsY2
+
 				db.collection('users').doc(user.uid).onSnapshot(snapshot => {
 					const unit = `unit_${unitNumber}`;
 					const part = partNumber ? `part_${partNumber}` : 'test';
@@ -367,6 +370,17 @@ class App extends Component {
 	logIn = () => {
 		this.props.history.push(`/login`);
 	}
+
+// 	listAllUsers = () => {
+// 		admin.auth().getUserByEmail('jakub@wp.pl')
+//   .then(function(userRecord) {
+//     // See the UserRecord reference doc for the contents of userRecord.
+//     console.log('Successfully fetched user data:', userRecord.toJSON());
+//   })
+//   .catch(function(error) {
+//    console.log('Error fetching user data:', error);
+//   });
+// 	}
 	
 	render = () => {
 		let baseWord = {};

@@ -22,6 +22,7 @@ import NotFoundPage from './pages/404/404'
 
 import Automatic from './Components/Automatic/Auto'
 import TinderApp from './Components/App/TinderApp'
+import Stats from './Components/Stats'
 // import OxfordList from './pages/books/3_Oxford/oxford'
 import RoadSignsList from './pages/components/List/RoadSignsList'
 import List from './pages/components/List/List'
@@ -220,6 +221,7 @@ class App extends Component {
 				<Route path="/editor" exact component={Editor}/>
 				<Route path="/auto" exact component={Automatic}/>
 				<Route path="/tinder" exact component={TinderApp}/>
+				<Route path="/ranking" exact component={Stats}/>
 				<Route path="/not-found-page" exact component={NotFoundPage}/>
 				<Route path="/:bookName" exact component={List}/>
 				<Route path="/:bookName/rozdzial-:unitNumber/:unitName" exact render={(props) =>
