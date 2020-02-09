@@ -219,7 +219,7 @@ class App extends Component {
 
 	check = (e) => {
 		this.setState({counter: this.state.counter + 1});
-		let userWord = e.target.value.toLowerCase().trim().replace('ą','a').replace('ć','c').replace('ę','e').replace('ł','l').replace('ń','n').replace('ó','o').replace('ś','s').replace('ź','z').replace('ż','z');
+		let userWord = e.target.value.toLowerCase().trimStart().replace('ą','a').replace('ć','c').replace('ę','e').replace('ł','l').replace('ń','n').replace('ó','o').replace('ś','s').replace('ź','z').replace('ż','z');
 
 		const translation1 = similarTranslation(this.state.baseWord.translation1);
 		const translation2 = similarTranslation(this.state.baseWord.translation2);
