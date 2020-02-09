@@ -58,7 +58,8 @@ class App extends Component {
 		counter: 0,
 		deleteImage: false,
 		message: false,
-		info: {}
+		info: {},
+		pointsAnimation: null
 	}
 	componentDidMount() {
 		const db = firebase.firestore();
@@ -251,6 +252,7 @@ class App extends Component {
 				e.persist();
 				this.setState({
 					great: true,
+					pointsAnimation: '+2'
 				});
 				if (this.state.userId) {
 					firebase.firestore().collection('users').doc(this.state.userId).update({
@@ -266,7 +268,8 @@ class App extends Component {
 					this.getNew();
 					this.setState({
 						hideAnswer: true,
-						great: false
+						great: false,
+						pointsAnimation: null
 					});
 				}, 1000)
 			}
@@ -274,6 +277,7 @@ class App extends Component {
 				e.persist();
 				this.setState({
 					good: true,
+					pointsAnimation: '+1'
 				});
 				if (this.state.userId) {
 					firebase.firestore().collection('users').doc(this.state.userId).update({
@@ -289,7 +293,8 @@ class App extends Component {
 					this.getNew();
 					this.setState({
 						hideAnswer: true,
-						good: false
+						good: false,
+						pointsAnimation: null
 					});
 				}, 1000)
 			}
@@ -423,12 +428,14 @@ class App extends Component {
 			max-width: 300px;
 			max-height: calc(100vh - 336px);
 			transform: translatex(-50%);
-			${props =>
-				props.preview &&
-				css`
-					display: block;
-				`
-			};
+			@media(min-height: 600px) {
+				${props =>
+					props.preview &&
+					css`
+						display: block;
+					`
+				};
+			}
 			@media(min-width: 700px) {
 				top: 150px;
 			}
@@ -439,7 +446,7 @@ class App extends Component {
 				<Wrapper center small>
 					<Preloader load={this.state.load} />
 					<Cathegory content={cathegory} />
-					<Navigation points={this.state.points} />
+					<Navigation points={this.state.points} pointsAnimation={this.state.pointsAnimation}/>
 					<Word content={word} />
 					<Picture hide={this.state.deleteImage} onClick={this.deleteImg} src={image} word={word} link={`https://pxhere.com/pl/photos?q=${baseWord.word1}`} />
 					<Input onChange={this.check} press={this.keyPress} points={this.state.points} max={this.state.goal} />

@@ -19,6 +19,9 @@ const AppNavigationButton = styled.button`
 	transition: opacity 0.1s ease-in;
 	font-family: 'Ubuntu', sans-serif;
 	text-transform: uppercase;
+	@media (max-height: 300px) {
+		display: none;
+	}
 `
 
 class AppNavigation extends Component {

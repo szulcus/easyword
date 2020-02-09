@@ -22,7 +22,7 @@ const HamburgerListElement = styled.ul`
 	margin: 10px;
 	padding: 0;
 	align-items: center;
-	@media(max-width: 550px) {
+	/* @media(max-width: 550px) {
 		top: 20vh;
 		right: 20vw;
 		width: 60vw;
@@ -32,7 +32,7 @@ const HamburgerListElement = styled.ul`
 		justify-content: center;
 		align-items: center;
 		top: 0;
-	}
+	} */
 `
 const HamburgerListItem = styled.li`
 	margin: 0 15px;
@@ -59,7 +59,7 @@ const HamburgerListItem = styled.li`
 	:nth-child(5) {
 		transition-duration: 0.6s;
 	}
-	@media(max-width: 700px) {
+	/* @media(max-width: 700px) {
 		margin: 0 10px;
 		:hover {
 			animation: none;
@@ -89,7 +89,7 @@ const HamburgerListItem = styled.li`
 	}
 	@media(max-width: 350px) {
 		padding: 20px 0;
-	}
+	} */
 	${props =>
 		props.active &&
 		css`

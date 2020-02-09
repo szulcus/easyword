@@ -84,7 +84,7 @@ class Hamburger extends Component {
 						<Bars active={this.state.active} />
 					</Container>
 				</Menu>
-				<HamburgerList active={this.state.active} />
+				{/* <HamburgerList active={this.state.active} /> */}
 			</HamburgerElement>
 		);
 	}
