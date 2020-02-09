@@ -12,6 +12,7 @@ import camelcase from 'camelcase'
 import { Wrapper } from '../Styles/Components'
 // COMPONENTS
 import Specification from './components/Specification'
+import Editor from './components/Editor'
 
 const WordListPage = styled(Wrapper)`
 	flex-direction: column;
@@ -25,6 +26,7 @@ const TableBody = styled.tbody``
 const Td = styled.td``
 const Tr = styled.tr``
 const Image = styled.img``
+const Item = styled.span``
 const ContentTable = styled.table`
 	position: relative;
 	border-collapse: collapse;
@@ -77,6 +79,32 @@ const ContentTable = styled.table`
 			}
 		}
 	}
+	${Td} {
+		position: relative;
+		border: 2px solid var(--color-secondary);
+		:hover {
+			cursor: pointer;
+			::before {
+				content: '';
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				opacity: 0.5;
+				background-color: var(--color-dark);
+			}
+			/* ::after {
+				content: '';
+				position: absolute;
+				bottom: -50%;
+				right: -50%;
+				width: 100%;
+				height: 100%;
+				background-color: var(--color-dark);
+			} */
+		}
+	}
 	${TableHead} ${UnitName} {
 		background-color: #11a989;
 	}
@@ -114,7 +142,8 @@ const ContentTable = styled.table`
 class WordList extends Component {
 	state = {
 		words: null,
-		activeElements: null
+		activeElements: null,
+		edit: false
 	}
 	componentDidMount() {
 		const db = firebase.firestore();
@@ -149,6 +178,10 @@ class WordList extends Component {
 			this.setState({activeElements});
 		}
 	}
+	edit = (word1, word2, word3, translation1, level, type, image) => {
+		console.log(word1, word2, word3, translation1, level, type, image);
+		this.setState({edit: true});
+	}
 	render() {
 		// if (this.state.words) {
 		// 	console.log(Object.values(this.state.words.parts));
@@ -177,8 +210,16 @@ class WordList extends Component {
 						<TableBody>
 							{words.map(({word1, word2, word3, translation1, level, type, image}) => {
 								return (
-									<Tr key={word1} id={camelcase(word1)} onClick={this.showWord}>
-										<Td className={camelcase(word1)}>{word3 ? `${word1} / ${word2} / ${word3}` : word2 ? `${word1} / ${word2}` : word1}</Td>
+									<Tr key={word1} id={camelcase(word1)} onDoubleClick={this.showWord}>
+										<Td onClick={() => this.edit(word1, word2, word3, translation1, level, type, image)} className={camelcase(word1)}>
+											{word3 ? <>
+												<Item>{word1}</Item> / <Item>{word2}</Item> / <Item>{word3}</Item>
+											</> : word2 ? <>
+												<Item>{word1}</Item> / <Item>{word2}</Item>
+											</> : <>
+												<Item>{word1}</Item>
+											</>}
+										</Td>
 										<Td className={camelcase(word1)}>{translation1}</Td> 
 										<Td className={camelcase(word1)}>{level === 'basic' ? 'Podstawowy': 'Rozszerzony'}</Td>
 										<Td className={camelcase(word1)}>{type}</Td>
@@ -192,6 +233,7 @@ class WordList extends Component {
 					</>
 				)})}
 				</ContentTable>
+				<Editor />
 				<Specification word={this.state.activeElements} onClick={this.showWord} />
 			</WordListPage>
 		);

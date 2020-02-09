@@ -3,9 +3,11 @@ import {keyframes } from 'styled-components'
 
 const entry = keyframes`
 	from {
-		transform: scale(0);
+		opacity: 0;
+		transform: scale(0.8);
 	}
 	to {
+		opacity: 1;
 		transform: scale(1);
 	}
 `

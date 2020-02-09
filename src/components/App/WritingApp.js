@@ -96,7 +96,7 @@ class App extends Component {
 		}
 		firebase.auth().onAuthStateChanged(user => {
 
-			db.collection('books').doc(this.props.match.params.bookName).onSnapshot((snap) => {
+			db.collection('books').doc(this.props.match.params.bookName).get().then((snap) => {
 				let partWords = [];
 				const unit = `unit_${unitNumber}`
 				const words = snap.data()[unit];

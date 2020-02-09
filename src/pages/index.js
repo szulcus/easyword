@@ -117,9 +117,9 @@ class IndexPage extends Component {
 			<>
 				<Preloader load={this.state.load}/>
 				<Wrapper center scroll>
-					<HelpTrigger>
+					{/* <HelpTrigger>
 						<Help to='/editor'>?</Help>
-					</HelpTrigger>
+					</HelpTrigger> */}
 					<PageHeader>
 						<Logo><span>E</span>asy<span>W</span>ord</Logo>
 						<LogoSeparator/>
