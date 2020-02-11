@@ -237,7 +237,7 @@ class App extends Component {
 						translated_language='pl'
 					/>
 				} />
-				<Route path="/:book/spis-slowek/rozdzial-:unitNumber/:unitName" exact component={WordList}/>
+				<Route path="/:bookName/spis-slowek/rozdzial-:unitNumber/:unitName" exact component={WordList}/>
 
 				<Books />
 				{/* <Route component={NotFoundPage} /> */}

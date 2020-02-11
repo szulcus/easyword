@@ -1,6 +1,6 @@
 // BASIC
 import React, { Component } from 'react'
-import styled from 'styled-components'
+import styled, {css} from 'styled-components'
 // ICONS
 import {FaReply} from 'react-icons/fa'
 
@@ -8,16 +8,22 @@ const EditorElement = styled.div`
 	position: absolute;
 	top: 0;
 	left: 0;
-	display: flex;
+	display: none;
 	align-items: center;
 	flex-direction: column;
 	width: 100%;
 	height: 100vh;
 	background-color: var(--color-dark);
+	${props =>
+		props.show &&
+		css`
+			display: flex;
+		`
+	}
 `
-const Main = styled.div`
+const Main = styled.form`
 	display: flex;
-	align-items: space-evenly;
+	justify-content: space-evenly;
 	width: 100%;
 `
 const Div = styled.div`
@@ -28,32 +34,81 @@ const Div = styled.div`
 	padding: 30px;
 	border: 1px solid var(--color-secondary);
 	border-radius: 10px;
+	text-align: center;
+`
+const Label = styled.label`
+
 `
 
 class Editor extends Component {
+	state = {
+		data: {
+			word1: null,
+			word2: null,
+			word3: null,
+			translation1: null,
+			translation2: null,
+			translation3: null
+		}
+	}
+	log = (e) => {
+		e.preventDefault()
+		console.log(this.state.data);
+	}
+	setVariable = (e) => {
+		e.persist()
+
+		// this.setState(prevState => ({
+		// 	user: {
+		// 		...prevState.user,
+		// 		isLoggedIn: true,
+		// 		email: user.email
+		// 	}
+		// }))
+
+		this.setState(
+			
+			(prevState) => {
+				return {
+					data: {
+						...prevState.data,
+						[e.target.id]: e.target.value
+					}
+				};
+			},
+			
+			() => {
+				// this.check();
+				// document.querySelectorAll("input").value = '';
+				// document.getElementById('word1').value = '';
+			}
+			
+			);
+	}
 	render() {
 		return (
-			<EditorElement>
+			<EditorElement show={this.props.show}>
 				<h1>Edytuj</h1>
-				<Main>
+				<Main onSubmit={this.log}>
 					<Div>
-						<label htmlFor="word1">Pierwsze słówko</label>
-						<input type="text" name="word1"/>
-						<label htmlFor="word2">Drugie słówko</label>
-						<input type="text" name="word2"/>
-						<label htmlFor="word3">trzecie słówko</label>
-						<input type="text" name="word3"/>
+						<Label htmlFor="word1">1 słówko</Label>
+						<input onChange={this.setVariable} type="text" name="word1" id="word1"/>
+						<Label htmlFor="word2">2 słówko</Label>
+						<input onChange={this.setVariable} type="text" name="word2" id="word2"/>
+						<Label htmlFor="word3">3 słówko</Label>
+						<input onChange={this.setVariable} type="text" name="word3" id="word3"/>
 					</Div>
 					<Div>
-						<label htmlFor="translation1">Pierwsze tłumaczenie</label>
-						<input type="text" name="translation1"/>
-						<label htmlFor="translation2">Drugie tłumaczenie</label>
-						<input type="text" name="translation2"/>
-						<label htmlFor="translation3">trzecie tłumaczenie</label>
-						<input type="text" name="translation3"/>
+						<Label htmlFor="translation1">1 tłumaczenie</Label>
+						<input onChange={this.setVariable} type="text" name="translation1" id="translation1"/>
+						<Label htmlFor="translation2">2 tłumaczenie</Label>
+						<input onChange={this.setVariable} type="text" name="translation2" id="translation2"/>
+						<Label htmlFor="translation3">3 tłumaczenie</Label>
+						<input onChange={this.setVariable} type="text" name="translation3" id="translation3"/>
 					</Div>
+				<button type='submit'>Click</button>
 				</Main>
-				<FaReply />
+				<FaReply onClick={this.props.back} />
 			</EditorElement>
 		);
 	}

@@ -48,10 +48,12 @@ class App extends Component {
 		points: 0,
 		appLevel: 0,
 		goal: 30,
+		prevGoal: 0,
 		experience: 0,
 		words: null,
 		baseWord: null,
 		hideAnswer: true,
+		hideKeyboard: false,
 		answer: '',
 		good: false,
 		great: false,
@@ -64,9 +66,8 @@ class App extends Component {
 	componentDidMount() {
 		const db = firebase.firestore();
 		this.setState({load: true});
-
 		let {bookName, unitNumber} = this.props.match.params;
-		if (bookName === 'macmillan') {
+		if (bookName === 'macmillan' || bookName === 'repetytorium') {
 			bookName = 'book_01'
 		}
 		else if (bookName === 'wsip') {
@@ -137,33 +138,43 @@ class App extends Component {
 					const experience = snapshot.data().points.experience;
 					this.setState({ points, experience, appLevel });
 					if (appLevel === 1) {
+						this.setState({prevGoal: 0});
 						this.setState({goal: 10});
 					}
 					else if (appLevel === 2) {
+						this.setState({prevGoal: 10});
 						this.setState({goal: 30});
 					}
 					else if (appLevel === 3) {
+						this.setState({prevGoal: 30});
 						this.setState({goal: 60});
 					}
 					else if (appLevel === 4) {
+						this.setState({prevGoal: 60});
 						this.setState({goal: 100});
 					}
 					else if (appLevel === 5) {
+						this.setState({prevGoal: 100});
 						this.setState({goal: 150});
 					}
 					else if (appLevel === 6) {
+						this.setState({prevGoal: 150});
 						this.setState({goal: 210});
 					}
 					else if (appLevel === 7) {
+						this.setState({prevGoal: 210});
 						this.setState({goal: 280});
 					}
 					else if (appLevel === 8) {
+						this.setState({prevGoal: 280});
 						this.setState({goal: 460});
 					}
 					else if (appLevel === 9) {
+						this.setState({prevGoal: 460});
 						this.setState({goal: 550});
 					}
 					else if (appLevel === 10) {
+						this.setState({prevGoal: 550});
 						this.setState({goal: 650});
 					}
 					// else if (appLevel === 11) {
@@ -183,6 +194,7 @@ class App extends Component {
 					// }
 					
 					if (this.state.points >= this.state.goal) {
+						// document.getElementById
 						this.showNotification();
 					}
 				});
@@ -364,7 +376,11 @@ class App extends Component {
 	}
 
 	handleMessage = () => {
-		!this.state.message ? this.setState({message: true}) : this.setState({message: false});
+		this.setState({hideKeyboard: true})
+		setTimeout(() => {
+			!this.state.message ? this.setState({message: true}) : this.setState({message: false});
+			this.setState({hideKeyboard: false})
+		}, 50);
 		// alert('o')
 	}
 
@@ -449,7 +465,7 @@ class App extends Component {
 					<Navigation points={this.state.points} pointsAnimation={this.state.pointsAnimation}/>
 					<Word content={word} />
 					<Picture hide={this.state.deleteImage} onClick={this.deleteImg} src={image} word={word} link={`https://pxhere.com/pl/photos?q=${baseWord.word1}`} />
-					<Input onChange={this.check} press={this.keyPress} points={this.state.points} max={this.state.goal} />
+					<Input readOnly={this.state.hideKeyboard} onChange={this.check} press={this.keyPress} points={this.state.points} goal={this.state.goal} prevGoal={this.state.prevGoal} />
 					<AppNavigation check={this.getAnswer} change={this.getNew} />
 					<Answer hideAnswer={this.state.hideAnswer} text={this.state.answer} />
 					{/* <button onClick={this.handleMessage}>Klik {this.state.experience}</button> */}

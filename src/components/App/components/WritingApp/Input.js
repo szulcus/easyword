@@ -67,9 +67,9 @@ class Input extends Component {
 			<InputComponent>
 				<LevelElement>
 					{/* <Progress value={this.props.points} max="30" /> */}
-					<Progress value={this.props.points} max={this.props.max} />
+					<Progress value={this.props.points - this.props.prevGoal} max={this.props.goal - this.props.prevGoal} />
 				</LevelElement>
-				<InputElement onChange={this.props.onChange} onKeyPress={this.props.press} placeholder="Wpisz tłumaczenie" type="text" autoComplete="off" />
+				<InputElement id="input" readOnly={this.props.readOnly} onChange={this.props.onChange} onKeyPress={this.props.press} placeholder="Wpisz tłumaczenie" type="text" autoComplete="off" />
 			</InputComponent>
 		);
 	}

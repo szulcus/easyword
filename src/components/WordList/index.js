@@ -1,6 +1,6 @@
 // BASIC
 import React, { Component } from 'react'
-import styled from 'styled-components'
+import styled, {css} from 'styled-components'
 import firebase from 'firebase/app'
 import 'firebase/app'
 import 'firebase/auth'
@@ -23,7 +23,28 @@ const TableHead = styled.thead``
 const Th = styled.th``
 const UnitName = styled.th``
 const TableBody = styled.tbody``
-const Td = styled.td``
+const Td = styled.td`
+	${props =>
+			props.edit &&
+			css`
+				position: relative;
+				border: 2px solid var(--color-secondary);
+				:hover {
+					cursor: pointer;
+					::before {
+						content: '';
+						position: absolute;
+						top: 0;
+						left: 0;
+						width: 100%;
+						height: 100%;
+						opacity: 0.5;
+						background-color: var(--color-dark);
+					}
+				}
+			`
+		}
+`
 const Tr = styled.tr``
 const Image = styled.img``
 const Item = styled.span``
@@ -79,32 +100,6 @@ const ContentTable = styled.table`
 			}
 		}
 	}
-	${Td} {
-		position: relative;
-		border: 2px solid var(--color-secondary);
-		:hover {
-			cursor: pointer;
-			::before {
-				content: '';
-				position: absolute;
-				top: 0;
-				left: 0;
-				width: 100%;
-				height: 100%;
-				opacity: 0.5;
-				background-color: var(--color-dark);
-			}
-			/* ::after {
-				content: '';
-				position: absolute;
-				bottom: -50%;
-				right: -50%;
-				width: 100%;
-				height: 100%;
-				background-color: var(--color-dark);
-			} */
-		}
-	}
 	${TableHead} ${UnitName} {
 		background-color: #11a989;
 	}
@@ -141,20 +136,42 @@ const ContentTable = styled.table`
 
 class WordList extends Component {
 	state = {
+		isAdmin: false,
 		words: null,
 		activeElements: null,
-		edit: false
+		edit: false,
+		showEditor: false
 	}
 	componentDidMount() {
+		let {bookName, unitNumber} = this.props.match.params;
+		unitNumber < 10 ? unitNumber = `0${unitNumber}` : unitNumber = `${unitNumber}` ;
+		console.log(unitNumber);
+		console.log(bookName);
 		const db = firebase.firestore();
-		db.collection('books').doc('macmillan').onSnapshot((snap) => {
-			const unit = `unit_${this.props.match.params.unitNumber}`
+		db.collection('books').doc(bookName).onSnapshot((snap) => {
+			const unit = `unit_${unitNumber}`
 			const words = snap.data()[unit];
 			this.setState({words});
 			const element = document.getElementById(this.props.match.params.unitName);
 			if (element) {
 				console.log(element);
 				element.scrollIntoView();
+			}
+		})
+
+		firebase.auth().onAuthStateChanged(user => {
+			if(user) {
+				console.log(user);
+				user.getIdTokenResult().then(idTokenResult => {
+					if (idTokenResult.claims.admin) {
+						this.setState({isAdmin: true});
+						console.log('adminn');
+					}
+					user.admin = idTokenResult.claims.admin;
+				})
+			}
+			else {
+				console.log('not logged in');
 			}
 		})
 	}
@@ -178,9 +195,30 @@ class WordList extends Component {
 			this.setState({activeElements});
 		}
 	}
-	edit = (word1, word2, word3, translation1, level, type, image) => {
-		console.log(word1, word2, word3, translation1, level, type, image);
-		this.setState({edit: true});
+	edit = (partIndex, index) => {
+		let part;
+		if (partIndex < 10) {
+			part = `part_0${partIndex + 1}`;
+		}
+		else {
+			part = `part_${partIndex + 1}`;
+		}
+		let unit = this.props.match.params.unitNumber;
+		if (unit < 10) {
+			unit = `unit_0${unit}`;
+		}
+		else {
+			unit = `unit_${unit}`;
+		}
+		firebase.firestore().collection('books').doc('repetytorium').onSnapshot((snap) => {
+			console.log(snap.data()[unit].parts[part].words[index]);
+			console.log(snap.data()[unit]);
+			console.log(unit);
+		})
+		this.changeEditorWindow();
+	}
+	changeEditorWindow = () => {
+		!this.state.showEditor ? this.setState({showEditor: true}) : this.setState({showEditor: false})
 	}
 	render() {
 		// if (this.state.words) {
@@ -192,7 +230,7 @@ class WordList extends Component {
 					{/* <h1>Tabela</h1> */}
 				</header>
 				<ContentTable>
-				{!this.state.words ? 'Wczytywanie...' : Object.values(this.state.words.parts).map(({name, words}, index) => {
+				{!this.state.words ? 'Wczytywanie...' : Object.values(this.state.words.parts).map(({name, words}, partIndex) => {
 				return (
 					<>
 						<TableHead id={latinize(name).split(' ').join('-')} key={name}>
@@ -208,10 +246,10 @@ class WordList extends Component {
 							</Tr>
 						</TableHead>
 						<TableBody>
-							{words.map(({word1, word2, word3, translation1, level, type, image}) => {
+							{words.map(({word1, word2, word3, translation1, level, type, image}, index) => {
 								return (
 									<Tr key={word1} id={camelcase(word1)} onDoubleClick={this.showWord}>
-										<Td onClick={() => this.edit(word1, word2, word3, translation1, level, type, image)} className={camelcase(word1)}>
+										<Td edit={this.state.isAdmin} onClick={() => this.edit(partIndex, index)} className={camelcase(word1)}>
 											{word3 ? <>
 												<Item>{word1}</Item> / <Item>{word2}</Item> / <Item>{word3}</Item>
 											</> : word2 ? <>
@@ -223,7 +261,7 @@ class WordList extends Component {
 										<Td className={camelcase(word1)}>{translation1}</Td> 
 										<Td className={camelcase(word1)}>{level === 'basic' ? 'Podstawowy': 'Rozszerzony'}</Td>
 										<Td className={camelcase(word1)}>{type}</Td>
-										<Td className={camelcase(word1)}>
+										<Td onClick={this.changeEditorWindow} className={camelcase(word1)}>
 											<Image src={image !== 'url' ? image : `https://fakeimg.pl/647x400/?text=${word1}`} alt=""/>
 										</Td>
 									</Tr>
@@ -233,7 +271,7 @@ class WordList extends Component {
 					</>
 				)})}
 				</ContentTable>
-				<Editor />
+				<Editor word={this.state.activeElements} show={this.state.showEditor} back={this.changeEditorWindow} />
 				<Specification word={this.state.activeElements} onClick={this.showWord} />
 			</WordListPage>
 		);

@@ -201,7 +201,7 @@ class List extends Component {
 													<UnitListItem>
 														<Arrow />
 														<PageLink list="true" to={`${this.state.bookName}/rozdzial-${unitIndex + 1}.${partIndex + 1}/${this.flat(name)}`}>{name}</PageLink>
-														<Go to={`${this.state.bookName}/spis-slowek/rozdzial-${unitIndex + 1}.${partIndex + 1}/${this.flat(name)}`}>
+														<Go to={`${this.state.bookName}/spis-slowek/rozdzial-${unitIndex + 1}/${this.flat(name)}`}>
 															<FaListUl />
 														</Go>
 														{}
@@ -212,7 +212,7 @@ class List extends Component {
 												<Star />
 												<PageLink list="true" to={`${this.state.bookName}/rozdzial-${unitIndex + 1}/test`}>&nbsp;Test&nbsp;</PageLink>
 												<Star />
-												<Go to={`${this.state.bookName}/spis-slowek/rozdzial-${this.props.number}/test`}>
+												<Go to={`${this.state.bookName}/spis-slowek/rozdzial-${unitIndex + 1}/test`}>
 													<FaListUl />
 												</Go>
 											</UnitListItem>

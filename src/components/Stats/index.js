@@ -10,6 +10,7 @@ import 'firebase/functions'
 import first from '../Images/icons/podium/first.svg'
 import second from '../Images/icons/podium/second.svg'
 import third from '../Images/icons/podium/third.svg'
+import agreement from '../Images/icons/agreement.svg'
 // ICONS
 import {FaSearch} from 'react-icons/fa'
 
@@ -248,6 +249,16 @@ const Units = styled.ul`
 const Unit = styled.li`
 
 `
+const Helper = styled.img`
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	color: var(--color-decorative);
+	width: 40px;
+	:hover {
+		cursor: pointer;
+	}
+`
 
 class Stats extends Component {
 	state = {
@@ -297,12 +308,15 @@ class Stats extends Component {
 				{/* <Bitmoji src={libmoji.buildPreviewUrl("head",2,gender[1],style[1],0,traits,outfit)} alt=""/> */}
 					<Main>
 						{!users ? 'Wczytywanie...' : <UserList active={this.state.active}>
-							{users.map(({nick, points}, index) => {
+							{users.map(({nick, points, helper, uid}, index) => {
 								return (
-									<User key={index}>
-										<Nick>{nick}</Nick>
-										<Points>{points.experience}</Points>
-									</User>
+									<>
+										<User key={index}>
+											<Nick>{nick}</Nick>
+											<Points>{points.experience}</Points>
+											{helper ? <Helper src={agreement} alt={uid} title="Pomocnik" /> : ''}
+										</User>
+									</>
 								)
 							})}
 						</UserList>}
