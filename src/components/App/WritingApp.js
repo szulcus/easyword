@@ -3,6 +3,7 @@ import React, {Component} from 'react'
 import styled, { css } from 'styled-components'
 import greatAnimationData from '../lotties/data/72-favourite-app-icon.json'
 import goodAnimationData from '../lotties/data/433-checked-done.json'
+import latinize from 'latinize'
 import firebase from 'firebase/app'
 import 'firebase/app'
 import 'firebase/auth'
@@ -65,9 +66,10 @@ class App extends Component {
 	}
 	componentDidMount() {
 		const db = firebase.firestore();
+
 		this.setState({load: true});
 		let {bookName, unitNumber} = this.props.match.params;
-		if (bookName === 'macmillan' || bookName === 'repetytorium') {
+		if (bookName === 'repetytorium') {
 			bookName = 'book_01'
 		}
 		else if (bookName === 'wsip') {
@@ -103,15 +105,16 @@ class App extends Component {
 				const unit = `unit_${unitNumber}`
 				const words = snap.data()[unit];
 				if (partNumber) {
-					partWords = words.parts[`part_${partNumber}`].words;
+					partWords = Object.values(words.parts[`part_${partNumber}`].words);
 				}
 				else {
-					Object.values(words.parts).map(({words}) => {
-						partWords = partWords.concat(words);
+					Object.values(words.parts).forEach(({words}) => {
+						words = words ? Object.values(words) : [];
+						partWords = partWords.concat(Object.values(words));
 					});
-					console.log(partWords);
+					// console.log(partWords);
 				}
-				console.log(words);
+				// console.log(words);
 				this.setState({
 					words: partWords,
 					baseWord: getWord(partWords),
@@ -231,7 +234,7 @@ class App extends Component {
 
 	check = (e) => {
 		this.setState({counter: this.state.counter + 1});
-		let userWord = e.target.value.toLowerCase().trimStart().replace('ą','a').replace('ć','c').replace('ę','e').replace('ł','l').replace('ń','n').replace('ó','o').replace('ś','s').replace('ź','z').replace('ż','z');
+		let userWord = latinize(e.target.value.toLowerCase().trimStart());
 
 		const translation1 = similarTranslation(this.state.baseWord.translation1);
 		const translation2 = similarTranslation(this.state.baseWord.translation2);

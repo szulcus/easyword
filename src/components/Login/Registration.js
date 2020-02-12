@@ -207,13 +207,13 @@ class App extends Component {
 							<Field>
 								<Input className="input" id="txtBiography" type="text" name="biography" autoComplete="off" required />
 								<Label className="label" htmlFor="biography">
-									<ContentLabel className="content-label">Biogram</ContentLabel>
+									<ContentLabel className="content-label">Biogram / Opis</ContentLabel>
 								</Label>
 							</Field>
 							<Field>
 								<Input className="input" id="txtNick" type="text" name="nick" autoComplete="off" required />
 								<Label className="label" htmlFor="nick">
-									<ContentLabel className="content-label">Nick</ContentLabel>
+									<ContentLabel className="content-label">Nick / Imię</ContentLabel>
 								</Label>
 							</Field>
 						</Form>

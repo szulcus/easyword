@@ -138,7 +138,7 @@ class List extends Component {
 
 		let {bookName} = this.props.match.params;
 		this.setState({bookName});
-		if (bookName === 'macmillan') {
+		if (bookName === 'repetytorium') {
 			bookName = 'book_01'
 		}
 		else if (bookName === 'wsip') {
@@ -160,7 +160,7 @@ class List extends Component {
 			this.setState({
 				data: snap.data()
 			})
-			// console.log(this.state.data);
+			console.log(this.state.data);
 			// console.log(Object.values(this.state.data));
 		});
 	}
@@ -200,8 +200,8 @@ class List extends Component {
 												return(
 													<UnitListItem>
 														<Arrow />
-														<PageLink list="true" to={`${this.state.bookName}/rozdzial-${unitIndex + 1}.${partIndex + 1}/${this.flat(name)}`}>{name}</PageLink>
-														<Go to={`${this.state.bookName}/spis-slowek/rozdzial-${unitIndex + 1}/${this.flat(name)}`}>
+														<PageLink list="true" to={`/${this.state.bookName}/rozdzial-${unitIndex + 1}.${partIndex + 1}/${this.flat(name)}`}>{name}</PageLink>
+														<Go to={`/${this.state.bookName}/spis-slowek/rozdzial-${unitIndex + 1}/${this.flat(name)}`}>
 															<FaListUl />
 														</Go>
 														{}
@@ -210,9 +210,9 @@ class List extends Component {
 											})}
 											<UnitListItem>
 												<Star />
-												<PageLink list="true" to={`${this.state.bookName}/rozdzial-${unitIndex + 1}/test`}>&nbsp;Test&nbsp;</PageLink>
+												<PageLink list="true" to={`/${this.state.bookName}/rozdzial-${unitIndex + 1}/test`}>&nbsp;Test&nbsp;</PageLink>
 												<Star />
-												<Go to={`${this.state.bookName}/spis-slowek/rozdzial-${unitIndex + 1}/test`}>
+												<Go to={`/${this.state.bookName}/spis-slowek/rozdzial-${unitIndex + 1}/test`}>
 													<FaListUl />
 												</Go>
 											</UnitListItem>

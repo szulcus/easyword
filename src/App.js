@@ -223,7 +223,7 @@ class App extends Component {
 				<Route path="/tinder" exact component={TinderApp}/>
 				<Route path="/ranking" exact component={Stats}/>
 				<Route path="/not-found-page" exact component={NotFoundPage}/>
-				<Route path="/:bookName" exact component={List}/>
+				<Route path="/:bookName/spis-tresci" exact component={List}/>
 				<Route path="/:bookName/rozdzial-:unitNumber/:unitName" exact render={(props) =>
 					<AppPage
 						{...props}

@@ -5,8 +5,10 @@ import {Wrapper} from '../Components/Styles/Components'
 import roadSignsBookImage from '../Components/Images/road-signs-book.png'
 import irregularVerbsBookImage from '../Components/Images/irregular-verbs-book.png'
 import Preloader from '../Components/App/Preloader'
+// ICONS
+import {FaTrophy} from 'react-icons/fa'
 
-const HelpTrigger = styled.div`
+const Stats = styled.div`
 	position: absolute;
 	right: 20px;
 	bottom: 20px;
@@ -23,10 +25,13 @@ const HelpTrigger = styled.div`
 	}
 `
 
-const Help = styled(Link)`
+const Go = styled(Link)`
 	text-decoration: none;
 	color: var(--color-decorative);
-	font-weight: bold;
+`
+
+const Cup = styled(FaTrophy)`
+	transform: translateY(2.5px);
 `
 
 const PageHeader = styled.header`
@@ -117,9 +122,11 @@ class IndexPage extends Component {
 			<>
 				<Preloader load={this.state.load}/>
 				<Wrapper center scroll>
-					{/* <HelpTrigger>
-						<Help to='/editor'>?</Help>
-					</HelpTrigger> */}
+					<Stats>
+						<Go to='/ranking'>
+							<Cup />
+						</Go>
+					</Stats>
 					<PageHeader>
 						<Logo><span>E</span>asy<span>W</span>ord</Logo>
 						<LogoSeparator/>

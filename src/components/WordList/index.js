@@ -24,7 +24,8 @@ const Th = styled.th``
 const UnitName = styled.th``
 const TableBody = styled.tbody``
 const Td = styled.td`
-	${props =>
+	:first-child {
+		${props =>
 			props.edit &&
 			css`
 				position: relative;
@@ -44,6 +45,7 @@ const Td = styled.td`
 				}
 			`
 		}
+	}
 `
 const Tr = styled.tr``
 const Image = styled.img``
@@ -139,8 +141,10 @@ class WordList extends Component {
 		isAdmin: false,
 		words: null,
 		activeElements: null,
+		activeWord: null,
 		edit: false,
-		showEditor: false
+		showEditor: false,
+		data: null
 	}
 	componentDidMount() {
 		let {bookName, unitNumber} = this.props.match.params;
@@ -210,15 +214,39 @@ class WordList extends Component {
 		else {
 			unit = `unit_${unit}`;
 		}
-		firebase.firestore().collection('books').doc('repetytorium').onSnapshot((snap) => {
-			console.log(snap.data()[unit].parts[part].words[index]);
-			console.log(snap.data()[unit]);
-			console.log(unit);
+		firebase.firestore().collection('books').doc(this.props.match.params.bookName).onSnapshot((snap) => {
+			const activeWord = snap.data()[unit].parts[part].words[index];
+			this.setState({activeWord, data: activeWord, wordLink: `${unit}.parts.${part}.words.${index}`})
+			console.log(activeWord);
 		})
 		this.changeEditorWindow();
 	}
 	changeEditorWindow = () => {
 		!this.state.showEditor ? this.setState({showEditor: true}) : this.setState({showEditor: false})
+	}
+	confirm = (e) => {
+		e.preventDefault()
+		console.log(this.state.data);
+		firebase.firestore().collection('books').doc(this.props.match.params.bookName).update({
+			[this.state.wordLink]: this.state.data
+		});
+		this.changeEditorWindow();
+	}
+	setVariable = (e) => {
+		e.persist()
+		this.setState(
+			(prevState) => {
+				return {
+					data: {
+						...prevState.data,
+						[e.target.id]: e.target.value
+					}
+				};
+			},
+			() => {
+				console.log(this.state.data);
+			}
+		);
 	}
 	render() {
 		// if (this.state.words) {
@@ -246,7 +274,7 @@ class WordList extends Component {
 							</Tr>
 						</TableHead>
 						<TableBody>
-							{words.map(({word1, word2, word3, translation1, level, type, image}, index) => {
+							{Object.values(words).map(({word1, word2, word3, translation1, level, type, image}, index) => {
 								return (
 									<Tr key={word1} id={camelcase(word1)} onDoubleClick={this.showWord}>
 										<Td edit={this.state.isAdmin} onClick={() => this.edit(partIndex, index)} className={camelcase(word1)}>
@@ -271,7 +299,7 @@ class WordList extends Component {
 					</>
 				)})}
 				</ContentTable>
-				<Editor word={this.state.activeElements} show={this.state.showEditor} back={this.changeEditorWindow} />
+				<Editor activeWord={this.state.activeWord} show={this.state.showEditor} back={this.changeEditorWindow} onChange={this.setVariable} onSubmit={this.confirm} />
 				<Specification word={this.state.activeElements} onClick={this.showWord} />
 			</WordListPage>
 		);
