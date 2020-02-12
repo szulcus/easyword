@@ -162,6 +162,20 @@ class WordList extends Component {
 				element.scrollIntoView();
 			}
 		})
+		// db.collection('books').doc('jezyk-angielski-zawodowy').get().then(snap => {
+		// 	const s = snap.data();
+		// 	db.collection('books').doc('jezyk-angielski-zawodowy').update({
+		// 		'unit_01.parts.part_01.words': {...s.unit_01.parts.part_01.words},
+		// 		'unit_02.parts.part_01.words': {...s.unit_02.parts.part_01.words},
+		// 		'unit_02.parts.part_02.words': {...s.unit_02.parts.part_02.words},
+		// 		'unit_03.parts.part_01.words': {...s.unit_03.parts.part_01.words},
+		// 		'unit_04.parts.part_01.words': {...s.unit_04.parts.part_01.words},
+		// 		'unit_04.parts.part_02.words': {...s.unit_04.parts.part_02.words},
+		// 		'unit_05.parts.part_01.words': {...s.unit_05.parts.part_01.words},
+		// 		'unit_06.parts.part_01.words': {...s.unit_06.parts.part_01.words},
+		// 		'unit_07.parts.part_01.words': {...s.unit_07.parts.part_01.words}
+		// 	})
+		// })
 
 		firebase.auth().onAuthStateChanged(user => {
 			if(user) {
@@ -227,6 +241,21 @@ class WordList extends Component {
 	confirm = (e) => {
 		e.preventDefault()
 		console.log(this.state.data);
+		const idInputs = [
+			'word1',
+			'word2',
+			'word3',
+			'translation1',
+			'translation2',
+			'translation3',
+			'image',
+			'level',
+			'type',
+			'female'
+		]
+		idInputs.forEach(id => {
+			document.getElementById(id).value = '';
+		})
 		firebase.firestore().collection('books').doc(this.props.match.params.bookName).update({
 			[this.state.wordLink]: this.state.data
 		});

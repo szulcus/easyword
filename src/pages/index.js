@@ -134,17 +134,17 @@ class IndexPage extends Component {
 					</PageHeader>
 					<BooksWrapper>
 						<Book>
-							<Link to='/macmillan'>
+							<Link to='/repetytorium/spis-tresci'>
 								<img src="https://www.macmillan.pl/components/com_ssshop/cache/500x500/9788376218496.png" alt="Macmillan Education"/>
 							</Link>
 						</Book>
 						<Book>
-							<Link to='/wsip'>
+							<Link to='/wsip/spis-tresci'>
 								<img src="https://sklep.wsip.pl/uploads/tx_evosenk/covers/upload_temp_tF8lhB.jpg" alt="test"/>
 							</Link>
 						</Book>
 						<Book>
-							<Link to='/jezyk-angielski-zawodowy'>
+							<Link to='/jezyk-angielski-zawodowy/spis-tresci'>
 								<img src="https://sklep.wsip.pl/typo3temp/pics/upload_temp_kyFIwn_1a19bdf063.jpg" alt="WSiP - język angielski zawodowy w logistyce i spedycji. Zeszyt ćwiczeń"/>
 							</Link>
 						</Book>

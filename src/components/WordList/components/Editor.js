@@ -88,49 +88,49 @@ class Editor extends Component {
 						<Field>
 							<Div>
 								<Label htmlFor="word1">1 słówko</Label>
-								<Input defaultValue={word1} onChange={this.props.onChange} type="text" name="word1" id="word1" autoComplete="off" />
+								<Input placeholder={word1} onChange={this.props.onChange} type="text" name="word1" id="word1" autoComplete="off" />
 							</Div>
 							<Div>
 								<Label htmlFor="word2">2 słówko</Label>
-								<Input defaultValue={word2} onChange={this.props.onChange} type="text" name="word2" id="word2" autoComplete="off" />
+								<Input placeholder={word2} onChange={this.props.onChange} type="text" name="word2" id="word2" autoComplete="off" />
 							</Div>
 							<Div>
 								<Label htmlFor="word3">3 słówko</Label>
-								<Input defaultValue={word3} onChange={this.props.onChange} type="text" name="word3" id="word3" autoComplete="off" />
+								<Input placeholder={word3} onChange={this.props.onChange} type="text" name="word3" id="word3" autoComplete="off" />
 							</Div>
 						</Field>
 						<Field>
 							<Div>
 								<Label htmlFor="translation1">1 tłumaczenie</Label>
-								<Input defaultValue={translation1} onChange={this.props.onChange} type="text" name="translation1" id="translation1" autoComplete="off" />
+								<Input placeholder={translation1} onChange={this.props.onChange} type="text" name="translation1" id="translation1" autoComplete="off" />
 							</Div>
 							<Div>
 								<Label htmlFor="translation2">2 tłumaczenie</Label>
-								<Input defaultValue={translation2} onChange={this.props.onChange} type="text" name="translation2" id="translation2" autoComplete="off" />
+								<Input placeholder={translation2} onChange={this.props.onChange} type="text" name="translation2" id="translation2" autoComplete="off" />
 							</Div>
 							<Div>
 								<Label htmlFor="translation3">3 tłumaczenie</Label>
-								<Input defaultValue={translation3} onChange={this.props.onChange} type="text" name="translation3" id="translation3" autoComplete="off" />
+								<Input placeholder={translation3} onChange={this.props.onChange} type="text" name="translation3" id="translation3" autoComplete="off" />
 							</Div>
 						</Field>
 						<Field>
 							<Div>
 								<Label htmlFor="image">Zdjęcie</Label>
-								<Input defaultValue={image} onChange={this.props.onChange} type="text" name="image" id="image" autoComplete="off" />
+								<Input placeholder={image} onChange={this.props.onChange} type="text" name="image" id="image" autoComplete="off" />
 							</Div>
 						</Field>
 						<Field>
 							<Div>
 								<Label htmlFor="female">Feminizacja</Label>
-								<Input defaultValue={female} onChange={this.props.onChange} type="text" name="female" id="female" autoComplete="off" />
+								<Input placeholder={female} onChange={this.props.onChange} type="text" name="female" id="female" autoComplete="off" />
 							</Div>
 							<Div>
 								<Label htmlFor="type">Nazwa podrozdziału</Label>
-								<Input defaultValue={type} onChange={this.props.onChange} type="text" name="type" id="type" autoComplete="off" />
+								<Input placeholder={type} onChange={this.props.onChange} type="text" name="type" id="type" autoComplete="off" />
 							</Div>
 							<Div>
 								<Label htmlFor="level">Poziom</Label>
-								<Input defaultValue={level} onChange={this.props.onChange} type="text" name="level" id="level" autoComplete="off" />
+								<Input placeholder={level} onChange={this.props.onChange} type="text" name="level" id="level" autoComplete="off" />
 							</Div>
 						</Field>
 					</Fields>
