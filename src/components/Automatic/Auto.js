@@ -140,10 +140,9 @@ class Auto extends Component {
 	state = {
 		isConverted: false,
 		text: '',
-		chapterName: undefined,
+		chapterName: '1_Other',
 		level: 'basic',
-		type: undefined,
-		image: 'url'
+		type: 'inne'
 	}
 	changeState = (e) => {
 		e.persist()
@@ -153,39 +152,51 @@ class Auto extends Component {
 				return {
 					[e.target.id]: e.target.value
 				};
-			},
-			
-			() => {
-				console.log(this.state[e.target.id]);
-			}
-			
-			);
+			});
 	}
 	convert = () => {
-		const expWord = /[a-zą-żó ,\-'()/0-9.?]+\n\n/gi;
-		const expTranslation = /[a-zą-żó \-'()/0-9.?]+\n/gi;
+		const exp = /.+\n.+/gi;
 		let text = document.getElementById('text');
 		if (this.state.text === '') {
 			alert("Nic jeszcze nie wpisałeś!");
 		}
-		else if (expWord.test(text.value += '\n\n') === false) {
-			alert("Wpisałeś zły tekst!");
-		}
-		else if (this.state.chapterName === undefined || this.state.type === undefined) {
-			alert("Najpierw uzupełnij wszystkie pola!")
-		}
 		else if (text.value.includes(`const words${this.state.chapterName}`) === false) {
-			// text.value += '\n\n';
-	
-			text.value = text.value.replace(expWord, (x) => {
-				return `\t\tword1: \`${x.replace(/\n/g, '')}\`,\n\t\tlevel: \`${this.state.level}\`,\n\t\ttype: \`${this.state.type}\`,\n\t\timage: \`${this.state.image}\`\n\t},\n`
+			text.value = text.value.replace(/Pozbądź się reklam\nJedynie 4,59 zł\/miesiąc/g, '');
+			
+			text.value = text.value.replace(exp, (x) => {
+				return `\t{\n\t\tword1: \`${x.replace(/\n.+/g, x => {
+					return `\`,${x.replace(/\n/g, `\n\t\ttranslation1: \``)}`
+				})}\`,\n\t\tlevel: \`${this.state.level}\`,\n\t\ttype: \`${this.state.type}\`,\n\t\timage: \`url\`\n\t},`
 			});
-	
-			text.value = text.value.replace(expTranslation, (x) => {
-				return `\t{\n\t\ttranslation1: \`${x.replace(/\n/g, '')}\`,\n`
-			});
-	
-			text.value = `const words${this.state.chapterName} = [\n${text.value}];\n\nexport default words${this.state.chapterName}`
+
+			text.value = text.value.replace(/word1: `.+, .+, .+`,/gi, x => {
+				return x.replace(/, .+,/gi, x => {
+					return `\`,\n\t\tword2: \`${x.replace(/, .+, /g, x => `${x.replace(/, /g, '')}\`,\n\t\tword3: \``)}`
+				});
+			})
+			
+			text.value = text.value.replace(/word1: `.+, .+`,/gi, x => {
+				return x.replace(/, .+`,/gi, x => {
+					return `\`,\n\t\tword2: \`${x.replace(/, /gi, '')}`
+				});
+			})
+			
+			text.value = text.value.replace(/translation1: `.+, .+, .+`,/gi, x => {
+				return x.replace(/, .+,/gi, x => {
+					return `\`,\n\t\ttranslation2: \`${x.replace(/, .+, /g, x => `${x.replace(/, /g, '')}\`,\n\t\ttranslation3: \``)}`
+				});
+			})
+
+			text.value = text.value.replace(/translation1: `.+, .+`,/gi, x => {
+				return x.replace(/, .+`,/gi, x => {
+					return `\`,\n\t\ttranslation2: \`${x.replace(/, /gi, '')}`
+				});
+			})
+			
+			text.value = text.value.replace(/},\n+/g, '},\n');
+
+
+			text.value = `const words${this.state.chapterName} = [\n${text.value}\n];\n\nexport default words${this.state.chapterName};`
 			this.setState({isConverted: true});
 		}
 		else if(text.value.includes(`const words${this.state.chapterName}`)){

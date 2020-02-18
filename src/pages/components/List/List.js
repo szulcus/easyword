@@ -20,8 +20,11 @@ import Header from './components/ListElement/Header'
 import ListWrapper from './components/ListElement/ListWrapper'
 import Unit from './components/Unit'
 // ICONS
-import { FaAngleRight, FaStar, FaListUl} from 'react-icons/fa'
+import { FaAngleRight, FaStar, FaListUl, FaThinkPeaks} from 'react-icons/fa'
 
+const ListComponent = styled.div`
+	text-align: center;
+`
 const Separator = styled.hr`
 	display: none;
 	@media (min-width: 800px) {
@@ -88,7 +91,7 @@ const UnitElement = styled.div`
 `
 
 const UnitTitle = styled.h3`
-
+	text-align: left;
 `;
 
 const UnitList = styled.ul`
@@ -156,12 +159,18 @@ class List extends Component {
 		else {
 			this.props.history.push('not-found-page')
 		}
-		db.collection('books').doc(this.props.match.params.bookName).onSnapshot((snap) => {
+		db.collection('books').doc(this.props.match.params.bookName).get().then((snap) => {
 			this.setState({
 				data: snap.data()
 			})
 			console.log(this.state.data);
 			// console.log(Object.values(this.state.data));
+		});
+		db.collection('data').doc('nearest-unit').get().then((snap) => {
+			this.setState({
+				nearestUnit: snap.data()
+			})
+			console.log(this.state.nearestUnit);
 		});
 	}
 	flat = (name) => {
@@ -169,8 +178,9 @@ class List extends Component {
 	}
 	render() {
 		moment.locale('pl')
+		// let nearestParts = this.state.data[`unit_${this.state.nearestUnit.number}`].parts;
 		return (
-			<>
+			<ListComponent>
 				<Global />
 				{!this.state.data ? 'Wczytywanie...' : <Wrapper list>
 					<Book src={this.state.data.info.src} information='WSiP - język angielski zawodowy w logistyce i spedycji. Zeszyt ćwiczeń'/>
@@ -178,18 +188,39 @@ class List extends Component {
 					<ListElementWrapper>
 						<Header />
 						<ListWrapper>
-							{/* <Term>
-								<Date>{`${moment(this.state.plannedDate, "YYYYMMDD").format('LL')}r`}</Date>
-								<Line>|</Line>
-								<Time>{moment(this.state.plannedDate, "YYYYMMDD").add(11, 'hours').add(40, 'minutes').fromNow()}</Time>
-							</Term> */}
-							{/* <Advertisement>
-								<Unit
-									book='jezyk-angielski-zawodowy'
-									number = '6'
-									title = 'Materiały i towary'
-								/>
-							</Advertisement> */}
+							{!this.state.nearestUnit ? '...' : <>
+								<Term>
+									<Date>{`${moment(this.state.plannedDate, "YYYYMMDD").format('LL')}r`}</Date>
+									<Line>|</Line>
+									<Time>{moment(this.state.plannedDate, "YYYYMMDD").add(11, 'hours').add(40, 'minutes').fromNow()}</Time>
+								</Term>
+								<Advertisement>
+									<UnitTitle>Rozdział {this.state.nearestUnit.number} - {this.state.data[`unit_${this.state.nearestUnit.number}`].title}</UnitTitle>
+									<UnitList>
+										{/* {!this.state.data ? console.log('-->',this.state.data[this.state.nearestUnit.number]) : '...'} */}
+										{/* {Object.values(nearestParts).length === 1 ? '' : Object.values(parts).map(({name}, partIndex) => {
+											return (
+												<UnitListItem>
+													<Arrow />
+													<PageLink list="true" to={`/${this.state.bookName}/rozdzial-${unitIndex + 1}.${partIndex + 1}/${this.flat(name)}`}>{name}</PageLink>
+													<Go to={`/${this.state.bookName}/spis-slowek/rozdzial-${unitIndex + 1}/${this.flat(name)}`}>
+														<FaListUl />
+													</Go>
+													{}
+												</UnitListItem>
+											)
+										})} */}
+										{/* <UnitListItem>
+											<Star />
+											<PageLink list="true" to={`/${this.state.bookName}/rozdzial-${unitIndex + 1}/test`}>&nbsp;Test&nbsp;</PageLink>
+											<Star />
+											<Go to={`/${this.state.bookName}/spis-slowek/rozdzial-${unitIndex + 1}/test`}>
+												<FaListUl />
+											</Go>
+										</UnitListItem> */}
+									</UnitList>
+								</Advertisement>
+							</>}
 
 							{Object.values(this.state.data).slice(1).map(({title, parts}, unitIndex) => {
 								return(
@@ -220,11 +251,10 @@ class List extends Component {
 									</>
 								)
 							})}
-
 						</ListWrapper>
 					</ListElementWrapper>
 				</Wrapper>}
-			</>
+			</ListComponent>
 		);
 	}
 }

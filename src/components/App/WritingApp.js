@@ -32,14 +32,13 @@ import similarTranslation from './similarTranslation'
 // ANIMATIONS
 import LottieAnimation from '../lotties/LottieAnimation'
 //words
-import w1 from '../Words/1_Macmillan/Unit2/1_ThePlaceWhereWeLive'
-import w2 from '../Words/1_Macmillan/Unit2/2_DescribingHouses'
-import w3 from '../Words/1_Macmillan/Unit2/3_HouseholdAndGardenJobs'
-import w4 from '../Words/1_Macmillan/Unit2/4_RentingPurchasingAndSellingProperty'
-import w5 from '../Words/1_Macmillan/Unit2/5_Orther'
-// import w6 from '../Words/1_Macmillan/Unit2/'
-// import w7 from '../Words/1_Macmillan/Unit1/7_EthnicalProblems'
-// import w8 from '../Words/1_Macmillan/Unit1/8_Orther'
+import w1 from '../Words/1_Macmillan/Unit12/1_AreasOfScienceAndScientists'
+import w2 from '../Words/1_Macmillan/Unit12/2_InventionsAndDiscoveries'
+import w3 from '../Words/1_Macmillan/Unit12/3_ScientificResearch'
+import w4 from '../Words/1_Macmillan/Unit12/4_UsingTechnology'
+import w5 from '../Words/1_Macmillan/Unit12/5_InformationAndCommunicationTechnology'
+import w6 from '../Words/1_Macmillan/Unit12/6_TechnicalFailures'
+import w7 from '../Words/1_Macmillan/Unit12/7_Other'
 
 class App extends Component {
 	state = {
@@ -66,6 +65,42 @@ class App extends Component {
 	}
 	componentDidMount() {
 		const db = firebase.firestore();
+
+		// db.collection('books').doc('repetytorium').update({
+		// 	unit_12: {
+		// 		title: 'Nauka i technika',
+		// 		parts: {
+		// 			part_01: {
+		// 				name: w1[0].type,
+		// 				words: {...w1}
+		// 			},
+		// 			part_02: {
+		// 				name: w2[0].type,
+		// 				words: {...w2}
+		// 			},
+		// 			part_03: {
+		// 				name: w3[0].type,
+		// 				words: {...w3}
+		// 			},
+		// 			part_04: {
+		// 				name: w4[0].type,
+		// 				words: {...w4}
+		// 			},
+		// 			part_05: {
+		// 				name: w5[0].type,
+		// 				words: {...w5}
+		// 			},
+		// 			part_06: {
+		// 				name: w6[0].type,
+		// 				words: {...w6}
+		// 			},
+		// 			part_07: {
+		// 				name: w7[0].type,
+		// 				words: {...w7}
+		// 			}
+		// 		}
+		// 	}
+		// })
 
 		this.setState({load: true});
 		let {bookName, unitNumber} = this.props.match.params;
@@ -140,6 +175,7 @@ class App extends Component {
 					const appLevel = snapshot.data().points.books[book].units[unit].parts[part].level;
 					const experience = snapshot.data().points.experience;
 					this.setState({ points, experience, appLevel });
+						console.log(appLevel);
 					if (appLevel === 1) {
 						this.setState({prevGoal: 0});
 						this.setState({goal: 10});
