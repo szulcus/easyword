@@ -2,7 +2,7 @@
 import React, { Component } from 'react'
 import styled, {css} from 'styled-components'
 // ICONS
-import {FaReply} from 'react-icons/fa'
+import {FaReply, FaLocationArrow} from 'react-icons/fa'
 
 const EditorElement = styled.div`
 	position: absolute;
@@ -28,12 +28,15 @@ const Title = styled.h1`
 `
 const Main = styled.form`
 	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 `
 const Fields = styled.div`
 	display: flex;
 	justify-content: space-evenly;
 	flex-wrap: wrap;
-	height: calc(100vh - 150px);
+	height: calc(90vh - 150px);
 	margin: 10px;
 	overflow-y: scroll;
 	::-webkit-scrollbar {
@@ -60,7 +63,17 @@ const Field = styled.div`
 	text-align: center;
 `
 const Submit = styled.button`
-
+	background: transparent;
+	padding: 5px;
+	font-size: 25px;
+	color: var(--color-decorative);
+	border: none;
+	border-radius: 100%;
+	transition: opacity 0.1s ease;
+	:hover {
+		cursor: pointer;
+		opacity: 0.5;
+	}
 `
 const Div = styled.div`
 	margin: 5px;
@@ -88,53 +101,53 @@ class Editor extends Component {
 						<Field>
 							<Div>
 								<Label htmlFor="word1">1 słówko</Label>
-								<Input placeholder={word1} onChange={this.props.onChange} type="text" name="word1" id="word1" autoComplete="off" />
+								<Input defaultValue={word1} onChange={this.props.onChange} type="text" name="word1" id="word1" autoComplete="off" />
 							</Div>
 							<Div>
 								<Label htmlFor="word2">2 słówko</Label>
-								<Input placeholder={word2} onChange={this.props.onChange} type="text" name="word2" id="word2" autoComplete="off" />
+								<Input defaultValue={word2} onChange={this.props.onChange} type="text" name="word2" id="word2" autoComplete="off" />
 							</Div>
 							<Div>
 								<Label htmlFor="word3">3 słówko</Label>
-								<Input placeholder={word3} onChange={this.props.onChange} type="text" name="word3" id="word3" autoComplete="off" />
+								<Input defaultValue={word3} onChange={this.props.onChange} type="text" name="word3" id="word3" autoComplete="off" />
 							</Div>
 						</Field>
 						<Field>
 							<Div>
 								<Label htmlFor="translation1">1 tłumaczenie</Label>
-								<Input placeholder={translation1} onChange={this.props.onChange} type="text" name="translation1" id="translation1" autoComplete="off" />
+								<Input defaultValue={translation1} onChange={this.props.onChange} type="text" name="translation1" id="translation1" autoComplete="off" />
 							</Div>
 							<Div>
 								<Label htmlFor="translation2">2 tłumaczenie</Label>
-								<Input placeholder={translation2} onChange={this.props.onChange} type="text" name="translation2" id="translation2" autoComplete="off" />
+								<Input defaultValue={translation2} onChange={this.props.onChange} type="text" name="translation2" id="translation2" autoComplete="off" />
 							</Div>
 							<Div>
 								<Label htmlFor="translation3">3 tłumaczenie</Label>
-								<Input placeholder={translation3} onChange={this.props.onChange} type="text" name="translation3" id="translation3" autoComplete="off" />
+								<Input defaultValue={translation3} onChange={this.props.onChange} type="text" name="translation3" id="translation3" autoComplete="off" />
 							</Div>
 						</Field>
 						<Field>
 							<Div>
 								<Label htmlFor="image">Zdjęcie</Label>
-								<Input placeholder={image} onChange={this.props.onChange} type="text" name="image" id="image" autoComplete="off" />
+								<Input defaultValue={image} onChange={this.props.onChange} type="text" name="image" id="image" autoComplete="off" />
 							</Div>
 						</Field>
 						<Field>
 							<Div>
 								<Label htmlFor="female">Feminizacja</Label>
-								<Input placeholder={female} onChange={this.props.onChange} type="text" name="female" id="female" autoComplete="off" />
+								<Input defaultValue={female} onChange={this.props.onChange} type="text" name="female" id="female" autoComplete="off" />
 							</Div>
 							<Div>
 								<Label htmlFor="type">Nazwa podrozdziału</Label>
-								<Input placeholder={type} onChange={this.props.onChange} type="text" name="type" id="type" autoComplete="off" />
+								<Input defaultValue={type} onChange={this.props.onChange} type="text" name="type" id="type" autoComplete="off" />
 							</Div>
 							<Div>
 								<Label htmlFor="level">Poziom</Label>
-								<Input placeholder={level} onChange={this.props.onChange} type="text" name="level" id="level" autoComplete="off" />
+								<Input defaultValue={level} onChange={this.props.onChange} type="text" name="level" id="level" autoComplete="off" />
 							</Div>
 						</Field>
 					</Fields>
-					<Submit type='submit'>Potwierdź</Submit>
+					<Submit type='submit'><FaLocationArrow /></Submit>
 				</Main>
 				<FaReply onClick={this.props.back} />
 			</EditorElement>

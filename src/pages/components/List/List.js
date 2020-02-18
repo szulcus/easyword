@@ -178,7 +178,10 @@ class List extends Component {
 	}
 	render() {
 		moment.locale('pl')
-		// let nearestParts = this.state.data[`unit_${this.state.nearestUnit.number}`].parts;
+		// let nearestParts = null;
+		// if (this.state.nearestUnit) {
+		// 	nearestParts = this.state.data[`unit_${this.state.nearestUnit.number}`].parts;
+		// }
 		return (
 			<ListComponent>
 				<Global />
@@ -197,7 +200,18 @@ class List extends Component {
 								<Advertisement>
 									<UnitTitle>Rozdział {this.state.nearestUnit.number} - {this.state.data[`unit_${this.state.nearestUnit.number}`].title}</UnitTitle>
 									<UnitList>
-										{/* {!this.state.data ? console.log('-->',this.state.data[this.state.nearestUnit.number]) : '...'} */}
+										{Object.values(this.state.data[`unit_${this.state.nearestUnit.number}`].parts).map(({name}, index) => {
+											return (
+												<UnitListItem>
+													<Arrow />
+													<PageLink list="true" to={`/${this.state.bookName}/rozdzial-${this.state.nearestUnit.number}.${index + 1}/${this.flat(name)}`}>{name}</PageLink>
+													<Go to={`/${this.state.bookName}/spis-slowek/rozdzial-${this.state.nearestUnit.number}/${this.flat(name)}`}>
+														<FaListUl />
+													</Go>
+													{}
+												</UnitListItem>
+											)
+										})}
 										{/* {Object.values(nearestParts).length === 1 ? '' : Object.values(parts).map(({name}, partIndex) => {
 											return (
 												<UnitListItem>

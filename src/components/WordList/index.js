@@ -230,7 +230,7 @@ class WordList extends Component {
 		}
 		firebase.firestore().collection('books').doc(this.props.match.params.bookName).onSnapshot((snap) => {
 			const activeWord = snap.data()[unit].parts[part].words[index];
-			this.setState({activeWord, data: activeWord, wordLink: `${unit}.parts.${part}.words.${index}`})
+			this.setState({activeWord, data: activeWord, wordLink: `${unit}.parts.${part}.words.${index}`, partLink: `parts.${part}.words.${index}`})
 			console.log(activeWord);
 		})
 		this.changeEditorWindow();
@@ -241,21 +241,26 @@ class WordList extends Component {
 	confirm = (e) => {
 		e.preventDefault()
 		console.log(this.state.data);
-		const idInputs = [
-			'word1',
-			'word2',
-			'word3',
-			'translation1',
-			'translation2',
-			'translation3',
-			'image',
-			'level',
-			'type',
-			'female'
-		]
-		idInputs.forEach(id => {
-			document.getElementById(id).value = '';
-		})
+		// const idInputs = [
+		// 	'word1',
+		// 	'word2',
+		// 	'word3',
+		// 	'translation1',
+		// 	'translation2',
+		// 	'translation3',
+		// 	'image',
+		// 	'level',
+		// 	'type',
+		// 	'female'
+		// ]
+		// idInputs.forEach(id => {
+		// 	// document.getElementById(id).defaultValue = this.state.words[this.state.partLink].id;
+		// 	// console.log('===');
+		// 	// console.log(this.state.words);
+		// 	// console.log(this.state.partLink);
+		// 	// console.log(this.state.words[this.state.partLink].id);
+		// 	// this.state.words[this.state.partLink].id;
+		// })
 		firebase.firestore().collection('books').doc(this.props.match.params.bookName).update({
 			[this.state.wordLink]: this.state.data
 		});
@@ -281,6 +286,7 @@ class WordList extends Component {
 		// if (this.state.words) {
 		// 	console.log(Object.values(this.state.words.parts));
 		// }
+		console.log('==>', this.state.words);
 		return (
 			<WordListPage>
 				<header>

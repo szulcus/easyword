@@ -171,11 +171,19 @@ class App extends Component {
 					const unit = `unit_${unitNumber}`;
 					const part = partNumber ? `part_${partNumber}` : 'test';
 					const book = bookName;
-					const points = snapshot.data().points.books[book].units[unit].parts[part].points;//naprawić!!!
-					const appLevel = snapshot.data().points.books[book].units[unit].parts[part].level;
+					if(!snapshot.data().points.books[book].units[unit].parts[part]) {
+						db.collection('users').doc(user.uid).update({
+							[`points.books.${book}.units.${unit}.parts.${part}`]: {
+								points: 0,
+								level: 0
+							}
+						})
+					}
+					const dPart = snapshot.data().points.books[book].units[unit].parts[part]
+					const points = dPart ? dPart.points : 0;
+					const appLevel = dPart ? dPart.level : 0;
 					const experience = snapshot.data().points.experience;
 					this.setState({ points, experience, appLevel });
-						console.log(appLevel);
 					if (appLevel === 1) {
 						this.setState({prevGoal: 0});
 						this.setState({goal: 10});
