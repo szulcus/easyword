@@ -18,9 +18,8 @@ import { listEntry, listHover } from '../../../Components/Styles/Keyframes'
 import Book from './components/Book'
 import Header from './components/ListElement/Header'
 import ListWrapper from './components/ListElement/ListWrapper'
-import Unit from './components/Unit'
 // ICONS
-import { FaAngleRight, FaStar, FaListUl, FaThinkPeaks} from 'react-icons/fa'
+import { FaAngleRight, FaStar, FaListUl } from 'react-icons/fa'
 
 const ListComponent = styled.div`
 	text-align: center;
@@ -81,13 +80,6 @@ const Date = styled.div`
 		@media (min-width: 600px) {
 			display: block;
 		}
-`
-
-
-
-
-const UnitElement = styled.div`
-	
 `
 
 const UnitTitle = styled.h3`
@@ -198,9 +190,9 @@ class List extends Component {
 									<Time>{moment(this.state.plannedDate, "YYYYMMDD").add(11, 'hours').add(40, 'minutes').fromNow()}</Time>
 								</Term>
 								<Advertisement>
-									<UnitTitle>Rozdział {this.state.nearestUnit.number} - {this.state.data[`unit_${this.state.nearestUnit.number}`].title}</UnitTitle>
+									{/* <UnitTitle>Rozdział {this.state.nearestUnit.number} - {this.state.data[`unit_${this.state.nearestUnit.number}`].title}</UnitTitle> */}
 									<UnitList>
-										{Object.values(this.state.data[`unit_${this.state.nearestUnit.number}`].parts).map(({name}, index) => {
+										{/* {Object.values(this.state.data[`unit_${this.state.nearestUnit.number}`].parts).map(({name}, index) => {
 											return (
 												<UnitListItem>
 													<Arrow />
@@ -211,7 +203,7 @@ class List extends Component {
 													{}
 												</UnitListItem>
 											)
-										})}
+										})} */}
 										{/* {Object.values(nearestParts).length === 1 ? '' : Object.values(parts).map(({name}, partIndex) => {
 											return (
 												<UnitListItem>

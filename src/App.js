@@ -23,6 +23,7 @@ import NotFoundPage from './pages/404/404'
 import Automatic from './Components/Automatic/Auto'
 import TinderApp from './Components/App/TinderApp'
 import Stats from './Components/Stats'
+import CalcApp from './CalcApp'
 // import OxfordList from './pages/books/3_Oxford/oxford'
 import RoadSignsList from './pages/components/List/RoadSignsList'
 import List from './pages/components/List/List'
@@ -217,6 +218,7 @@ class App extends Component {
 				<Route path="/rejestracja" exact component={Registration}/>
 				<Route path="/users/:id" exact component={UserProfile}/>
 				<Route path="/leaves" exact component={Leaves}/>
+				<Route path="/calc-app" exact component={CalcApp}/>
 
 				<Route path="/editor" exact component={Editor}/>
 				<Route path="/auto" exact component={Automatic}/>

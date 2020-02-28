@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 import styled, {css} from 'styled-components'
 // FUNCTIONS
 // import expand from '../../../../../Scripts/Functions/expand()'
-import HamburgerList from './components/HamburgerList';
+// import HamburgerList from './components/HamburgerList';
 
 const Menu = styled.button`
 	display: flex;

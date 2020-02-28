@@ -26,15 +26,14 @@ const CongratulationsElement = styled.div`
 			display: flex;
 	`};
 `
-
-const Message = styled.div`
-	width: 50vw;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	padding: 30px;
-`
+// const Message = styled.div`
+// 	width: 50vw;
+// 	display: flex;
+// 	flex-direction: column;
+// 	align-items: center;
+// 	justify-content: center;
+// 	padding: 30px;
+// `
 const Animations = styled.div`
 	/* position: relative; */
 	width: 100vw;
