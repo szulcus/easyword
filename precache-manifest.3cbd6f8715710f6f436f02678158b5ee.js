@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "161a78e3791a2914ea2f938d08af723c",
+    "revision": "a5c2ced51e44f940f2fd3fcff97a78ae",
     "url": "/easy-word/index.html"
   },
   {
-    "revision": "225331517d4d29c02bee",
+    "revision": "368fc0334cec88f02752",
     "url": "/easy-word/static/css/main.772d0451.chunk.css"
   },
   {
@@ -16,20 +16,20 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/easy-word/static/js/2.a4645c51.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "225331517d4d29c02bee",
-    "url": "/easy-word/static/js/main.87c4d9e3.chunk.js"
+    "revision": "368fc0334cec88f02752",
+    "url": "/easy-word/static/js/main.5b2d8a3e.chunk.js"
   },
   {
     "revision": "f815818162ba9d16087c",
     "url": "/easy-word/static/js/runtime-main.4c077e01.js"
   },
   {
-    "revision": "8dc27bead82e2f7392d0a8bb2e0d6477",
-    "url": "/easy-word/static/media/agreement.8dc27bea.svg"
+    "revision": "9517f40d5aa291506f941fc085394516",
+    "url": "/easy-word/static/media/agreement.9517f40d.svg"
   },
   {
-    "revision": "5e651c2a20158df95bebd071646a9ffe",
-    "url": "/easy-word/static/media/first.5e651c2a.svg"
+    "revision": "0584e231ed34cd57a05df2d26e9dc8ad",
+    "url": "/easy-word/static/media/first.0584e231.svg"
   },
   {
     "revision": "006306a634213de22aa4ebc42353ac7c",
@@ -52,24 +52,24 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/easy-word/static/media/irregular-verbs-book.e29a7072.png"
   },
   {
-    "revision": "61a6f7efc0de08e93c04d071c4d199c4",
-    "url": "/easy-word/static/media/left-arrow.61a6f7ef.svg"
+    "revision": "1584f27341f9256357d24dad00a66f90",
+    "url": "/easy-word/static/media/left-arrow.1584f273.svg"
   },
   {
-    "revision": "0fb78b6e4f2c2289823cc4f023106f32",
-    "url": "/easy-word/static/media/loader.0fb78b6e.svg"
+    "revision": "b493f4c5f5770794d69a4ec6c9c44ba7",
+    "url": "/easy-word/static/media/loader.b493f4c5.svg"
   },
   {
-    "revision": "59edc96a714ae4be8943877825968881",
-    "url": "/easy-word/static/media/right-arrow.59edc96a.svg"
+    "revision": "c357d125e5d88b8c4b8073fc41971267",
+    "url": "/easy-word/static/media/right-arrow.c357d125.svg"
   },
   {
     "revision": "41db461c28779b39b3756e90e7a1ee11",
     "url": "/easy-word/static/media/road-signs-book.41db461c.png"
   },
   {
-    "revision": "19a84318f2598493fc732771a94d1a0c",
-    "url": "/easy-word/static/media/second.19a84318.svg"
+    "revision": "0c5d2c3c24a64c173200a41880324f8b",
+    "url": "/easy-word/static/media/second.0c5d2c3c.svg"
   },
   {
     "revision": "8a2fabccfad38d9158808e24891ddf2a",
@@ -84,8 +84,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/easy-word/static/media/thinking.4a9a84f4.png"
   },
   {
-    "revision": "c173f5cb51324fb128530bd731728fff",
-    "url": "/easy-word/static/media/third.c173f5cb.svg"
+    "revision": "51a8d7452728e41b4af76c59b2f83fe7",
+    "url": "/easy-word/static/media/third.51a8d745.svg"
   },
   {
     "revision": "15c5ed818c5ab36f525e6bb0734fe6f9",
