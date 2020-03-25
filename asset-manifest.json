@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/easy-word/static/css/main.772d0451.chunk.css",
-    "main.js": "/easy-word/static/js/main.3a1bb66a.chunk.js",
-    "main.js.map": "/easy-word/static/js/main.3a1bb66a.chunk.js.map",
+    "main.js": "/easy-word/static/js/main.f67e7123.chunk.js",
+    "main.js.map": "/easy-word/static/js/main.f67e7123.chunk.js.map",
     "runtime-main.js": "/easy-word/static/js/runtime-main.4c077e01.js",
     "runtime-main.js.map": "/easy-word/static/js/runtime-main.4c077e01.js.map",
-    "static/js/2.2c10fbea.chunk.js": "/easy-word/static/js/2.2c10fbea.chunk.js",
-    "static/js/2.2c10fbea.chunk.js.map": "/easy-word/static/js/2.2c10fbea.chunk.js.map",
+    "static/js/2.b8d838cb.chunk.js": "/easy-word/static/js/2.b8d838cb.chunk.js",
+    "static/js/2.b8d838cb.chunk.js.map": "/easy-word/static/js/2.b8d838cb.chunk.js.map",
     "index.html": "/easy-word/index.html",
-    "precache-manifest.e60f60aadc34a16565a65c695bae37ce.js": "/easy-word/precache-manifest.e60f60aadc34a16565a65c695bae37ce.js",
+    "precache-manifest.0e284d61e54c4856da02250d5d8ed036.js": "/easy-word/precache-manifest.0e284d61e54c4856da02250d5d8ed036.js",
     "service-worker.js": "/easy-word/service-worker.js",
     "static/css/main.772d0451.chunk.css.map": "/easy-word/static/css/main.772d0451.chunk.css.map",
-    "static/js/2.2c10fbea.chunk.js.LICENSE.txt": "/easy-word/static/js/2.2c10fbea.chunk.js.LICENSE.txt",
+    "static/js/2.b8d838cb.chunk.js.LICENSE.txt": "/easy-word/static/js/2.b8d838cb.chunk.js.LICENSE.txt",
     "static/media/agreement.svg": "/easy-word/static/media/agreement.9517f40d.svg",
     "static/media/first.svg": "/easy-word/static/media/first.0584e231.svg",
     "static/media/good.png": "/easy-word/static/media/good.006306a6.png",
@@ -25,16 +25,18 @@
     "static/media/second.svg": "/easy-word/static/media/second.0c5d2c3c.svg",
     "static/media/snapchat-d.png": "/easy-word/static/media/snapchat-d.8a2fabcc.png",
     "static/media/snapchat-icon.png": "/easy-word/static/media/snapchat-icon.ecfbbab3.png",
+    "static/media/star.svg": "/easy-word/static/media/star.7dc6e5d5.svg",
     "static/media/thinking.png": "/easy-word/static/media/thinking.4a9a84f4.png",
     "static/media/third.svg": "/easy-word/static/media/third.51a8d745.svg",
+    "static/media/tick.svg": "/easy-word/static/media/tick.4190ac11.svg",
     "static/media/win.png": "/easy-word/static/media/win.a64949b4.png",
     "static/media/working.png": "/easy-word/static/media/working.15c5ed81.png",
     "static/media/wow.png": "/easy-word/static/media/wow.909d1f30.png"
   },
   "entrypoints": [
     "static/js/runtime-main.4c077e01.js",
-    "static/js/2.2c10fbea.chunk.js",
+    "static/js/2.b8d838cb.chunk.js",
     "static/css/main.772d0451.chunk.css",
-    "static/js/main.3a1bb66a.chunk.js"
+    "static/js/main.f67e7123.chunk.js"
   ]
 }
