@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/easy-word/static/css/main.772d0451.chunk.css",
-    "main.js": "/easy-word/static/js/main.a47a10d1.chunk.js",
-    "main.js.map": "/easy-word/static/js/main.a47a10d1.chunk.js.map",
+    "main.js": "/easy-word/static/js/main.c5c264e1.chunk.js",
+    "main.js.map": "/easy-word/static/js/main.c5c264e1.chunk.js.map",
     "runtime-main.js": "/easy-word/static/js/runtime-main.4c077e01.js",
     "runtime-main.js.map": "/easy-word/static/js/runtime-main.4c077e01.js.map",
-    "static/js/2.38eb26cd.chunk.js": "/easy-word/static/js/2.38eb26cd.chunk.js",
-    "static/js/2.38eb26cd.chunk.js.map": "/easy-word/static/js/2.38eb26cd.chunk.js.map",
+    "static/js/2.db9912c4.chunk.js": "/easy-word/static/js/2.db9912c4.chunk.js",
+    "static/js/2.db9912c4.chunk.js.map": "/easy-word/static/js/2.db9912c4.chunk.js.map",
     "index.html": "/easy-word/index.html",
-    "precache-manifest.23e805c861d66cca41b36a8c65176534.js": "/easy-word/precache-manifest.23e805c861d66cca41b36a8c65176534.js",
+    "precache-manifest.afd6f4f54e89e00faf6c95fedb2f7d73.js": "/easy-word/precache-manifest.afd6f4f54e89e00faf6c95fedb2f7d73.js",
     "service-worker.js": "/easy-word/service-worker.js",
     "static/css/main.772d0451.chunk.css.map": "/easy-word/static/css/main.772d0451.chunk.css.map",
-    "static/js/2.38eb26cd.chunk.js.LICENSE.txt": "/easy-word/static/js/2.38eb26cd.chunk.js.LICENSE.txt",
+    "static/js/2.db9912c4.chunk.js.LICENSE.txt": "/easy-word/static/js/2.db9912c4.chunk.js.LICENSE.txt",
     "static/media/agreement.svg": "/easy-word/static/media/agreement.9517f40d.svg",
     "static/media/cat1.svg": "/easy-word/static/media/cat1.3e47551a.svg",
     "static/media/cat2.svg": "/easy-word/static/media/cat2.636b86e7.svg",
@@ -51,8 +51,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.4c077e01.js",
-    "static/js/2.38eb26cd.chunk.js",
+    "static/js/2.db9912c4.chunk.js",
     "static/css/main.772d0451.chunk.css",
-    "static/js/main.a47a10d1.chunk.js"
+    "static/js/main.c5c264e1.chunk.js"
   ]
 }
