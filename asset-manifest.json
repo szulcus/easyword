@@ -1,18 +1,20 @@
 {
   "files": {
-    "main.css": "/easy-word/static/css/main.772d0451.chunk.css",
-    "main.js": "/easy-word/static/js/main.87141e0a.chunk.js",
-    "main.js.map": "/easy-word/static/js/main.87141e0a.chunk.js.map",
+    "main.css": "/easy-word/static/css/main.ee75fc04.chunk.css",
+    "main.js": "/easy-word/static/js/main.82168ba2.chunk.js",
+    "main.js.map": "/easy-word/static/js/main.82168ba2.chunk.js.map",
     "runtime-main.js": "/easy-word/static/js/runtime-main.4c077e01.js",
     "runtime-main.js.map": "/easy-word/static/js/runtime-main.4c077e01.js.map",
-    "static/js/2.2a870eae.chunk.js": "/easy-word/static/js/2.2a870eae.chunk.js",
-    "static/js/2.2a870eae.chunk.js.map": "/easy-word/static/js/2.2a870eae.chunk.js.map",
+    "static/js/2.d8a0e370.chunk.js": "/easy-word/static/js/2.d8a0e370.chunk.js",
+    "static/js/2.d8a0e370.chunk.js.map": "/easy-word/static/js/2.d8a0e370.chunk.js.map",
     "index.html": "/easy-word/index.html",
-    "precache-manifest.d11cae160c184f8a2d5743b33ac77218.js": "/easy-word/precache-manifest.d11cae160c184f8a2d5743b33ac77218.js",
+    "precache-manifest.a1325344b85988c00cb5b3e423f7669b.js": "/easy-word/precache-manifest.a1325344b85988c00cb5b3e423f7669b.js",
     "service-worker.js": "/easy-word/service-worker.js",
-    "static/css/main.772d0451.chunk.css.map": "/easy-word/static/css/main.772d0451.chunk.css.map",
-    "static/js/2.2a870eae.chunk.js.LICENSE.txt": "/easy-word/static/js/2.2a870eae.chunk.js.LICENSE.txt",
+    "static/css/main.ee75fc04.chunk.css.map": "/easy-word/static/css/main.ee75fc04.chunk.css.map",
+    "static/js/2.d8a0e370.chunk.js.LICENSE.txt": "/easy-word/static/js/2.d8a0e370.chunk.js.LICENSE.txt",
     "static/media/agreement.svg": "/easy-word/static/media/agreement.9517f40d.svg",
+    "static/media/answer-icon.svg": "/easy-word/static/media/answer-icon.fe8857d5.svg",
+    "static/media/answer.svg": "/easy-word/static/media/answer.002516d0.svg",
     "static/media/cat1.svg": "/easy-word/static/media/cat1.3e47551a.svg",
     "static/media/cat2.svg": "/easy-word/static/media/cat2.636b86e7.svg",
     "static/media/cool1.svg": "/easy-word/static/media/cool1.50392de4.svg",
@@ -23,6 +25,8 @@
     "static/media/default2.svg": "/easy-word/static/media/default2.9e8af3de.svg",
     "static/media/devil1.svg": "/easy-word/static/media/devil1.4baabe9d.svg",
     "static/media/devil2.svg": "/easy-word/static/media/devil2.1216ffb3.svg",
+    "static/media/exchange-icon.svg": "/easy-word/static/media/exchange-icon.f10198af.svg",
+    "static/media/exchange.svg": "/easy-word/static/media/exchange.3598c16e.svg",
     "static/media/first.svg": "/easy-word/static/media/first.0584e231.svg",
     "static/media/good.png": "/easy-word/static/media/good.006306a6.png",
     "static/media/hello.png": "/easy-word/static/media/hello.22d09fa8.png",
@@ -51,8 +55,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.4c077e01.js",
-    "static/js/2.2a870eae.chunk.js",
-    "static/css/main.772d0451.chunk.css",
-    "static/js/main.87141e0a.chunk.js"
+    "static/js/2.d8a0e370.chunk.js",
+    "static/css/main.ee75fc04.chunk.css",
+    "static/js/main.82168ba2.chunk.js"
   ]
 }
