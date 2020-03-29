@@ -4,6 +4,8 @@ import styled from 'styled-components';
 
 const WordElement = styled.div`
 	margin: 5px 0;
+	padding: 0 30px;
+	text-align: center;
 	color: var(--color-highlighted);
 	font-weight: bold;
 `

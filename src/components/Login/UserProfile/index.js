@@ -243,7 +243,12 @@ const Achievements = styled.div`
 	justify-content: space-evenly;
 `
 const Achievement = styled.div`
-	
+	${props =>
+		props.hide &&
+		css`
+			display: none;
+		`
+	};
 `
 const AchievementIcon = styled.span`
 	font-size: 30px;
@@ -514,12 +519,10 @@ class UserProfile extends Component {
 							</AddAdmin>
 						</UserContent>
 						<Achievements>
-							<Achievement>
+							<Achievement hide={!this.state.isOwner}>
 								<AchievementIcon>
-									<FaShoppingBasket onClick={this.goToShop} />
+									<Go to='/easy-shop'><FaShoppingBasket /></Go>
 								</AchievementIcon>
-								<Shop onBack={this.goToShop} show={this.state.showShop} coins={this.state.info.coins} experience={this.state.points.experience} />
-								{/* {!this.state.points ? '...' : this.state.points.experience} XP */}
 							</Achievement>
 							<Achievement>
 								<AchievementIcon>

@@ -7,7 +7,7 @@ import latinize from 'latinize'
 import styled from 'styled-components'
 import {db, au} from '../../Config/firebase'
 // COMPONENTS
-import Preloader from './Preloader'
+import Preloader from '../Preloader'
 import Cathegory from './components/Cathegory'
 import Achievements from './components/Navigation/Achievements'
 import Word from './components/Word'
@@ -36,10 +36,11 @@ const AppSite = styled.div`
 class App extends Component {
 	state = {
 		languageOrder: {
-			word: 'translation',
-			translation: 'word'
+			word: 'word',
+			translation: 'translation'
 		},
-		// languageOrder: ['translation', 'word'],
+		langChanges: 1,
+		answers: 5,
 		userId: null,
 		showInformation: false,
 		points: 0,
@@ -58,7 +59,7 @@ class App extends Component {
 		badAnswers: [],
 		waitRounds: 0,
 		lastAnswer: true,
-		appComplete: false,
+		appsComplete: 0,
 		// animations
 		endMessage: false,
 		animation: '',
@@ -120,7 +121,6 @@ class App extends Component {
 					}
 				})
 				units.forEach((prop, index) => result[`unit_${(index + 1).toString().padStart(2, '0')}`] = prop);
-				console.log('result: ', result);
 				let partWords = [];
 				const words = result[unit];
 				if (part !== 'test') {
@@ -132,21 +132,14 @@ class App extends Component {
 						partWords = partWords.concat(Object.values(words));
 					});
 				}
-				db.collection('users').doc(user.uid).get().then(snap => {
-					const app = snap.data()['easy-word']['points'][bookName].units[unit].parts[part]
-					const goodAnswers = app.goodAnswers ? app.goodAnswers : [];
-					partWords = partWords.filter(({word1}) => !goodAnswers.includes(word1));
-					// console.log(partWords);
-					this.setState({
-						words: partWords,
-						baseWord: getWord(partWords),
-						info: {
-							unit,
-							part,
-							bookName
-						},
-						appComplete: app.complete
-					})
+				this.setState({
+					words: partWords,
+					baseWord: getWord(partWords),
+					info: {
+						unit,
+						part,
+						bookName
+					}
 				})
 
 			})
@@ -162,7 +155,10 @@ class App extends Component {
 					const experience = snap.data()['easy-word'].experience;
 					this.setState({
 						points, experience, appLevel, goodAnswers,
-						languageOrder: snap.data()['easy-word'].config.languageOrder,
+						langChanges: snap.data()['easy-word'].langChanges,
+						answers: snap.data()['easy-word'].answers,
+						languageOrder: app.languageOrder ? app.languageOrder : this.state.languageOrder,
+						appsComplete: app.complete ? app.complete : this.state.appsComplete
 					});
 					if (appLevel === 1) {
 						this.setState({prevGoal: 0});
@@ -229,7 +225,6 @@ class App extends Component {
 		}
 	}
 	getNew = () => {
-		console.log(this.state.badAnswers.length);
 		if (this.state.hideAnswer === true || this.state.answer === 'Brawo!') {
 			if (this.state.badAnswers.length !== 0) {
 				if (this.state.badAnswers.length === 1 && this.state.lastAnswer === false && this.state.words.length !== 0) {
@@ -282,9 +277,14 @@ class App extends Component {
 					if (!this.state.goodAnswers.includes(this.state.baseWord.word1)) {
 						goodAnswers = this.state.goodAnswers.concat(this.state.baseWord.word1);
 					}
-					db.collection('users').doc(this.state.userId).update({
-						[`${app}.goodAnswers`]: goodAnswers
-					})
+					if (this.state.userId) {
+						db.collection('users').doc(this.state.userId).update({
+							[`${app}.goodAnswers`]: goodAnswers
+						})
+					}
+					else {
+						this.setState({goodAnswers})
+					}
 					const filtered = this.state.words.filter(({word1}) => !goodAnswers.includes(word1));
 					if (filtered.length !== 0 || this.state.badAnswers.length !== 0) {
 						// console.log(filtered);
@@ -293,7 +293,7 @@ class App extends Component {
 					else {
 						db.collection('users').doc(this.state.userId).update({
 							[`${app}.goodAnswers`]: [],
-							[`${app}.complete`]: true
+							[`${app}.complete`]: this.state.appsComplete + 1
 						});
 						db.collection('books').doc(this.props.match.params.bookName).get().then((snap) => {
 							let partWords;
@@ -383,7 +383,7 @@ class App extends Component {
 			badAnswers: this.state.badAnswers.concat(this.state.baseWord),
 			waitRounds: this.state.waitRounds + 1,
 			lastAnswer: false
-		})
+		});
 		if (this.state.hideAnswer !== false) {
 			const translation = this.state.languageOrder.translation;
 			let translation1 = this.state.baseWord[`${translation}1`];
@@ -457,41 +457,116 @@ class App extends Component {
 		if (!this.state.appComplete) {
 			!this.state.endMessage ? this.setState({endMessage: true}) : this.setState({endMessage: false})
 		}
-		this.changeLanguage();
+		this.changeLanguage('free');
 	}
-	changeLanguage = () => {
+	changeLanguage = (free) => {
+		const {bookName, unit, part} = this.state.info;
+		const app = `easy-word.points.${bookName}.units.${unit}.parts.${part}`;
 		if (this.state.userId) {
 			db.collection('users').doc(this.state.userId).get().then(snap => {
-				if (snap.data()['easy-word'].config.languageOrder.word === 'word') {
-					db.collection('users').doc(this.state.userId).update({
-						'easy-word.config.languageOrder': {
-							word: 'translation',
-							translation: 'word'
+				if (snap.data()['easy-word'].langChanges > 0) {
+					const languageOrder = snap.data()['easy-word'].points[bookName].units[unit].parts[part].languageOrder;
+					const langChanges = snap.data()['easy-word'].langChanges
+					if (!languageOrder || languageOrder.word === 'word') {
+						if (!free) {
+							db.collection('users').doc(this.state.userId).update({
+								'easy-word.langChanges': langChanges - 1
+							})
 						}
-					})
+						db.collection('users').doc(this.state.userId).update({
+							[`${app}.languageOrder`]: {
+								word: 'translation',
+								translation: 'word'
+							}
+						})
+					}
+					else {
+						if (!free) {
+							db.collection('users').doc(this.state.userId).update({
+								'easy-word.langChanges': langChanges - 1
+							})
+						}
+						db.collection('users').doc(this.state.userId).update({
+							[`${app}.languageOrder`]: {
+								word: 'word',
+								translation: 'translation'
+							}
+						})
+					}
 				}
 				else {
-					db.collection('users').doc(this.state.userId).update({
-						'easy-word.config.languageOrder': {
-							word: 'word',
-							translation: 'translation'
-						}
-					})
+					alert('Nie posiadasz juz zmian języka! Przejdź do sklepu, by kupić ich więcej ;)')
 				}
 			})
 		}
 		else {
-			this.state.languageOrder.word === 'word' ? (
-				this.setState({languageOrder: {
-					word: 'translation',
-					translation: 'word'
-				}})
-			) : (
-				this.setState({languageOrder: {
-					word: 'word',
-					translation: 'translation'
-				}})
-			)
+			if (this.state.langChanges > 0) {
+				this.state.languageOrder.word === 'word' ? (
+					this.setState({
+						languageOrder: {
+							word: 'translation',
+							translation: 'word'
+						},
+						langChanges: this.state.langChanges - 1
+					})
+				) : (
+					this.setState({
+						languageOrder: {
+							word: 'word',
+							translation: 'translation'
+						},
+						langChanges: this.state.langChanges - 1
+					})
+				)
+			}
+			else {
+				alert('Zaloguj się, aby móc dalej korzystać ze zmiany języka!')
+			}
+		}
+	}
+	hint = () => {
+		if (this.state.hideAnswer) {
+			if (this.state.userId) {
+				db.collection('users').doc(this.state.userId).get().then(snap => {
+					const answers = snap.data()['easy-word'].answers;
+					if (answers > 0) {
+						db.collection('users').doc(this.state.userId).update({
+							'easy-word.answers': answers - 1
+						});
+						document.getElementById('answer').style.color = 'green';
+						this.setState({
+							badAnswers: this.state.badAnswers.concat(this.state.baseWord),
+							waitRounds: this.state.waitRounds + 1,
+							lastAnswer: false,
+							hideAnswer: false,
+							answer: this.state.baseWord[`${this.state.languageOrder.translation}1`]
+						})
+					}
+					else {
+						alert('Wykorzystałeś już wszystkie podpowiedzi! Przejdź do sklepu, aby kupic ich więcej ;)')
+					}
+	
+				})
+			}
+			else {
+				if (this.state.answers > 0) {
+					document.getElementById('answer').style.color = 'green';
+					this.setState({
+						badAnswers: this.state.badAnswers.concat(this.state.baseWord),
+						waitRounds: this.state.waitRounds + 1,
+						lastAnswer: false,
+						answers: this.state.answers - 1,
+						hideAnswer: false,
+						answer: this.state.baseWord[`${this.state.languageOrder.translation}1`]
+					})
+				}
+				else {
+					alert('Zaloguj się, aby skorzystać z wiekszej ilości podpowiedzi!')
+				}
+			}
+		}
+		else {
+			alert('Po co chcesz wykorzystac podpowiedź? Masz ją przecież podane 😅')
 		}
 	}
 	render = () => {
@@ -537,7 +612,7 @@ class App extends Component {
 				{/* <Congratulations preview={this.state.message} level={this.state.appLevel} prize={this.state.prize} onClick={this.handleMessage} /> */}
 				<End part={this.state.info.part} bookName={this.props.match.params.bookName} onBack={this.endMessage} show={this.state.endMessage} />
 				{/* <Congratulations preview='true' level={this.state.appLevel} prize={this.state.prize} onClick={this.handleMessage} /> */}
-				<SocialMedia lang={this.state.languageOrder} changeLanguage={this.changeLanguage} />
+				<SocialMedia lang={this.state.languageOrder} langChanges={this.state.langChanges} changeLanguage={this.changeLanguage} answers={this.state.answers} hint={this.hint} />
 			</AppSite>
 		);
 	}

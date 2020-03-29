@@ -10,6 +10,7 @@ import Facebook from './Components/Facebook/Facebook'
 import Login from './Components/Login/LoginApp'
 import Registration from './Components/Login/Registration'
 import UserProfile from './Components/Login/UserProfile/index'
+import Shop from './Components/Shop'
 import Leaves from './Components/_Leaves/Leaves'
 import Editor from './Components/_Editor/Editor'
 import NotFoundPage from './pages/404/404'
@@ -209,6 +210,7 @@ class App extends Component {
 				<Route path="/login" exact component={Login}/>
 				<Route path="/rejestracja" exact component={Registration}/>
 				<Route path="/users/:id" exact component={UserProfile}/>
+				<Route path="/easy-shop" exact component={Shop}/>
 				<Route path="/leaves" exact component={Leaves}/>
 				<Route path="/editor" exact component={Editor}/>
 				<Route path="/auto" exact component={Automatic}/>

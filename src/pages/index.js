@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import {Wrapper} from '../Components/Styles/Components'
 import roadSignsBookImage from '../Components/Images/road-signs-book.png'
 import irregularVerbsBookImage from '../Components/Images/irregular-verbs-book.png'
-import Preloader from '../Components/App/Preloader'
+import Preloader from '../Components/Preloader'
 // ICONS
 import {FaTrophy} from 'react-icons/fa'
 

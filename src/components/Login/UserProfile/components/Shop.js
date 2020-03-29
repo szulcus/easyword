@@ -9,6 +9,7 @@ import {FaGamepad, FaTimes} from 'react-icons/fa'
 import {GiTwoCoins} from 'react-icons/gi'
 import {TiChartLine, TiTick} from 'react-icons/ti'
 //images
+import exchange from '../../../Images/icons/exchange.svg'
 import premium from '../../../Images/icons/reward.svg'
 
 const fade = keyframes`
@@ -70,18 +71,26 @@ const ExperienceIcon = styled(TiChartLine)`
 const Number = styled.strong`
 	color: var(--color-decorative);
 `
-const Products = styled.div`
+const AllProducts = styled.div`
 	width: 90vw;
 	max-width: 1000px;
 	display: flex;
-	justify-content: center;
-	flex-wrap: wrap;
+	flex-direction: column;
+	align-items: center;
 	max-height: calc(100vh - 250px);
 	overflow-y: scroll;
 	/* background-color: gray; */
 	::-webkit-scrollbar {
 		width: 0;
 	}
+`
+const ProductsTitle = styled.h2`
+	filter: blur(0);
+`
+const Products = styled.div`
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
 `
 const animation1 = keyframes`
 	0% {
@@ -276,6 +285,9 @@ const Product = styled.div`
 		props.show && props.show !== props.id &&
 		css`
 			filter: blur(10px);
+			${ProductsTitle} {
+				filter: blur(10px);
+			}
 		`
 	}
 	/* aktywny produkt */
@@ -358,7 +370,7 @@ class Shop extends Component {
 			purchased: ['default', 'nerd'],
 			selected: 'default',
 		},
-		products: ['default', 'cat', 'cool', 'crazy', 'devil', 'nerd', 'nice'],
+		packs: ['default', 'cat', 'cool', 'crazy', 'devil', 'nerd', 'nice'],
 		animations: {
 			catAnimation: false,
 			coolAnimation: false,
@@ -464,30 +476,40 @@ class Shop extends Component {
 						<Text>Doświadczenie:</Text> <Number>{this.props.experience} <ExperienceIcon /></Number>
 					</Experience>
 				</Info>
-				<Products>
-					{this.state.products.map(product => {
-						return (
-							<Product purchased={this.state.userPackages.purchased} selected={this.state.userPackages.selected} id={product} show={this.state.showProduct} onClick={this.showProduct} onMouseOver={this.play} onMouseOut={this.stop}>
-								<ProductItem first={this.state.animations[`${product}Animation`]} src={require(`../../../Images/icons/packs/${product}-pack/${product}1.svg`)} />
-								<ProductItem second={this.state.animations[`${product}Animation`]} src={require(`../../../Images/icons/packs/${product}-pack/${product}2.svg`)} />
-								<ProductMenu>
-									<Cost>{!this.state.userPackages.purchased.includes(product) ? <>50 <CoinIcon/></> : <TiTick />}</Cost>
-									{this.state.userPackages.selected === product ? '' : (!this.state.userPackages.purchased.includes(product) ? <Buy onClick={this.buy} color="decorative">Kup</Buy> : <Buy onClick={this.set} color="decorative">Ustaw</Buy>)}
-									<Back onClick={this.backProduct} />
-								</ProductMenu>
-							</Product>
-						)
-					})}
-					{/* <Product purchased={this.state.userPackages.purchased} selected={this.state.userPackages.selected} id="premium" show={this.state.showProduct} onClick={this.showProduct} onMouseOver={this.play} onMouseOut={this.stop}>
-						<ProductItem src={premium} />
-						<ProductMenu>
-							<Cost>1000 <CoinIcon/></Cost>
-							<Buy onClick={this.buyPremium} color="decorative">Kup</Buy>
-							<Back onClick={this.backProduct} />
-						</ProductMenu>
-					</Product> */}
-					
-				</Products>
+				<AllProducts>
+					<ProductsTitle>Paczki</ProductsTitle>
+					<Products>
+						{this.state.packs.map(product => {
+							return (
+								<Product purchased={this.state.userPackages.purchased} selected={this.state.userPackages.selected} id={product} show={this.state.showProduct} onClick={this.showProduct} onMouseOver={this.play} onMouseOut={this.stop}>
+									<ProductItem first={this.state.animations[`${product}Animation`]} src={require(`../../../Images/icons/packs/${product}-pack/${product}1.svg`)} />
+									<ProductItem second={this.state.animations[`${product}Animation`]} src={require(`../../../Images/icons/packs/${product}-pack/${product}2.svg`)} />
+									<ProductMenu>
+										<Cost>{!this.state.userPackages.purchased.includes(product) ? <>50 <CoinIcon/></> : <TiTick />}</Cost>
+										{this.state.userPackages.selected === product ? '' : (!this.state.userPackages.purchased.includes(product) ? <Buy onClick={this.buy} color="decorative">Kup</Buy> : <Buy onClick={this.set} color="decorative">Ustaw</Buy>)}
+										<Back onClick={this.backProduct} />
+									</ProductMenu>
+								</Product>
+							)
+						})}
+					</Products>
+					<ProductsTitle>Paczki</ProductsTitle>
+					<Products>
+						{this.state.packs.map(product => {
+							return (
+								<Product purchased={this.state.userPackages.purchased} selected={this.state.userPackages.selected} id={product} show={this.state.showProduct} onClick={this.showProduct} onMouseOver={this.play} onMouseOut={this.stop}>
+									<ProductItem first={this.state.animations[`${product}Animation`]} src={require(`../../../Images/icons/packs/${product}-pack/${product}1.svg`)} />
+									<ProductItem second={this.state.animations[`${product}Animation`]} src={require(`../../../Images/icons/packs/${product}-pack/${product}2.svg`)} />
+									<ProductMenu>
+										<Cost>{!this.state.userPackages.purchased.includes(product) ? <>50 <CoinIcon/></> : <TiTick />}</Cost>
+										{this.state.userPackages.selected === product ? '' : (!this.state.userPackages.purchased.includes(product) ? <Buy onClick={this.buy} color="decorative">Kup</Buy> : <Buy onClick={this.set} color="decorative">Ustaw</Buy>)}
+										<Back onClick={this.backProduct} />
+									</ProductMenu>
+								</Product>
+							)
+						})}
+					</Products>
+				</AllProducts>
 				<Exit>
 					<Link to='/'>
 						<Icon>
