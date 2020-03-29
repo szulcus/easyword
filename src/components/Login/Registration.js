@@ -1,20 +1,9 @@
 // BASIC
 import React, {Component} from 'react';
 import styled, {css} from 'styled-components'
-import firebase from 'firebase/app'
-import 'firebase/app'
-import 'firebase/auth'
-import 'firebase/firestore'
-import 'firebase/functions'
-// STYLE
-import Global from '../Styles/Global'
-import { Wrapper } from '../Styles/Components'
-// COMPONENTS
-import SignUp from './components/SignUp'
-import SignInWithFacebook from './components/SignInWithFacebook'
-import SignInWithGoogle from './components/SignInWithGoogle'
-import LogOut from './components/LogOut'
-import points from './BlankPointsObject';
+import {au, auth} from '../../Config/firebase'
+// ICONS
+import {FaFacebookF, FaGoogle} from 'react-icons/fa'
 
 const LoginElement = styled.div`
 	display: flex;
@@ -23,12 +12,10 @@ const LoginElement = styled.div`
 	align-items: center;
 	color: var(--color-primary);
 	width: 100vw;
-	/* min-width: 540px; */
-	/* min-height: 720px; */
 	padding: 20px;
 `
 const LoginTitle = styled.header`
-	font-size: 35px;
+	font-size: 40px;
 	font-weight: bold;
 	text-align: center;
 	margin: 30px 0;
@@ -36,11 +23,8 @@ const LoginTitle = styled.header`
 		font-size: 50px;
 	}
 	@media(max-height: 600px) {
-		margin: 15px 0 0 0;
-		font-size: 35px;
-	}
-	@media(max-height: 450px) {
-		margin: 30px 0;
+		margin: 0;
+		font-size: 40px;
 	}
 `
 const Form = styled.form`
@@ -58,7 +42,7 @@ const Field = styled.div`
 	margin: 30px;
 	.input:focus + .label .content-label,
 	.input:valid + .label .content-label {
-		transform: translateY(-200%);
+		transform: translateY(-150%);
 		font-size: 15px;
 	}
 `
@@ -92,21 +76,21 @@ const ContentLabel = styled.span`
 	position: absolute;
 	bottom: 5px;
 	left: 0;
+	width: 100%;
 	transition: all 0.2s ease;
+	background-color: var(--color-bg);
 `
 const Choise = styled.div`
 	display: grid;
 	justify-content: center;
-	grid-template-columns: 1fr 1fr;
-	grid-template-rows: auto auto;
-	${props =>
-			props.hide &&
-			css`
-				display: none;
-	`};
-	@media(max-width: 500px) {
-		display: flex;
-		align-items: center;
+	grid-template-columns: repeat(3, 1fr);
+	grid-gap: 20px;
+	width: 90vw;
+	max-width: 700px;
+	margin-top: 30px;
+	@media(max-width: 600px) {
+		grid-template-columns: repeat(1, 1fr);
+		max-width: 250px;
 	}
 `
 const UserContent = styled.ul`
@@ -121,35 +105,77 @@ const UserContent = styled.ul`
 				display: block;
 	`};
 `
-const Error = styled.p`
-
+const LogIn = styled.button`
+	position: relative;
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	line-height: 150%;
+	min-width: 180px;
+	font-size: 20px;
+	padding: 10px 20px;
+	background-color: transparent;
+	border-radius: 20px;
+	border: 2px solid ${props => `var(--color-${props.color})`};
+	color: var(--color-primary);
+	transition: all 0.5s ease;
+	overflow: hidden;
+	::before {
+		content: '';
+		display: block;
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		background-color: ${props => `var(--color-${props.color})`};
+		opacity: 0.5;
+		filter: blur(5px);
+		transform: translateX(-250px) skewX(-15deg);
+		z-index: 2;
+	}
+	:hover {
+		cursor: pointer;
+		background-color: ${props => `var(--color-${props.color})`};
+		color: ${props => props.color === 'main' || props.color === 'decorative' ? 'var(--color-bg)' : 'var(--color-light)'};
+		::before {
+			transform: translate(250px) skewX(-15deg);
+			opacity: 0.6;
+			transition: all 0.7s ease;
+		}
+	}
+	:focus {
+		outline: none
+	}
+`
+const Icon = styled.span`
+	transform: translateY(3px);
 `
 class App extends Component {
 	state = {
 		error: null
 	}
 	componentDidMount() {
-		firebase.auth().onAuthStateChanged(user => {
+		au.onAuthStateChanged(user => {
 			if(user) {
 				this.props.history.push(`/users/${user.uid}`);
 			}
 		})
 	}
 	signInWithGoogle = () => {
-		const provider = new firebase.auth.GoogleAuthProvider();
+		const provider = new auth.GoogleAuthProvider();
 
-		firebase.auth().signInWithRedirect(provider).then(result => {
-			console.log(result);
+		au.signInWithRedirect(provider).then(result => {
+			console.log(result.user);
 		}).catch(error => {
 			console.log(error);
 		})
 	}
 	signInWithFacebook = () => {
-		const provider = new firebase.auth.FacebookAuthProvider();
+		const provider = new auth.FacebookAuthProvider();
 
-		firebase.auth().signInWithPopup(provider).then(result => {
-			console.log(result);
-			console.log(result.uid);
+		au.signInWithPopup(provider).then(result => {
+			console.log(result.user);
 		}).catch(error => {
 			console.log(error);
 		})
@@ -157,35 +183,17 @@ class App extends Component {
 	signUp = () => {
 		const txtEmail = document.getElementById('txtEmail');
 		const txtPassword = document.getElementById('txtPassword');
-		const txtBiography = document.getElementById('txtBiography');
-		const txtNick = document.getElementById('txtNick');
 		const email = txtEmail.value;
 		const pass = txtPassword.value;
-		const auth = firebase.auth();
-		const db = firebase.firestore();
-		auth.createUserWithEmailAndPassword(email, pass).then(cred => {
-			console.log(`cred:`);
+		au.createUserWithEmailAndPassword(email, pass).then(cred => {
 			console.log(cred.user.uid);
-			this.props.history.push(`/users/${cred.user.uid}`);
-				return db.collection('users').doc(cred.user.uid).set({
-					bio: txtBiography.value,
-					nick: txtNick.value,
-					points: points
-				})
-			}).then((cred) => {
-				console.log(cred);
-				this.setState({error: ''});
-
-			}).catch(err => {
-				console.log(err);
-				this.setState({error: err.message});
-			})
+		}).catch(err => {
+				console.log(err.message);
+		})
 	}
 	render() {
 		return (
 			<>
-				<Global />
-				<Wrapper scroll onClick={this.exit}>
 					<LoginElement>
 						<LoginTitle>Zarejestruj się</LoginTitle>
 						<UserContent preview={this.state.isLoggedIn}>
@@ -204,7 +212,7 @@ class App extends Component {
 									<ContentLabel className="content-label">Hasło</ContentLabel>
 								</Label>
 							</Field>
-							<Field>
+							{/* <Field>
 								<Input className="input" id="txtBiography" type="text" name="biography" autoComplete="off" required />
 								<Label className="label" htmlFor="biography">
 									<ContentLabel className="content-label">Biogram / Opis</ContentLabel>
@@ -215,17 +223,22 @@ class App extends Component {
 								<Label className="label" htmlFor="nick">
 									<ContentLabel className="content-label">Nick / Imię</ContentLabel>
 								</Label>
-							</Field>
+							</Field> */}
 						</Form>
-						<Choise hide={this.state.isLoggedIn}>
-							<SignInWithFacebook onClick={this.signInWithFacebook} />
-							<SignInWithGoogle onClick={this.signInWithGoogle} />
-							<SignUp onClick={this.signUp} />
-							<Error id="error">{this.state.error}</Error>
+						<Choise>
+							<LogIn color="fb" onClick={this.signInWithFacebook}>
+								<Icon><FaFacebookF /></Icon>
+								Zaloguj się
+							</LogIn>
+							<LogIn color="gplus" onClick={this.signInWithGoogle}>
+								<Icon><FaGoogle /></Icon>
+								Zaloguj się
+							</LogIn>
+							<LogIn color="decorative" onClick={this.signUp}>
+								Zarejestruj się
+							</LogIn>
 						</Choise>
-						<LogOut onClick={this.logOut} preview={this.state.isLoggedIn} />
 					</LoginElement>
-				</Wrapper>
 			</>
 		);
 	}

@@ -1,8 +1,6 @@
 // BASIC
 import React, { Component } from 'react'
 import styled from 'styled-components'
-// COMPONENTS
-import LogIn from '../../Login/components/LogIn'
 // Images
 import hello from '../../Images/hello.png'
 
@@ -41,7 +39,49 @@ const Image = styled.img`
 		display: none;
 	}
 `
-
+const LogIn = styled.button`
+	position: relative;
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	line-height: 150%;
+	min-width: 180px;
+	font-size: 20px;
+	padding: 10px 20px;
+	background-color: transparent;
+	border-radius: 20px;
+	border: 2px solid ${props => `var(--color-${props.color})`};
+	color: var(--color-primary);
+	transition: all 0.5s ease;
+	overflow: hidden;
+	::before {
+		content: '';
+		display: block;
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		background-color: ${props => `var(--color-${props.color})`};
+		opacity: 0.5;
+		filter: blur(5px);
+		transform: translateX(-250px) skewX(-15deg);
+		z-index: 2;
+	}
+	:hover {
+		cursor: pointer;
+		background-color: ${props => `var(--color-${props.color})`};
+		color: ${props => props.color === 'main' || props.color === 'decorative' ? 'var(--color-bg)' : 'var(--color-light)'};
+		::before {
+			transform: translate(250px) skewX(-15deg);
+			opacity: 0.6;
+			transition: all 0.7s ease;
+		}
+	}
+	:focus {
+		outline: none
+	}
+`
 const Button = styled.button`
 	border: none;
 	background-color: inherit;
@@ -64,7 +104,7 @@ class Information extends Component {
 			<InformationElement>
 				<Title>Zapisz swoje osiągnięcia!</Title>
 				<Image src={hello} />
-				<LogIn onClick={this.props.onClick} />
+				<LogIn color="main" onClick={this.props.onClick}>Zaloguj się</LogIn>
 				<Button onClick={this.props.onBack}>Pomiń</Button>
 			</InformationElement>
 		);

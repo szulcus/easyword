@@ -12,7 +12,7 @@ class Word extends Component {
 	render() {
 		return (
 				<WordElement>
-					{this.props.content}
+					{this.props.content ? this.props.content : '...'}
 				</WordElement>
 		);
 	}

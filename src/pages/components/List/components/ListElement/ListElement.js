@@ -19,7 +19,7 @@ class ListElement extends Component {
 		return (
 			<ListElementItem>
 				<Icon />
-				<PageLink list to={this.props.path}>{this.props.content}</PageLink>
+				<PageLink list="true" to={this.props.path}>{this.props.content}</PageLink>
 			</ListElementItem>
 		);
 	}

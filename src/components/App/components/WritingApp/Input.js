@@ -66,7 +66,6 @@ class Input extends Component {
 		return (
 			<InputComponent>
 				<LevelElement>
-					{/* <Progress value={this.props.points} max="30" /> */}
 					<Progress value={this.props.points - this.props.prevGoal} max={this.props.goal - this.props.prevGoal} />
 				</LevelElement>
 				<InputElement id="input" readOnly={this.props.readOnly} onChange={this.props.onChange} onKeyPress={this.props.press} placeholder="Wpisz tłumaczenie" type="text" autoComplete="off" />

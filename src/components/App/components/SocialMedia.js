@@ -1,17 +1,28 @@
 // BASIC
 import React, { Component } from 'react'
-import styled from 'styled-components'
-// STYLES
-import { BrowserLink } from '../../Styles/Components'
+import styled, {keyframes} from 'styled-components'
+import {Link} from 'react-router-dom'
 // ICONS
-import { FaFacebookF, FaGithub, FaLinkedinIn, FaUserTie } from 'react-icons/fa'
+import { FaUserTie } from 'react-icons/fa'
+import { au } from '../../../Config/firebase'
+import pl from '../../Images/icons/pl.svg'
+import uk from '../../Images/icons/uk.svg'
+import random from '../../Images/icons/pl-uk.svg'
 
-
-const SocialMediaElement = styled.ul`
+const fade = keyframes`
+	from {
+		opacity: 0;
+		transform: translateY(10px)
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0)
+	}
+`
+const NavigationComponent = styled.nav`
 	/* display: none; */
 	position: absolute;
-	bottom: 0;
-	right: 20vw;
+	bottom: 10px;
 	display: flex;
 	justify-content: center;
 	list-style: none;
@@ -19,24 +30,47 @@ const SocialMediaElement = styled.ul`
 	padding: 0;
 	text-align: center;
 	font-size: 30px;
-	opacity: 0.5;
+	/* opacity: 0.5; */
 	transition-duration: 0.5s;
-	animation: floatBottom 0.3s ease-in;
+	animation: ${fade} 0.3s ease-in;
 	z-index: 2;
 	@media(max-height: 550px) {
 		display: none;
 	}
 `
+const Icon = styled.img`
+	height: 30px;
+`
 
-const SocialMediaItem = styled.li`
+// const SocialMediaItem = styled.li`
+// 	margin: 0 10px;
+// `
+
+const SocialMediaItem = styled(Link)`
+	text-decoration: none;
+	color: var(--color-decorative);
 	margin: 0 10px;
+	transition: all 0.2s ease;
+	:hover {
+		opacity: 0.7;
+	}
 `
 
 class SocialMedia extends Component {
+	state = {
+		userId: null
+	}
+	componentDidMount() {
+		au.onAuthStateChanged(user => {
+			if (user) {
+				this.setState({userId: user.uid})
+			}
+		})
+	}
 	render() {
 		return (
-			<SocialMediaElement>
-				<SocialMediaItem>
+			<NavigationComponent>
+				{/* <SocialMediaItem>
 					<BrowserLink href="https://www.facebook.com/programista.webowy.jakub.schulz" target="_blank">
 						<FaFacebookF />
 					</BrowserLink>
@@ -55,8 +89,15 @@ class SocialMedia extends Component {
 					<BrowserLink href="https://programista-webowy-jakub-schulz.000webhostapp.com" target="_blank">
 						<FaUserTie />
 					</BrowserLink>
-				</SocialMediaItem>
-			</SocialMediaElement>
+				</SocialMediaItem> */}
+				{!this.state.userId ? '' : <SocialMediaItem to={`/users/${this.state.userId}`}>
+					<FaUserTie />
+				</SocialMediaItem>}
+				{this.props.lang.word === 'word' ? <Icon onClick={this.props.changeLanguage} src={pl} alt="pl" title="Zmień na język polski" /> : <Icon onClick={this.props.changeLanguage} src={uk} alt="uk" title="Zmień na język angielski" />}
+				
+				{/* <Icon src={pl} alt="pl" title="J. Polski" /> */}
+				{/* <Icon src={random} alt="pl-uk" title="Na przemian" /> */}
+			</NavigationComponent>
 		);
 	}
 }

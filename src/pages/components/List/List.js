@@ -37,50 +37,50 @@ const Separator = styled.hr`
 
 const ListElementWrapper = styled.div``
 
-const Advertisement = styled.div`
-	background-color: var(--color-dark);
-	padding: 10px;
-	margin-bottom: 50px;
-	border-radius: 20px;
-	@media (min-width: 600px) {
-		padding: 10px 20px;
-	}
-`
+// const Advertisement = styled.div`
+// 	background-color: var(--color-dark);
+// 	padding: 10px;
+// 	margin-bottom: 50px;
+// 	border-radius: 20px;
+// 	@media (min-width: 600px) {
+// 		padding: 10px 20px;
+// 	}
+// `
 
-const Term = styled.div`
-	display: flex;
-	justify-content: space-around;
-	line-height: 100%;
-	margin: 20px;
-	font-size: 30px;
-	color: var(--color-decorative);
-`
+// const Term = styled.div`
+// 	display: flex;
+// 	justify-content: space-around;
+// 	line-height: 100%;
+// 	margin: 20px;
+// 	font-size: 30px;
+// 	color: var(--color-decorative);
+// `
 
-const Line = styled.div`
-	display: none;
-		@media (min-width: 600px) {
-			display: block;
-		}
-`
+// const Line = styled.div`
+// 	display: none;
+// 		@media (min-width: 600px) {
+// 			display: block;
+// 		}
+// `
 
-const Time = styled.div`
-	width: 200px;
-	font-size: 20px;
-	text-align: center;
-	::after {
-		content: ' 😉';
-	}
-`
+// const Time = styled.div`
+// 	width: 200px;
+// 	font-size: 20px;
+// 	text-align: center;
+// 	::after {
+// 		content: ' 😉';
+// 	}
+// `
 
-const Date = styled.div`
-	width: 200px;
-	font-size: 20px;
-	text-align: center;
-	display: none;
-		@media (min-width: 600px) {
-			display: block;
-		}
-`
+// const Date = styled.div`
+// 	width: 200px;
+// 	font-size: 20px;
+// 	text-align: center;
+// 	display: none;
+// 		@media (min-width: 600px) {
+// 			display: block;
+// 		}
+// `
 
 const UnitTitle = styled.h3`
 	text-align: left;
@@ -107,7 +107,7 @@ const Go = styled(Link)`
 const UnitListItem = styled.li`
 	position: relative;
 	display: flex;
-	align-items: center;
+	justify-content: flex-start;
 	padding: 3px;
 	:hover ${Go} {
 		display: block;
@@ -127,6 +127,7 @@ const Star = styled(FaStar)`
 class List extends Component {
 	state = {
 		plannedDate: '20200128',
+		units: null
 	}
 	componentDidMount() {
 		const db = firebase.firestore();
@@ -151,19 +152,20 @@ class List extends Component {
 		else {
 			this.props.history.push('not-found-page')
 		}
-		db.collection('books').doc(this.props.match.params.bookName).get().then((snap) => {
-			this.setState({
-				data: snap.data()
+		db.collection('books').get().then((snaps) => {
+			// const data = snaps.filter((snap) => snap.data().info.id.includes(this.props.match.params.bookName));
+			let units = [];
+			let info = {}
+			snaps.forEach(snap => {
+				if (snap.data().info.id.includes(this.props.match.params.bookName)) {
+					units = units.concat(Object.values(snap.data()).slice(1))
+					if (snap.data().info.id === this.props.match.params.bookName) {
+						info = snap.data().info
+					}
+				}
 			})
-			console.log(this.state.data);
-			// console.log(Object.values(this.state.data));
-		});
-		db.collection('data').doc('nearest-unit').get().then((snap) => {
-			this.setState({
-				nearestUnit: snap.data()
-			})
-			console.log(this.state.nearestUnit);
-		});
+			this.setState({units, info})
+		})
 	}
 	flat = (name) => {
 		return name ? latinize(name.toLowerCase()).split(' ').join('-').replace(/,/g, '') : '';
@@ -177,65 +179,29 @@ class List extends Component {
 		return (
 			<ListComponent>
 				<Global />
-				{!this.state.data ? 'Wczytywanie...' : <Wrapper list>
-					<Book src={this.state.data.info.src} information='WSiP - język angielski zawodowy w logistyce i spedycji. Zeszyt ćwiczeń'/>
+				{!this.state.units ? 'Wczytywanie...' : <Wrapper list="true">
+					<Book src={this.state.info.src} information='WSiP - język angielski zawodowy w logistyce i spedycji. Zeszyt ćwiczeń'/>
 					<Separator />
 					<ListElementWrapper>
 						<Header />
 						<ListWrapper>
-							{!this.state.nearestUnit ? '...' : <>
+							{/* {!this.state.nearestUnit ? '...' : <>
 								<Term>
 									<Date>{`${moment(this.state.plannedDate, "YYYYMMDD").format('LL')}r`}</Date>
 									<Line>|</Line>
 									<Time>{moment(this.state.plannedDate, "YYYYMMDD").add(11, 'hours').add(40, 'minutes').fromNow()}</Time>
 								</Term>
-								<Advertisement>
-									{/* <UnitTitle>Rozdział {this.state.nearestUnit.number} - {this.state.data[`unit_${this.state.nearestUnit.number}`].title}</UnitTitle> */}
-									<UnitList>
-										{/* {Object.values(this.state.data[`unit_${this.state.nearestUnit.number}`].parts).map(({name}, index) => {
-											return (
-												<UnitListItem>
-													<Arrow />
-													<PageLink list="true" to={`/${this.state.bookName}/rozdzial-${this.state.nearestUnit.number}.${index + 1}/${this.flat(name)}`}>{name}</PageLink>
-													<Go to={`/${this.state.bookName}/spis-slowek/rozdzial-${this.state.nearestUnit.number}/${this.flat(name)}`}>
-														<FaListUl />
-													</Go>
-													{}
-												</UnitListItem>
-											)
-										})} */}
-										{/* {Object.values(nearestParts).length === 1 ? '' : Object.values(parts).map(({name}, partIndex) => {
-											return (
-												<UnitListItem>
-													<Arrow />
-													<PageLink list="true" to={`/${this.state.bookName}/rozdzial-${unitIndex + 1}.${partIndex + 1}/${this.flat(name)}`}>{name}</PageLink>
-													<Go to={`/${this.state.bookName}/spis-slowek/rozdzial-${unitIndex + 1}/${this.flat(name)}`}>
-														<FaListUl />
-													</Go>
-													{}
-												</UnitListItem>
-											)
-										})} */}
-										{/* <UnitListItem>
-											<Star />
-											<PageLink list="true" to={`/${this.state.bookName}/rozdzial-${unitIndex + 1}/test`}>&nbsp;Test&nbsp;</PageLink>
-											<Star />
-											<Go to={`/${this.state.bookName}/spis-slowek/rozdzial-${unitIndex + 1}/test`}>
-												<FaListUl />
-											</Go>
-										</UnitListItem> */}
-									</UnitList>
-								</Advertisement>
-							</>}
+								<Advertisement></Advertisement>
+							</>} */}
 
-							{Object.values(this.state.data).slice(1).map(({title, parts}, unitIndex) => {
+							{this.state.units.map(({title, parts}, unitIndex) => {
 								return(
-									<>
+									<div key={`${unitIndex}_${title}`}>
 										<UnitTitle>Rozdział {unitIndex + 1} - {title}</UnitTitle>
 										<UnitList>
 											{Object.values(parts).length === 1 ? '' : Object.values(parts).map(({name}, partIndex) => {
 												return(
-													<UnitListItem>
+													<UnitListItem key={`${partIndex}_${name}`}>
 														<Arrow />
 														<PageLink list="true" to={`/${this.state.bookName}/rozdzial-${unitIndex + 1}.${partIndex + 1}/${this.flat(name)}`}>{name}</PageLink>
 														<Go to={`/${this.state.bookName}/spis-slowek/rozdzial-${unitIndex + 1}/${this.flat(name)}`}>
@@ -254,7 +220,7 @@ class List extends Component {
 												</Go>
 											</UnitListItem>
 										</UnitList>
-									</>
+									</div>
 								)
 							})}
 						</ListWrapper>

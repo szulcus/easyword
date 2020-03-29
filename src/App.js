@@ -6,26 +6,19 @@ import AppPage from './Components/App/WritingApp'
 import IrregularAppPage from './Components/App/IrregularApp'
 import WorkPage from './Components/Work/Work'
 import IndexPage from './pages/index'
-
-import Books from './pages/Books'
-
 import Facebook from './Components/Facebook/Facebook'
-
 import Login from './Components/Login/LoginApp'
 import Registration from './Components/Login/Registration'
-import UserProfile from './Components/Login/UserProfile'
-
+import UserProfile from './Components/Login/UserProfile/index'
 import Leaves from './Components/_Leaves/Leaves'
-
 import Editor from './Components/_Editor/Editor'
 import NotFoundPage from './pages/404/404'
-
 import Automatic from './Components/Automatic/Auto'
 import TinderApp from './Components/App/TinderApp'
+import ChoiseApp from './Components/App/EasyChoise'
 import Stats from './Components/Stats'
-import CalcApp from './CalcApp'
 // import OxfordList from './pages/books/3_Oxford/oxford'
-import RoadSignsList from './pages/components/List/RoadSignsList'
+// import RoadSignsList from './pages/components/List/RoadSignsList'
 import List from './pages/components/List/List'
 
 // STYLED
@@ -53,7 +46,6 @@ import Global from './Components/Styles/Global';
 
 		import testWords from './Components/Words/_test'
 import WordList from './Components/WordList';
-import b1_e1_words1 from './Components/Words/1_Macmillan/Unit1/1_PersonalData'
 
 class App extends Component {
 	render() {
@@ -74,7 +66,7 @@ class App extends Component {
 				{/* STRONA GŁÓWNA */}
 				<Route path="/" exact component={IndexPage}/>
 					{/* ZNAKI DROGOWE */}
-					<Route path="/znaki-drogowe" exact component={RoadSignsList}/>
+					{/* <Route path="/znaki-drogowe" exact component={RoadSignsList}/> */}
 						{/* 1 - Znaki drogowe pionowe */}
 							{/* Znaki ostrzegawcze */}
 							<Route path="/znaki-drogowe/rozdział-1/znaki-ostrzegawcze" render={(props) =>
@@ -218,31 +210,15 @@ class App extends Component {
 				<Route path="/rejestracja" exact component={Registration}/>
 				<Route path="/users/:id" exact component={UserProfile}/>
 				<Route path="/leaves" exact component={Leaves}/>
-				<Route path="/calc-app" exact component={CalcApp}/>
-
 				<Route path="/editor" exact component={Editor}/>
 				<Route path="/auto" exact component={Automatic}/>
 				<Route path="/tinder" exact component={TinderApp}/>
+				<Route path="/choise" exact component={ChoiseApp}/>
 				<Route path="/ranking" exact component={Stats}/>
 				<Route path="/not-found-page" exact component={NotFoundPage}/>
 				<Route path="/:bookName/spis-tresci" exact component={List}/>
-				<Route path="/:bookName/rozdzial-:unitNumber/:unitName" exact render={(props) =>
-					<AppPage
-						{...props}
-						words={b1_e1_words1}
-						info={{
-							book: 'book_01',
-							unit: 'unit_01',
-							part: 'part_04'
-						}}
-						base_language='en'
-						translated_language='pl'
-					/>
-				} />
+				<Route path="/:bookName/rozdzial-:unitNumber/:unitName" exact component={AppPage} />
 				<Route path="/:bookName/spis-slowek/rozdzial-:unitNumber/:unitName" exact component={WordList}/>
-
-				<Books />
-				{/* <Route component={NotFoundPage} /> */}
 			</Switch>
 		</Router>
 	);

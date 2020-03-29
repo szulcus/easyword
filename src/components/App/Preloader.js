@@ -1,12 +1,9 @@
 // BASIC
 import React, { Component } from 'react'
-import styled, { css } from 'styled-components'
+import styled, { css, keyframes } from 'styled-components'
 // IMAGES
-import loader from '../Images/arrows/loader.svg'
 import LeftArrow from '../Images/arrows/left-arrow.svg'
 import RightArrow from '../Images/arrows/right-arrow.svg'
-// ANIMATIONS
-import '../Styles/main-keyframes.css'
 
 const PreloaderElement = styled.div`
 	display: flex;
@@ -32,31 +29,26 @@ const PreloaderElement = styled.div`
 	}
 `
 
-const Loader = styled.img`
-	display: none;
-	width: 10vmin;
-	animation: load 2s infinite linear;
-	${props =>
-		props.preview &&
-		css`
-			display: block;
-		`
-	}
-`
-
 const Arrows = styled.div`
-	display: none;
+	display: flex;
 	position: relative;
 	width: 500px;
 	height: 500px;
-	${props =>
-		props.isLoaded &&
-		css`
-			display: flex;
-		`
+`
+const arrow =  keyframes`
+	0% {
+		opacity: 0;
+		transform: scale(0.8) translateX(-200px);
+	}
+	50% {
+		opacity: 1;
+		transform: scale(1);
+	}
+	100% {
+		transform: translateX(0);
+		opacity: 1;
 	}
 `
-
 const Arrow = styled.img`
 	width: 100%;
 	position: absolute;
@@ -64,30 +56,26 @@ const Arrow = styled.img`
 	top: 0;
 	transform: translateX(-100px);
 	:first-child {
-		animation: arrow 1.5s both;
+		animation: ${arrow} 1.5s both;
 	}
 	:last-child {
-		animation: arrow 1.3s both;
+		animation: ${arrow} 1.3s both;
 	}
 `
 
 class Preloader extends Component {
 	state = {
-		isLoaded: false,
-		isLoading: true,
 		hide: false,
 		delete: false
 	}
-	componentWillReceiveProps() {
-		this.setState({isLoaded: true, isLoading: false})
+	componentDidMount() {
 		setTimeout(() => {this.setState({hide: true})}, 1000);
 		setTimeout(() => {this.setState({delete: true})}, 1300);
 	}
 	render() {
 		return (
 			<PreloaderElement hide={this.state.hide} delete={this.state.delete}>
-				<Loader src={loader} preview={this.state.isLoading} />
-				<Arrows isLoaded={this.state.isLoaded}>
+				<Arrows>
 					<Arrow src={LeftArrow} />
 					<Arrow src={RightArrow} />
 				</Arrows>

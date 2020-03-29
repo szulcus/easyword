@@ -1,6 +1,6 @@
 // BASIC
 import React, { Component } from 'react'
-import styled, {css, keyframes} from 'styled-components'
+import styled, {css} from 'styled-components'
 
 const PointsElement = styled.div`
 	color: var(--color-secondary);
@@ -14,31 +14,35 @@ const Value = styled.strong`
 		`
 	};
 `
-const swim = keyframes`
-	from {
-		margin-left: 10px;
-		opacity: 1;
-	}
-	to {
-		margin-left: 0;
-		opacity: 0;
-	}
-`
 const Add = styled.b`
-	color: green;
-	animation: ${swim} 0.3s 1.5s both;
+	position: relative;
+	::after {
+		content: '${props => props.points}';
+		position: absolute;
+		color: var(--color-primary);
+		transform: translateX(-10px);
+		transition: all 0.3s ease;
+		opacity: 0;
+		${props =>
+			props.show &&
+			css`
+				transform: translateX(10px);
+				opacity: 1;
+			`
+		};
+	}
 `
 
 class Points extends Component {
 	render() {
 		return (
 			<PointsElement>
-				Punkty: {this.props.points === 0 ? (
-					<Value empty>{this.props.points}</Value>
-				)	: (
+				Punkty: {this.props.points !== 0 ? (
 					<Value>{this.props.points}</Value>
+				)	: (
+					<Value empty>{this.props.points}</Value>
 				)}
-				<Add>{this.props.pointsAnimation}</Add>
+				<Add show={this.props.pointsAnimation} points={this.props.pointsAnimation} />
 			</PointsElement>
 		);
 	}

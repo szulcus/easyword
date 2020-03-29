@@ -70,6 +70,7 @@ const Separator = styled.hr`
 
 const PageLink = styled(Link)`
 	display: block;
+	text-align: left;
 	text-decoration: none;
 	color: var(--color-bright);
 	transition: all 0.15s ease-in;

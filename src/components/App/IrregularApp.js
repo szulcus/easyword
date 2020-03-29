@@ -5,7 +5,7 @@ import goodAnimationData from '../lotties/data/433-checked-done.json'
 import styled, { css } from 'styled-components'
 // COMPONENTS
 import Cathegory from './components/Cathegory'
-import Navigation from './components/Navigation/Navigation'
+import Navigation from './components/Navigation/Achievements'
 import Word from './components/Word'
 import Picture from './components/Picture'
 import Inputs from './components/IrregularApp/Inputs'

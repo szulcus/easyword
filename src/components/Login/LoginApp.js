@@ -1,19 +1,16 @@
 // BASIC
 import React, {Component} from 'react';
 import styled, {css} from 'styled-components'
-import firebase from 'firebase/app'
-import 'firebase/app'
-import 'firebase/auth'
-import 'firebase/firestore'
-import 'firebase/functions'
+import {au, auth} from '../../Config/firebase'
 // STYLE
-import Global from '../Styles/Global'
 import { Wrapper } from '../Styles/Components'
-// COMPONENTS
-import SignUp from './components/SignUp'
-import LogIn from './components/LogIn'
-import SignInWithFacebook from './components/SignInWithFacebook'
-import SignInWithGoogle from './components/SignInWithGoogle'
+// ICONS
+import {FaFacebookF, FaGoogle} from 'react-icons/fa'
+// // COMPONENTS
+// import SignUp from './components/SignUp'
+// import LogIn from './components/LogIn'
+// import SignInWithFacebook from './components/SignInWithFacebook'
+// import SignInWithGoogle from './components/SignInWithGoogle'
 
 const LoginElement = styled.div`
 	display: flex;
@@ -55,15 +52,20 @@ const Field = styled.div`
 	flex-direction: column;
 	position: relative;
 	margin: 30px;
+	/* ::after {
+		position: absolute;
+		top: 0;
+		left: 0;
+		background-color: black;
+	} */
 	.input:focus + .label .content-label,
 	.input:valid + .label .content-label {
-		transform: translateY(-200%);
+		transform: translateY(-150%);
 		font-size: 15px;
 	}
 `
 const Input = styled.input`
 	display: block;
-	/* margin: 20px; */
 	padding: 5px;
 	padding-top: 20px;
 	color: var(--color-light);
@@ -71,6 +73,9 @@ const Input = styled.input`
 	background-color: transparent;
 	border: none;
 	outline: none;
+	/* ::placeholder {
+		color: green;
+	} */
 `
 const Label = styled.label`
 	position: absolute;
@@ -79,33 +84,84 @@ const Label = styled.label`
 	width: 100%;
 	height: 100%;
 	pointer-events: none;
-	border-bottom: 1px solid var(--color-decorative);
+	border-bottom: 1.5px solid var(--color-main);
 	::after {
 		content: '';
 		position: absolute;
 		height: 100%;
 		width: 100%;
 	}
-`
+	`
 const ContentLabel = styled.span`
 	position: absolute;
 	bottom: 5px;
 	left: 0;
 	transition: all 0.2s ease;
+	background-color: var(--color-bg);
+	width: 100%;
 `
 const Choise = styled.div`
 	display: grid;
 	justify-content: center;
-	grid-template-columns: 250px 250px;
-	grid-template-rows: auto auto;
+	grid-template-columns: repeat(2, 1fr);
+	grid-gap: 20px;
+	width: 90vw;
+	max-width: 500px;
 	${props =>
 			props.hide &&
 			css`
 				display: none;
 	`};
+	@media (max-width: 450px) {
+		grid-template-columns: repeat(1, 1fr);
+		max-width: 250px;
+	}
 `
-const Error = styled.p`
-
+const LogIn = styled.button`
+	position: relative;
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	line-height: 150%;
+	min-width: 180px;
+	font-size: 20px;
+	padding: 10px 20px;
+	background-color: transparent;
+	border-radius: 20px;
+	border: 2px solid ${props => `var(--color-${props.color})`};
+	color: var(--color-primary);
+	transition: all 0.5s ease;
+	overflow: hidden;
+	::before {
+		content: '';
+		display: block;
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		background-color: ${props => `var(--color-${props.color})`};
+		opacity: 0.5;
+		filter: blur(5px);
+		transform: translateX(-250px) skewX(-15deg);
+		z-index: 2;
+	}
+	:hover {
+		cursor: pointer;
+		background-color: ${props => `var(--color-${props.color})`};
+		color: ${props => props.color === 'main' || props.color === 'decorative' ? 'var(--color-bg)' : 'var(--color-light)'};
+		::before {
+			transform: translate(250px) skewX(-15deg);
+			opacity: 0.6;
+			transition: all 0.7s ease;
+		}
+	}
+	:focus {
+		outline: none
+	}
+`
+const Icon = styled.span`
+	transform: translateY(3px);
 `
 class App extends Component {
 	state = {
@@ -120,51 +176,14 @@ class App extends Component {
 		userPoints: 0
 	}
 	componentDidMount() {
-		firebase.auth().onAuthStateChanged(user => {
+		au.onAuthStateChanged(user => {
 			if(user) {
 				this.props.history.push(`/users/${user.uid}`);
 			}
 			else {
 				console.log('not logged in');
 				this.setState({isLoggedIn: false, isAdmin: false, userEmail: ''});
-				this.setUpGuides([]);
 			}
-		})
-	}
-	setUpGuides = (data) => {
-		if (data.length) {
-			let html = data.map(doc => {
-				const guide = doc.data();
-				return <li key={guide.title}>
-						<h1>{guide.title}</h1>
-						<p>{guide.content}</p>
-					</li>
-			})
-			this.setState({userContent: html})
-		}
-		else {
-			this.setState({userContent: ''})
-		}
-	}
-	createNewGuides = (e) => {
-		e.preventDefault();
-		const titleElement = document.getElementById('title');
-		const contentElement = document.getElementById('content');
-		firebase.firestore().collection('guides').add({
-			title: titleElement.value,
-			content: contentElement.value
-		}).then(() => {
-			document.getElementById('userForm').reset();
-			titleElement.value = '';
-			contentElement.value = '';
-		})
-	}
-	addAdminCloudFunction = (e) => {
-		e.preventDefault();
-		const adminEmail = document.getElementById('adminEmail').value;
-		const addAdminRole = firebase.functions().httpsCallable('addAdminRole');
-		addAdminRole({email: adminEmail}).then(result => {
-			console.log(result);
 		})
 	}
 	logIn = () => {
@@ -172,28 +191,27 @@ class App extends Component {
 		const txtPassword = document.getElementById('txtPassword');
 		const email = txtEmail.value;
 		const pass = txtPassword.value;
-		const auth = firebase.auth();
-		auth.signInWithEmailAndPassword(email, pass).catch(err => {
-			document.getElementById('error').innerHTML = err.message
+		au.signInWithEmailAndPassword(email, pass).catch(error => {
+			alert(error.message);
 		});
 		console.log(email);
 	}
 	signInWithGoogle = () => {
-		const provider = new firebase.auth.GoogleAuthProvider();
+		const provider = new auth.GoogleAuthProvider();
 
-		firebase.auth().signInWithRedirect(provider).then(result => {
+		au.signInWithRedirect(provider).then(result => {
 			console.log(result);
 		}).catch(error => {
-			console.log(error);
+			alert(error.message);
 		})
 	}
 	signInWithFacebook = () => {
-		const provider = new firebase.auth.FacebookAuthProvider();
+		const provider = new auth.FacebookAuthProvider();
 
-		firebase.auth().signInWithPopup(provider).then(result => {
-			console.log("result");
+		au.signInWithPopup(provider).then(result => {
+			console.log(result);
 		}).catch(error => {
-			console.log(error);
+			alert(error.message);
 		})
 	}
 	signUp = () => {
@@ -201,8 +219,6 @@ class App extends Component {
 	}
 	render() {
 		return (
-			<>
-				<Global />
 				<Wrapper scroll onClick={this.exit}>
 					<LoginElement>
 						<LoginTitle>
@@ -210,28 +226,36 @@ class App extends Component {
 						</LoginTitle>
 						<Form id="userForm" hide={this.state.isLoggedIn}>
 							<Field>
-								<Input className="input" id="txtEmail" type="text" name="email" autoComplete="off" required />
+								<Input className="input" id="txtEmail" type="text" name="email" autoComplete="off" required placeholder="Wpisz e-mail" />
 								<Label className="label" htmlFor="email">
 									<ContentLabel className="content-label">E-mail</ContentLabel>
 								</Label>
 							</Field>
 							<Field>
-								<Input className="input" id="txtPassword" type="password" name="password" autoComplete="off" required />
+								<Input className="input" id="txtPassword" type="password" name="password" autoComplete="off" required placeholder="Wpisz hasło" />
 								<Label className="label" htmlFor="password">
 									<ContentLabel className="content-label">Hasło</ContentLabel>
 								</Label>
 							</Field>
 						</Form>
-							<Choise hide={this.state.isLoggedIn}>
-								<LogIn onClick={this.logIn} />
-								<SignInWithFacebook onClick={this.signInWithFacebook} />
-								<SignInWithGoogle onClick={this.signInWithGoogle} />
-								<SignUp onClick={this.signUp} />
-								<Error id="error"></Error>
-							</Choise>
+						<Choise hide={this.state.isLoggedIn}>
+							<LogIn color="fb" onClick={this.signInWithFacebook}>
+								<Icon><FaFacebookF /></Icon>
+								Zaloguj się 
+							</LogIn>
+							<LogIn color="gplus" onClick={this.signInWithGoogle}>
+								<Icon><FaGoogle /></Icon>
+								Zaloguj się
+							</LogIn>
+							<LogIn color="main" onClick={this.logIn}>
+								Zaloguj się
+							</LogIn>
+							<LogIn color="decorative" onClick={this.signUp}>
+								Zarejestruj się
+							</LogIn>
+						</Choise>
 					</LoginElement>
 				</Wrapper>
-			</>
 		);
 	}
 }

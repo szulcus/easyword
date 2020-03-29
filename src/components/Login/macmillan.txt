@@ -1,0 +1,108 @@
+Człowiek
+Dane osobowe
+Wygląd zewnętrzny
+Ubrania
+Cechy charakteru
+Uczucia i emocje
+Zainteresowania
+Problemy etyczne
+Inne
+Test
+Dom
+Miejsce zamieszkania
+Opis Domu
+Prace w domu i ogrodzie
+Wynajem, kupno i sprzedaż nieruchomości
+Inne
+Test
+Szkoła
+Przedmioty szkolne
+Oceny i wymagania
+Życie szkolne
+Zajęcia pozalekcyjne
+System oświaty
+Inne
+Test
+Praca
+Zawody i związane z nimi czynności
+Warunki pracy i zatrudnienia
+Praca dorywcza
+Rynek pracy
+Inne
+Test
+Życie rodzinne i towarzyskie
+Etapy życia
+Członkowie rodziny, koledzy i przyjaciele
+Czynności życia codziennego
+Formy spędzania czasu wolnego
+Święta i uroczystości
+Styl życia, konflikty i problemy
+Inne
+Test
+Żywienie
+Artykuły spożywcze
+Posiłki i ich przygotowanie
+Lokale gastronomiczne
+Diety
+Inne
+Test
+Zakupy i usługi
+Rodzaje sklepów
+Opisywanie towarów
+Sprzedawanie i kupowanie
+Reklamacje
+Reklama
+Korzystanie z usług
+Środki płatnicze
+Banki
+Ubezpieczenie
+Inne
+Test
+Podróżowanie i turystyka
+Podróżowanie i środki transportu
+Informacja turystyczna
+Baza noclegowa
+Wycieczki i zwiedzanie
+Wypadki
+Inne
+Test
+Kultura
+Imprezy sportowe
+Sport wyczynowy
+Inne
+Test
+Zdrowie
+Samopoczucie
+Częsci ciała
+Zdrowy styl życia
+Uzależnienia
+Ochrona zdrowia
+Inne
+Test
+Nauka i technika
+Dziedziny nauki i naukowcy
+Wynalazki i odkrycia
+Badania naukowe
+Korzystanie z urządzeń technicznych
+Technologie informacyjno-komunikacyjne
+Awarie techniczne
+Inne
+Test
+Świat przyrody
+Pogoda i klimat
+Świat roślin i zwierząt
+Krajobraz
+Zagrożenia środowiska naturalnego
+Ochrona środowiska naturalnego
+Klęski żywiołowe
+Przestrzeń kosmiczna
+Inne
+Test
+Struktura państwa i urzędy
+Organizacje społeczne i międzynarodowe
+Konflikty wewnętrzne i międzynarodowe
+Wymiar sprawiedliwości
+Polityka społeczna
+Gospodarka
+Inne
+Test

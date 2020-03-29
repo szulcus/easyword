@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 import styled from 'styled-components'
 
 const CathegoryItem = styled.div`
-	width: calc(100vw - 20px);
+	width: 100%;
 	margin: 0 10px 10px 10px;
 	color: var(--color-secondary);
 	text-align: center;
@@ -17,7 +17,7 @@ class Cathegory extends Component {
 	render() {
 		return (
 			<CathegoryItem>
-				{this.props.content}
+				{this.props.content ? this.props.content : '...'}
 			</CathegoryItem>
 		);
 	}
