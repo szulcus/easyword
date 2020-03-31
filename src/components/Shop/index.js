@@ -7,7 +7,7 @@ import {au, db} from '../../Config/firebase'
 import Preloader from '../Preloader'
 // ICONS
 import {MdExitToApp} from 'react-icons/md'
-import {FaGamepad, FaTimes} from 'react-icons/fa'
+import {FaGamepad, FaTimes, FaInfinity} from 'react-icons/fa'
 import {GiTwoCoins} from 'react-icons/gi'
 import {TiChartLine, TiTick} from 'react-icons/ti'
 //images
@@ -15,6 +15,8 @@ import exchange from '../Images/icons/exchange.svg'
 import exchangeIcon from '../Images/icons/exchange-icon.svg'
 import answer from '../Images/icons/answer.svg'
 import answerIcon from '../Images/icons/answer-icon.svg'
+import up from '../Images/icons/up.svg'
+import diamond from '../Images/icons/diamond.svg'
 // import premium from '../../Images/icons/reward.svg'
 
 const ShopComponent = styled.div`
@@ -39,7 +41,7 @@ const Info = styled.div`
 	display: flex;
 	width: 100%;
 	justify-content: space-between;
-	margin-bottom: 50px;
+	margin-bottom: 30px;
 `
 const Items = styled.div`
 	display: flex;
@@ -57,6 +59,12 @@ const CoinIcon = styled(GiTwoCoins)`
 `
 const Icon = styled.img`
 	height: 16px;
+	${props =>
+		props.premium &&
+		css`
+			height: 20px;
+		`
+	};
 `
 const Experience = styled.div``
 const ExperienceIcon = styled(TiChartLine)`
@@ -67,7 +75,6 @@ const Number = styled.strong`
 `
 const AllProducts = styled.div`
 	width: 90vw;
-	max-width: 1000px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -178,6 +185,40 @@ const answers = keyframes`
 		transform: translate(-50%, -50%) scale(1) rotate(0);
 	}
 `
+const upper = keyframes`
+	0% {
+		transform: translate(-50%, -50%) scale(1);
+	}
+	20% {
+		transform: translate(-50%, -55%) scale(1);
+	}
+	50% {
+		transform: translate(-50%, -45%) scale(1);
+	}
+	80% {
+		transform: translate(-50%, -60%) scale(1);
+	}
+	100% {
+		transform: translate(-50%, -50%) scale(1);
+	}
+`
+const premium = keyframes`
+	0% {
+		transform: translate(-50%, -50%) scale(1);
+	}
+	/* 20% {
+		transform: translate(-50%, -40%) scale(1);
+	} */
+	50% {
+		transform: translate(-50%, -45%) scale(1.15);
+	}
+	/* 80% {
+		transform: translate(-50%, -40%) scale(1);
+	} */
+	100% {
+		transform: translate(-50%, -50%) scale(1);
+	}
+`
 const ProductItem = styled.img`
 	position: absolute;
 	top: 40%;
@@ -196,6 +237,18 @@ const ProductItem = styled.img`
 		props.scale &&
 		css`
 			animation: ${answers} 1s infinite both;
+		`
+	}
+	${props =>
+		props.up &&
+		css`
+			animation: ${upper} 1s infinite both;
+		`
+	}
+	${props =>
+		props.premium &&
+		css`
+			animation: ${premium} 1s infinite both;
 		`
 	}
 	${props =>
@@ -254,7 +307,7 @@ const ProductMenu = styled.div`
 	text-align: center;
 `
 const Cost = styled.div`
-	width: 80px;
+	width: 90px;
 	color: var(--color-decorative);
 	font-size: 18px;
 	font-weight: bold;
@@ -305,7 +358,7 @@ const Buy = styled.button`
 `
 const Back = styled(FaTimes)`
 	display: none;
-	width: 80px;
+	width: 90px;
 	font-size: 30px;
 	color: var(--color-decorative);
 	:hover {
@@ -321,6 +374,29 @@ const Product = styled.div`
 	border-radius: 20px;
 	background-color: var(--color-bg);
 	transition: transform 0.3s ease;
+	/* overflow: hidden; */
+	::before {
+		opacity: 0;
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		border-radius: 20px;
+		box-shadow: 0 0 30px var(--color-secondary);
+		transition: opacity 0.2s ease-in;
+	}
+	${props =>
+		props.premium &&
+		css`
+		border: 2px solid skyblue;
+			${Quantity} {
+				border: none;
+				transform: translate(-50%, -55%) scale(0.9);
+			}
+		`
+	}
 	/* kupione */
 	${props =>
 		props.purchased.includes(props.id) &&
@@ -452,19 +528,25 @@ class Shop extends Component {
 		packs: ['default', 'cat', 'cool', 'crazy', 'devil', 'nerd', 'nice'],
 		langChanges: [{changes: 1, cost: 10}, {changes: 3, cost: 20}, {changes: 5, cost: 30}, {changes: 10, cost: 50}],
 		answers: [{answers: 1, cost: 3}, {answers: 5, cost: 10}, {answers: 50, cost: 50}, {answers: 150, cost: 100}],
+		experience: [{xp: 1000, cost: 100}, {xp: 3000, cost: 200}, {xp: 5000, cost: 300}, {xp: 10000, cost: 500}],
+		premium: [{hours: 3, cost: 50}, {hours: 6, cost: 70}, {hours: 12, cost: 120}, {hours: 24, cost: 200}, {hours: '∞', cost: 1000}],
 		animations: {
 			catAnimation: false,
 			coolAnimation: false,
 			crazyAnimation: false,
 			devilAnimation: false,
-			langChanges1: false,
-			langChanges3: false,
-			langChanges5: false,
-			langChanges10: false,
-			answers1: false,
-			answers5: false,
-			answers50: false,
-			answers100: false,
+			langChanges1Animation: false,
+			langChanges3Animation: false,
+			langChanges5Animation: false,
+			langChanges10Animation: false,
+			answers1Animation: false,
+			answers5Animation: false,
+			answers50Animation: false,
+			answers100Animation: false,
+			experience1000Animation: false,
+			experience3000Animation: false,
+			experience5000Animation: false,
+			experience10000Animation: false,
 		},
 		showProduct: ''
 	}
@@ -561,6 +643,37 @@ class Shop extends Component {
 						alert('Brak wystarczających środków na koncie!')
 					}
 				}
+				else if (name.includes('experience')) {
+					console.log('xp');
+					const object = this.state.experience.filter(({xp}) => xp.toString() === number);
+					console.log(object[0].cost);
+					if (coins >= object[0].cost) {
+						const experience = snap.data()['easy-word'].experience;
+						db.collection('users').doc(this.state.userId).update({
+							'info.coins': coins - object[0].cost,
+							'easy-word.experience': experience + object[0].experience
+						})
+					}
+					else {
+						alert('Brak wystarczających środków na koncie!')
+					}
+				}
+				else if (name.includes('premium')) {
+					console.log('premium');
+					const object = this.state.premium.filter(({hours}) => hours.toString() === number);
+					console.log(object[0].cost);
+					if (coins >= object[0].cost) {
+						// const experience = snap.data()['easy-word'].experience;
+						// db.collection('users').doc(this.state.userId).update({
+						// 	'info.coins': coins - object[0].cost,
+						// 	'easy-word.experience': experience + object[0].experience
+						// })
+						alert('Niestety ta funkcja jest jeszcze niedostępna. Wyczekuj kolejnych aktualizacji, aby być na bieżąco ;)')
+					}
+					else {
+						alert('Brak wystarczających środków na koncie!')
+					}
+				}
 				else {
 					if (coins >= 50) {
 						const purchased = snap.data().info.packs.purchased;
@@ -623,6 +736,24 @@ class Shop extends Component {
 								)
 							})}
 						</Products>
+						<ProductsTitle blur={this.state.showProduct}>
+							<Icon premium src={diamond} /> Konto premium <Icon premium src={diamond} />
+						</ProductsTitle>
+						<Products>
+							{this.state.premium.map(({hours, cost}) => {
+								return (
+									<Product premium purchased={this.state.userPackages.purchased} selected={this.state.userPackages.selected} id={`premium${hours}`} show={this.state.showProduct} onClick={this.showProduct} onMouseOver={this.play} onMouseOut={this.stop}>
+										<ProductItem premium={this.state.animations[`premium${hours}Animation`]} src={diamond} />
+										<Quantity>{isNaN(hours) ? <FaInfinity /> : hours.toString().replace(/[0-9]+/, x => `${x}H`)}</Quantity>
+										<ProductMenu>
+											<Cost>{cost} <CoinIcon/></Cost>
+											<Buy onClick={this.buy} color="decorative">Kup</Buy>
+											<Back onClick={this.backProduct} />
+										</ProductMenu>
+									</Product>
+								)
+							})}
+						</Products>
 						<ProductsTitle blur={this.state.showProduct}>Zmiany języka</ProductsTitle>
 						<Products>
 							{this.state.langChanges.map(({changes, cost}) => {
@@ -646,6 +777,22 @@ class Shop extends Component {
 									<Product purchased={this.state.userPackages.purchased} selected={this.state.userPackages.selected} id={`answers${answers}`} show={this.state.showProduct} onClick={this.showProduct} onMouseOver={this.play} onMouseOut={this.stop}>
 										<ProductItem scale={this.state.animations[`answers${answers}Animation`]} small src={answer} />
 										<Quantity>{answers}</Quantity>
+										<ProductMenu>
+											<Cost>{cost} <CoinIcon/></Cost>
+											<Buy onClick={this.buy} color="decorative">Kup</Buy>
+											<Back onClick={this.backProduct} />
+										</ProductMenu>
+									</Product>
+								)
+							})}
+						</Products>
+						<ProductsTitle blur={this.state.showProduct}>Doświadczenie</ProductsTitle>
+						<Products>
+							{this.state.experience.map(({xp, cost}) => {
+								return (
+									<Product purchased={this.state.userPackages.purchased} selected={this.state.userPackages.selected} id={`experience${xp}`} show={this.state.showProduct} onClick={this.showProduct} onMouseOver={this.play} onMouseOut={this.stop}>
+										<ProductItem up={this.state.animations[`experience${xp}Animation`]} src={up} />
+										<Quantity>{xp.toString().replace(/000$/, 'K')}</Quantity>
 										<ProductMenu>
 											<Cost>{cost} <CoinIcon/></Cost>
 											<Buy onClick={this.buy} color="decorative">Kup</Buy>

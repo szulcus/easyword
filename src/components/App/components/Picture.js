@@ -4,13 +4,21 @@ import styled, { css, keyframes } from 'styled-components'
 import {au, db} from '../../../Config/firebase'
 // ICONS
 import {FaTimes} from 'react-icons/fa'
+import {AiOutlineWoman} from 'react-icons/ai'
+import {MdImage, MdTitle, MdChat, MdChatBubble} from 'react-icons/md'
+
+
 
 const PictureWrapper = styled.div`
 	position: relative;
-	/* animation: scaleIn 1s ease; */
-	@media(max-height: 450px) {
-		display: none;
-	}
+	${props =>
+		!props.isAdmin &&
+		css`
+			@media(max-height: 450px) {
+				display: none;
+			}
+		`
+	};
 `
 const Delete = styled.div`
 	display: flex;
@@ -37,7 +45,42 @@ const Delete = styled.div`
 		`
 	}
 `
-
+const EditMenu = styled.div`
+	position: absolute;
+	bottom: 10px;
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	z-index: 2;
+`
+const EditField = styled.div`
+	position: relative;
+	width: 30px;
+	height: 30px;
+	padding: 5px;
+	margin: 0 5px;
+	background-color: var(--color-dark);
+	border-radius: 100%;
+	${props =>
+		props.content &&
+		css`
+			::after {
+				content: "${props => props.content}";
+				width: 40%;
+				height: 40%;
+				position: absolute;
+				top: -3px;
+				right: -3px;
+				background-color: var(--color-dark);
+				color: var(--color-decorative);
+				border-radius: 100%;
+				font-size: 10px;
+				text-align: center;
+				font-weight: bold;
+			}
+		`
+	};
+`
 const Cross = styled(FaTimes)`
 	display: block;
 	color: gold;
@@ -75,6 +118,12 @@ const PictureElement = styled.div`
 		width: 647px;
 		height: 400px;
 	}
+	${props =>
+		props.isAdmin &&
+		css`
+			min-height: 50px;
+		`
+	};
 	::after {
 		content: '';
 		position: absolute;
@@ -147,12 +196,26 @@ class Picture extends Component {
 		// this.state.hideImage && setTimeout(console.log('object'), 300);
 	}
 	render() {
+		// console.log(this.props)
 		return (
-			<PictureWrapper>
+			<PictureWrapper isAdmin={this.props.isAdmin}>
 				<Delete up={this.state.hideImage} onClick={this.handleCross}>
 					<Cross />
 				</Delete>
-				<PictureElement src={this.props.src} hideImage={this.state.hideImage} />
+				{this.props.isAdmin && <EditMenu>
+					<EditField onClick={() => this.props.onEdit('word1')} content="1"><MdChatBubble /></EditField>
+					<EditField onClick={() => this.props.onEdit('word2')} content="2"><MdChatBubble /></EditField>
+					<EditField onClick={() => this.props.onEdit('word3')} content="3"><MdChatBubble /></EditField>
+					<EditField onClick={() => this.props.onEdit('translation1')} content="1"><MdChat /></EditField>
+					<EditField onClick={() => this.props.onEdit('translation2')} content="2"><MdChat /></EditField>
+					<EditField onClick={() => this.props.onEdit('translation3')} content="3"><MdChat /></EditField>
+					<EditField onClick={() => this.props.onEdit('female')}><AiOutlineWoman /></EditField>
+					<EditField onClick={() => this.props.onEdit('image')}><MdImage /></EditField>
+					<EditField onClick={() => this.props.onEdit('type')}><MdTitle /></EditField>
+				</EditMenu>}
+				<a href={this.props.link} target="_blank" rel="noopener noreferrer">
+					<PictureElement onClick={this.props.onEdit} src={this.props.src} hideImage={this.state.hideImage} isAdmin={this.props.isAdmin} />
+				</a>
 				{this.props.animation === 'great' ? <Animation src={require(`../../Images/icons/packs/${this.state.selected}-pack/${this.state.selected}2.svg`)} /> : this.props.animation === 'good' ? <Animation src={require(`../../Images/icons/packs/${this.state.selected}-pack/${this.state.selected}1.svg`)} /> : ''}
 			</PictureWrapper>
 		);

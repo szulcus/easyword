@@ -35,6 +35,7 @@ const AppSite = styled.div`
 `
 class App extends Component {
 	state = {
+		isAdmin: false,
 		languageOrder: {
 			word: 'word',
 			translation: 'translation'
@@ -132,19 +133,31 @@ class App extends Component {
 						partWords = partWords.concat(Object.values(words));
 					});
 				}
-				this.setState({
-					words: partWords,
-					baseWord: getWord(partWords),
-					info: {
-						unit,
-						part,
-						bookName
-					}
-				})
+				this.setState(() => {
+					return {
+						words: partWords,
+						baseWord: getWord(partWords),
+						info: {
+							unit,
+							part,
+							bookName
+						}
+					};
+				},() => {
+					this.filterWords('empty');
+				});
 
 			})
 			if(user) {
-				// console.log(user);
+				user.getIdTokenResult().then(idTokenResult => {
+					if (idTokenResult.claims.admin) {
+						this.setState({isAdmin: true})
+					}
+					else {
+						this.setState({isAdmin: false})
+					}
+					user.admin = idTokenResult.claims.admin
+				})
 				this.setState({userId: user.uid});
 				db.collection('users').doc(user.uid).onSnapshot(snap => {
 					const book = bookName;
@@ -154,12 +167,12 @@ class App extends Component {
 					const goodAnswers = app.goodAnswers ? app.goodAnswers : [];
 					const experience = snap.data()['easy-word'].experience;
 					this.setState({
-						points, experience, appLevel, goodAnswers,
-						langChanges: snap.data()['easy-word'].langChanges,
-						answers: snap.data()['easy-word'].answers,
-						languageOrder: app.languageOrder ? app.languageOrder : this.state.languageOrder,
-						appsComplete: app.complete ? app.complete : this.state.appsComplete
-					});
+							points, experience, appLevel, goodAnswers,
+							langChanges: snap.data()['easy-word'].langChanges,
+							answers: snap.data()['easy-word'].answers,
+							languageOrder: app.languageOrder ? app.languageOrder : this.state.languageOrder,
+							appsComplete: app.complete ? app.complete : this.state.appsComplete
+					})
 					if (appLevel === 1) {
 						this.setState({prevGoal: 0});
 						this.setState({goal: 10});
@@ -210,6 +223,31 @@ class App extends Component {
 			}
 		})
 	}
+	edit = (variable) => {
+		if (this.state.isAdmin && typeof variable === 'string') {
+			const unit = Number(this.state.info.unit.replace('unit_', ''));
+			const bookName = unit < 14 ? this.props.match.params.bookName : `${this.props.match.params.bookName}2`
+			db.collection('books').doc(bookName).get().then(snap => {
+				const {unit, part} = this.state.info;
+				const words = Object.values(snap.data()[unit].parts[part].words);
+				let wordIndex;
+				const word = words.filter((object, index) => {
+					if (object.word1 === this.state.baseWord.word1) {
+						wordIndex = index;
+					}
+					return object[variable] === this.state.baseWord[variable]
+				})
+				console.log(snap.data())
+				const data = prompt(`${variable}:`, word[variable]);
+				console.log(`${unit}.parts.${part}.words.${wordIndex}.${variable}`)
+				if (data) {
+					db.collection('books').doc(this.props.match.params.bookName).update({
+						[`${unit}.parts.${part}.words.${wordIndex}.${variable}`]: data
+					})
+				}
+			})
+		}
+	}
 	showNotification = () => {
 		const {unit, part, bookName} = this.state.info;
 		const appLevel = `easy-word.points.${bookName}.units.${unit}.parts.${part}.level`;
@@ -249,7 +287,53 @@ class App extends Component {
 			alert('Wpisz prawidłowe słowo, aby przejść dalej ;)');
 		}
 	}
-
+	filterWords = (x) => {
+		console.log(x)
+		const {bookName, unit, part} = this.state.info;
+		const app = `easy-word.points.${bookName}.units.${unit}.parts.${part}`;
+		let goodAnswers = this.state.goodAnswers
+		if (x !== 'empty') {
+			if (!this.state.goodAnswers.includes(this.state.baseWord.word1)) {
+				goodAnswers = this.state.goodAnswers.concat(this.state.baseWord.word1);
+			}
+		}
+		if (this.state.userId) {
+			db.collection('users').doc(this.state.userId).update({
+				[`${app}.goodAnswers`]: goodAnswers
+			})
+		}
+		else {
+			this.setState({goodAnswers})
+		}
+		const filtered = this.state.words.filter(({word1}) => !goodAnswers.includes(word1));
+		if (filtered.length !== 0 || this.state.badAnswers.length !== 0) {
+			// console.log(filtered);
+			this.setState({words: filtered})
+		}
+		else {
+			db.collection('users').doc(this.state.userId).update({
+				[`${app}.goodAnswers`]: [],
+				[`${app}.complete`]: this.state.appsComplete + 1
+			});
+			db.collection('books').doc(this.props.match.params.bookName).get().then((snap) => {
+				let partWords;
+				const words = snap.data()[unit];
+				if (part !== 'test') {
+					partWords = Object.values(words.parts[part].words);
+				}
+				else {
+					Object.values(words.parts).forEach(({words}) => {
+						words = words ? Object.values(words) : [];
+						partWords = partWords.concat(Object.values(words));
+					});
+				}
+				this.setState({words: partWords})
+			});
+			if (x !== 'empty') {
+				this.endMessage();
+			}
+		}
+	}
 	check = (e) => {
 		this.setState({counter: this.state.counter + 1});
 		let userWord = latinize(e.target.value.toLowerCase().trimStart());
@@ -272,46 +356,6 @@ class App extends Component {
 			userWord === feminine_translation2 ||
 			userWord === feminine_translation3
 			) {
-				const filterWords = () => {
-					let goodAnswers = this.state.goodAnswers
-					if (!this.state.goodAnswers.includes(this.state.baseWord.word1)) {
-						goodAnswers = this.state.goodAnswers.concat(this.state.baseWord.word1);
-					}
-					if (this.state.userId) {
-						db.collection('users').doc(this.state.userId).update({
-							[`${app}.goodAnswers`]: goodAnswers
-						})
-					}
-					else {
-						this.setState({goodAnswers})
-					}
-					const filtered = this.state.words.filter(({word1}) => !goodAnswers.includes(word1));
-					if (filtered.length !== 0 || this.state.badAnswers.length !== 0) {
-						// console.log(filtered);
-						this.setState({words: filtered})
-					}
-					else {
-						db.collection('users').doc(this.state.userId).update({
-							[`${app}.goodAnswers`]: [],
-							[`${app}.complete`]: this.state.appsComplete + 1
-						});
-						db.collection('books').doc(this.props.match.params.bookName).get().then((snap) => {
-							let partWords;
-							const words = snap.data()[unit];
-							if (part !== 'test') {
-								partWords = Object.values(words.parts[part].words);
-							}
-							else {
-								Object.values(words.parts).forEach(({words}) => {
-									words = words ? Object.values(words) : [];
-									partWords = partWords.concat(Object.values(words));
-								});
-							}
-							this.setState({words: partWords})
-						});
-						this.endMessage();
-					}
-				}
 				document.getElementById('answer').style.color = 'var(--color-decorative)';
 				const target = e.target
 				this.setState({
@@ -326,7 +370,7 @@ class App extends Component {
 				}
 			if (translation1.length > this.state.counter && this.state.hideAnswer === true) {
 				e.persist();
-				filterWords();
+				this.filterWords();
 				this.setState({
 					animation: 'great',
 					pointsAnimation: '+2'
@@ -352,7 +396,7 @@ class App extends Component {
 			}
 			else {
 				e.persist();
-				filterWords();
+				this.filterWords();
 				this.setState({
 					animation: 'good',
 					pointsAnimation: '+1'
@@ -464,11 +508,12 @@ class App extends Component {
 		const app = `easy-word.points.${bookName}.units.${unit}.parts.${part}`;
 		if (this.state.userId) {
 			db.collection('users').doc(this.state.userId).get().then(snap => {
-				if (snap.data()['easy-word'].langChanges > 0) {
-					const languageOrder = snap.data()['easy-word'].points[bookName].units[unit].parts[part].languageOrder;
-					const langChanges = snap.data()['easy-word'].langChanges
+				const languageOrder = snap.data()['easy-word'].points[bookName].units[unit].parts[part].languageOrder;
+				const langChanges = snap.data()['easy-word'].langChanges
+				if (langChanges > 0) {
 					if (!languageOrder || languageOrder.word === 'word') {
-						if (!free) {
+						if (free !== 'free') {
+							console.log(langChanges);
 							db.collection('users').doc(this.state.userId).update({
 								'easy-word.langChanges': langChanges - 1
 							})
@@ -481,7 +526,7 @@ class App extends Component {
 						})
 					}
 					else {
-						if (!free) {
+						if (free !== 'free') {
 							db.collection('users').doc(this.state.userId).update({
 								'easy-word.langChanges': langChanges - 1
 							})
@@ -566,7 +611,7 @@ class App extends Component {
 			}
 		}
 		else {
-			alert('Po co chcesz wykorzystac podpowiedź? Masz ją przecież podane 😅')
+			alert('Po co chcesz wykorzystać podpowiedź? Masz ją przecież podane 😅')
 		}
 	}
 	render = () => {
@@ -574,10 +619,11 @@ class App extends Component {
 		if (this.state.baseWord) {
 			baseWord = this.state.baseWord;
 		}
+		const word = this.state.languageOrder.word;
 		// replace empty images
 		let image = baseWord.image;
 		if (image === `url`) {
-			image = `https://fakeimg.pl/647x400/?text=${baseWord.word1}`;
+			image = `https://fakeimg.pl/647x400/?text=${latinize(baseWord[`${word}1`])}`;
 		}
 		// subtype and subsubtype exceptions
 		let cathegory = baseWord.type;
@@ -589,7 +635,6 @@ class App extends Component {
 			cathegory = `${cathegory} (${baseWord.subsubtype})`;
 		}
 		// word2 and word3 exceptions
-		const word = this.state.languageOrder.word;
 		let word1 = baseWord[`${word}1`];
 		if(baseWord[`${word}3`]) {
 			word1 = `${word1} / ${baseWord[`${word}2`]} / ${baseWord[`${word}3`]}`;
@@ -604,7 +649,14 @@ class App extends Component {
 				<Cathegory content={cathegory} />
 				<Achievements points={this.state.points} level={this.state.appLevel} pointsAnimation={this.state.pointsAnimation}/>
 				<Word content={word1} />
-				<Picture animation={this.state.animation} onClick={this.deleteImg} src={image} word={word} link={`https://pxhere.com/pl/photos?q=${baseWord.word1}`} />
+				<Picture
+					isAdmin={this.state.isAdmin}
+					onEdit={this.edit}
+					animation={this.state.animation}
+					onClick={this.deleteImg}
+					src={image}
+					word={word} link={`https://pxhere.com/pl/photos?q=${baseWord[`${word}1`]}`}
+				/>
 				<Input readOnly={this.state.hideKeyboard} onChange={this.check} press={this.keyPress} points={this.state.points} goal={this.state.goal} prevGoal={this.state.prevGoal} />
 				<AppNavigation check={this.getAnswer} change={this.getNew} />
 				<Answer hideAnswer={this.state.hideAnswer} text={this.state.answer} />
