@@ -198,20 +198,22 @@ class SocialMedia extends Component {
 				{!this.state.userId ? '' : <SocialMediaItem to={`/users/${this.state.userId}`}>
 					<FaUserTie />
 				</SocialMediaItem>}
-				{this.props.lang.word === 'word' ? (
-					<LanguageIcon langChanges={this.props.langChanges} onClick={this.props.changeLanguage} title="Zmień na język polski">
-						<LangMessage show={this.state.showMessage}><Go to="/login">Zaloguj się</Go>, aby znów zmienić język <span role="img" aria-label="wink">😉</span></LangMessage>
-						<Icon src={pl} alt="pl" />
-					</LanguageIcon>
-				) : (
-					<LanguageIcon langChanges={this.props.langChanges} onClick={this.props.changeLanguage} title="Zmień na język polski">
-						<LangMessage show={this.state.showMessage}><Go to="/login">Zaloguj się</Go>, aby znów zmienić język <span role="img" aria-label="wink">😉</span></LangMessage>
-						<Icon src={uk} alt="uk" />
-					</LanguageIcon>
-				)}
-				<AnswerIcon answers={this.props.answers}>
-					<Icon src={answerIcon} onClick={this.props.hint} />
-				</AnswerIcon>
+				{!this.props.lang ? '' : <>
+					{this.props.lang.word  === 'word' ? (
+						<LanguageIcon langChanges={this.props.langChanges} onClick={this.props.changeLanguage} title="Zmień na język polski">
+							<LangMessage show={this.state.showMessage}><Go to="/login">Zaloguj się</Go>, aby znów zmienić język <span role="img" aria-label="wink">😉</span></LangMessage>
+							<Icon src={pl} alt="pl" />
+						</LanguageIcon>
+					) : (
+						<LanguageIcon langChanges={this.props.langChanges} onClick={this.props.changeLanguage} title="Zmień na język polski">
+							<LangMessage show={this.state.showMessage}><Go to="/login">Zaloguj się</Go>, aby znów zmienić język <span role="img" aria-label="wink">😉</span></LangMessage>
+							<Icon src={uk} alt="uk" />
+						</LanguageIcon>
+					)}
+					<AnswerIcon answers={this.props.answers}>
+						<Icon src={answerIcon} onClick={this.props.hint} />
+					</AnswerIcon>
+				</>}
 			</NavigationComponent>
 		);
 	}

@@ -21,7 +21,7 @@ import Stats from './Components/Stats'
 // import OxfordList from './pages/books/3_Oxford/oxford'
 // import RoadSignsList from './pages/components/List/RoadSignsList'
 import List from './pages/components/List/List'
-
+import Backup from './Components/Backup'
 // STYLED
 import Global from './Components/Styles/Global';
 // FILES
@@ -214,6 +214,7 @@ class App extends Component {
 				<Route path="/leaves" exact component={Leaves}/>
 				<Route path="/editor" exact component={Editor}/>
 				<Route path="/auto" exact component={Automatic}/>
+				<Route path="/backup" exact component={Backup}/>
 				<Route path="/tinder" exact component={TinderApp}/>
 				<Route path="/choise" exact component={ChoiseApp}/>
 				<Route path="/ranking" exact component={Stats}/>

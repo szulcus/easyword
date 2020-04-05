@@ -121,7 +121,7 @@ const PictureElement = styled.div`
 	${props =>
 		props.isAdmin &&
 		css`
-			min-height: 50px;
+			min-height: 100px;
 		`
 	};
 	::after {
@@ -177,7 +177,7 @@ const Animation = styled.img`
 
 class Picture extends Component {
 	state = {
-		hideImage: true,
+		hideImage: false,
 		selected: 'default'
 	}
 	componentDidMount() {

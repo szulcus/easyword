@@ -23,6 +23,12 @@ import End from './components/End'
 import getWord from './components/Functions/chooseWord'
 import female from './components/Functions/createFemaleTranslations'
 import similarTranslation from './similarTranslation'
+// words
+import w1 from '../Words/1_Macmillan/Unit6/1_FoodProducts'
+import w2 from '../Words/1_Macmillan/Unit6/2_MealsAndTheirPreparation'
+import w3 from '../Words/1_Macmillan/Unit6/3_EatingPlaces'
+import w4 from '../Words/1_Macmillan/Unit6/4_Dieting'
+import w5 from '../Words/1_Macmillan/Unit6/5_Other'
 
 
 const AppSite = styled.div`
@@ -68,20 +74,25 @@ class App extends Component {
 		pointsAnimation: null
 	}
 	componentDidMount() {
-		// db.collection('users').get().then(snaps => {
-		// 	snaps.forEach(snap => {
-		// 		if(snap.data()['easy-word']) {
-		// 			db.collection('users').doc(snap.data().info.uid).update({
-		// 				'easy-word.config': {
-		// 					languageOrder: {
-		// 						word: 'word',
-		// 						translation: 'translation'
-		// 					}
-		// 				}
-		// 			})
-		// 		}
+		db.collection('books').doc('repetytorium').update({
+			'unit_06.parts.part_01.words': {...w1},
+			'unit_06.parts.part_02.words': {...w2},
+			'unit_06.parts.part_03.words': {...w3},
+			'unit_06.parts.part_04.words': {...w4},
+			'unit_06.parts.part_05.words': {...w5},
+		})
+		// db.collection('books').doc('repetytorium').get().then(snap => {
+		// 	console.log(snap.data().unit_13);
+		// 	db.collection('books').doc('repetytorium2').update({
+		// 		unit_13: snap.data().unit_13
 		// 	})
 		// })
+		db.collection('books').doc('repetytorium').get().then(snap => {
+			console.log(snap.data())
+		})
+		db.collection('books').doc('repetytorium2').get().then(snap => {
+			console.log(snap.data())
+		})
 
 		let {bookName, unitNumber} = this.props.match.params;
 		if (bookName === 'repetytorium') {
@@ -143,7 +154,7 @@ class App extends Component {
 							bookName
 						}
 					};
-				},() => {
+				}, () => {
 					this.filterWords('empty');
 				});
 
@@ -241,7 +252,7 @@ class App extends Component {
 				const data = prompt(`${variable}:`, word[variable]);
 				console.log(`${unit}.parts.${part}.words.${wordIndex}.${variable}`)
 				if (data) {
-					db.collection('books').doc(this.props.match.params.bookName).update({
+					db.collection('books').doc(bookName).update({
 						[`${unit}.parts.${part}.words.${wordIndex}.${variable}`]: data
 					})
 				}

@@ -496,6 +496,10 @@ class UserProfile extends Component {
 		this.props.history.push(`/login`);
 	}
 	render() {
+		var d1 = new Date(); //"now"
+		var d2 = new Date("2011/02/01")  // some date
+		var diff = Math.abs(d1-d2);
+		console.log(diff)
 		return (
 			<UserProfileSite>
 				{!this.state.info ? '...' : <>
@@ -510,7 +514,7 @@ class UserProfile extends Component {
 						</Avatar>
 						<UserContent>
 							<Biogram id="biogramEditor" contentEditable={this.state.isOwner} onInput={this.editBiogram}>
-								{ReactHtmlParser(this.state.info.biogram)}
+								{ReactHtmlParser(this.state.info.biogram.replace(/kurw/gi, "k🤬w").replace(/pierdol/gi, "p🤬rdol").replace(/pierdal/gi, "p🤬rdal").replace(/jeban/gi, "j🤬an"))}
 							</Biogram>
 							<Confirm onClick={this.updateBiogram} show={this.state.biogramEdit} />
 							<AddAdmin onSubmit={this.addAdminCloudFunction} className="admin" preview={this.state.isAdmin}>

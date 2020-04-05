@@ -10,6 +10,7 @@ import 'firebase/firestore'
 import 'firebase/functions'
 import {Link} from 'react-router-dom'
 import latinize from 'latinize'
+import {paramCase} from 'change-case'
 // STYLES
 import Global from '../../../Components/Styles/Global'
 import { Wrapper, PageLink } from '../../../Components/Styles/Components'
@@ -167,15 +168,7 @@ class List extends Component {
 			this.setState({units, info})
 		})
 	}
-	flat = (name) => {
-		return name ? latinize(name.toLowerCase()).split(' ').join('-').replace(/,/g, '') : '';
-	}
 	render() {
-		moment.locale('pl')
-		// let nearestParts = null;
-		// if (this.state.nearestUnit) {
-		// 	nearestParts = this.state.data[`unit_${this.state.nearestUnit.number}`].parts;
-		// }
 		return (
 			<ListComponent>
 				<Global />
@@ -185,15 +178,6 @@ class List extends Component {
 					<ListElementWrapper>
 						<Header />
 						<ListWrapper>
-							{/* {!this.state.nearestUnit ? '...' : <>
-								<Term>
-									<Date>{`${moment(this.state.plannedDate, "YYYYMMDD").format('LL')}r`}</Date>
-									<Line>|</Line>
-									<Time>{moment(this.state.plannedDate, "YYYYMMDD").add(11, 'hours').add(40, 'minutes').fromNow()}</Time>
-								</Term>
-								<Advertisement></Advertisement>
-							</>} */}
-
 							{this.state.units.map(({title, parts}, unitIndex) => {
 								return(
 									<div key={`${unitIndex}_${title}`}>
@@ -203,8 +187,8 @@ class List extends Component {
 												return(
 													<UnitListItem key={`${partIndex}_${name}`}>
 														<Arrow />
-														<PageLink list="true" to={`/${this.state.bookName}/rozdzial-${unitIndex + 1}.${partIndex + 1}/${this.flat(name)}`}>{name}</PageLink>
-														<Go to={`/${this.state.bookName}/spis-slowek/rozdzial-${unitIndex + 1}/${this.flat(name)}`}>
+														<PageLink list="true" to={`/${this.state.bookName}/rozdzial-${unitIndex + 1}.${partIndex + 1}/${paramCase(latinize(name))}`}>{name}</PageLink>
+														<Go to={`/${this.state.bookName}/spis-slowek/rozdzial-${unitIndex + 1}/${paramCase(latinize(name))}`}>
 															<FaListUl />
 														</Go>
 														{}
