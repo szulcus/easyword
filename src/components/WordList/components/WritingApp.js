@@ -112,7 +112,7 @@ class WritingApp extends Component {
 			console.log(unitNumber, partIndex, wordIndex);
 			const unit = `unit_${unitNumber.padStart(2, '0')}`;
 			const part = `part_${(partIndex + 1).toString().padStart(2, '0')}`
-			const book = Number(unitNumber) < 14 ? bookName : `${bookName}2`
+			const book = Number(unitNumber) <= 10 ? bookName : `${bookName}2`
 			console.log(book);
 			db.collection('books').doc(book).get().then(snap => {
 				// console.log(snap.data())

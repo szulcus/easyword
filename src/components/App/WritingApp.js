@@ -237,19 +237,18 @@ class App extends Component {
 	edit = (variable) => {
 		if (this.state.isAdmin && typeof variable === 'string') {
 			const unit = Number(this.state.info.unit.replace('unit_', ''));
-			const bookName = unit < 14 ? this.props.match.params.bookName : `${this.props.match.params.bookName}2`
+			const bookName = unit <= 10 ? this.props.match.params.bookName : `${this.props.match.params.bookName}2`
 			db.collection('books').doc(bookName).get().then(snap => {
 				const {unit, part} = this.state.info;
 				const words = Object.values(snap.data()[unit].parts[part].words);
 				let wordIndex;
-				const word = words.filter((object, index) => {
+				words.forEach((object, index) => {
 					if (object.word1 === this.state.baseWord.word1) {
 						wordIndex = index;
 					}
-					return object[variable] === this.state.baseWord[variable]
 				})
 				console.log(snap.data())
-				const data = prompt(`${variable}:`, word[variable]);
+				const data = prompt(`${variable}:`, this.state.baseWord[variable]);
 				console.log(`${unit}.parts.${part}.words.${wordIndex}.${variable}`)
 				if (data) {
 					db.collection('books').doc(bookName).update({

@@ -4,9 +4,16 @@ import styled from 'styled-components'
 import {db, au} from '../../Config/firebase'
 import { saveAs } from 'file-saver';
 import JSZip from 'jszip'
-import test from './books/euro-klasa.json'
 // ICONS
 import {MdCloudDownload, MdCloud} from 'react-icons/md'
+//wo
+import w1 from '../Words/1_Macmillan/Unit5/1_StagesOfLife'
+import w2 from '../Words/1_Macmillan/Unit5/2_FamilyAndFriends'
+import w3 from '../Words/1_Macmillan/Unit5/3_EverydayActivities'
+import w4 from '../Words/1_Macmillan/Unit5/4_FreeTimeActivities'
+import w5 from '../Words/1_Macmillan/Unit5/5_HolidaysAndCelebrations'
+import w6 from '../Words/1_Macmillan/Unit5/6_LifestyleConflictsAndProblems'
+import w7 from '../Words/1_Macmillan/Unit5/7_Other'
 
 const BackupComponent = styled.div`
 	width: 100vw;
@@ -45,8 +52,8 @@ class Backup extends Component {
 		collections: {
 			'books': {},
 			'users': {},
-			'games-data': {}
-		}
+			'games-data': {},
+		},
 	}
 	componentDidMount() {
 		au.onAuthStateChanged(user => {
@@ -82,6 +89,7 @@ class Backup extends Component {
 			Object.keys(this.state.collections[element]).forEach((name, index) => {
 				zip.folder(element).file(`${name}.json`, JSON.stringify(content[index]));
 			})
+			zip.folder('all').file(`${element}.json`, JSON.stringify(content));
 		})
 		zip.generateAsync({type:"blob"}).then(content => saveAs(content, "EasyLearn backup.zip"));
 	}

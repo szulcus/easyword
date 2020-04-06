@@ -11,6 +11,7 @@ import Shop from './components/Shop'
 // ICONS
 import {FaPencilAlt, FaTrophy, FaReply, FaUserPlus, FaShoppingBasket} from 'react-icons/fa'
 import {TiChartPie, TiPlus} from 'react-icons/ti'
+import {MdCloudDownload} from 'react-icons/md'
 // KEYFRAMES
 import { editOpacity } from '../../Styles/Keyframes'
 
@@ -518,6 +519,7 @@ class UserProfile extends Component {
 							</Biogram>
 							<Confirm onClick={this.updateBiogram} show={this.state.biogramEdit} />
 							<AddAdmin onSubmit={this.addAdminCloudFunction} className="admin" preview={this.state.isAdmin}>
+								<Go to="/backup"><MdCloudDownload /></Go>
 								<Email type="email" placeholder="User email" id="adminEmail" required />
 								<Submit type="submit"><FaUserPlus /></Submit>
 							</AddAdmin>
