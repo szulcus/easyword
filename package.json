@@ -2,7 +2,7 @@
 	"name": "easy-word",
 	"version": "0.1.0",
 	"private": true,
-	"homepage": "https://jakub104.github.io/easy-word",
+	"homepage": "https://szulcus.pl",
 	"dependencies": {
 		"@fortawesome/fontawesome-svg-core": "^1.2.18",
 		"@fortawesome/free-brands-svg-icons": "^5.8.2",
