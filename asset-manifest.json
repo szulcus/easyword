@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/static/css/main.690eee0d.chunk.css",
-    "main.js": "/static/js/main.e945f414.chunk.js",
-    "main.js.map": "/static/js/main.e945f414.chunk.js.map",
+    "main.css": "/static/css/main.d406e0de.chunk.css",
+    "main.js": "/static/js/main.b04085b7.chunk.js",
+    "main.js.map": "/static/js/main.b04085b7.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.95542983.js",
     "runtime-main.js.map": "/static/js/runtime-main.95542983.js.map",
-    "static/js/2.5a5a5e89.chunk.js": "/static/js/2.5a5a5e89.chunk.js",
-    "static/js/2.5a5a5e89.chunk.js.map": "/static/js/2.5a5a5e89.chunk.js.map",
+    "static/js/2.eee4e13a.chunk.js": "/static/js/2.eee4e13a.chunk.js",
+    "static/js/2.eee4e13a.chunk.js.map": "/static/js/2.eee4e13a.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.497cb653afa67be8893ff94797880479.js": "/precache-manifest.497cb653afa67be8893ff94797880479.js",
+    "precache-manifest.2b939b5086074ad72f6c9b2b71233b88.js": "/precache-manifest.2b939b5086074ad72f6c9b2b71233b88.js",
     "service-worker.js": "/service-worker.js",
-    "static/css/main.690eee0d.chunk.css.map": "/static/css/main.690eee0d.chunk.css.map",
-    "static/js/2.5a5a5e89.chunk.js.LICENSE.txt": "/static/js/2.5a5a5e89.chunk.js.LICENSE.txt",
+    "static/css/main.d406e0de.chunk.css.map": "/static/css/main.d406e0de.chunk.css.map",
+    "static/js/2.eee4e13a.chunk.js.LICENSE.txt": "/static/js/2.eee4e13a.chunk.js.LICENSE.txt",
     "static/media/agreement.svg": "/static/media/agreement.9517f40d.svg",
     "static/media/answer-icon.svg": "/static/media/answer-icon.fe8857d5.svg",
     "static/media/answer.svg": "/static/media/answer.002516d0.svg",
@@ -39,9 +39,7 @@
     "static/media/nerd2.svg": "/static/media/nerd2.b7e238f5.svg",
     "static/media/nice1.svg": "/static/media/nice1.abc4ad80.svg",
     "static/media/nice2.svg": "/static/media/nice2.c84f0b7e.svg",
-    "static/media/pl-uk.svg": "/static/media/pl-uk.40432619.svg",
     "static/media/pl.svg": "/static/media/pl.2d8a8c66.svg",
-    "static/media/reward.svg": "/static/media/reward.a2ecbbec.svg",
     "static/media/right-arrow.svg": "/static/media/right-arrow.c357d125.svg",
     "static/media/road-signs-book.png": "/static/media/road-signs-book.41db461c.png",
     "static/media/second.svg": "/static/media/second.0c5d2c3c.svg",
@@ -57,8 +55,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.95542983.js",
-    "static/js/2.5a5a5e89.chunk.js",
-    "static/css/main.690eee0d.chunk.css",
-    "static/js/main.e945f414.chunk.js"
+    "static/js/2.eee4e13a.chunk.js",
+    "static/css/main.d406e0de.chunk.css",
+    "static/js/main.b04085b7.chunk.js"
   ]
 }
