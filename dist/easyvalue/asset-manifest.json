@@ -1,0 +1,35 @@
+{
+  "files": {
+    "main.css": "/static/css/main.3c7c0bc2.chunk.css",
+    "main.js": "/static/js/main.0b61a591.chunk.js",
+    "main.js.map": "/static/js/main.0b61a591.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.47cf5a1a.js",
+    "runtime-main.js.map": "/static/js/runtime-main.47cf5a1a.js.map",
+    "static/js/2.1f1c6dab.chunk.js": "/static/js/2.1f1c6dab.chunk.js",
+    "static/js/2.1f1c6dab.chunk.js.map": "/static/js/2.1f1c6dab.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.5557f0eb3e6d8fa1ea5f8467ae321587.js": "/precache-manifest.5557f0eb3e6d8fa1ea5f8467ae321587.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.3c7c0bc2.chunk.css.map": "/static/css/main.3c7c0bc2.chunk.css.map",
+    "static/js/2.1f1c6dab.chunk.js.LICENSE.txt": "/static/js/2.1f1c6dab.chunk.js.LICENSE.txt",
+    "static/media/circle-border.svg": "/static/media/circle-border.9a928abc.svg",
+    "static/media/circle.svg": "/static/media/circle.a6a21606.svg",
+    "static/media/hexagon-border.svg": "/static/media/hexagon-border.bf7d93da.svg",
+    "static/media/hexagon.svg": "/static/media/hexagon.43266d99.svg",
+    "static/media/icon.svg": "/static/media/icon.a8a96b94.svg",
+    "static/media/linear.svg": "/static/media/linear.675c0f9a.svg",
+    "static/media/logo.png": "/static/media/logo.08adfec6.png",
+    "static/media/quadratic.svg": "/static/media/quadratic.eadbef7e.svg",
+    "static/media/scroll.svg": "/static/media/scroll.3241e4b6.svg",
+    "static/media/square-border.svg": "/static/media/square-border.b55702a9.svg",
+    "static/media/square.svg": "/static/media/square.0bf613c7.svg",
+    "static/media/triangle-border.svg": "/static/media/triangle-border.71928223.svg",
+    "static/media/triangle.svg": "/static/media/triangle.c7e04dbc.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.47cf5a1a.js",
+    "static/js/2.1f1c6dab.chunk.js",
+    "static/css/main.3c7c0bc2.chunk.css",
+    "static/js/main.0b61a591.chunk.js"
+  ]
+}

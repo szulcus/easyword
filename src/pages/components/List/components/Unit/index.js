@@ -27,7 +27,7 @@ const Go = styled(Link)`
 	right: 0px;
 	display: none;
 	padding: 3px;
-	color: var(--color-decorative);
+	color: var(--color-main);
 	opacity: 0;
 	animation: ${listEntry} 0.3s 0.1s both;
 	transition: all 0.1s ease;
@@ -48,10 +48,10 @@ const UnitListItem = styled.li`
 	}
 `
 const Arrow = styled(FaAngleRight)`
-	color: var(--color-decorative);
+	color: var(--color-main);
 `
 const Star = styled(FaStar)`
-	color: var(--color-decorative);
+	color: var(--color-main);
 `
 
 class Unit extends Component {

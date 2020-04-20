@@ -12,7 +12,7 @@ const ListElementTestItem = styled.li`
 `
 
 const Icon = styled(FaStar)`
-	color: var(--color-decorative);
+	color: var(--color-main);
 `
 
 class ListElementTest extends Component {

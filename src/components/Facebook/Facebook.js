@@ -174,7 +174,7 @@ const AppData = styled.div`
 const UserPoints = styled.p``
 
 const Points = styled.span`
-	color: var(--color-decorative);
+	color: var(--color-main);
 	font-weight: bold;
 `
 

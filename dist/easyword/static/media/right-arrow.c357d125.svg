@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" viewBox="0 0 512 512">
+  <defs>
+    <clipPath id="clip-Right_Arrow">
+      <rect width="512" height="512"/>
+    </clipPath>
+  </defs>
+  <g id="Right_Arrow" data-name="Right Arrow" clip-path="url(#clip-Right_Arrow)">
+    <line id="Down" x2="100" y2="100" transform="translate(323 256) rotate(90)" fill="none" stroke="gold" stroke-linecap="round" stroke-width="70"/>
+    <line id="Up" x2="100" y2="100" transform="translate(223 156)" fill="none" stroke="gold" stroke-linecap="round" stroke-width="70"/>
+  </g>
+</svg>

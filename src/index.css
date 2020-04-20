@@ -1,8 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Ubuntu:400,700&display=swap&subset=latin-ext');
+@import url('https://fonts.googleapis.com/css?family=Baloo&display=swap');
 * {
-  --color-main: lightgreen;
-  --color-decorative: gold;
-  --color-item: dodgerblue;
+  --color-main: gold;
+  /* --color-decorative: #b19cd9; */
+  --color-decorative: skyblue;
   --color-primary: lightgray;
   --color-secondary: gray;
   --color-bg: #202020;
@@ -19,6 +20,7 @@
 }
 body {
   font-family: 'Ubuntu', sans-serif;
+  font-size: 18px;
   background-color: var(--color-bg);
   color: var(--color-primary);
   width: 100vw;

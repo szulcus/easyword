@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" viewBox="0 0 512 512">
+  <defs>
+    <clipPath id="clip-circle-border">
+      <rect width="512" height="512"/>
+    </clipPath>
+  </defs>
+  <g id="circle-border" clip-path="url(#clip-circle-border)">
+    <g id="Ellipse_1" data-name="Ellipse 1" transform="translate(56 56)" fill="none" stroke="#1589ff" stroke-width="20">
+      <circle cx="200" cy="200" r="200" stroke="none"/>
+      <circle cx="200" cy="200" r="190" fill="none"/>
+    </g>
+  </g>
+</svg>

@@ -73,7 +73,7 @@ const Input = styled.input`
 	background: none;
 	outline: none;
 	border: none;
-	border-bottom: 1px solid var(--color-decorative);
+	border-bottom: 1px solid var(--color-main);
 	padding: 0 10px;
 	font-size: 20px;
 	color: var(--color-white);
@@ -101,7 +101,7 @@ const Submit = styled.input`
 	padding: 10px;
 	background: none;
 	border: none;
-	color: var(--color-decorative);
+	color: var(--color-main);
 	font-size: 30px;
 	font-weight: bold;
 	outline: none;
@@ -153,7 +153,7 @@ const Copy = styled.button`
 
 const CopyImg = styled(MdContentCopy)`
 	text-decoration: none;
-	color: var(--color-decorative);
+	color: var(--color-main);
 	font-size: 20px;
 `
 

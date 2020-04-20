@@ -71,7 +71,7 @@ const ExperienceIcon = styled(TiChartLine)`
 	transform: translateY(3px);
 `
 const Number = styled.strong`
-	color: var(--color-decorative);
+	color: var(--color-main);
 `
 const AllProducts = styled.div`
 	width: 90vw;
@@ -291,7 +291,7 @@ const Quantity = styled.div`
 	border: 2px solid var(--color-primary);
 	border-radius: 100%;
 	font-weight: bold;
-	color: var(--color-decorative);
+	color: var(--color-main);
 
 `
 const ProductMenu = styled.div`
@@ -308,7 +308,7 @@ const ProductMenu = styled.div`
 `
 const Cost = styled.div`
 	width: 90px;
-	color: var(--color-decorative);
+	color: var(--color-main);
 	font-size: 18px;
 	font-weight: bold;
 `
@@ -360,7 +360,7 @@ const Back = styled(FaTimes)`
 	display: none;
 	width: 90px;
 	font-size: 30px;
-	color: var(--color-decorative);
+	color: var(--color-main);
 	:hover {
 		cursor: pointer;
 	}
@@ -503,9 +503,9 @@ const Exit = styled.div`
 	display: flex;
 	justify-content: space-evenly;
 `
-const Play = styled(FaGamepad)`
+const NavIcon = styled.div`
 	font-size: 40px;
-	color: var(--color-decorative);
+	color: var(--color-main);
 	transition: 0.3s ease;
 	:hover {
 		cursor: pointer;
@@ -729,7 +729,7 @@ class Shop extends Component {
 										<ProductItem second={this.state.animations[`${product}Animation`]} src={require(`../Images/icons/packs/${product}-pack/${product}2.svg`)} />
 										<ProductMenu>
 											<Cost>{!this.state.userPackages.purchased.includes(product) ? <>50 <CoinIcon/></> : <TiTick />}</Cost>
-											{this.state.userPackages.selected === product ? '' : (!this.state.userPackages.purchased.includes(product) ? <Buy onClick={this.buy} color="decorative">Kup</Buy> : <Buy onClick={this.set} color="decorative">Ustaw</Buy>)}
+											{this.state.userPackages.selected === product ? '' : (!this.state.userPackages.purchased.includes(product) ? <Buy onClick={this.buy} color="main">Kup</Buy> : <Buy onClick={this.set} color="main">Ustaw</Buy>)}
 											<Back onClick={this.backProduct} />
 										</ProductMenu>
 									</Product>
@@ -747,7 +747,7 @@ class Shop extends Component {
 										<Quantity>{isNaN(hours) ? <FaInfinity /> : hours.toString().replace(/[0-9]+/, x => `${x}H`)}</Quantity>
 										<ProductMenu>
 											<Cost>{cost} <CoinIcon/></Cost>
-											<Buy onClick={this.buy} color="decorative">Kup</Buy>
+											<Buy onClick={this.buy} color="main">Kup</Buy>
 											<Back onClick={this.backProduct} />
 										</ProductMenu>
 									</Product>
@@ -763,7 +763,7 @@ class Shop extends Component {
 										<Quantity>{changes}</Quantity>
 										<ProductMenu>
 											<Cost>{cost} <CoinIcon/></Cost>
-											<Buy onClick={this.buy} color="decorative">Kup</Buy>
+											<Buy onClick={this.buy} color="main">Kup</Buy>
 											<Back onClick={this.backProduct} />
 										</ProductMenu>
 									</Product>
@@ -779,7 +779,7 @@ class Shop extends Component {
 										<Quantity>{answers}</Quantity>
 										<ProductMenu>
 											<Cost>{cost} <CoinIcon/></Cost>
-											<Buy onClick={this.buy} color="decorative">Kup</Buy>
+											<Buy onClick={this.buy} color="main">Kup</Buy>
 											<Back onClick={this.backProduct} />
 										</ProductMenu>
 									</Product>
@@ -795,7 +795,7 @@ class Shop extends Component {
 										<Quantity>{xp.toString().replace(/000$/, 'K')}</Quantity>
 										<ProductMenu>
 											<Cost>{cost} <CoinIcon/></Cost>
-											<Buy onClick={this.buy} color="decorative">Kup</Buy>
+											<Buy onClick={this.buy} color="main">Kup</Buy>
 											<Back onClick={this.backProduct} />
 										</ProductMenu>
 									</Product>
@@ -805,11 +805,13 @@ class Shop extends Component {
 					</AllProducts>
 					<Exit>
 						<Link to='/'>
-							<Play />
+							<NavIcon>
+								<FaGamepad />
+							</NavIcon>
 						</Link>
-						{/* <Icon>
-							<MdExitToApp onClick={() => {}} />
-						</Icon> */}
+						<NavIcon>
+							<MdExitToApp onClick={() => this.props.history.goBack()} />
+						</NavIcon>
 					</Exit>
 				</ShopComponent>
 			</>

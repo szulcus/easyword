@@ -35,7 +35,7 @@ const Game = styled.div`
 
 const StyledIcon = styled(Icon)`
 	font-size: 50px;
-	color: var(--color-decorative);
+	color: var(--color-main);
 `
 
 class Page extends Component {

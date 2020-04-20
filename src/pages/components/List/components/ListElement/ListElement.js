@@ -11,7 +11,7 @@ const ListElementItem = styled.li`
 `
 
 const Icon = styled(FaAngleRight)`
-	color: var(--color-decorative);
+	color: var(--color-main);
 `
 
 class ListElement extends Component {

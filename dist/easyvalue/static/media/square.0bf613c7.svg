@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" viewBox="0 0 512 512">
+  <defs>
+    <clipPath id="clip-square">
+      <rect width="512" height="512"/>
+    </clipPath>
+  </defs>
+  <g id="square" clip-path="url(#clip-square)">
+    <rect id="Rectangle_1" data-name="Rectangle 1" width="400" height="400" rx="20" transform="translate(56 56)" fill="#1589ff"/>
+  </g>
+</svg>

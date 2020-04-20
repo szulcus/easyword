@@ -2,8 +2,9 @@
 import React, {Component} from 'react';
 import { HashRouter as Router, Switch, Route} from 'react-router-dom';
 // PAGES
-import AppPage from './Components/App/WritingApp'
-import IrregularAppPage from './Components/App/IrregularApp'
+import WritingApp from './Components/Apps/WritingApp'
+import ShootApp from './Components/Apps/ShootApp'
+import IrregularAppPage from './Components/Apps/IrregularApp'
 import WorkPage from './Components/Work/Work'
 import IndexPage from './pages/index'
 import Facebook from './Components/Facebook/Facebook'
@@ -15,15 +16,13 @@ import Leaves from './Components/_Leaves/Leaves'
 import Editor from './Components/_Editor/Editor'
 import NotFoundPage from './pages/404/404'
 import Automatic from './Components/Automatic/Auto'
-import TinderApp from './Components/App/TinderApp'
-import ChoiseApp from './Components/App/EasyChoise'
+import TinderApp from './Components/Apps/TinderApp'
+import ChoiseApp from './Components/Apps/EasyChoise'
 import Stats from './Components/Stats'
 // import OxfordList from './pages/books/3_Oxford/oxford'
 // import RoadSignsList from './pages/components/List/RoadSignsList'
 import List from './pages/components/List/List'
 import Backup from './Components/Backup'
-// STYLED
-import Global from './Components/Styles/Global';
 // FILES
 		// WORDS
 			// WSiP
@@ -52,7 +51,6 @@ class App extends Component {
 	render() {
 	return (
 		<Router>
-		<Global/>
 			<Switch>
 				{/* <Route path="/app" render={(props) =>
 					<AppPage
@@ -71,7 +69,7 @@ class App extends Component {
 						{/* 1 - Znaki drogowe pionowe */}
 							{/* Znaki ostrzegawcze */}
 							<Route path="/znaki-drogowe/rozdział-1/znaki-ostrzegawcze" render={(props) =>
-								<AppPage
+								<WritingApp
 									{...props}
 									words={b4_e1_words1A}
 									base_language='en'
@@ -80,7 +78,7 @@ class App extends Component {
 							}/>
 							{/* Znaki zakazu */}
 							<Route path="/znaki-drogowe/rozdział-1/znaki-zakazu" render={(props) =>
-								<AppPage
+								<WritingApp
 									{...props}
 									words={b4_e1_words2B}
 									base_language='en'
@@ -89,7 +87,7 @@ class App extends Component {
 							}/>
 							{/* Znaki nakazu */}
 							<Route path="/znaki-drogowe/rozdział-1/znaki-nakazu" render={(props) =>
-								<AppPage
+								<WritingApp
 									{...props}
 									words={b4_e1_words3C}
 									base_language='en'
@@ -98,7 +96,7 @@ class App extends Component {
 							}/>
 							{/* Znaki informacyjne */}
 							<Route path="/znaki-drogowe/rozdział-1/znaki-informacyjne" render={(props) =>
-								<AppPage
+								<WritingApp
 									{...props}
 									words={b4_e1_words4D}
 									base_language='en'
@@ -189,7 +187,7 @@ class App extends Component {
 					}/>
 
 				<Route path="/test" render={(props) =>
-					<AppPage
+					<WritingApp
 						{...props}
 						words={testWords}
 						base_language="en"
@@ -220,7 +218,8 @@ class App extends Component {
 				<Route path="/ranking" exact component={Stats}/>
 				<Route path="/not-found-page" exact component={NotFoundPage}/>
 				<Route path="/:bookName/spis-tresci" exact component={List}/>
-				<Route path="/:bookName/rozdzial-:unitNumber/:unitName" exact component={AppPage} />
+				<Route path="/:bookName/rozdzial-:unitNumber/:unitName" exact component={WritingApp} />
+				<Route path="/:bookName/rozdzial-:unitNumber/:unitName/easy-shoot" exact component={ShootApp} />
 				<Route path="/:bookName/spis-slowek/rozdzial-:unitNumber/:unitName" exact component={WordList}/>
 			</Switch>
 		</Router>

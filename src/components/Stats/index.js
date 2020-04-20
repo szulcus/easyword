@@ -8,7 +8,7 @@ import {db} from '../../Config/firebase'
 import first from '../Images/icons/podium/first.svg'
 import second from '../Images/icons/podium/second.svg'
 import third from '../Images/icons/podium/third.svg'
-import agreement from '../Images/icons/agreement.svg'
+import diamond from '../Images/icons/diamond.svg'
 // ICONS
 // import {FaSearch} from 'react-icons/fa'
 
@@ -24,30 +24,19 @@ const Header = styled.header`
 	font-weight: bold;
 `
 // const Search = styled(FaSearch)`
-// 	color: var(--color-decorative);
+// 	color: var(--color-main);
 // 	font-size: 30px;
 // 	:hover {
 // 		cursor: pointer;
 // 	}
 // `
 const Main = styled.div`
+	width: calc(100vw - 60px);
+	height: calc(100vh - 150px);
 	display: flex;
 	justify-content: center;
-	width: 100vw;
 	position: relative;
-`
-const UserList = styled.div`
-	height: 80vh;
-	width: 90vw;
-	max-width: 500px;
-	transition: transform 0.3s ease;
 	overflow-y: scroll;
-	${props =>
-		props.active &&
-		css`
-			transform: translateX(-275px);
-		`
-	}
 	::-webkit-scrollbar {
 		width: 3px;
 	}
@@ -57,6 +46,17 @@ const UserList = styled.div`
 	}
 	::-webkit-scrollbar-thumb {
 		background: var(--color-secondary);
+	}
+`
+const UserList = styled.div`
+	width: 100%;
+	max-width: 500px;
+	transition: transform 0.3s ease;
+	${props =>
+		props.active &&
+		css`
+			transform: translateX(-275px);
+		`
 	}
 	@media (max-width: 1100px) {
 		transform: translateX(0);
@@ -115,6 +115,14 @@ const User = styled(Link)`
 	:hover {
 		border: 1px solid var(--color-primary);
 	}
+	${props =>
+		props.premium &&
+		css`
+			:hover {
+				border: 1px solid var(--color-decorative);
+			}
+		`
+	};
 `
 const Nick = styled.h1`
 	margin-top: 0px;
@@ -126,7 +134,7 @@ const Nick = styled.h1`
 `
 const Points = styled.strong`
 	font-size: 20px;
-	color: var(--color-decorative);
+	color: var(--color-main);
 `
 // const entry = keyframes`
 // 	from {
@@ -252,11 +260,11 @@ const Points = styled.strong`
 // const Unit = styled.li`
 
 // `
-const Helper = styled.img`
+const Diamond = styled.img`
 	position: absolute;
 	top: 10px;
 	left: 10px;
-	color: var(--color-decorative);
+	color: var(--color-main);
 	width: 40px;
 	:hover {
 		cursor: pointer;
@@ -312,12 +320,12 @@ class Stats extends Component {
 					<Main>
 						{!users ? 'Wczytywanie...' : <UserList active={this.state.active}>
 							{users.map((user, index) => {
-								const {nick, helper, uid} = user.info;
+								const {nick, uid} = user.info;
 								return (
-									<User to={`/users/${uid}`} id={uid} key={index}>
+									<User premium={user['easy-word'].premium} to={`/users/${uid}`} id={uid} key={index}>
 										<Nick>{nick}</Nick>
 										<Points>{user['easy-word'].experience}</Points>
-										{helper ? <Helper src={agreement} alt={uid} title="Pomocnik" /> : ''}
+										{user['easy-word'].premium ? <Diamond src={diamond} alt={uid} title="Użytkownik premium" /> : ''}
 									</User>
 								)
 							})}

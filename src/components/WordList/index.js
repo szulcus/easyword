@@ -16,6 +16,7 @@ const WordListPage = styled(Wrapper)`
 	flex-direction: column;
 	align-items: center;
 	overflow-y: scroll;
+	font-size: 20px;
 `
 const TableHead = styled.thead``
 const Th = styled.th``
@@ -133,7 +134,8 @@ class WordList extends Component {
 		units: [],
 		unitWords: [],
 		unitsLength: {},
-		wordData: null
+		wordData: null,
+		activeWord: ''
 	}
 	componentDidMount() {
 		let {bookName, unitNumber, unitName} = this.props.match.params;
@@ -184,9 +186,10 @@ class WordList extends Component {
 				unitNumber: this.props.match.params.unitNumber
 			}
 		})
-		if (e.target.parentElement.id) {
+		console.log('id: ', e.currentTarget.id);
+		if (e.currentTarget.id) {
 			this.setState({
-				activeWord: e.target.parentElement.id.replace(/word-/, '')
+				activeWord: e.currentTarget.id.replace(/word-/, '')
 			})
 		}
 	}

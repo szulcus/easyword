@@ -107,7 +107,7 @@ const List = styled.ul`
 	transform: translate(-50%, -50%);
 	list-style-type: none;
 	width: 500px;
-	border: 1.5px solid var(--color-decorative);
+	border: 1.5px solid var(--color-main);
 	border-radius: 20px;
 	animation: ${speedAbsoluteEntry} 0.2s both;
 	${props =>

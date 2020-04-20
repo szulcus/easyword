@@ -6,14 +6,6 @@ import { saveAs } from 'file-saver';
 import JSZip from 'jszip'
 // ICONS
 import {MdCloudDownload, MdCloud} from 'react-icons/md'
-//wo
-import w1 from '../Words/1_Macmillan/Unit5/1_StagesOfLife'
-import w2 from '../Words/1_Macmillan/Unit5/2_FamilyAndFriends'
-import w3 from '../Words/1_Macmillan/Unit5/3_EverydayActivities'
-import w4 from '../Words/1_Macmillan/Unit5/4_FreeTimeActivities'
-import w5 from '../Words/1_Macmillan/Unit5/5_HolidaysAndCelebrations'
-import w6 from '../Words/1_Macmillan/Unit5/6_LifestyleConflictsAndProblems'
-import w7 from '../Words/1_Macmillan/Unit5/7_Other'
 
 const BackupComponent = styled.div`
 	width: 100vw;
@@ -28,7 +20,7 @@ const Download = styled(MdCloudDownload)`
 	width: 90vmin;
 	max-width: 1500px;
 	font-size: 150px;
-	color: var(--color-decorative);
+	color: var(--color-main);
 	transition: all 0.3s ease;
 	:hover {
 		opacity: 0.5;
@@ -39,7 +31,7 @@ const Cloud = styled(MdCloud)`
 	width: 90vmin;
 	max-width: 1500px;
 	font-size: 150px;
-	color: var(--color-decorative);
+	color: var(--color-main);
 `
 const Info = styled.div`
 	font-size: 25px;

@@ -1,5 +1,20 @@
 {
   "projects": {
     "default": "easyword"
+  },
+  "targets": {
+    "easyword": {
+      "hosting": {
+        "eword": [
+          "easyword"
+        ],
+        "evalue": [
+          "easyvalue"
+        ],
+        "ecalc": [
+          "easycalc"
+        ]
+      }
+    }
   }
 }

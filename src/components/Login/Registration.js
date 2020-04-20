@@ -64,7 +64,7 @@ const Label = styled.label`
 	width: 100%;
 	height: 100%;
 	pointer-events: none;
-	border-bottom: 1px solid var(--color-decorative);
+	border-bottom: 1px solid var(--color-main);
 	::after {
 		content: '';
 		position: absolute;

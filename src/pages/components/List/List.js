@@ -1,7 +1,7 @@
 // BASIC
 import React, { Component } from 'react'
-import styled from 'styled-components'
-import moment from 'moment'
+import styled, {keyframes, css} from 'styled-components'
+// import moment from 'moment'
 import 'moment/locale/pl'
 import firebase from 'firebase/app'
 import 'firebase/app'
@@ -13,14 +13,14 @@ import latinize from 'latinize'
 import {paramCase} from 'change-case'
 // STYLES
 import Global from '../../../Components/Styles/Global'
-import { Wrapper, PageLink } from '../../../Components/Styles/Components'
-import { listEntry, listHover } from '../../../Components/Styles/Keyframes'
+import { Wrapper } from '../../../Components/Styles/Components'
 // COMPONENTS
 import Book from './components/Book'
 import Header from './components/ListElement/Header'
 import ListWrapper from './components/ListElement/ListWrapper'
 // ICONS
-import { FaAngleRight, FaStar, FaListUl } from 'react-icons/fa'
+import { FaAngleRight, FaStar, FaListUl, FaBomb } from 'react-icons/fa'
+import {GoKebabVertical} from 'react-icons/go'
 
 const ListComponent = styled.div`
 	text-align: center;
@@ -35,74 +35,64 @@ const Separator = styled.hr`
 		margin: 0 30px;
 	}
 `
-
 const ListElementWrapper = styled.div``
-
-// const Advertisement = styled.div`
-// 	background-color: var(--color-dark);
-// 	padding: 10px;
-// 	margin-bottom: 50px;
-// 	border-radius: 20px;
-// 	@media (min-width: 600px) {
-// 		padding: 10px 20px;
-// 	}
-// `
-
-// const Term = styled.div`
-// 	display: flex;
-// 	justify-content: space-around;
-// 	line-height: 100%;
-// 	margin: 20px;
-// 	font-size: 30px;
-// 	color: var(--color-decorative);
-// `
-
-// const Line = styled.div`
-// 	display: none;
-// 		@media (min-width: 600px) {
-// 			display: block;
-// 		}
-// `
-
-// const Time = styled.div`
-// 	width: 200px;
-// 	font-size: 20px;
-// 	text-align: center;
-// 	::after {
-// 		content: ' 😉';
-// 	}
-// `
-
-// const Date = styled.div`
-// 	width: 200px;
-// 	font-size: 20px;
-// 	text-align: center;
-// 	display: none;
-// 		@media (min-width: 600px) {
-// 			display: block;
-// 		}
-// `
-
 const UnitTitle = styled.h3`
 	text-align: left;
-`;
-
+`
 const UnitList = styled.ul`
 	list-style: none;
+	@media (max-width: 400px) {
+		padding-left: 20px;
+	}
 `
-
-const Go = styled(Link)`
+const Menu = styled(GoKebabVertical)`
 	position: absolute;
-	top: 1.5px;
 	right: 0px;
+	transform: translateY(3px);
+	color: var(--color-main);
+	@media (min-width: 600px) {
+		display: none;
+	}
+`
+const Links = styled.div`
+	position: absolute;
+	right: 0;
 	display: none;
-	padding: 3px;
-	color: var(--color-decorative);
+	justify-content: flex-end;
+	transform: translateX(-10px);
+	transition: all 0.3s ease;
+	@media (max-width: 600px) {
+		background-color: var(--color-dark);
+		padding: 8px 0 5px 0;
+		transform: translateY(-5px) translateX(0);
+		border-radius: 10px;
+		margin-right: 20px;
+	}
+`
+const listEntry = keyframes`
+	0% {
+		transform: translateX(-100%);
+		opacity: 0;
+	}
+	100% {
+		transform: translateX(0);
+		opacity: 1;
+	}
+`
+const Go = styled(Link)`
+	display: block;
+	margin: 0 5px;
+	color: var(--color-main);
 	opacity: 0;
-	animation: ${listEntry} 0.3s 0.1s both;
-	transition: all 0.1s ease;
+	transition: all 0.2s ease;
+	:first-child {
+		animation: ${listEntry} 0.3s 0.1s both;
+	}
+	:last-child {
+		animation: ${listEntry} 0.5s 0.1s both;
+	}
 	:hover {
-		animation: ${listHover} 0.3s both;
+		color: rgb(255,223,0, 0.5);
 	}
 `
 const UnitListItem = styled.li`
@@ -110,18 +100,31 @@ const UnitListItem = styled.li`
 	display: flex;
 	justify-content: flex-start;
 	padding: 3px;
-	:hover ${Go} {
-		display: block;
-	}
-	:hover ${PageLink} {
-		color: var(--color-primary);
+	text-align: left;
+	@media (max-width: 600px) {
+		padding-right: 30px;
 	}
 `
 const Arrow = styled(FaAngleRight)`
-	color: var(--color-decorative);
+	color: var(--color-main);
+	min-width: 20px;
 `
 const Star = styled(FaStar)`
-	color: var(--color-decorative);
+	color: var(--color-main);
+	min-width: 20px;
+	:first-child {
+		margin-left: 20px;
+	}
+`
+const PageLink = styled(Link)`
+	display: block;
+	text-align: left;
+	text-decoration: none;
+	color: var(--color-secondary);
+	transition: all 0.15s ease-in;
+	:hover {
+		color: var(--color-primary);
+	}
 `
 
 
@@ -168,6 +171,13 @@ class List extends Component {
 			this.setState({units, info})
 		})
 	}
+	showLinks = (e) => {
+		const children = e.currentTarget.children;
+		children[children.length - 1].style.display = 'flex';
+	}
+	hideLinks = () => {
+		document.querySelectorAll('.links').forEach(element => element.style.display = 'none')
+	}
 	render() {
 		return (
 			<ListComponent>
@@ -185,23 +195,34 @@ class List extends Component {
 										<UnitList>
 											{Object.values(parts).length === 1 ? '' : Object.values(parts).map(({name}, partIndex) => {
 												return(
-													<UnitListItem key={`${partIndex}_${name}`}>
+													<UnitListItem onMouseOver={this.showLinks} onMouseOut={this.hideLinks} key={`${partIndex}_${name}`}>
 														<Arrow />
 														<PageLink list="true" to={`/${this.state.bookName}/rozdzial-${unitIndex + 1}.${partIndex + 1}/${paramCase(latinize(name))}`}>{name}</PageLink>
-														<Go to={`/${this.state.bookName}/spis-slowek/rozdzial-${unitIndex + 1}/${paramCase(latinize(name))}`}>
-															<FaListUl />
-														</Go>
-														{}
+														<Menu />
+														<Links className="links">
+															<Go to={`/${this.state.bookName}/spis-slowek/rozdzial-${unitIndex + 1}/${paramCase(latinize(name))}`}>
+																<FaListUl />
+															</Go>
+															<Go to={`/${this.state.bookName}/rozdzial-${unitIndex + 1}.${partIndex + 1}/${paramCase(latinize(name))}/easy-shoot`}>
+																<FaBomb />
+															</Go>
+														</Links>
 													</UnitListItem>
 												)
 											})}
-											<UnitListItem>
+											<UnitListItem onMouseOver={this.showLinks} onMouseOut={this.hideLinks}>
 												<Star />
 												<PageLink list="true" to={`/${this.state.bookName}/rozdzial-${unitIndex + 1}/test`}>&nbsp;Test&nbsp;</PageLink>
 												<Star />
-												<Go to={`/${this.state.bookName}/spis-slowek/rozdzial-${unitIndex + 1}/test`}>
-													<FaListUl />
-												</Go>
+												<Menu />
+												<Links className="links">
+													<Go to={`/${this.state.bookName}/spis-slowek/rozdzial-${unitIndex + 1}/test`}>
+														<FaListUl />
+													</Go>
+													<Go to={`/${this.state.bookName}/spis-slowek/rozdzial-${unitIndex + 1}/test/easy-shoot`}>
+														<FaBomb />
+													</Go>
+												</Links>
 											</UnitListItem>
 										</UnitList>
 									</div>

@@ -27,7 +27,7 @@ const Stats = styled.div`
 
 const Go = styled(Link)`
 	text-decoration: none;
-	color: var(--color-decorative);
+	color: var(--color-main);
 `
 
 const Cup = styled(FaTrophy)`
@@ -63,7 +63,7 @@ const Logo = styled.span`
 const LogoSeparator = styled.hr`
 	max-width: 1200px;
 	height: 0;
-	border: solid 0.5px var(--color-decorative);
+	border: solid 0.5px var(--color-main);
 `;
 
 const Separator = styled.hr`
@@ -72,7 +72,7 @@ const Separator = styled.hr`
 	max-width: 700px;
 	clip-path: polygon(10% 0, 90% 0, 100% 100%, 0 100%);
 	border: none;
-	border-bottom: solid 1px var(--color-decorative);
+	border-bottom: solid 1px var(--color-main);
 	margin-bottom: 50px;
 `;
 

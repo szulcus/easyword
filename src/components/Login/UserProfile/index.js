@@ -5,13 +5,11 @@ import {Link} from 'react-router-dom'
 import ReactHtmlParser from 'react-html-parser'
 // CONFIG
 import {db, au, fu, st} from '../../../Config/firebase'
-// COMPONENTS
-// import Achievements from './components/Achievements'
-import Shop from './components/Shop'
 // ICONS
 import {FaPencilAlt, FaTrophy, FaReply, FaUserPlus, FaShoppingBasket} from 'react-icons/fa'
 import {TiChartPie, TiPlus} from 'react-icons/ti'
 import {MdCloudDownload} from 'react-icons/md'
+import {WiStars} from 'react-icons/wi'
 // KEYFRAMES
 import { editOpacity } from '../../Styles/Keyframes'
 
@@ -81,7 +79,7 @@ const EditIcon = styled(FaPencilAlt)`
 		css`
 			${LoginTitle}:hover & {
 				transform: scale(1) translateX(50px);
-				color: var(--color-decorative);
+				color: var(--color-main);
 				opacity: 0.5;
 			}
 		`
@@ -118,6 +116,20 @@ const Avatar = styled.div`
 		width: 250px;
 		min-height: 250px;
 	}
+	${props =>
+		props.premium &&
+		css`
+			border: 5px solid var(--color-decorative);
+		`
+	};
+`
+const Stars = styled(WiStars)`
+	position: absolute;
+	top: 0;
+	right: 0;
+	font-size: 30px;
+	color: skyblue;
+	z-index: 99;
 `
 const EditAvatar = styled(FaPencilAlt)`
 	display: none;
@@ -175,7 +187,7 @@ const Confirm = styled(TiPlus)`
 	top: 10px;
 	right: 10px;
 	font-size: 25px;
-	color: var(--color-decorative);
+	color: var(--color-main);
 	opacity: 0;
 	transition: all 0.2s ease;
 	${props =>
@@ -208,7 +220,7 @@ const AddAdmin = styled.form`
 const Email = styled.input`
 	background-color: transparent;
 	border: none;
-	border-bottom: 2px solid var(--color-decorative);
+	border-bottom: 2px solid var(--color-main);
 	margin: 5px;
 	:focus {
 		outline: none;
@@ -228,7 +240,7 @@ const Submit = styled.button`
 	background-color: transparent;
 	border: none;
 	font-size: 30px;
-	color: var(--color-decorative);
+	color: var(--color-main);
 	:hover {
 		cursor: pointer;
 	}
@@ -253,7 +265,7 @@ const Achievement = styled.div`
 `
 const AchievementIcon = styled.span`
 	font-size: 30px;
-	color: var(--color-decorative);
+	color: var(--color-main);
 	transition: all 0.3s ease;
 	@media (min-width: 800px) {
 		font-size: 40px;
@@ -265,7 +277,7 @@ const AchievementIcon = styled.span`
 `
 const Go = styled(Link)`
 	text-decoration: none;
-	color: var(--color-decorative);
+	color: var(--color-main);
 `
 const Return = styled.div`
 	width: 90vw;
@@ -341,7 +353,8 @@ class UserProfile extends Component {
 		previewUserAchievements: false,
 		percentage: 0,
 		biogramEdit: false,
-		showShop: false
+		showShop: false,
+		premium: false
 	}
 	componentDidMount() {
 		// console.log(easyWord);
@@ -368,7 +381,11 @@ class UserProfile extends Component {
 										nick: nick,
 										biogram: biogram,
 										email: user.email,
-										coins: 0
+										coins: 0,
+										packs: {
+											purchased: ['default'],
+											selected: 'default'
+										}
 									}
 								})
 							}).then(() => {
@@ -420,7 +437,8 @@ class UserProfile extends Component {
 						info: {
 							nick, biogram, uid, email, avatar, coins
 						},
-						points: snap.data()['easy-word'],
+						points: snap.data()['easy-word'].points,
+						premium: snap.data()['easy-word'].premium,
 						isOwner: true
 					})
 				});
@@ -432,7 +450,8 @@ class UserProfile extends Component {
 						info: {
 							nick, biogram, uid, email, avatar, coins
 						},
-						points: snap.data()['easy-word'],
+						points: snap.data()['easy-word'].points,
+						premium: snap.data()['easy-word'].premium
 					})
 				});
 			}
@@ -497,10 +516,10 @@ class UserProfile extends Component {
 		this.props.history.push(`/login`);
 	}
 	render() {
-		var d1 = new Date(); //"now"
-		var d2 = new Date("2011/02/01")  // some date
-		var diff = Math.abs(d1-d2);
-		console.log(diff)
+		// var d1 = new Date(); //"now"
+		// var d2 = new Date("2011/02/01")  // some date
+		// var diff = Math.abs(d1-d2);
+		console.log(this.state.points)
 		return (
 			<UserProfileSite>
 				{!this.state.info ? '...' : <>
@@ -509,7 +528,8 @@ class UserProfile extends Component {
 							<EditNick defaultValue={this.state.info.nick} readOnly={!this.state.isOwner} onChange={this.updateNick} editable={this.state.isOwner} />
 							<EditIcon preview={this.state.isOwner} />
 						</LoginTitle>
-						<Avatar avatar={this.state.info.avatar} progress={this.state.percentage}>
+						<Avatar avatar={this.state.info.avatar} progress={this.state.percentage} premium={this.state.premium}>
+							<Stars />
 							<EditAvatar preview={this.state.isOwner} onClick={this.editAvatar} />
 							<Input type="file" accept="image/*" onChange={this.updateAvatar} id="fileButton"/>
 						</Avatar>

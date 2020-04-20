@@ -53,7 +53,7 @@ const Input = styled.input`
 	background: none;
 	outline: none;
 	border: none;
-	border-bottom: 1px solid var(--color-decorative);
+	border-bottom: 1px solid var(--color-main);
 	padding: 0 10px;
 	font-size: 20px;
 	color: var(--color-white);
@@ -80,7 +80,7 @@ const Select = styled.select`
 	background: none;
 	outline: none;
 	border: none;
-	border-bottom: 1px solid var(--color-decorative);
+	border-bottom: 1px solid var(--color-main);
 	padding: 0 10px;
 	font-size: 20px;
 	color: var(--color-white);
@@ -113,7 +113,7 @@ const Action = styled.div`
 const ConvertIcon = styled(MdPhotoFilter)`
 	margin: 10px;
 	font-size: 50px;
-	color: var(--color-decorative);
+	color: var(--color-main);
 	:hover {
 		cursor: pointer;
 	}
@@ -125,7 +125,7 @@ const ConvertIcon = styled(MdPhotoFilter)`
 const DownloadIcon = styled(MdFileDownload)`
 	margin: 10px;
 	font-size: 50px;
-	color: var(--color-decorative);
+	color: var(--color-main);
 	:hover {
 		cursor: pointer;
 	}

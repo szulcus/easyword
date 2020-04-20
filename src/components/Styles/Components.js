@@ -65,7 +65,7 @@ const Separator = styled.hr`
 	width: calc(100vw - 100px);
 	max-width: 1000px;
 	height: 0;
-	border: 0.5px solid var(--color-decorative);
+	border: 0.5px solid var(--color-main);
 `;
 
 const PageLink = styled(Link)`
@@ -82,7 +82,7 @@ const PageLink = styled(Link)`
 		props.content &&
 		css`
 			display: contents;
-			color: var(--color-decorative);
+			color: var(--color-main);
 	`}
 
 	${props =>
@@ -134,7 +134,7 @@ const BrowserLink = styled.a`
 		display: block;
 		margin: 0 auto;
 		width: 30px;
-		color: var(--color-decorative);
+		color: var(--color-main);
 		font-size: 30px;
 			:hover {
 				opacity: 0.5;
@@ -168,7 +168,7 @@ const Go = styled(Link)`
 	${props =>
 		props.gold &&
 		css`
-			color: var(--color-decorative);
+			color: var(--color-main);
 		`
 	}
 `

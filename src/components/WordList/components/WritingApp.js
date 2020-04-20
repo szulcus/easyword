@@ -4,13 +4,14 @@ import styled, {keyframes, css} from 'styled-components'
 import {au, db} from '../../../Config/firebase'
 import latinize from 'latinize'
 // COMPONENTS
-import Input from '../../App/components/WritingApp/Input'
-import Cathegory from '../../App/components/Cathegory'
-import Word from '../../App/components/Word'
-import Picture from '../../App/components/Picture'
-import SocialMedia from '../../App/components/SocialMedia'
+import Input from '../../Apps/components/WritingApp/Input'
+import Cathegory from '../../Apps/components/Cathegory'
+import Word from '../../Apps/components/Word'
+import Picture from '../../Apps/components/Picture'
+import SocialMedia from '../../Apps/components/SocialMedia'
 // ICONS
 import {MdExitToApp, MdKeyboardArrowLeft, MdKeyboardArrowRight} from 'react-icons/md'
+import {FaGlobeEurope, FaGlobeAmericas} from 'react-icons/fa'
 
 const fade = keyframes`
 	from {
@@ -57,6 +58,10 @@ const WritingAppComponent = styled.div`
 		padding-bottom: 10px;
 	}
 `
+const Level = styled.p`
+	color: var(--color-main);
+	font-size: 30px;
+`
 const Navigation = styled.div`
 	display: flex;
 	justify-content: center;
@@ -75,19 +80,23 @@ const Exit = styled(MdExitToApp)`
 const Arrow = styled.div`
 	font-size: 50px;
 	transform: translateY(5px);
-	color: var(--color-decorative);
+	color: var(--color-main);
 	margin: 0 10px;
 	transition: all 0.2s ease;
-	${props =>
-		props.hide &&
-		css`
-			opacity: 0;
-		`
-	};
 	:hover {
 		opacity: 0.5;
 		cursor: pointer;
 	}
+	${props =>
+		props.hide &&
+		css`
+			opacity: 0;
+			:hover {
+				opacity: 0;
+				cursor: default;
+			}
+		`
+	};
 `
 
 class WritingApp extends Component {
@@ -162,6 +171,7 @@ class WritingApp extends Component {
 		return (
 			<WritingAppComponent hide={this.state.hide}>
 				<Cathegory content={type} />
+				<Level>{level === 'basic' ? <FaGlobeEurope /> : <FaGlobeAmericas />}</Level>
 				<Word content={word1} />
 				<Picture
 					isAdmin={this.state.isAdmin}

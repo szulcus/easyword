@@ -2,7 +2,7 @@
 import React, { Component } from 'react'
 import styled, {css} from 'styled-components'
 
-import Picture from '../../../Components/App/components/Picture'
+import Picture from '../../../Components/Apps/components/Picture'
 
 const SpecificationComponent = styled.div`
 	position: absolute;
