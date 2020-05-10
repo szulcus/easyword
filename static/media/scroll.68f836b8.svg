@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="300" height="301.176" viewBox="0 0 300 301.176">
+  <defs>
+    <clipPath id="clip-scroll">
+      <rect width="300" height="301.176"/>
+    </clipPath>
+  </defs>
+  <g id="scroll" clip-path="url(#clip-scroll)">
+    <line id="Right_Arrow_up_" data-name="Right Arrow (up)" x2="100" y2="100" transform="translate(250 151) rotate(90)" fill="none" stroke="skyblue" stroke-linecap="round" stroke-width="70"/>
+    <line id="Right_Arrow_down_" data-name="Right Arrow (down)" x2="100" y2="100" transform="translate(50 151)" fill="none" stroke="skyblue" stroke-linecap="round" stroke-width="70"/>
+    <line id="Left_Arrow_up_" data-name="Left Arrow (up)" x2="30" y2="30" transform="translate(120 100)" fill="none" stroke="skyblue" stroke-linecap="round" stroke-width="25"/>
+    <line id="Left_Arrow_down_" data-name="Left Arrow (down)" x2="30" y2="30" transform="translate(180 100) rotate(90)" fill="none" stroke="skyblue" stroke-linecap="round" stroke-width="25"/>
+  </g>
+</svg>

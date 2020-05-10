@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" viewBox="0 0 512 512">
+  <defs>
+    <clipPath id="clip-Final_Icon">
+      <rect width="512" height="512"/>
+    </clipPath>
+  </defs>
+  <g id="Final_Icon" data-name="Final Icon" clip-path="url(#clip-Final_Icon)">
+    <circle id="Background" cx="256" cy="256" r="256"/>
+    <line id="Right_Arrow_up_" data-name="Right Arrow (up)" x2="100" y2="100" transform="translate(223 156)" fill="none" stroke="gold" stroke-linecap="round" stroke-width="70"/>
+    <line id="Right_Arrow_down_" data-name="Right Arrow (down)" x2="100" y2="100" transform="translate(323 256) rotate(90)" fill="none" stroke="gold" stroke-linecap="round" stroke-width="70"/>
+    <line id="Left_Arrow_up_" data-name="Left Arrow (up)" x2="30" y2="30" transform="translate(173 226)" fill="none" stroke="gold" stroke-linecap="round" stroke-width="25"/>
+    <line id="Left_Arrow_down_" data-name="Left Arrow (down)" x2="30" y2="30" transform="translate(203 256) rotate(90)" fill="none" stroke="gold" stroke-linecap="round" stroke-width="25"/>
+  </g>
+</svg>
