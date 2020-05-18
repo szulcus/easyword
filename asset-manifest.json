@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/static/css/main.4e0dce78.chunk.css",
-    "main.js": "/static/js/main.37dfa788.chunk.js",
-    "main.js.map": "/static/js/main.37dfa788.chunk.js.map",
+    "main.js": "/static/js/main.6cc449e7.chunk.js",
+    "main.js.map": "/static/js/main.6cc449e7.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.95542983.js",
     "runtime-main.js.map": "/static/js/runtime-main.95542983.js.map",
-    "static/js/2.32906569.chunk.js": "/static/js/2.32906569.chunk.js",
-    "static/js/2.32906569.chunk.js.map": "/static/js/2.32906569.chunk.js.map",
+    "static/js/2.96927c75.chunk.js": "/static/js/2.96927c75.chunk.js",
+    "static/js/2.96927c75.chunk.js.map": "/static/js/2.96927c75.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.1637262c4ec16a8d3679813d29544729.js": "/precache-manifest.1637262c4ec16a8d3679813d29544729.js",
+    "precache-manifest.b9ef845d39379595412f9d12d1d03378.js": "/precache-manifest.b9ef845d39379595412f9d12d1d03378.js",
     "service-worker.js": "/service-worker.js",
     "static/css/main.4e0dce78.chunk.css.map": "/static/css/main.4e0dce78.chunk.css.map",
-    "static/js/2.32906569.chunk.js.LICENSE.txt": "/static/js/2.32906569.chunk.js.LICENSE.txt",
+    "static/js/2.96927c75.chunk.js.LICENSE.txt": "/static/js/2.96927c75.chunk.js.LICENSE.txt",
     "static/media/answer-icon.svg": "/static/media/answer-icon.fe8857d5.svg",
     "static/media/answer.svg": "/static/media/answer.002516d0.svg",
     "static/media/ban.png": "/static/media/ban.e417f31d.png",
@@ -43,6 +43,7 @@
     "static/media/nice2.svg": "/static/media/nice2.c84f0b7e.svg",
     "static/media/no.png": "/static/media/no.63159d22.png",
     "static/media/pl.svg": "/static/media/pl.2d8a8c66.svg",
+    "static/media/programming-book.png": "/static/media/programming-book.deb75620.png",
     "static/media/right-arrow.svg": "/static/media/right-arrow.c357d125.svg",
     "static/media/road-signs-book.png": "/static/media/road-signs-book.41db461c.png",
     "static/media/scroll.svg": "/static/media/scroll.68f836b8.svg",
@@ -59,8 +60,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.95542983.js",
-    "static/js/2.32906569.chunk.js",
+    "static/js/2.96927c75.chunk.js",
     "static/css/main.4e0dce78.chunk.css",
-    "static/js/main.37dfa788.chunk.js"
+    "static/js/main.6cc449e7.chunk.js"
   ]
 }
