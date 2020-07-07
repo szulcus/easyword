@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/static/css/main.4ab88093.chunk.css",
-    "main.js": "/static/js/main.43bf5a99.chunk.js",
-    "main.js.map": "/static/js/main.43bf5a99.chunk.js.map",
+    "main.js": "/static/js/main.e02f77ef.chunk.js",
+    "main.js.map": "/static/js/main.e02f77ef.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.95542983.js",
     "runtime-main.js.map": "/static/js/runtime-main.95542983.js.map",
-    "static/js/2.3b82937b.chunk.js": "/static/js/2.3b82937b.chunk.js",
-    "static/js/2.3b82937b.chunk.js.map": "/static/js/2.3b82937b.chunk.js.map",
+    "static/js/2.88bbd67f.chunk.js": "/static/js/2.88bbd67f.chunk.js",
+    "static/js/2.88bbd67f.chunk.js.map": "/static/js/2.88bbd67f.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.902e61bd5fc16c92f9562c4c2b04f26a.js": "/precache-manifest.902e61bd5fc16c92f9562c4c2b04f26a.js",
+    "precache-manifest.4904e3a2e029c626274f7c3d25327c46.js": "/precache-manifest.4904e3a2e029c626274f7c3d25327c46.js",
     "service-worker.js": "/service-worker.js",
     "static/css/main.4ab88093.chunk.css.map": "/static/css/main.4ab88093.chunk.css.map",
-    "static/js/2.3b82937b.chunk.js.LICENSE.txt": "/static/js/2.3b82937b.chunk.js.LICENSE.txt",
+    "static/js/2.88bbd67f.chunk.js.LICENSE.txt": "/static/js/2.88bbd67f.chunk.js.LICENSE.txt",
     "static/media/answer-icon.svg": "/static/media/answer-icon.fe8857d5.svg",
     "static/media/answer.svg": "/static/media/answer.002516d0.svg",
     "static/media/ban.png": "/static/media/ban.e417f31d.png",
@@ -29,14 +29,18 @@
     "static/media/easyword.svg": "/static/media/easyword.24f8149d.svg",
     "static/media/exchange-icon.svg": "/static/media/exchange-icon.f10198af.svg",
     "static/media/exchange.svg": "/static/media/exchange.3598c16e.svg",
+    "static/media/fire.svg": "/static/media/fire.4de80e85.svg",
     "static/media/first.svg": "/static/media/first.0584e231.svg",
     "static/media/good.png": "/static/media/good.006306a6.png",
     "static/media/hello.png": "/static/media/hello.22d09fa8.png",
+    "static/media/hi.svg": "/static/media/hi.61cd8af9.svg",
     "static/media/instagram-d.png": "/static/media/instagram-d.74b52e9d.png",
     "static/media/instagram-icon.png": "/static/media/instagram-icon.c5e01a9e.png",
     "static/media/irregular-verbs-book.png": "/static/media/irregular-verbs-book.e29a7072.png",
     "static/media/left-arrow.svg": "/static/media/left-arrow.1584f273.svg",
     "static/media/loader.svg": "/static/media/loader.b493f4c5.svg",
+    "static/media/logo.svg": "/static/media/logo.32734ff0.svg",
+    "static/media/love.svg": "/static/media/love.fb8ab822.svg",
     "static/media/nerd1.svg": "/static/media/nerd1.8dcbc123.svg",
     "static/media/nerd2.svg": "/static/media/nerd2.b7e238f5.svg",
     "static/media/nice1.svg": "/static/media/nice1.abc4ad80.svg",
@@ -61,8 +65,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.95542983.js",
-    "static/js/2.3b82937b.chunk.js",
+    "static/js/2.88bbd67f.chunk.js",
     "static/css/main.4ab88093.chunk.css",
-    "static/js/main.43bf5a99.chunk.js"
+    "static/js/main.e02f77ef.chunk.js"
   ]
 }
