@@ -14,7 +14,7 @@
 		"file-saver": "^2.0.2",
 		"firebase": "^7.5.0",
 		"firebase-admin": "^8.9.2",
-		"i": "^0.3.6",
+		"i": "^0.3.7",
 		"image-resize": "^1.1.5",
 		"jquery": "^3.4.1",
 		"jszip": "^3.3.0",
