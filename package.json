@@ -13,7 +13,7 @@
 		"clipboard": "^2.0.4",
 		"file-saver": "^2.0.2",
 		"firebase": "^7.5.0",
-		"firebase-admin": "^8.9.2",
+		"firebase-admin": "^11.4.1",
 		"i": "^0.3.6",
 		"image-resize": "^1.1.5",
 		"jquery": "^3.4.1",
